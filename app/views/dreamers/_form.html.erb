@@ -1,0 +1,7 @@
+<%= form_for @dreamer do |f|%>
+  Username: <%= f.text_field :username %><br>
+  Email: <%= f.text_field :email %><br>
+  Zipcode: <%= f.text_field :zipcode %><br>
+  Password: <%= f.password_field :password %><br>
+  <%= f.submit %>
+<% end %>

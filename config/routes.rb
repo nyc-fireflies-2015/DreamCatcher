@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :dreamers, except: [:index]
+  resources :dreamers, except: [:index, :destroy]
   resources :dreams
   resources :favorites, only: [:create, :destroy]
 
