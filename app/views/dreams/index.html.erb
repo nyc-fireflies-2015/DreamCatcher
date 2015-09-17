@@ -1,0 +1,8 @@
+<% @dreams.each do |dream| %>
+  <li>
+    <%= dream.title %>
+    <%= dream.story %>
+  </li>
+<% end %>
+
+<%= link_to 'Add', new_dream_path %>
