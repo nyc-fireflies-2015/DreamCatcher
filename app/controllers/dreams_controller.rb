@@ -1,10 +1,11 @@
 class DreamsController < ApplicationController
+
   def index
     @dreams = Dream.all
   end
 
   def create
-    @dream = Dream.new(dream_params)
+    @dream = current_user.dreams.build(dream_params)
 
     if @dream.save
       redirect_to dream_path(@dream)
@@ -15,7 +16,7 @@ class DreamsController < ApplicationController
   end
 
   def new
-    @dream = Dream.new
+    @dream = current_user.dreams.build()
   end
 
   def edit
