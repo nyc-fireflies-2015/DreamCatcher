@@ -11,17 +11,13 @@ James         |
 
 ## User Stories
 
-Prolile Page : |
----------------|
-Avatar         |
-Questionnaire  |
+Prolile Page : |   Dashboard : |
+---------------|---------------|
+Avatar         | River of Dreams |
+Questionnaire  | Trends |
 Stats          |
 Set Reminders  |
 Dream Logs     |
 My Recipe      |
 Badges         |
 
-Dashboard : |
-------------|
-River of Dreams|
-Trends|
