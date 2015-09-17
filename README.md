@@ -21,4 +21,8 @@ Dream Logs     |
 My Recipe      |
 Badges         |
 
+## Schema
+
+![Schema]("schema.png")
+
 [Our Waffle](https://waffle.io/nyc-fireflies-2015/LucidDreamer)
