@@ -1,0 +1,8 @@
+<h1>Sign Up</h1>
+
+<%= form_for @dreamer do |f|%>
+  Username: <%= f.text_field :username %><br>
+  Email: <%= f.text_field :email %><br>
+  Zipcode: <%= f.text_field :zipcode %><br>
+  <%= f.submit %>
+<% end %>
