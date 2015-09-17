@@ -1,7 +1,6 @@
 FactoryGirl.define do
-  factory :dreamer do
-    username { Faker::Internet.user_name }
-    email { Faker::Internet.email }
-    password "foobar"
+  factory :dream do
+    story { Faker::Lorem.paragraph }
+    title { Faker::Lorem.word }
   end
 end
