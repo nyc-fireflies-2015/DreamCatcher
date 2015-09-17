@@ -1,4 +1,4 @@
-# LucidDreamer
+# Dream Catcher
 
 Team Members: |
 --------------|
