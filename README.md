@@ -23,6 +23,6 @@ Badges         |
 
 ## Schema
 
-![Schema]("schema.png")
+![Schema]("/schema.png")
 
 [Our Waffle](https://waffle.io/nyc-fireflies-2015/LucidDreamer)
