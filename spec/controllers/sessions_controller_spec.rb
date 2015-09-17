@@ -22,7 +22,7 @@ RSpec.describe SessionsController, type: :controller do
     end
     it "renders login path with bad password" do
       post :create, session:{username: dreamer.username, password: "wrong password"}
-      expect(response).to redirect_to root_path
+      expect(response).to render_template('new')
     end
   end
 end
