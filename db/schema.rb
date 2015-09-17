@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917203136) do
+ActiveRecord::Schema.define(version: 20150917210128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dreamers", force: :cascade do |t|
-    t.string   "username",        limit: 64,             null: false
-    t.string   "password_digest",                        null: false
+    t.string   "username",        limit: 64,               null: false
+    t.string   "password_digest",                          null: false
     t.text     "about"
     t.text     "recipe"
-    t.integer  "level",                      default: 0
-    t.integer  "zipcode",                                null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.integer  "level",                        default: 0
+    t.integer  "zipcode",                                  null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "email"
+    t.string   "avatar_url",      limit: 2048
   end
 
   create_table "dreams", force: :cascade do |t|
