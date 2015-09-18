@@ -3,7 +3,8 @@ NewDreamView.showNewDream = function(newDreamForm){
   $("[data-river=dreams]").prepend(newDreamForm);
 };
 NewDreamView.showEditDream = function(editDreamForm, eventTarget){
-  $(eventTarget).replaceWith(editDreamForm);
+  var dreamSummary = $(eventTarget).closest("[data-li=summary]");
+  $(dreamSummary).replaceWith(editDreamForm);
 };
 NewDreamView.hideDream = function(dreamShow, eventTarget){
   var newDreamForm = $(eventTarget).closest("[data-form=new]");
