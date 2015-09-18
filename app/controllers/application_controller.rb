@@ -11,5 +11,4 @@ class ApplicationController < ActionController::Base
   def current_dreamer
     @current_dreamer ||= Dreamer.find_by(id: session[:dreamer_id])
   end
-
 end
