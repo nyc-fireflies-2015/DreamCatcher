@@ -1,6 +1,7 @@
-<% @dreams.each do |dream| %>
-<%= render partial: "summary", locals: {dream: dream} %>
-<% end %>
-
+<ul>
+  <% @dreams.each do |dream| %>
+  <%= render partial: "summary", locals: {dream: dream} %>
+  <% end %>
+</ul>
 
 <%= link_to 'Add', new_dream_path %>
