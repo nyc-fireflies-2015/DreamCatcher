@@ -10,7 +10,6 @@ class DreamsController < ApplicationController
 
   def create
     @dream = current_user.dreams.build(dream_params)
-    # binding.pry
     check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
     if @dream.save
       redirect_to dream_path(@dream)
