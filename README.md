@@ -24,6 +24,7 @@ Badges         |
 ## Schema
 
 ![Schema](schema.png)
+![Wireframe](wireframe.jpeg)
 
 [Our Waffle](https://waffle.io/nyc-fireflies-2015/DreamCatcher)
 
