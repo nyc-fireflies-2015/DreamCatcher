@@ -3,3 +3,5 @@
 <% if @dreamer.recipe == nil %>
   <%= render partial: "default" %>
 <% end %>
+
+<%= link_to 'Edit', edit_recipe_path(@dreamer) %>
