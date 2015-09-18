@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_dreamer
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def authenticate_user
+  def authenticate_dreamer
     redirect_to root_path if !session[:dreamer_id]
   end
 
