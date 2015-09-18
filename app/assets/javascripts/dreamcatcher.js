@@ -20,7 +20,6 @@ Obj.fromForm = function(args){
     }
    return formData;
 }
-
 Obj.fromLink = function(link){
   return $(link).attr("href");
 }
