@@ -22,8 +22,7 @@ RSpec.describe DreamersController, type: :controller do
       end
 
       it "redirects to homepage with successful sign up" do
-        pending
-        post :create, dreamer: @dreamer_attributes
+        post :create, dreamer: FactoryGirl.attributes_for(:dreamer)
         expect(response).to redirect_to root_path
       end
     end

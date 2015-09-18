@@ -20,15 +20,15 @@ class DreamsController < ApplicationController
   end
 
   def edit
-    @dream = Dream.find(params[:id])
+    @dream = Dream.find_by(id: params[:id])
   end
 
   def show
-    @dream = Dream.find(params[:id])
+    @dream = Dream.find_by(id: params[:id])
   end
 
   def update
-    dream = Dream.find(params[:id])
+    dream = Dream.find_by(id: params[:id])
     if dream.update_attributes(dream_params)
       redirect_to dream_path(dream)
     else
@@ -38,7 +38,7 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    dream = Dream.find(params[:id])
+    dream = Dream.find_by(id: params[:id])
     if dream.destroy
       redirect_to dreams_path
     else
@@ -49,7 +49,7 @@ class DreamsController < ApplicationController
 
   private
 
-    def dream_params
-      params.require(:dream).permit(:title, :story, :decision_clarity?, :consciousness_clarity?, :dream_state_clarity?)
-    end
+  def dream_params
+    params.require(:dream).permit(:title, :story, :decision_clarity?, :consciousness_clarity?, :dream_state_clarity?)
+  end
 end

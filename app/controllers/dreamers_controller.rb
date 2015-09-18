@@ -1,6 +1,6 @@
-class DreamersController < ActionController::Base
+class DreamersController < ApplicationController
   def show
-    @dreamer = Dreamer.find(params[:id])
+    @dreamer = Dreamer.find_by(id: params[:id])
   end
 
   def new
@@ -19,11 +19,11 @@ class DreamersController < ActionController::Base
   end
 
   def edit
-    @dreamer = Dreamer.find(params[:id])
+    @dreamer = Dreamer.find_by(id: params[:id])
   end
 
   def update
-    dreamer = Dreamer.find(session[:dreamer_id])
+    dreamer = Dreamer.find_by(id: session[:dreamer_id])
     if dreamer.update_attributes(dreamer_params)
       redirect_to dreamer_path(dreamer)
     elsif dreamer
