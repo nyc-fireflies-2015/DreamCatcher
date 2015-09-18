@@ -1,24 +1,5 @@
-<%= form_for :dream, url: dreams_path do |f| %>
-  <p>
-    <span><%= f.label :title %></span>
-    <span><%= f.text_field :title %></span>
-  </p>
+<h1>New Dream</h1>
 
-  <p>
-    <span><%= f.label :story %></span>
-    <span><%= f.text_area :story %></span>
-  </p>
+<%= flash[:error] %>
 
-  <p>
-    <%= f.label('Able to make decisions?') %>
-    <%= f.check_box(:decision_clarity?) %>
-    <%= f.label('Aware you were dreaming?') %>
-    <%= f.check_box(:consciousness_clarity?) %>
-    <%= f.label('Were your experiences vivid?') %>
-    <%= f.check_box(:dream_state_clarity?) %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render "form" %>
