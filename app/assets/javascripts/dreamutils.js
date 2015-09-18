@@ -6,7 +6,8 @@ Binder.bind = function(args){
   });
 }
 
-var GetFormData = function(args){
+var Obj = {};
+Obj.fromForm = function(args){
    var formData = {};
    if(args.type !== undefined){
     formData.type = $(args.form).attr("method");
@@ -20,3 +21,6 @@ var GetFormData = function(args){
    return formData;
 }
 
+Obj.fromLink = function(link){
+  return $(link).attr("href")
+}
