@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = Dreamer.find_by(username: params[:session][:username])
-    if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
+    dreamer = Dreamer.find_by(username: params[:session][:username])
+    if dreamer && dreamer.authenticate(params[:session][:password])
+      session[:dreamer_id] = dreamer.id
       redirect_to root_path
     else
       flash[:error] = ['Unsuccessful Login!']
