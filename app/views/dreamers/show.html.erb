@@ -1,5 +1,8 @@
-<h1><%= @dreamer.username%>'s Profile</h1>
-<div class="profile-container">
-  <span><%= @dreamer.about %></span>
-  <span><%= @dreamer.level %></span>
+<h1 class="center"><%= @dreamer.username%>'s Profile</h1>
+<hr>
+<div class="center profile-container">
+  <ul>
+    <li>Level: <%= @dreamer.level %></li>
+    <li>About: <%= @dreamer.about %></li>
+  </ul>
 </div>
