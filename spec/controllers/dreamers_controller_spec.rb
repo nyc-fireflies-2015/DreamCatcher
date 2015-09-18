@@ -67,6 +67,7 @@ RSpec.describe DreamersController, type: :controller do
       end
 
       it "redirects to the updated dreamer profile" do
+        session[:dreamer_id] = @dreamer.id
         put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer)
         expect(response).to redirect_to @dreamer
       end
@@ -81,5 +82,4 @@ RSpec.describe DreamersController, type: :controller do
       end
     end
   end
-
 end

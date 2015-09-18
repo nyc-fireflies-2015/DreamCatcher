@@ -17,13 +17,11 @@ class DreamersController < ApplicationController
   end
 
   def update
-    if dreamer.update_attributes(dreamer_params)
-      redirect_to dreamer_path(dreamer)
-    elsif dreamer
-      flash[:error] = dreamer.errors.full_messages
-      redirect_to edit_dreamer_path(dreamer)
+    if @dreamer.update_attributes(dreamer_params)
+      redirect_to dreamer_path(@dreamer)
     else
-      redirect_to root_path
+      flash[:error] = @dreamer.errors.full_messages
+      redirect_to edit_dreamer_path(@dreamer)
     end
   end
 
