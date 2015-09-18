@@ -7,17 +7,11 @@ Binder.bind = function(args){
 };
 
 var Obj = {};
-Obj.fromForm = function(args){
+Obj.fromForm = function(form){
    var formData = {};
-   if(args.type !== undefined){
-    formData.type = $(args.form).attr("method");
-    }
-   if(args.url !== undefined){
-   formData.url = $(args.form).attr("action");
-    }
-   if(args.data !== undefined){
-   formData.data = $(args.form).serialize();
-    }
+   formData.type = $(form).attr("method");
+   formData.url = $(form).attr("action");
+   formData.data = $(form).serialize();
    return formData;
 };
 Obj.fromLink = function(link){
@@ -26,7 +20,10 @@ Obj.fromLink = function(link){
 
 var DreamCatcher = {};
 DreamCatcher.send = function(args){
+  if(args.params === undefined){
+    args.params = "";
+  }
   $.ajax(args.data).done(function(element){
-    args.callback(element);
+    args.callback(element, args.params);
   });
 };

@@ -1,7 +1,7 @@
-  <li>
+  <li data-li="summary">
     <%= dream.title %>
     <%= dream.story %>
-    <% if dream.dreamer.id == session[:user_id] %>
-      <%= link_to "Edit", edit_dream_path(dream) %>
+    <% if dream.dreamer.id == session[:dreamer_id] %>
+      <%= link_to "Edit", edit_dream_path(dream), data: { link: "edit-dream" } %>
     <% end %>
   </li>

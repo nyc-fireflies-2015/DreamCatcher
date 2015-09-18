@@ -19,7 +19,11 @@ class DreamsController < ApplicationController
     @dream = current_dreamer.dreams.build(dream_params)
     check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
     if @dream.save
-      redirect_to dreams_path
+      if request.xhr?
+        render partial: "summary", locals: {dream: @dream}
+      else
+        redirect_to dreams_path
+      end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty?"
       redirect_to new_dream_path
@@ -28,7 +32,11 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update_attributes(dream_params)
-      redirect_to dream_path(@dream)
+      if request.xhr?
+        render partial: "summary", locals: {dream: @dream}
+      else
+        redirect_to dream_path(@dream)
+      end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty"
       render "edit"
