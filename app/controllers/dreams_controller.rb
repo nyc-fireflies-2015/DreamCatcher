@@ -4,6 +4,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.all
+    redirect_to
   end
 
   def show
