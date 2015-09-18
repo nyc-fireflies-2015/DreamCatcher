@@ -4,7 +4,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.all
-    # redirect_to welcome_path unless current_dreamer
+    redirect_to welcome_path unless current_dreamer
   end
 
   def show
