@@ -4,11 +4,7 @@
   <p><%= link_to "Edit Profile", edit_dreamer_path(current_dreamer) %></p>
 <% end %>
 
-<% if @dreamer.avatar_url.nil? %>
-  <%= image_tag("avatar.png", class: "avatar")%>
-<% else %>
-  <%= image_tag("#{@dreamer.avatar_url}", class: "avatar")%>
-<% end %>
+<%= image_tag("#{@dreamer.avatar_url}", class: "avatar")%>
 
 <div class="center profile-container">
   <ul>
