@@ -30,4 +30,4 @@ Badges         |
 
 [Our Slack](https://luciddreamer.slack.com/messages/general/)
 
-[Our Test Coverage](coverage/index.html)
+[Our Test Coverage](https://rawgit.com/nyc-fireflies-2015/DreamCatcher/b34e0cc4a5e82470efbb31cd4885fa8c8a2758b3/coverage/index.html#_AllFiles)
