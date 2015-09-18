@@ -1,11 +1,6 @@
 <% @dreams.each do |dream| %>
-  <li>
-    <%= dream.title %>
-    <%= dream.story %>
-    <% if dream.dreamer.id == session[:user_id] %>
-      <%= link_to "Edit", edit_dream_path(dream) %>
-    <% end %>
-  </li>
+<%= render partial: "summary", locals: {dream: dream} %>
 <% end %>
+
 
 <%= link_to 'Add', new_dream_path %>
