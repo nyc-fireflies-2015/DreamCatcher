@@ -32,7 +32,11 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update_attributes(dream_params)
-      redirect_to dream_path(@dream)
+      if request.xhr?
+        render partial: "summary",locals {dream: @dream}
+      else
+        redirect_to dream_path(@dream)
+      end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty"
       render "edit"
