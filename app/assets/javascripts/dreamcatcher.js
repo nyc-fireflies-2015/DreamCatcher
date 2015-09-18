@@ -4,7 +4,7 @@ Binder.bind = function(args){
     e.preventDefault();
     args.callback(e.target);
   });
-}
+};
 
 var Obj = {};
 Obj.fromForm = function(args){
@@ -19,7 +19,14 @@ Obj.fromForm = function(args){
    formData.data = $(args.form).serialize();
     }
    return formData;
-}
+};
 Obj.fromLink = function(link){
   return $(link).attr("href");
-}
+};
+
+var DreamCatcher = {};
+DreamCatcher.send = function(args){
+  $.ajax(args.data).done(function(element){
+    args.callback(element);
+  });
+};

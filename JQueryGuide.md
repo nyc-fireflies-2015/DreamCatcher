@@ -8,6 +8,8 @@ Binder.bind allows you to bind your controller events to specific actions in the
 
 Obj.fromForm and Obj.fromLink allow you to get the relevant ajax data from the corresponding DOM elements.
 
+DreamCatcher.send accepts a data attribute representing the relevant ajax data and callback for the view action to be performed
+
 You can see examples of their use and the DC framework in lib/assets/JQueryExample
 
 The framework is comprised of a runner.js a controller.js and a view.js
