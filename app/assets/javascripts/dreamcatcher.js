@@ -22,5 +22,5 @@ Obj.fromForm = function(args){
 }
 
 Obj.fromLink = function(link){
-  return $(link).attr("href")
+  return $(link).attr("href");
 }
