@@ -2,4 +2,10 @@
 
 <%= flash[:error] %>
 
-<%= render "form" %>
+<%= form_for @dreamer do |f| %>
+  <%= f.text_field :username, placeholder: "username" %>
+  <%= f.text_field :email, placeholder: "email" %>
+  <%= f.text_field :zipcode, placeholder: "zip code" %>
+  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.submit "Submit" %>
+<% end %>

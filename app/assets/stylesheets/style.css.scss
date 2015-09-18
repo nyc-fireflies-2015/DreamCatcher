@@ -9,9 +9,16 @@ main {
 }
 
 .profile-container {
+
   li {
     list-style-type: none;
   }
+}
+
+.avatar {
+  width: 9em;
+  height: 9em;
+  border: 1px solid #999;
 }
 
 nav {

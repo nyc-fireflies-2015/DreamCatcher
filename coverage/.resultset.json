@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Sy_borg/LucidDreamer/spec/controllers/dreamers_controller_spec.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/dreamers_controller_spec.rb": [
         1,
         null,
         1,
@@ -88,7 +88,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/rails_helper.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/rails_helper.rb": [
         null,
         1,
         null,
@@ -151,14 +151,14 @@
         1,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/environment.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/Sy_borg/LucidDreamer/config/application.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/application.rb": [
         1,
         null,
         1,
@@ -195,12 +195,12 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/boot.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/Sy_borg/LucidDreamer/config/environments/test.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/environments/test.rb": [
         1,
         null,
         null,
@@ -244,7 +244,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/assets.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -257,7 +257,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/backtrace_silencers.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -266,18 +266,18 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/cookies_serializer.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/filter_parameter_logging.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/inflections.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -295,18 +295,18 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/mime_types.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/session_store.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/Sy_borg/LucidDreamer/config/initializers/wrap_parameters.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -322,7 +322,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/factories/dream.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/factories/dream.rb": [
         1,
         1,
         23,
@@ -334,7 +334,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/factories/dreamer.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/factories/dreamer.rb": [
         1,
         1,
         24,
@@ -355,13 +355,14 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/config/routes.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/routes.rb": [
         1,
         1,
         null,
         1,
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -371,21 +372,21 @@
         1,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/support/factory_girl.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/support/factory_girl.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/support/login_macros.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/support/login_macros.rb": [
         1,
         1,
         18,
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/app/controllers/dreamers_controller.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/dreamers_controller.rb": [
         1,
         1,
         null,
@@ -424,7 +425,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/app/controllers/application_controller.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -436,11 +437,11 @@
         null,
         null,
         1,
-        6,
+        8,
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/controllers/dreams_controller_spec.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/dreams_controller_spec.rb": [
         1,
         null,
         1,
@@ -608,12 +609,13 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/app/controllers/dreams_controller.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/dreams_controller.rb": [
         1,
         1,
         1,
         null,
         1,
+        2,
         2,
         null,
         null,
@@ -683,7 +685,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -713,7 +715,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/app/controllers/sessions_controller.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -736,7 +738,7 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/models/dream_spec.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/dream_spec.rb": [
         1,
         null,
         1,
@@ -758,14 +760,14 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/app/models/dream.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/dream.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/spec/models/dreamer_spec.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/dreamer_spec.rb": [
         1,
         null,
         1,
@@ -784,30 +786,6 @@
         1,
         1,
         null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/Sy_borg/LucidDreamer/app/models/dreamer.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/Sy_borg/LucidDreamer/spec/models/favorite_spec.rb": [
-        1,
-        null,
-        1,
-        1,
         1,
         1,
         null,
@@ -817,13 +795,37 @@
         null,
         null
       ],
-      "/Users/Sy_borg/LucidDreamer/app/models/favorite.rb": [
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/dreamer.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/favorite_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/favorite.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1442611706
+    "timestamp": 1442614115
   }
 }

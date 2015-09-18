@@ -6,7 +6,7 @@ class DreamersController < ApplicationController
   end
 
   def create
-    dreamer = Dreamer.new(dreamer_params)
+    dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png"))
     if dreamer.save
       session[:dreamer_id] = dreamer.id
       redirect_to root_path, notice: "Account Has Created!!"
@@ -18,7 +18,7 @@ class DreamersController < ApplicationController
 
   def update
     if @dreamer.update_attributes(dreamer_params)
-      redirect_to dreamer_path(@dreamer)
+      redirect_to profile_path(@dreamer)
     else
       flash[:error] = @dreamer.errors.full_messages
       redirect_to edit_dreamer_path(@dreamer)
@@ -28,7 +28,7 @@ class DreamersController < ApplicationController
   private
 
   def dreamer_params
-    params.require(:dreamer).permit(:username, :email, :password, :zipcode)
+    params.require(:dreamer).permit(:username, :email, :password, :zipcode, :avatar_url, :about)
   end
 
   def find_dreamer
