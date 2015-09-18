@@ -44,15 +44,42 @@ RSpec.describe DreamersController, type: :controller do
 
   describe "GET #edit" do
     it "renders the :edit view when logged in" do
-      pending
-      log_in(user)
-      get :edit, id: dreamer
+      get :edit, id: @dreamer
       expect(response).to render_template :edit
     end
 
     it "located the requested @question" do
       get :edit, id: @dreamer
       expect(assigns(:dreamer)).to eq(@dreamer)
+    end
+  end
+
+  describe "PUT #update" do
+    before :each do
+      @dreamer = FactoryGirl.create(:dreamer, username: "username")
+      session[:dreamer_id] = @dreamer.id
+    end
+
+    context "valid attributes" do
+      it "changes dreamer's attributes" do
+        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: "updated username")
+        @dreamer.reload
+        expect(@dreamer.username).to eq("updated username")
+      end
+
+      it "redirects to the updated dreamer profile" do
+        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer)
+        expect(response).to redirect_to @dreamer
+      end
+    end
+
+    context "invalid attributes" do
+      it "does not change dreamer's attributes" do
+        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: nil)
+        @dreamer.reload
+        expect(@dreamer.username).to eq("username")
+        expect(response).to redirect_to edit_dreamer_path(@dreamer)
+      end
     end
   end
 
