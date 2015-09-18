@@ -2,5 +2,8 @@ $(document).ready(function(){
   var ctrl = new NewDreamController();
   Binder.bind({event: "click", 
               selector: "[data-link=new-dream]", 
-              callback: ctrl.getDreamForm })
+              callback: ctrl.getDreamForm });
+  Binder.bind({event: "submit",
+              selector: "[data-form=dream]",
+              callback: ctrl.postDreamForm });
 });
