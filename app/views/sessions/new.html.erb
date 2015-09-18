@@ -1,7 +1,7 @@
 <%= form_for :session, url: sessions_path  do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %><br>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.submit 'Log In' %>
+  <span><%= f.label :username %></span>
+  <span><%= f.text_field :username %></span>
+  <span><%= f.label :password %></span>
+  <span><%= f.password_field :password %></span>
+  <span><%= f.submit 'Log In' %></span>
 <%end%>
