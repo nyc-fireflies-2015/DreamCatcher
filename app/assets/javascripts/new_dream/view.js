@@ -7,7 +7,7 @@ NewDreamView.showEditDream = function(editDreamForm, eventTarget){
   $(dreamSummary).replaceWith(editDreamForm);
 };
 NewDreamView.hideDream = function(dreamShow, eventTarget){
-  var newDreamForm = $(eventTarget).closest("[data-form=new]");
+  var newDreamForm = $(eventTarget).closest("[data-div=dream-form]");
   $(newDreamForm).replaceWith(dreamShow);
 };
 
