@@ -1,0 +1,10 @@
+<%= form_for @dreamer, url: update_recipe_path(@dreamer) do |f| %>
+  <p class="recipe-input">
+    <span><%= f.label :recipe %></span>
+    <span><%= f.text_area :recipe %></span>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
