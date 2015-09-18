@@ -7,4 +7,13 @@ FactoryGirl.define do
     zipcode { Faker::Address.zip }
     password "foobar"
   end
+
+  factory :invalid_dreamer do
+    username { Faker::Name.name }
+    email nil
+    about { Faker::Lorem.paragraph }
+    recipe { Faker::Lorem.paragraph }
+    zipcode { Faker::Address.zip }
+    password "foobar"
+  end
 end

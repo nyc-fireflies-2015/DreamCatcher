@@ -1,4 +1,9 @@
 <h1 class="center"><%= @dreamer.username%>'s Profile</h1>
+
+<% if current_dreamer == @dreamer %>
+  <%= link_to "Edit Profile", edit_dreamer_path(current_dreamer) %>
+<% end %>
+
 <hr>
 <div class="center profile-container">
   <ul>
