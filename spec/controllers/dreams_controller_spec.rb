@@ -138,12 +138,29 @@ describe DreamsController do
       @dream.reload
       expect(response).to redirect_to dream_path(@dream)
     end
-    it "re-renders :edit template if invalid"
+    it "re-renders :edit template if invalid" do
+      put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: nil, story: "title story")
+      @dream.reload
+      expect(response).to render_template :edit
+    end
+
   end
 
   describe "DELETE #destroy" do
-    it "deletes question"
-    it "redirects to /"
-  end
+    before :each do
+      login(dreamer)
+      @dream = FactoryGirl.create(:dream)
+    end
 
+    it "deletes dream" do
+      expect{
+        delete :destroy, id: @dream
+      }.to change(Dream,:count).by(-1)
+    end
+
+    it "redirects to /" do
+      delete :destroy, id: @dream
+      expect(response).to redirect_to dreams_path
+    end
+  end
 end
