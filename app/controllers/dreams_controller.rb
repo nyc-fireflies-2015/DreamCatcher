@@ -1,4 +1,5 @@
 class DreamsController < ApplicationController
+  before_filter :authenticate_user, except: [:index]
 
   def index
     @dreams = Dream.all
@@ -6,7 +7,6 @@ class DreamsController < ApplicationController
 
   def create
     @dream = current_user.dreams.build(dream_params)
-
     if @dream.save
       redirect_to dream_path(@dream)
     else

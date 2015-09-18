@@ -4,10 +4,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :verify_logged_in
-
-  def verify_logged_in
-    session[:user_id]
+  def authenticate_user
+    redirect_to root_path if !session[:dreamer_id]
   end
 
   def current_user
