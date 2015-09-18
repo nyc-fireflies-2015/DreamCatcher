@@ -6,8 +6,7 @@ Binder.bind = function(args){
   });
 }
 
-var Controller = {};
-Controller.getFormData = function(args){
+var GetFormData = function(args){
    var formData = {};
    if(args.type !== undefined){
     formData.type = $(args.form).attr("method");
