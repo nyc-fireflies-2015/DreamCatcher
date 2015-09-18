@@ -1,4 +1,4 @@
-class DreamersController < ActionController::Base
+class DreamersController < ApplicationController
   def show
     @dreamer = Dreamer.find_by(id: params[:id])
   end
