@@ -26,7 +26,10 @@ Obj.fromLink = function(link){
 
 var DreamCatcher = {};
 DreamCatcher.send = function(args){
+  if(args.params === undefined){
+    args.params = "";
+  }
   $.ajax(args.data).done(function(element){
-    args.callback(element);
+    args.callback(element, args.params);
   });
 };
