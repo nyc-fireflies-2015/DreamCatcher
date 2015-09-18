@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+10.times do
+  d = FactoryGirl.create(:dreamer)
+  4.times do
+    ds = d.dreams.create(FactoryGirl.attributes_for(:dream))
+    5.times do
+      ds.favorites.create(fan: d)
+    end
+  end
+end
