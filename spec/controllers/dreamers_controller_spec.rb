@@ -42,4 +42,18 @@ RSpec.describe DreamersController, type: :controller do
     end
   end
 
+  describe "GET #edit" do
+    it "renders the :edit view when logged in" do
+      pending
+      log_in(user)
+      get :edit, id: dreamer
+      expect(response).to render_template :edit
+    end
+
+    it "located the requested @question" do
+      get :edit, id: @dreamer
+      expect(assigns(:dreamer)).to eq(@dreamer)
+    end
+  end
+
 end
