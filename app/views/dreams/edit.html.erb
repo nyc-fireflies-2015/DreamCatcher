@@ -1,17 +1,8 @@
-<%= form_for :dream, url: dream_path(@dream), method: :patch do |f| %>
-  <p class="dream-input">
-    <span><%= f.label :title %></span>
-    <span><%= f.text_field :title %></span>
-  </p>
+<h1>Edit Dream</h1>
 
-  <p class="dream-input">
-    <span><%= f.label :story %></span>
-    <span><%= f.text_area :story %></span>
-  </p>
+<%= flash[:error] %>
 
-  <p>
-    <%= f.submit %>
-  </p>
+<%= render "form" %>
 
 <%= link_to 'Delete', dream_path(@dream), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+
