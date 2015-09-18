@@ -1,12 +1,12 @@
 <%= form_for :dream, url: dreams_path do |f| %>
   <p>
-    <%= f.label :title %><br/>
-    <%= f.text_field :title %>
+    <span><%= f.label :title %></span>
+    <span><%= f.text_field :title %></span>
   </p>
 
   <p>
-    <%= f.label :story %><br/>
-    <%= f.text_area :story %>
+    <span><%= f.label :story %></span>
+    <span><%= f.text_area :story %></span>
   </p>
 
   <p>
