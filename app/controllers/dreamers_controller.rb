@@ -12,7 +12,7 @@ class DreamersController < ApplicationController
       redirect_to root_path, notice: "Account Has Created!!"
     else
       flash[:error] = dreamer.errors.full_messages
-      redirect_to new_dreamer_path
+      redirect_to signup_path
     end
   end
 

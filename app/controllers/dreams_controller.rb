@@ -6,6 +6,10 @@ class DreamsController < ApplicationController
     @dreams = Dream.all
   end
 
+  def show
+    @dream = Dream.find_by(id: params[:id])
+  end
+
   def new
     @dream = current_dreamer.dreams.build()
   end
@@ -14,10 +18,10 @@ class DreamsController < ApplicationController
     @dream = current_dreamer.dreams.build(dream_params)
     check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
     if @dream.save
-      redirect_to dream_path(@dream)
+      redirect_to dreams_path
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty?"
-      render new
+      redirect_to new_dream_path
     end
   end
 

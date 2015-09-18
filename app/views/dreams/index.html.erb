@@ -1,7 +1,9 @@
-<ul>
+<ul data-river="dreams">
   <% @dreams.each do |dream| %>
   <%= render partial: "summary", locals: {dream: dream} %>
   <% end %>
 </ul>
 
-<%= link_to 'Add', new_dream_path %>
+<%= link_to 'Add', new_dream_path, data: {link: "new-dream"} %>
+
+

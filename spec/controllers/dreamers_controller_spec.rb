@@ -36,7 +36,7 @@ RSpec.describe DreamersController, type: :controller do
 
       it "redirects to sign up page with unsuccessful sign up" do
         post :create, dreamer: @dreamer_attributes.merge(username: nil)
-        expect(response).to redirect_to new_dreamer_path
+        expect(response).to redirect_to signup_path
       end
     end
   end

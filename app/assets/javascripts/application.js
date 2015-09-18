@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require dreamcatcher.js
 //= require_tree .
+//= require foundation
 
 $(function(){ $(document).foundation(); });
