@@ -2,6 +2,9 @@
   <li>
     <%= dream.title %>
     <%= dream.story %>
+    <% if dream.dreamer.id == session[:user_id] %>
+      <%= link_to "Edit", edit_dream_path(dream) %>
+    <% end %>
   </li>
 <% end %>
 
