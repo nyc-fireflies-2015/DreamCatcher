@@ -1,0 +1,17 @@
+<%= form_for :dream, url: dream_path(@dream), method: :patch do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :story %><br/>
+    <%= f.text_area :story %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<%= link_to 'Delete', dream_path(@dream), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
