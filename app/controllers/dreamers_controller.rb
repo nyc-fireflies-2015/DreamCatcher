@@ -10,9 +10,8 @@ class DreamersController < ActionController::Base
   def create
     dreamer = Dreamer.new(dreamer_params)
     if dreamer.save
-      # log_in(dreamer)
-      redirect_to dreamer_path(dreamer), notice: "Account Has Created!!"
-      #change above route to root_path
+      session[:dreamer_id] = dreamer.id
+      redirect_to root_path, notice: "Account Has Created!!"
     else
       flash[:error] = dreamer.errors.full_messages
       redirect_to new_dreamer_path
@@ -24,12 +23,14 @@ class DreamersController < ActionController::Base
   end
 
   def update
-    dreamer = current_user
+    dreamer = Dreamer.find(session[:dreamer_id])
     if dreamer.update_attributes(dreamer_params)
       redirect_to dreamer_path(dreamer)
-    else
+    elsif dreamer
       flash[:error] = dreamer.errors.full_messages
-      redirect_to edit_user_path(dreamer)
+      redirect_to edit_dreamer_path(dreamer)
+    else
+      redirect_to root_path
     end
   end
 
