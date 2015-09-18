@@ -18,7 +18,7 @@ class DreamersController < ApplicationController
 
   def update
     if @dreamer.update_attributes(dreamer_params)
-      redirect_to dreamer_path(@dreamer)
+      redirect_to profile_path(@dreamer)
     else
       flash[:error] = @dreamer.errors.full_messages
       redirect_to edit_dreamer_path(@dreamer)
