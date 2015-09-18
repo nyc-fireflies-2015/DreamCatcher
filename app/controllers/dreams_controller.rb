@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_filter :authenticate_user, except: [:index]
+  before_filter :authenticate_dreamer, except: [:index]
   before_filter :find_dream, except: [:index, :create, :new]
 
   def index
