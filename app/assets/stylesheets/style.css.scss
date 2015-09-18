@@ -13,3 +13,15 @@ main {
     list-style-type: none;
   }
 }
+
+nav {
+  position: absolute;
+  top: 1.5em;
+  right: 0.8em;
+  float: right;
+
+  a {
+    border: 1px solid #999;
+    padding: 0.5em;
+  }
+}
