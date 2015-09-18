@@ -5,7 +5,7 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @dream = Dreamer.find_by(id: session[:user_id]).dreams.build(dream_params)
+    @dream = current_user.dreams.build(dream_params)
 
     if @dream.save
       redirect_to dream_path(@dream)
@@ -16,7 +16,7 @@ class DreamsController < ApplicationController
   end
 
   def new
-    @dream = Dreamer.find_by(id: session[:user_id]).dreams.build()
+    @dream = current_user.dreams.build()
   end
 
   def edit
