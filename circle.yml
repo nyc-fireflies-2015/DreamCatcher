@@ -1,6 +1,7 @@
-machine:
-  ruby:
-    version: 2.0.0-p353
+database:
+  override:
+  - bundle exec rake db:create RAILS_ENV=test; bundle exec rake db:migrate RAILS_ENV=test
+
 test:
-  pre:
-  - bundle exec rake db:migrate RAILS_ENV=test
+  adapter: postgresql
+  database: LucidDreamer_test
