@@ -3,5 +3,4 @@ machine:
     version: 2.0.0-p353
 test:
   post:
-  - bundle exec rake db:migrate: 
-    environment: RAILS_ENV=test
+  - bundle exec rake db:migrate RAILS_ENV=test
