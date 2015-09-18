@@ -1,6 +1,7 @@
 machine:
   ruby:
     version: 2.0.0-p353
-  pre:
-  - bundle exec rake db:create RAILS_ENV=test
-  - bundle exec rake db:migrate RAILS_ENV=test
+test:
+  post:
+  - bundle exec rake db:migrate 
+    environment: RAILS_ENV=test
