@@ -52,3 +52,4 @@ class DreamsController < ApplicationController
   def dream_params
     params.require(:dream).permit(:title, :story, :decision_clarity?, :consciousness_clarity?, :dream_state_clarity?)
   end
+end
