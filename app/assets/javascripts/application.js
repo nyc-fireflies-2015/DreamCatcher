@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dreamutils.js
+//= require dreamcatcher.js
 //= require_tree .
 //= require foundation
 
