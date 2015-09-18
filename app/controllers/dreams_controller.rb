@@ -5,8 +5,13 @@ class DreamsController < ApplicationController
     @dreams = Dream.all
   end
 
+  def new
+    @dream = current_user.dreams.build()
+  end
+
   def create
     @dream = current_user.dreams.build(dream_params)
+    check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
     if @dream.save
       redirect_to dream_path(@dream)
     else
@@ -15,8 +20,12 @@ class DreamsController < ApplicationController
     end
   end
 
-  def new
-    @dream = current_user.dreams.build()
+  def edit
+    @dream = Dream.find_by(id: params[:id])
+  end
+
+  def show
+    @dream = Dream.find_by(id: params[:id])
   end
 
   def update
@@ -46,4 +55,23 @@ class DreamsController < ApplicationController
   def find_dream
     @dream = Dream.find_by(id: params[:id])
   end
+
+  def check_decision(dream)
+    if params[:dream][:decision_clarity] == '1'
+      dream[:decision_clarity?] = true
+    end
+  end
+
+  def check_consciousness(dream)
+    if params[:dream][:consciousness_clarity] == '1'
+      dream[:consciousness_clarity?] = true
+    end
+  end
+
+  def check_state(dream)
+    if params[:dream][:dream_state_clarity] == '1'
+      dream[:dream_state_clarity?] = true
+    end
+  end
+
 end
