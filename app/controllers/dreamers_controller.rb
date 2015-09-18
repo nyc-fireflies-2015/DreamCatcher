@@ -28,7 +28,7 @@ class DreamersController < ApplicationController
   private
 
   def dreamer_params
-    params.require(:dreamer).permit(:username, :email, :password, :zipcode)
+    params.require(:dreamer).permit(:username, :email, :password, :zipcode, :avatar_url, :about)
   end
 
   def find_dreamer
