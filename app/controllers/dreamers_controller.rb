@@ -1,7 +1,5 @@
 class DreamersController < ApplicationController
-  def show
-    @dreamer = Dreamer.find_by(id: params[:id])
-  end
+  before_action :find_dreamer, only: [:show, :edit, :update]
 
   def new
     @dreamer = Dreamer.new
@@ -18,12 +16,7 @@ class DreamersController < ApplicationController
     end
   end
 
-  def edit
-    @dreamer = Dreamer.find_by(id: params[:id])
-  end
-
   def update
-    dreamer = Dreamer.find_by(id: session[:dreamer_id])
     if dreamer.update_attributes(dreamer_params)
       redirect_to dreamer_path(dreamer)
     elsif dreamer
@@ -38,5 +31,9 @@ class DreamersController < ApplicationController
 
   def dreamer_params
     params.require(:dreamer).permit(:username, :email, :password, :zipcode)
+  end
+
+  def find_dreamer
+    @dreamer = Dreamer.find_by(id: params[:id])
   end
 end
