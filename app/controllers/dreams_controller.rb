@@ -33,7 +33,7 @@ class DreamsController < ApplicationController
   def update
     if @dream.update_attributes(dream_params)
       if request.xhr?
-        render partial: "summary",locals {dream: @dream}
+        render partial: "summary", locals: {dream: @dream}
       else
         redirect_to dream_path(@dream)
       end
