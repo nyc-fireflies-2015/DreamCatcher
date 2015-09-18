@@ -4,9 +4,10 @@ Binder.bind = function(args){
     e.preventDefault();
     args.callback(e.target);
   });
-}
+};
 
-var GetFormData = function(args){
+var Obj = {};
+Obj.fromForm = function(args){
    var formData = {};
    if(args.type !== undefined){
     formData.type = $(args.form).attr("method");
@@ -18,5 +19,14 @@ var GetFormData = function(args){
    formData.data = $(args.form).serialize();
     }
    return formData;
-}
+};
+Obj.fromLink = function(link){
+  return $(link).attr("href");
+};
 
+var DreamCatcher = {};
+DreamCatcher.send = function(args){
+  $.ajax(args.data).done(function(element){
+    args.callback(element);
+  });
+};
