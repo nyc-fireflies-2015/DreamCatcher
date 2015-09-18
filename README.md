@@ -29,3 +29,5 @@ Badges         |
 [Our Waffle](https://waffle.io/nyc-fireflies-2015/DreamCatcher)
 
 [Our Slack](https://luciddreamer.slack.com/messages/general/)
+
+[Our Test Coverage](coverage/index.html)
