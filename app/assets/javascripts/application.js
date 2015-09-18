@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require utilsDJ.js
+//= require dreamutils.js
 //= require_tree .
 //= require foundation
 
