@@ -9,6 +9,7 @@ NewDreamController.prototype.postDreamForm = function(eventTarget){
                     params: eventTarget});
 };
 NewDreamController.prototype.getEditDreamForm = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm(eventTarget),
-                    callback: NewDreamView.showEditDream });
+  DreamCatcher.send({data: Obj.fromLink(eventTarget),
+                    callback: NewDreamView.showEditDream,
+                    params: eventTarget });
 }
