@@ -1,14 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe DreamsController, type: :controller do
+describe DreamsController do
+
+  let!(:dream) { FactoryGirl.create(:dream) }
+  let!(:dreamer) { FactoryGirl.create(:dreamer) }
 
   describe "GET /" do
     context 'user is not logged in' do
     end
 
     context 'user is logged in' do
+      before :each do
+        login(dreamer)
+        get :index, id: dream.id
+      end
+
       it "renders the :index template" do
-        get :index
         expect(response).to render_template :index
       end
 
@@ -18,16 +25,16 @@ RSpec.describe DreamsController, type: :controller do
   end
 
   describe "GET #show" do
-    let!(:dream) { FactoryGirl.create(:dream) }
-
-    before :each do
-      get :show, id: dream.id
-    end
 
     context 'user is not logged in' do
     end
 
     context 'user is logged in' do
+      before :each do
+        login(dreamer)
+        get :show, id: dream.id
+      end
+
       it "assigns the requested dream to @dream" do
         expect(assigns(:dream)).to eq dream
       end
@@ -35,6 +42,7 @@ RSpec.describe DreamsController, type: :controller do
         expect(response).to render_template :show
       end
     end
+
   end
 
   describe "GET #new" do
@@ -48,7 +56,7 @@ RSpec.describe DreamsController, type: :controller do
       it "assigns an empty dream to @dream" do
         login(dreamer)
         get :new
-        expect(assigns(dreamer.dream)).to be_a_new Dream
+        expect(assigns(:dream)).to be_a_new Dream
       end
       it "renders the :new template" do
         login(dreamer)
@@ -59,13 +67,13 @@ RSpec.describe DreamsController, type: :controller do
   end
 
   describe "GET #edit" do
-    let!(:dream) { FactoryGirl.create(:dream) }
 
     context 'user not logged in' do
     end
 
     context 'user is logged in' do
       before :each do
+        login(dreamer)
         get :edit, id: dream.id
       end
 

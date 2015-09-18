@@ -6,6 +6,10 @@ class DreamsController < ApplicationController
     @dreams = Dream.all
   end
 
+  def show
+    @dream = Dream.find_by(id: params[:id])
+  end
+
   def new
     @dream = current_dreamer.dreams.build()
   end
