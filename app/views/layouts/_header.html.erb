@@ -1,7 +1,9 @@
-<header>
-  <h1><%= link_to "DreamCatcher", root_path %></h1>
-
-  <nav>
+<div class="sticky">
+<header class="top-bar" data-topbar role="navigation" class="row">
+  <div class="small-2-text-center large-4 columns">
+    <h1 class="title-area"><%= link_to "DreamCatcher", root_path %></h1>
+  </div>
+  <nav class="small-4-collapse medium-3 large-4 columns">
     <% if current_dreamer %>
       <%= link_to "Dreams", root_path %>
       <%= link_to "Recipe", recipe_path(current_dreamer) %>
@@ -13,3 +15,4 @@
     <% end %>
   </nav>
 </header>
+</div>
