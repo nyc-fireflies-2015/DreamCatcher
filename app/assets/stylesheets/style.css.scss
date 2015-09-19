@@ -20,12 +20,6 @@ main {
   }
 }
 
-.avatar {
-  width: 9em;
-  height: 9em;
-  border: 1px solid #999;
-}
-
 nav {
   a {
     border: 1px solid #999;
@@ -54,4 +48,17 @@ nav {
   ul {
     list-style-type: none;
   }
+}
+
+.edit-icon {
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.avatar {
+  border: 1px solid #999;
+  position: relative;
+  left: 8em;
+  width: 5em;
+  height: 5em;
 }

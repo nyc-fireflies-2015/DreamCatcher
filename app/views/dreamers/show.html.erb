@@ -1,19 +1,33 @@
-<h1 class="center subtitle"><%= @dreamer.username %>'s Profile</h1>
+<p>
+  <h1 class="center">
+    <% if current_dreamer == @dreamer %>
+      <%= link_to image_tag("edit-icon.png", class: "edit-icon"), edit_dreamer_path(current_dreamer) %>
+    <% end %>
+    <%= @dreamer.username %>'s Profile
+  </h1>
+</p>
 
-<% if current_dreamer == @dreamer %>
-  <p><%= link_to "Edit Profile", edit_dreamer_path(current_dreamer) %></p>
-<% end %>
+<%= image_tag("#{@dreamer.avatar_url}", class: "left avatar") %>
 
-<%= image_tag("#{@dreamer.avatar_url}", class: "avatar") %>
-
-<div class="center profile-container">
+<div class="profile-container">
   <ul>
     <li>Level: <%= @dreamer.level %></li>
+    <li>
+      <% if @dreamer.country %>
+      Country: <%= @dreamer.country %>
+      <% end %>
+    </li>
+    <li>
+      <% if @dreamer.state %>
+      State: <%= @dreamer.state %>
+      <% end %>
+    </li>
     <li>
       <% if @dreamer.about %>
       About: <%= @dreamer.about %>
       <% end %>
     </li>
+    <li><%= link_to "Dream Recipe", recipe_path(@dreamer) %></li>
   </ul>
 </div>
 
