@@ -3,6 +3,12 @@ main {
   border: 1px solid #999;
   width: 60%;
   padding: 1em;
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 2em;
+}
+
+.title-area {
+  font-family: 'Fredericka the Great', cursive;
 }
 
 .center {
@@ -27,4 +33,9 @@ nav {
   a {
     border: 1px solid #999;
   }
+}
+
+.subtitle {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.8em;
 }
