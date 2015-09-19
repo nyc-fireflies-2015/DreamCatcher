@@ -1,0 +1,7 @@
+<h1>TWILIO!!!</h1>
+
+<%= form_tag('/send_sms', method: 'POST') do %>
+  <input type="text" placeholder="enter number" name="number">
+  <input type="text" placeholder="enter message here" name="message">
+  <button type="submit">Submit</button>
+<% end %>
