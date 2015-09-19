@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/dreamers/:id/recipe' => 'recipes#show', as: 'recipe'
-  get '/dreamers/:id/recipe/edit' => 'recipes#edit', as: 'edit_recipe'
-  patch '/dreamers/:id/recipe' => 'recipes#update', as: 'update_recipe'
+  get '/recipes/:id' => 'recipes#show', as: 'recipe'
+  get '/recipes/:id/edit' => 'recipes#edit', as: 'edit_recipe'
+  patch '/recipes/:id' => 'recipes#update', as: 'update_recipe'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
