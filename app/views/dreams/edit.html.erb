@@ -3,7 +3,7 @@
 
 <%= flash[:error] %>
 
-<%= render "form" %>
+  <%= render partial: "form", locals: {dream: dream} %>
 
 <%= link_to 'Delete', dream_path(@dream), method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

@@ -3,5 +3,5 @@
 
   <%= flash[:error] %>
 
-  <%= render "form" %>
+  <%= render partial: "form", locals: {dream: dream} %>
 </div>
