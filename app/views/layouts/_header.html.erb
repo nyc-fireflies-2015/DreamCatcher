@@ -3,6 +3,8 @@
 
   <nav>
     <% if current_dreamer %>
+      <%= link_to "Dreams", root_path %>
+      <%= link_to "Recipe", recipe_path(current_dreamer) %>
       <%= link_to "Profile", profile_path(current_dreamer) %>
       <%= link_to "Log Out", logout_path, method: "delete" %>
     <% else %>
