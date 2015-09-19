@@ -55,7 +55,10 @@ class DreamsController < ApplicationController
 
   def destroy
     if @dream.destroy
-      redirect_to dreams_path
+      respond_to do |format|
+        format.html { redirect_to dreams_path }
+        format.js { render "destroy.js.erb" }
+      end
     else
       flash[:error] = "Something went wrong."
       redirect_to dream_path(dream)
