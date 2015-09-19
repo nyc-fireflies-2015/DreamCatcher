@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   get '/recipes/:id' => 'recipes#show', as: 'recipe'
   get '/recipes/:id/edit' => 'recipes#edit', as: 'edit_recipe'
-  get '/items/new' => 'recipes#add_item', as: 'new_item'
-  post '/recipes/:id/items' => 'recipes#create_item', as: 'create_item'
-  patch '/items/:id' => 'recipes#update', as: 'update_recipe_item'
+  get '/steps/new' => 'recipes#add_step', as: 'new_step'
+  post '/recipes/:id/steps' => 'recipes#create_step', as: 'create_step'
+  patch '/steps/:id' => 'recipes#update', as: 'update_recipe_step'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'

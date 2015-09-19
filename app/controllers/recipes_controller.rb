@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
- before_action :find_recipe, only: [:show, :edit, :create_step]
-
+  before_action :find_recipe, only: [:show, :edit, :create_step]
   def update
     @step = Step.find(params[:id])
     @step.update_attributes(step_params)
@@ -13,7 +12,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def new_step
+  def add_step
     @step = Step.new
     respond_to do |format|
       format.html { render partial: "new_step", locals: {step: @step} }
@@ -45,6 +44,12 @@ class RecipesController < ApplicationController
       @step.destroy
     else
       current_dreamer.recipe.steps.delete(@step)
+  end
+
+  def create_step
+    @step = @recipe.steps.build(step_params)
+    unless @step.save
+      flash[:error] = @step.errors.full_messages
     end
     respond_to do |format|
       format.html { redirect_to :back }
