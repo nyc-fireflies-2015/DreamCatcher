@@ -24,10 +24,9 @@ class DreamsController < ApplicationController
     @dream = current_dreamer.dreams.build(dream_params)
     check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
     if @dream.save
-      if request.xhr?
-        render partial: "summary", locals: {dream: @dream}
-      else
-        redirect_to dreams_path
+      respond_to do |format|
+        format.html { redirect_to dreams_path }
+        format.js { render "summary.js.erb" }
       end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty?"
