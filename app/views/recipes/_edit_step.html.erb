@@ -1,0 +1,5 @@
+<div data-div="step-form">
+  <%= form_for step, url: update_recipe_step(@recipe) do |f| %>
+    <%= render partial: "step_form", locals: { step: step } %>
+  <% end %>
+</div>
