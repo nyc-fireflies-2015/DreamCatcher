@@ -29,7 +29,7 @@ class DreamsController < ApplicationController
         format.js { render "summary.js.erb" }
       end
     else
-      flash[:error] = "Something went wrong. Perhaps you left a field empty?"
+      flash[:error] = @dream.errors.full_messages
       redirect_to new_dream_path
     end
   end
@@ -48,7 +48,7 @@ class DreamsController < ApplicationController
         format.js { render "info.js.erb" }
       end
     else
-      flash[:error] = "Something went wrong. Perhaps you left a field empty"
+      flash[:error] = @dream.errors.full_messages
       render "edit"
     end
   end
@@ -60,7 +60,7 @@ class DreamsController < ApplicationController
         format.js { render "destroy.js.erb" }
       end
     else
-      flash[:error] = "Something went wrong."
+      flash[:error] = @dream.errors.full_messages
       redirect_to dream_path(dream)
     end
   end
