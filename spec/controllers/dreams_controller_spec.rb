@@ -7,6 +7,10 @@ describe DreamsController do
 
   describe "GET /" do
     context 'user is not logged in' do
+      it "renders the welcome page" do
+        get :index
+        expect(response).to redirect_to welcome_path
+      end
     end
 
     context 'user is logged in' do
@@ -27,6 +31,10 @@ describe DreamsController do
   describe "GET #show" do
 
     context 'user is not logged in' do
+      it "renders the welcome page" do
+        get :show, id: dream.id
+        expect(response).to redirect_to root_path
+      end
     end
 
     context 'user is logged in' do
@@ -50,6 +58,10 @@ describe DreamsController do
     let!(:dream) { FactoryGirl.create(:dream)}
 
     context 'user is not logged in' do
+      it "renders the welcome page" do
+        get :new, id: dream.id
+        expect(response).to redirect_to root_path
+      end
     end
 
     context 'user is logged in' do
@@ -69,6 +81,10 @@ describe DreamsController do
   describe "GET #edit" do
 
     context 'user not logged in' do
+      it "renders the welcome page" do
+        get :edit, id: dream.id
+        expect(response).to redirect_to root_path
+      end
     end
 
     context 'user is logged in' do
