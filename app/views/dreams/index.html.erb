@@ -1,12 +1,29 @@
+<div class="trend-container">
   <div data-form="new">
    <%= render partial: "new", locals: {dream: @new_dream} %>
   </div>
-  <%= link_to 'Add New Dream', new_dream_path, class: "button", data: {link: "new-dream"}, remote: true %>
-<ul data-river="dreams">
-  <% @dreams.each do |dream| %>
-  <%= render partial: "summary", locals: {dream: dream} %>
-  <% end %>
-</ul>
 
+  <div class="center">
+    <p><%= link_to 'Add New Dream', new_dream_path, class: "button", remote: true %></p>
+    <h3>Trending</h3>
+  </div>
+
+  <div class="trend-river">
+    trending dreams go here...
+  </div>
+</div>
+
+<div class="dreams-container">
+  <div class="center">
+    <h3>Recent Dreams</h3>
+  </div>
+  <div class="dream-river">
+    <ul data-river="dreams">
+      <% @dreams.each do |dream| %>
+        <%= render partial: "summary", locals: {dream: dream} %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 
