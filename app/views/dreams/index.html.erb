@@ -1,7 +1,7 @@
   <div data-form="new">
    <%= render partial: "new", locals: {dream: @new_dream} %>
   </div>
-  <%= link_to 'Add New Dream', new_dream_path, class: "button", remote: true %>
+  <%= link_to 'Add New Dream', new_dream_path, class: "button", data: {link: "new-dream"}, remote: true %>
 <ul data-river="dreams">
   <% @dreams.each do |dream| %>
   <%= render partial: "summary", locals: {dream: dream} %>
