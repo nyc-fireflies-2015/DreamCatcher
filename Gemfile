@@ -5,6 +5,7 @@ gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'twilio-rb'
+gem 'twilio-ruby'
 # Use foundation for css framework
 gem 'foundation-rails'
 # Use SCSS for stylesheets
