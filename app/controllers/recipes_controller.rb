@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :create_step]
+
   def update
     @step = Step.find(params[:id])
     @step.update_attributes(step_params)
