@@ -1,15 +1,30 @@
-<header>
-  <h1><%= link_to "DreamCatcher", root_path %></h1>
+<div class="sticky">
+  <header class="top-bar" data-topbar role="navigation" class="row">
+    <ul class="title-area">
+      <li class="name">
+        <h1 class="title-area"><%= link_to "DreamCatcher", root_path %></h1>
+      </li>
+    </ul>
 
-  <nav>
-    <% if current_dreamer %>
-      <%= link_to "Dreams", root_path %>
-      <%= link_to "Recipe", recipe_path(current_dreamer) %>
-      <%= link_to "Profile", profile_path(current_dreamer) %>
-      <%= link_to "Log Out", logout_path, method: "delete" %>
-    <% else %>
-      <%= link_to "Sign Up", signup_path %>
-      <%= link_to "Log In", login_path %>
-    <% end %>
-  </nav>
-</header>
+    <nav class="right top-bar-section">
+      <% if current_dreamer %>
+      <ul>
+        <li><%= link_to "Dreams", root_path %></li>
+        <li><%= link_to "Recipe", recipe_path(current_dreamer) %></li>
+        <li class="has-dropdown">
+          <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
+          <ul class="dropdown">
+            <li><%= link_to "Profile", profile_path(current_dreamer) %></li>
+            <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+          </ul>
+        </li>
+      </ul>
+      <% else %>
+        <ul>
+          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
+        </ul>
+      <% end %>
+    </nav>
+  </header>
+</div>

@@ -1,6 +1,8 @@
 main {
+  margin-top: 2em;
   border: 1px solid #999;
-  width: 50%;
+  width: 60%;
+  padding: 1em;
 }
 
 .center {
@@ -22,13 +24,7 @@ main {
 }
 
 nav {
-  position: absolute;
-  top: 1.5em;
-  right: 0.8em;
-  float: right;
-
   a {
     border: 1px solid #999;
-    padding: 0.5em;
   }
 }
