@@ -1,7 +1,11 @@
   <li data-li="summary">
-    <%= dream.title %>
-    <%= dream.story %>
-    <% if dream.dreamer.id == session[:dreamer_id] %>
-      <%= link_to "Edit", edit_dream_path(dream), data: { link: "edit-dream" } %>
+  <div data-form="edit">
+   <%= render partial: "edit", locals: {dream: dream} %>
+  </div>
+  <div data-div="info">
+    <%= render partial: "info", locals: {dream: dream} %>
+  </div>
+     <% if dream.dreamer.id == session[:dreamer_id] %>
+      <%= link_to "Edit", edit_dream_path(dream), data: { link: "edit-dream" }, remote: true %>
     <% end %>
   </li>
