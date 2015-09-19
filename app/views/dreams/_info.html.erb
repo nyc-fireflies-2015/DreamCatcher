@@ -1,2 +1,8 @@
-<%= dream.title %>
-<%= dream.story %>
+<hr>
+<%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
+
+<div class="right">
+  posted <%= dream.timestamp %> ago
+</div>
+
+<p><%= dream.story %></p>
