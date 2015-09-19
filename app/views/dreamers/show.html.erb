@@ -9,7 +9,11 @@
 <div class="center profile-container">
   <ul>
     <li>Level: <%= @dreamer.level %></li>
-    <li>About: <%= @dreamer.about %></li>
+    <li>
+      <% if @dreamer.about %>
+      About: <%= @dreamer.about %>
+      <% end %>
+    </li>
   </ul>
 </div>
 
