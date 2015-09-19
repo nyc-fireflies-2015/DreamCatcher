@@ -4,6 +4,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.all
+    @new_dream = Dream.new
     redirect_to welcome_path unless current_dreamer
   end
 
@@ -13,6 +14,10 @@ class DreamsController < ApplicationController
 
   def new
     @dream = current_dreamer.dreams.build()
+    respond_to do |format|
+      format.html { render "new" }
+      format.js { render "new.js.erb" }
+    end
   end
 
   def create
