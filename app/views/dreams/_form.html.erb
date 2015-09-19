@@ -1,4 +1,4 @@
-<%= form_for @dream, data: {form: "dream"} do |f|%>
+<%= form_for dream, data: {form: "dream"}, remote: true do |f| %>
   <p class="dream-input">
     <span><%= f.label :title %></span>
     <span><%= f.text_field :title %></span>
@@ -8,7 +8,6 @@
     <span><%= f.label :story %></span>
     <span><%= f.text_area :story %></span>
   </p>
-
     <%= f.label('Able to make decisions?') %>
     <%= f.check_box(:decision_clarity?) %>
     <%= f.label('Aware you were dreaming?') %>

@@ -1,0 +1,8 @@
+$("[data-form=dream]").on("ajax:success", function(event){
+  var dream = $(event.target).closest("[data-li=summary]");
+  $(dream)
+  .find("[data-form=edit]").hide();
+  $(dream)
+  .find("[data-div=info]")
+  .html("<%= j render(:partial => 'info', locals: {dream: @dream}) %>");
+});

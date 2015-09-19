@@ -4,6 +4,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.all
+    @new_dream = Dream.new
     redirect_to welcome_path unless current_dreamer
   end
 
@@ -13,16 +14,19 @@ class DreamsController < ApplicationController
 
   def new
     @dream = current_dreamer.dreams.build()
+    respond_to do |format|
+      format.html { render "new" }
+      format.js { render "new.js.erb" }
+    end
   end
 
   def create
     @dream = current_dreamer.dreams.build(dream_params)
     check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
     if @dream.save
-      if request.xhr?
-        render partial: "summary", locals: {dream: @dream}
-      else
-        redirect_to dreams_path
+      respond_to do |format|
+        format.html { redirect_to dreams_path }
+        format.js { render "summary.js.erb" }
       end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty?"
@@ -30,12 +34,18 @@ class DreamsController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.html { render "edit" }
+      format.js { render "edit.js.erb" }
+    end
+  end
+
   def update
     if @dream.update_attributes(dream_params)
-      if request.xhr?
-        render partial: "summary", locals: {dream: @dream}
-      else
-        redirect_to dream_path(@dream)
+      respond_to do |format|
+        format.html { redirect_to dream_path(@dream) }
+        format.js { render "info.js.erb" }
       end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty"
