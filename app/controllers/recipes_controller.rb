@@ -33,6 +33,10 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to :back }
     end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js 
+    end
   end
 
   def cancel_step
@@ -41,6 +45,9 @@ class RecipesController < ApplicationController
       @step.destroy
     else
       current_dreamer.recipe.steps.delete(@step)
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
     end
   end
 
