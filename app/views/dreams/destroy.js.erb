@@ -1,0 +1,3 @@
+$("[data-method=delete]").on("ajax:success", function(event){
+  $(event.target).closest("[data-li=summary]").remove();;
+});
