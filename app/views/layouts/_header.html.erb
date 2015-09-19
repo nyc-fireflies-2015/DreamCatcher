@@ -1,6 +1,10 @@
 <div class="sticky">
   <header class="top-bar" data-topbar role="navigation" class="row">
-    <h1 class="title-area"><%= link_to "DreamCatcher", root_path %></h1>
+    <ul class="title-area">
+      <li class="name">
+        <h1 class="title-area"><%= link_to "DreamCatcher", root_path %></h1>
+      </li>
+    </ul>
 
     <nav class="right top-bar-section">
       <% if current_dreamer %>
@@ -8,8 +12,9 @@
         <li><%= link_to "Dreams", root_path %></li>
         <li><%= link_to "Recipe", recipe_path(current_dreamer) %></li>
         <li class="has-dropdown">
-          <%= link_to "Profile", profile_path(current_dreamer) %>
+          <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
           <ul class="dropdown">
+            <li><%= link_to "Profile", profile_path(current_dreamer) %></li>
             <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
           </ul>
         </li>
