@@ -15,10 +15,12 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= render partial: "errors", locals: { errors: flash[:error] } %>
     <main class="center row">
       <%= yield %>
     </main>
+    <% if flash[:error] %>
+      <%= render partial: "errors", locals: { errors: flash[:error] } %>
+    <% end %>
     <%= render "layouts/footer" %>
   </body>
 
