@@ -4,6 +4,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     about { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
+    avatar_url { Faker::Company.logo } 
     password "password"
   end
 
@@ -12,6 +13,7 @@ FactoryGirl.define do
     email nil
     about { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
+    avatar_url { Faker::Company.logo } 
     password { Faker::Internet.password(8) }
   end
 end
