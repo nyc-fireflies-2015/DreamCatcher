@@ -25,5 +25,8 @@ Rails.application.routes.draw do
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
+  post '/call' => 'twilio#call'
+  post 'connect' => 'twilio#connect'
+
 
 end

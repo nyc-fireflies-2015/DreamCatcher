@@ -5,3 +5,8 @@
   <input type="text" placeholder="enter message here" name="message">
   <button type="submit">Submit</button>
 <% end %>
+
+<%= form_tag('/call', method: 'POST') do %>
+  <input type="text" placeholder="enter number" name="number">
+  <button type="submit">Submit</button>
+<% end %>
