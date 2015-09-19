@@ -1,7 +1,5 @@
 <h1 class="subtitle">Sign Up</h1>
 
-<%= flash[:error] %>
-
 <%= form_for @dreamer do |f| %>
   <%= f.text_field :username, placeholder: "username" %>
   <%= f.text_field :email, placeholder: "email" %>
@@ -9,3 +7,4 @@
   <%= f.password_field :password, placeholder: "password" %>
   <%= f.submit "Submit", class: "button" %>
 <% end %>
+

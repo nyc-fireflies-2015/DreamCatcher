@@ -18,6 +18,9 @@
     <main class="center row">
       <%= yield %>
     </main>
+    <% if flash[:error] %>
+      <%= render partial: "layouts/errors", locals: { errors: flash[:error] } %>
+    <% end %>
     <%= render "layouts/footer" %>
   </body>
 
