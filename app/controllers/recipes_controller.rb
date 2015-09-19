@@ -1,27 +1,56 @@
 class RecipesController < ApplicationController
-  def show
-    @dreamer = Dreamer.find(params[:id])
-    @recipe = @dreamer.recipe
-  end
-
-  def edit
-    @dreamer = Dreamer.find(params[:id])
-  end
+ before_action :find_recipe, only: [:show, :edit, :create_step]
 
   def update
-    @dreamer = Dreamer.find(params[:id])
-    @dreamer.update_attributes(recipe_params)
-    if @dreamer.save
-      redirect_to recipe_path(@dreamer)
+    @step = Step.find(params[:id])
+    @step.update_attributes(step_params)
+    unless @step.save
+      flash[:error] = @step.errors.full_messages
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js 
+    end
+  end
+
+  def new_step
+    @step = Step.new
+    respond_to do |format|
+      format.html { render partial: "new_step", locals: {step: @step} }
+      format.js {render "new_step.js.erb" }
+    end
+  end
+
+  def add_step
+    current_dreamer.recipe.steps << Step.find(params[:id])
+  end
+
+  def create_step
+    @step = @recipe.steps.build(step_params.merge(creator: current_dreamer))
+    unless @step.save
+      flash[:error] = @step.errors.full_messages
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+    end
+  end
+
+  def cancel_step
+    @step = Step.find(params[:id])
+    if @step.creator == current_dreamer
+      @step.destroy
     else
-      flash[:error] = "Something went wrong."
-      redirect_to edit_recipe_path(@dreamer)
+      current_dreamer.recipe.steps.delete(@step)
     end
   end
 
   private
 
-  def recipe_params
-    params.require(:dreamer).permit(:recipe, :password)
+  def step_params
+    params.require(:step).permit(:description)
+  end
+
+  def find_recipe
+     @recipe = Recipe.find(params[:id])
   end
 end
