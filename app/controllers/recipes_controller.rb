@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def add_step
+  def new_step
     @step = Step.new
     respond_to do |format|
       format.html { render partial: "new_step", locals: {step: @step} }
@@ -44,15 +44,25 @@ class RecipesController < ApplicationController
       @step.destroy
     else
       current_dreamer.recipe.steps.delete(@step)
+    end
   end
 
   def create_step
-    @step = @recipe.steps.build(step_params)
+    @step = @recipe.steps.build(step_params.merge(creator: current_dreamer))
     unless @step.save
       flash[:error] = @step.errors.full_messages
     end
     respond_to do |format|
       format.html { redirect_to :back }
+    end
+  end
+
+  def cancel_step
+    @step = Step.find(params[:id])
+    if @step.creator == current_dreamer
+      @step.destroy
+    else
+      current_dreamer.recipe.steps.delete(@step)
     end
   end
 
