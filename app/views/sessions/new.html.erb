@@ -3,5 +3,5 @@
 <%= form_for :session, url: sessions_path  do |f| %>
   <%= f.text_field :username, placeholder: "username" %>
   <%= f.password_field :password, placeholder: "password" %>
-  <%= f.submit 'Submit' %>
+  <%= f.submit 'Submit', class: "button" %>
 <%end%>
