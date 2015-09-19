@@ -1,4 +1,4 @@
-<h1 class="center"><%= @dreamer.username %>'s Profile</h1>
+<h1 class="center subtitle"><%= @dreamer.username %>'s Profile</h1>
 
 <% if current_dreamer == @dreamer %>
   <p><%= link_to "Edit Profile", edit_dreamer_path(current_dreamer) %></p>
@@ -19,7 +19,7 @@
 
 <hr>
 
-<h3>Dreams</h3>
+<h3 class="subtitle">Dreams</h3>
 <% if @dreamer.dreams.empty? %>
   <p>This dreamer has not registered any dreams yet.</p>
 <% else %>

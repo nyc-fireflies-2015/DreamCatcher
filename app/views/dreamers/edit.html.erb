@@ -1,4 +1,4 @@
-<h1 class="subtitle">Edit Profile</h1>
+<h1>Edit Profile</h1>
 
 <%= flash[:error] %>
 
@@ -8,5 +8,5 @@
   <%= f.text_field :zipcode, placeholder: "zip code" %>
   <%= f.password_field :password, placeholder: "password" %>
   <%= f.text_area :about, placeholder: "tell us about yourself" %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "button" %>
 <% end %>
