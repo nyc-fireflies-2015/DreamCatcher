@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/dreamers/:id/recipe' => 'recipes#show'
-  get '/dreamers/:id/recipe/edit' => 'recipes#edit'
-  patch '/dreamers/:id/recipe' => 'recipes#update'
+  get '/dreamers/:id/recipe' => 'recipes#show', as: 'recipe'
+  get '/dreamers/:id/recipe/edit' => 'recipes#edit', as: 'edit_recipe'
+  patch '/dreamers/:id/recipe' => 'recipes#update', as: 'update_recipe'
 end
