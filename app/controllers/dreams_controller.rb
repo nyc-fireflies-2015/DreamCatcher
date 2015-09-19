@@ -34,12 +34,18 @@ class DreamsController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.html { render "edit" }
+      format.js { render "edit.js.erb" }
+    end
+  end
+
   def update
     if @dream.update_attributes(dream_params)
-      if request.xhr?
-        render partial: "summary", locals: {dream: @dream}
-      else
-        redirect_to dream_path(@dream)
+      respond_to do |format|
+        format.html { redirect_to dream_path(@dream) }
+        format.js { render "info.js.erb" }
       end
     else
       flash[:error] = "Something went wrong. Perhaps you left a field empty"
