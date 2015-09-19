@@ -1,6 +1,4 @@
 main {
-  margin-top: 2em;
-  border: 1px solid #999;
   width: 60%;
   padding: 1em;
   font-family: 'Inconsolata', sans-serif;
@@ -17,7 +15,6 @@ main {
 }
 
 .profile-container {
-
   li {
     list-style-type: none;
   }
@@ -32,5 +29,29 @@ main {
 nav {
   a {
     border: 1px solid #999;
+  }
+}
+
+.dreams-container, .trend-container {
+  float: right;
+  text-align: left;
+  width: 50%;
+  height: 14em;
+  padding: 1em;
+}
+
+.trend-container {
+  float: left;
+}
+
+.dream-river, trend-river {
+  border: 1px solid #999;
+  overflow: scroll;
+  text-align: left;
+  height: 11.7em;
+  padding: 0 1em;
+
+  ul {
+    list-style-type: none;
   }
 }
