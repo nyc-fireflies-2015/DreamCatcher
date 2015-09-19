@@ -4,6 +4,7 @@ gem 'rspec_junit_formatter', '0.2.2'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'twilio-rb'
 # Use foundation for css framework
 gem 'foundation-rails'
 # Use SCSS for stylesheets
