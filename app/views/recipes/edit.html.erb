@@ -1,4 +1,4 @@
-<%= form_for @dreamer, url: update_recipe_path(@dreamer) do |f| %>
+<%= form_for recipe, url: update_recipe_path(@dreamer) do |f| %>
   <p class="recipe-input">
     <span><%= f.label :recipe %></span>
     <%= f.password_field :password, value: @dreamer.password %>

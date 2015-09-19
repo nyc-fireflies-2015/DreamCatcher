@@ -1,7 +1,9 @@
-<h1>Recipes</h1>
+<h1><%= @recipe.name %></h1>
 
-<% if @dreamer.recipe == nil %>
-  <%= render partial: "default" %>
-<% end %>
+<ul>
+  <% @recipe.steps.each do |step| %>
+    <li><%= step.description %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_recipe_path(@dreamer) %>

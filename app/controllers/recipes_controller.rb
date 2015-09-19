@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def show
     @dreamer = Dreamer.find(params[:id])
+    @recipe = @dreamer.recipe
   end
 
   def edit
