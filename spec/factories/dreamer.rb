@@ -5,7 +5,7 @@ FactoryGirl.define do
     about { Faker::Lorem.paragraph }
     recipe { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
-    password "foobar"
+    password "password"
   end
 
   factory :invalid_dreamer do
@@ -14,6 +14,6 @@ FactoryGirl.define do
     about { Faker::Lorem.paragraph }
     recipe { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
-    password "foobar"
+    password { Faker::Internet.password(8) }
   end
 end

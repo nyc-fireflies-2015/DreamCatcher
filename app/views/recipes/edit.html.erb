@@ -1,0 +1,11 @@
+<%= form_for @dreamer, url: update_recipe_path(@dreamer) do |f| %>
+  <p class="recipe-input">
+    <span><%= f.label :recipe %></span>
+    <%= f.password_field :password, value: @dreamer.password %>
+    <span><%= f.text_area :recipe %></span>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
