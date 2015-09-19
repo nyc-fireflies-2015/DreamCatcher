@@ -20,8 +20,4 @@ Rails.application.routes.draw do
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
 
-  get '/steps/:id' => 'steps#show', as: 'step'
-  post '/steps' => 'steps#create', as: 'steps'
-  delete '/steps/:id' => 'steps#destroy', as: 'delete_step'
-
 end
