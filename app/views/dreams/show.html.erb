@@ -1,6 +1,20 @@
-<%= @dream.title %>
-<%= @dream.story %>
+<h1><%= @dream.title %></h1>
+posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
+<%= image_tag(@dream.dreamer.avatar_url, class: "icon") %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
+<hr>
+<p><%= @dream.story %></p>
 
-<p>
-<%= link_to 'Return to Index', dreams_path %>
-</p>
+<h3>Comments</h3>
+
+<% if @dream.comments.empty? %>
+  <p>This dream currently has no comments.<br>
+    Be the first to leave a comment.</p>
+<% end %>
+
+<% @dream.comments.each do |comment| %>
+  <p><%= comment.dreamer.username %><br>
+    <%= comment.content %></p>
+<% end %>
+
+<hr>
+<%= render "comments/new" %>

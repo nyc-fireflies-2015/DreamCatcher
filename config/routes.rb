@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'dreams#index'
 
   resources :dreams
+  resources :comments, except: [:show]
   resources :favorites, only: [:create, :destroy]
 
   resources :dreamers, except: [:index, :show, :new, :destroy]

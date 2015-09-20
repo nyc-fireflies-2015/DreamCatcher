@@ -9,7 +9,8 @@ class DreamsController < ApplicationController
   end
 
   def show
-    @dream = Dream.find_by(id: params[:id])
+    @dream = Dream.find(params[:id])
+    @comment = Comment.new
   end
 
   def new
@@ -72,7 +73,7 @@ class DreamsController < ApplicationController
   end
 
   def find_dream
-    @dream = Dream.find_by(id: params[:id])
+    @dream = Dream.find(params[:id])
   end
 
   def check_decision(dream)

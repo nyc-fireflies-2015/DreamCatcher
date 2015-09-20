@@ -11,17 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920025045) do
+ActiveRecord::Schema.define(version: 20150920155141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content",    null: false
+    t.integer  "dreamer_id"
+    t.integer  "dream_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dreamers", force: :cascade do |t|
     t.string   "username",        limit: 64,               null: false
     t.string   "password_digest",                          null: false
     t.text     "about"
     t.integer  "level",                        default: 0
-    t.integer  "zipcode",                                  null: false
+    t.string   "zipcode",                                  null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.string   "email"

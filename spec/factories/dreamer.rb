@@ -4,7 +4,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     about { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
-    avatar_url { Faker::Company.logo } 
+    avatar_url { Faker::Avatar.image }
     country "US"
     state "NY"
     gender "queer"
@@ -16,7 +16,7 @@ FactoryGirl.define do
     email nil
     about { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
-    avatar_url { Faker::Company.logo } 
+    avatar_url { Faker::Avatar.image }
     password { Faker::Internet.password(8) }
   end
 end
