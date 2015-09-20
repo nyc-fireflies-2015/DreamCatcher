@@ -13,6 +13,11 @@
   <ul>
     <li>Level: <%= @dreamer.level %></li>
     <li>
+      <% if @dreamer.gender %>
+      Gender: <%= @dreamer.gender %>
+      <% end %>
+    </li>
+    <li>
       <% if @dreamer.country %>
       Country: <%= @dreamer.country %>
       <% end %>
@@ -33,11 +38,12 @@
 
 <hr>
 
-<h3 class="subtitle">Dreams</h3>
+<h3 class="subtitle">Recent Dreams</h3>
 <% if @dreamer.dreams.empty? %>
   <p>This dreamer has not registered any dreams yet.</p>
 <% else %>
-  <% @dreamer.dreams.each do |dream| %>
-    <%= dream.title %>
+  <% @dreamer.dreams.limit(5).order('created_at DESC').each do |dream| %>
+    <%= dream.created_at.strftime("%B %d %Y") %>:
+    <%= link_to dream.title, dream_path(dream) %><br>
   <% end %>
 <% end %>
