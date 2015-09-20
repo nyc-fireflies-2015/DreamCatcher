@@ -105,6 +105,13 @@ footer {
 }
 
 .comment {
-  border: 1px solid #999;
-  li:nth-child(even) {background: #CCC}
+  list-style-type: none;
+
+  li {
+    padding: 1.5em;
+  }
+
+  li:nth-child(even) {
+    background: #F0F0F5;
+  }
 }
