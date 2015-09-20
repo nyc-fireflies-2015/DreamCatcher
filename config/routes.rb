@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/profile/:id' => 'dreamers#show', as: 'profile'
   get '/signup' => 'dreamers#new', as: 'signup'
   get '/welcome' => 'welcome#index', as: 'welcome'
+  get '/search' => 'welcome#search'
 
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'

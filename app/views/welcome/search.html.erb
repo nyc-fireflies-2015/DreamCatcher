@@ -1,0 +1,18 @@
+<h1 class="center">Searching for "<%= @query %>"</h1>
+
+<% if @dreams.empty? %>
+  <hr>
+  <p>There are no results for your search.<br>
+    Your query might be too specific.</p>
+<% else %>
+  <h3 class="left">Dreams</h3>
+  <% @dreams.each do |dream| %>
+    <hr>
+    <div class="left">
+      <%= link_to dream.dreamer.username, profile_path(dream.dreamer) %>
+    </div>
+    <sub class="right">posted <%= dream.timestamp %></sub>
+    <%= link_to dream.title, dream_path(dream) %>
+    <p><%= dream.story %></p>
+  <% end %>
+<% end %>

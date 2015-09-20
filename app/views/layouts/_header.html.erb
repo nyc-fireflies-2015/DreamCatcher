@@ -7,24 +7,27 @@
     </ul>
 
     <nav class="right top-bar-section">
-      <% if current_dreamer %>
       <ul>
-        <li><%= link_to "Dreams", root_path %></li>
-        <li><%= link_to "Recipe", recipe_path(current_dreamer.recipe) %></li>
-        <li class="has-dropdown">
-          <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
-          <ul class="dropdown">
-            <li><%= link_to "Profile", profile_path(current_dreamer) %></li>
-            <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
-          </ul>
+        <li>
+          <%= search_form_for @q, url: search_path, method: "get" do |f| %>
+            <%= f.search_field :title_cont, placeholder: "search" %>
+          <% end %>
         </li>
-      </ul>
-      <% else %>
-        <ul>
+        <% if current_dreamer %>
+          <li><%= link_to "Dreams", root_path %></li>
+          <li><%= link_to "Recipe", recipe_path(current_dreamer) %></li>
+          <li class="has-dropdown">
+            <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
+            <ul class="dropdown">
+              <li><%= link_to "Profile", profile_path(current_dreamer) %></li>
+              <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+            </ul>
+          </li>
+        <% else %>
           <li><%= link_to "Sign Up", signup_path %></li>
           <li><%= link_to "Log In", login_path %></li>
-        </ul>
-      <% end %>
+        <% end %>
+      </ul>
     </nav>
   </header>
 </div>
