@@ -2,6 +2,7 @@ main {
   width: 50%;
   padding: 1em;
   font-family: 'Inconsolata', sans-serif;
+  min-height: 30em;
 }
 
 .title-area {
@@ -89,4 +90,10 @@ sub {
   ul {
     list-style-type: none;
   }
+}
+
+footer {
+  font-size: 0.7em;
+  padding: 1em;
+  width: 100%;
 }
