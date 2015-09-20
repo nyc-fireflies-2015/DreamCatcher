@@ -8,11 +8,12 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 
 <% if @dream.comments.empty? %>
   <p>This dream currently has no comments.<br>
-    Be the first to <%= link_to "leave a comment", new_comment_path %>.</p>
+    Be the first to leave a comment.</p>
 <% end %>
 
 <% @dream.comments.each do |comment| %>
-  <p><%= @dream.comment %></p>
+  <p><%= comment.content %></p>
 <% end %>
 
+<hr>
 <%= render "comments/new" %>
