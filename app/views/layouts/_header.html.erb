@@ -10,7 +10,7 @@
       <% if current_dreamer %>
       <ul>
         <li><%= link_to "Dreams", root_path %></li>
-        <li><%= link_to "Recipe", recipe_path(current_dreamer) %></li>
+        <li><%= link_to "Recipe", recipe_path(current_dreamer.recipe) %></li>
         <li class="has-dropdown">
           <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
           <ul class="dropdown">
