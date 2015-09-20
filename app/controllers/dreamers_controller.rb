@@ -7,6 +7,8 @@ class DreamersController < ApplicationController
 
   def edit
     respond_to do |format|
+      format.html { render "edit" }
+      format.js { render "edit.js.erb" }
     end
   end
 
@@ -24,7 +26,10 @@ class DreamersController < ApplicationController
 
   def update
     if @dreamer.update_attributes(dreamer_params)
-      redirect_to profile_path(@dreamer)
+      respond_to do |format|
+        format.html { redirect_to profile_path(@dreamer) }
+        format.js { render "save_profile.js.erb" }
+      end
     else
       flash[:error] = @dreamer.errors.full_messages
       redirect_to edit_dreamer_path(@dreamer)
