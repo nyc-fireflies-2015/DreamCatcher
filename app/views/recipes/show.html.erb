@@ -4,7 +4,7 @@
   <% @recipe.steps.each do |step| %>
     <li>
       <%= step.description %>
-      <%= link_to 'delete', delete_step_path(step), method: :delete %>
+      <%= link_to 'delete', remove_step_path(step), method: :delete %>
     </li>
   <% end %>
 </ul>
