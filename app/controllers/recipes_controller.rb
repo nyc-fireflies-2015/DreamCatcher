@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
   def edit_step
     redirect_to :back unless current_dreamer == @step.creator
     respond_to do |format|
-      format.html { render "edit" }
+      format.html { render partial: "steps/edit" }
       format.js { render "edit_step.js.erb" }
     end
   end
@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
   def new_step
     @step = Step.new
     respond_to do |format|
-      format.html { render partial: "new_step", locals: {step: @step} }
+      format.html { render partial: "steps/new", locals: {step: @step} }
       format.js { render "new_step.js.erb" }
     end
   end
