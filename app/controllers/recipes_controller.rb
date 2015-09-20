@@ -1,29 +1,6 @@
 class RecipesController < ApplicationController
   before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
 
-  def update
-    if @step.update_attributes(step_params)
-      respond_to do |format|
-        format.html { redirect_to recipe_path(current_dreamer.recipe) }
-        format.js { render "save_step.js.erb"}
-      end
-    else
-      flash[:error] = @step.errors.full_messages
-      respond_to do |format|
-        format.html { redirect_to recipe_path(current_dreamer.recipe) }
-        format.js { render :file => "layouts/errors.js.erb"}
-      end
-    end
-  end
-
-  def edit_step
-    redirect_to :back unless current_dreamer == @step.creator
-    respond_to do |format|
-      format.html { render partial: "steps/edit" }
-      format.js { render "edit_step.js.erb" }
-    end
-  end
-
   def new_step
     @step = Step.new
     respond_to do |format|
@@ -43,6 +20,30 @@ class RecipesController < ApplicationController
       format.js { render "save_new_step.js.erb" }
     end
   end
+
+  def edit_step
+    redirect_to :back unless current_dreamer == @step.creator
+    respond_to do |format|
+      format.html { render partial: "steps/edit" }
+      format.js { render "edit_step.js.erb" }
+    end
+  end
+
+  def update
+    if @step.update_attributes(step_params)
+      respond_to do |format|
+        format.html { redirect_to recipe_path(current_dreamer.recipe) }
+        format.js { render "save_step.js.erb"}
+      end
+    else
+      flash[:error] = @step.errors.full_messages
+      respond_to do |format|
+        format.html { redirect_to recipe_path(current_dreamer.recipe) }
+        format.js { render :file => "layouts/errors.js.erb"}
+      end
+    end
+  end
+  
 
   def show
     @recipe = Recipe.find(params[:id])

@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
   def create
     dreamer = Dreamer.find_by(username: params[:session][:username])
     if dreamer && dreamer.authenticate(params[:session][:password])

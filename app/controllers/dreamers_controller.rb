@@ -3,6 +3,7 @@ class DreamersController < ApplicationController
 
   def new
     @dreamer = Dreamer.new
+    render partial: "new", locals: { dreamer: @dreamer }
   end
 
   def show
@@ -14,7 +15,7 @@ class DreamersController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html { render "edit" }
+      format.html { render partial: "edit", locals: { dreamer: @dreamer } }
       format.js { render "edit.js.erb" }
     end
   end

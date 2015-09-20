@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/dreamers_controller_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/controllers/dreamers_controller_spec.rb": [
         1,
         null,
         1,
@@ -89,7 +89,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/rails_helper.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/rails_helper.rb": [
         null,
         1,
         null,
@@ -152,14 +152,14 @@
         1,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/environment.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/application.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/application.rb": [
         1,
         null,
         1,
@@ -196,12 +196,12 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/boot.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/environments/test.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/environments/test.rb": [
         1,
         null,
         null,
@@ -245,7 +245,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/assets.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -258,7 +258,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/backtrace_silencers.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -267,18 +267,18 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/cookies_serializer.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/filter_parameter_logging.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/inflections.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -296,18 +296,18 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/mime_types.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/session_store.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/wrap_parameters.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -323,7 +323,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/dream.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/factories/dream.rb": [
         1,
         1,
         27,
@@ -335,7 +335,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/dreamer.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/factories/dreamer.rb": [
         1,
         1,
         37,
@@ -359,24 +359,25 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/recipe.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/factories/recipe.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/step.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/factories/step.rb": [
         1,
         1,
         9,
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/config/routes.rb": [
+      "/Users/Sy_borg/LucidDreamer/config/routes.rb": [
         1,
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -404,21 +405,21 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/support/factory_girl.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/support/factory_girl.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/support/login_macros.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/support/login_macros.rb": [
         1,
         1,
         27,
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/dreamers_controller.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/controllers/dreamers_controller.rb": [
         1,
         1,
         null,
@@ -442,7 +443,6 @@
         null,
         1,
         4,
-        null,
         4,
         1,
         1,
@@ -477,30 +477,17 @@
         5,
         null,
         null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/application_controller.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/controllers/application_controller.rb": [
         1,
         1,
         1,
-        null,
-        null,
         1,
         1,
         1,
-        37,
+        1,
+        35,
         null,
         1,
         19,
@@ -511,7 +498,7 @@
         null,
         null,
         1,
-        21,
+        38,
         null,
         null,
         1,
@@ -526,10 +513,9 @@
         0,
         null,
         null,
-        1,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/dreams_controller_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/controllers/dreams_controller_spec.rb": [
         1,
         null,
         1,
@@ -713,7 +699,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/dreams_controller.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/controllers/dreams_controller.rb": [
         1,
         1,
         1,
@@ -725,7 +711,6 @@
         null,
         null,
         1,
-        2,
         2,
         null,
         null,
@@ -817,7 +802,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/recipes_controller_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/controllers/recipes_controller_spec.rb": [
         1,
         null,
         1,
@@ -906,7 +891,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/recipes_controller.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/controllers/recipes_controller.rb": [
         1,
         1,
         null,
@@ -992,7 +977,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -1022,7 +1007,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/sessions_controller.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -1045,7 +1030,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/dream_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/models/dream_spec.rb": [
         1,
         null,
         1,
@@ -1067,13 +1052,21 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/models/dream.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/models/dream.rb": [
         1,
         1,
         1,
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         1,
         0,
@@ -1094,7 +1087,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/dreamer_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/models/dreamer_spec.rb": [
         1,
         null,
         1,
@@ -1122,7 +1115,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/models/dreamer.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/models/dreamer.rb": [
         1,
         null,
         1,
@@ -1146,40 +1139,52 @@
         1,
         0,
         null,
-        null
-      ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/favorite_spec.rb": [
-        1,
         null,
         1,
-        1,
-        1,
-        1,
+        0,
+        null,
         null,
         1,
-        1,
+        0,
         null,
+        null,
+        1,
+        0,
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/models/favorite.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/recipe_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/models/favorite_spec.rb": [
         1,
         null,
         1,
         1,
+        1,
+        1,
+        null,
         1,
         1,
         null,
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/models/recipe.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/models/favorite.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Sy_borg/LucidDreamer/spec/models/recipe_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Sy_borg/LucidDreamer/app/models/recipe.rb": [
         1,
         1,
         1,
@@ -1188,7 +1193,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/step_spec.rb": [
+      "/Users/Sy_borg/LucidDreamer/spec/models/step_spec.rb": [
         1,
         null,
         1,
@@ -1202,7 +1207,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/models/step.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/models/step.rb": [
         1,
         1,
         1,
@@ -1231,7 +1236,7 @@
         null,
         null
       ],
-      "/Users/ddgs89/Desktop/DreamCatcher/app/models/comment.rb": [
+      "/Users/Sy_borg/LucidDreamer/app/models/comment.rb": [
         1,
         1,
         1,
@@ -1240,6 +1245,6 @@
         null
       ]
     },
-    "timestamp": 1442785640
+    "timestamp": 1442790399
   }
 }
