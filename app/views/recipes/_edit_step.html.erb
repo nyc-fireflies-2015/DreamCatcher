@@ -3,7 +3,7 @@
   <%= form_for step, url: update_recipe_step_path(step) do |f| %>
       <p>
       <%= f.label :description %>
-      <%= f.textarea :description, placeholder: "description" %>
+      <%= f.text_area :description, placeholder: "description" %>
     </p>
     <p>
       <% f.submit %>
