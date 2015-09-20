@@ -27,14 +27,15 @@
       State: <%= @dreamer.state %>
       <% end %>
     </li>
-    <li>
-      <% if @dreamer.about %>
-      About: <%= @dreamer.about %>
-      <% end %>
-    </li>
     <li><%= link_to "Dream Recipe", recipe_path(@dreamer) %></li>
   </ul>
 </div>
+
+<% if @dreamer.about %>
+<hr>
+<h6>About <%= @dreamer.username %></h6>
+<%= @dreamer.about %>
+<% end %>
 
 <hr>
 
