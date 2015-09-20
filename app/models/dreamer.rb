@@ -9,4 +9,7 @@ class Dreamer < ActiveRecord::Base
                   with: /\A\d{5}-\d{4}|\A\d{5}\z/,
                   message: "is not valid. Please try again."
   validates_presence_of :email, :username, :zipcode
+  def top_dreams
+    dreams.limit(5).order('created_at DESC')
+  end
 end

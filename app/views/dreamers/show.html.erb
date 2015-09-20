@@ -43,7 +43,7 @@
 <% if @dreamer.dreams.empty? %>
   <p>This dreamer has not registered any dreams yet.</p>
 <% else %>
-  <% @dreamer.dreams.limit(5).order('created_at DESC').each do |dream| %>
+  <% @dreamer.top_dreams.each do |dream| %>
     <%= dream.created_at.strftime("%B %d %Y") %>:
     <%= link_to dream.title, dream_path(dream) %><br>
   <% end %>
