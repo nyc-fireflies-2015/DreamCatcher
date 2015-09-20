@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :find_step, only: [:update, :add_step, :remove_step]
+  before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
   def show
     @recipe = Recipe.find(params[:id])
   end
@@ -12,6 +12,14 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to :back }
       format.js { render "save_step.js.erb"}
+    end
+  end
+
+  def edit_step
+    redirect_to :back unless current_dreamer == @step.creator
+    respond_to do |format|
+      format.html { render "edit" }
+      format.js { render "edit_step.js.erb" }
     end
   end
 
