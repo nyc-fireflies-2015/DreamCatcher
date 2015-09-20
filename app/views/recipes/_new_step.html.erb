@@ -1,4 +1,6 @@
 <div data-div="step-form">
+  <h1>Create New Step</h1>
+  
   <%= form_for step, url: create_step_path do |f| %>
     <%= render partial: "step_form", locals: { step: step } %>
   <% end %>
