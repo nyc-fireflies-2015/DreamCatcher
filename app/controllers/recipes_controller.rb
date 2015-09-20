@@ -1,5 +1,9 @@
 class RecipesController < ApplicationController
   before_action :find_step, only: [:update, :add_step, :remove_step]
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
   def update
     @step.update_attributes(step_params)
     unless @step.save
@@ -20,6 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def create_step
+    @recipe = current_dreamer.recipe
     @step = @recipe.steps.build(step_params.merge(creator: current_dreamer))
     unless @step.save
       flash[:error] = @step.errors.full_messages
