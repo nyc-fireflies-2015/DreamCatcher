@@ -10,7 +10,7 @@
       <%= render partial: "favorites/favorite", locals: {dream: dream} %>
     </div>
     <div data-favorite="destroy" data-div="<%= "hidden" if dream.favorite?(current_dreamer)%>" >
-    <%= render partial: "favorites/unfavorite", locals: {dream: dream} %>
+    <%= render partial: "favorites/un_favorite", locals: {dream: dream} %>
   </div>
   </div>
   </div>
