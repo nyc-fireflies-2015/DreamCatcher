@@ -1,10 +1,10 @@
 <h1>Edit Profile</h1>
 
-<%= form_for dreamer do |f| %>
+<%= form_for dreamer, remote: true do |f| %>
   <%= f.text_field :email, placeholder: "email" %>
   <%= f.text_field :avatar_url, placeholder: "avatar url" %>
   <%= f.text_field :zipcode, placeholder: "zip code" %>
-  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.password_field :password, placeholder: "password", data: {field: "password"} %>
   <%= f.text_area :about, placeholder: "tell us about yourself" %>
   <%= f.submit "Submit", class: "button" %>
 <% end %>
