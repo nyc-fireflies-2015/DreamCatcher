@@ -5,3 +5,12 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <p><%= @dream.story %></p>
 
 <h3>Comments</h3>
+
+<% if @dream.comments.empty? %>
+  <p>This dream currently has no comments.<br>
+    Be the first to leave a comment.</p>
+<% end %>
+
+<% @dream.comments.each do |comment| %>
+  <p><%= @dream.comment %></p>
+<% end %>
