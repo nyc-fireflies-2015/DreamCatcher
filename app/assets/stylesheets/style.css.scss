@@ -66,3 +66,27 @@ nav {
 sub {
   color: #999;
 }
+
+.recipe-container, popular-steps-container {
+  float: right;
+  text-align: left;
+  width: 50%;
+  height: 29em;
+  padding: 1em;
+}
+
+.recipe-container {
+  float: left;
+}
+
+.popular-steps-river, recipe-steps-river {
+  border: 1px solid #999;
+  overflow: scroll;
+  text-align: left;
+  height: 25em;
+  padding: 0 1em;
+
+  ul {
+    list-style-type: none;
+  }
+}
