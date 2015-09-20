@@ -21,8 +21,7 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @dream = current_dreamer.dreams.build(dream_params)
-    check_decision(@dream) && check_consciousness(@dream) && check_state(@dream)
+    @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
       respond_to do |format|
         format.html { redirect_to dreams_path }
@@ -74,28 +73,11 @@ class DreamsController < ApplicationController
   private
 
   def dream_params
-    params.require(:dream).permit(:title, :story, :decision_clarity?, :consciousness_clarity?, :dream_state_clarity?)
+    params.require(:dream).permit(:title, :story, :decision_clarity, :consciousness_clarity, :dream_state_clarity)
   end
 
   def find_dream
     @dream = Dream.find(params[:id])
   end
 
-  def check_decision(dream)
-    if params[:dream][:decision_clarity] == '1'
-      dream[:decision_clarity?] = true
-    end
-  end
-
-  def check_consciousness(dream)
-    if params[:dream][:consciousness_clarity] == '1'
-      dream[:consciousness_clarity?] = true
-    end
-  end
-
-  def check_state(dream)
-    if params[:dream][:dream_state_clarity] == '1'
-      dream[:dream_state_clarity?] = true
-    end
-  end
 end
