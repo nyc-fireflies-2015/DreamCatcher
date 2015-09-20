@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/steps/new' => 'recipes#new_step', as: 'new_step'
   post '/recipes/steps' => 'recipes#create_step', as: 'create_step'
   post '/steps/:id' => 'recipes#add_step', as: 'add_step'
+  get '/steps/:id/edit' => 'recipes#edit_step', as: 'edit_step'
   patch '/steps/:id' => 'recipes#update', as: 'update_recipe_step'
   post '/steps/:id/remove' => 'recipes#remove_step', as: 'remove_step'
 
