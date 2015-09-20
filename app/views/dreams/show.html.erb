@@ -1,6 +1,5 @@
-<%= @dream.title %>
-<%= @dream.story %>
-
-<p>
-<%= link_to 'Return to Index', dreams_path %>
-</p>
+<h1><%= @dream.title %></h1>
+posted on <%= @dream.created_at.strftime("%B %d %Y") %>
+by <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
+<hr>
+<p><%= @dream.story %></p>
