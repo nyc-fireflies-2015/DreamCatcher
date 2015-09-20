@@ -7,10 +7,10 @@
     </div>
       <div class="favorites">
         <div data-favorite="new">
-      <%= render partial: "favorite", locals: {dream: dream} %>
+      <%= render partial: "favorites/favorite", locals: {dream: dream} %>
     </div>
     <div data-favorite="destroy">
-    <%= render partial: "unfavorite", locals: {dream: dream} %>
+    <%= render partial: "favorites/unfavorite", locals: {dream: dream} %>
   </div>
   </div>
   </div>
