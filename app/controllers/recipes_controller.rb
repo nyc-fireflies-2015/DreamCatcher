@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @new_step = Step.new
     @popular_steps = Step.top
+    redirect_to welcome_path unless current_dreamer
   end
 
   def update
