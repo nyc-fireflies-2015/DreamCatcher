@@ -60,4 +60,28 @@ RSpec.describe RecipesController, type: :controller do
     end
   end
 
+  describe "post #remove_step" do
+    context "current dreamer is not creator" do
+      it "removes step from dreamer's recipes" do
+        @borrowed_step = Step.create(FactoryGirl.attributes_for(:step))
+        post :remove_step, id: @borrowed_step.id
+        @recipe.reload
+        expect(@recipe.steps).not_to include(@borrowed_step)
+      end
+      it "does not delete step" do
+        @borrowed_step = Step.create(FactoryGirl.attributes_for(:step))
+        post :remove_step, id: @borrowed_step.id
+        @recipe.reload
+        expect(Step.all).to include(@borrowed_step)
+      end
+    end
+    context "current dreamer is creator" do
+      it "deletes step" do
+        @created_step = Step.create(FactoryGirl.attributes_for(:step).merge(creator: @dreamer))
+        expect {
+          post :remove_step, id: @created_step.id
+        }.to change{Step.count}.by -1
+      end
+    end
+  end
 end
