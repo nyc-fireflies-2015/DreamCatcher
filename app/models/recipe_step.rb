@@ -1,4 +1,4 @@
 class RecipeStep < ActiveRecord::Base
-  belongs_to :step, counter_cache: true
+  belongs_to :step
   belongs_to :recipe
 end
