@@ -2,6 +2,8 @@ class RecipesController < ApplicationController
   before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
   def show
     @recipe = Recipe.find(params[:id])
+    @new_step = Step.new
+    @popular_steps = Step.top
   end
 
   def update

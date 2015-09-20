@@ -4,4 +4,7 @@ class Step < ActiveRecord::Base
   def self.default
     where(default: true)
   end
+  def self.top
+    order('recipes_count DESC').limit(10)
+  end
 end

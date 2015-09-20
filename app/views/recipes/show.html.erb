@@ -1,12 +1,32 @@
-<h1><%= @recipe.name %></h1>
-<h1>Recipe</h1>
-<ul>
-  <% @recipe.steps.each do |step| %>
-    <li>
-      <%= step.description %>
-      <%= link_to 'delete', delete_step_path(step), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+<div class="recipe-container">
+  <div data-form="new_step">
+   <%= render partial: "new_step", locals: {step: @new_step} %>
+  </div>
 
+  <div class="center">
+    <p><%= link_to 'Create New Step', new_step_path, class: "button", data: {link: "new-step" }, remote: true %></p>
+    <h3>My Recipe</h3>
+  </div>
+
+  <div class="recipe-steps-river">
+    <ul>
+    <% @recipe.steps.each do |step| %>
+      <%= render partial: "step", locals: {step: step} %>
+    <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="popular-steps-container">
+  <div class="center">
+    <h3>Popular Steps</h3>
+  </div>
+  <div class="popular-steps-river">
+    <ul data-river="popular_steps">
+      <% @popular_steps.each do |step| %>
+        <%= render partial: "step", locals: {step: step} %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
