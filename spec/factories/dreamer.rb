@@ -5,6 +5,9 @@ FactoryGirl.define do
     about { Faker::Lorem.paragraph }
     zipcode { Faker::Address.zip }
     avatar_url { Faker::Company.logo } 
+    country "US"
+    state "NY"
+    gender "queer"
     password "password"
   end
 
