@@ -6,9 +6,9 @@ class DreamersController < ApplicationController
   end
 
   def show
-    @awareness_dreams = find_awareness_dreams(@dreamer)
-    @free_decision_dreams = find_decision_making_dreams(@dreamer)
-    @vivid_dreams = find_vivid_dreams(@dreamer)
+    @awareness_dreams = @dreamer.awareness_dreams
+    @free_decision_dreams = @dreamer.decision_making_dreams
+    @vivid_dreams = @dreamer.vivid_dreams
     @num_of_dreams = @dreamer.dreams.count
   end
 
@@ -54,18 +54,6 @@ class DreamersController < ApplicationController
 
   def find_dreamer
     @dreamer = Dreamer.find_by(id: params[:id])
-  end
-
-  def find_vivid_dreams(dreamer)
-    dreamer.dreams.all.where('"consciousness_clarity?" = true')
-  end
-
-  def find_awareness_dreams(dreamer)
-    dreamer.dreams.all.where('"dream_state_clarity?" = true')
-  end
-
-  def find_decision_making_dreams(dreamer)
-    dreamer.dreams.all.where('"decision_clarity?" = true')
   end
 
 end
