@@ -2,8 +2,9 @@ class TwilioController < ApplicationController
 
   include Webhookify
 
-  before_filter :authenticate_twilio_request, :only => [
-    :connect]
+  after_filter :set_header
+
+  skip_before_action :verify_authenticity_token
 
   def index
 
