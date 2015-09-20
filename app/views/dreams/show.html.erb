@@ -1,5 +1,5 @@
 <h1><%= @dream.title %></h1>
-posted on <%= @dream.created_at.strftime("%B %d %Y") %>
-by <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
+posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
+<%= image_tag(@dream.dreamer.avatar_url, class: "icon") %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
 <hr>
 <p><%= @dream.story %></p>
