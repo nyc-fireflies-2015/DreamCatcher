@@ -1,17 +1,11 @@
 <div data-div="step-form">
   <h1>Edit Step</h1>
   <%= form_for step, url: update_recipe_step_path(step), remote: true do |f| %>
-      <p>
-      <%= f.label :description %>
-      <%= f.text_area :description, placeholder: "description" %>
-    </p>
+    <p><%= f.text_area :description, placeholder: "description" %></p>
     <p>
       <div data-handler="errors"></div>
-      <%= f.submit %>
+      <%= f.submit "Submit" %>
     </p>
-  <% end %>
-  <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"}, remote: true do |f| %>
-  <%= f.submit "delete" %>
   <% end %>
 </div>
 
