@@ -14,7 +14,7 @@ Step.delete_all
   d = FactoryGirl.create(:dreamer)
   r = Recipe.create(FactoryGirl.attributes_for(:recipe).merge(creator: d))
   4.times do
-    r.steps.create(FactoryGirl.attributes_for(:step))
+    Step.create(FactoryGirl.attributes_for(:step).merge(creator: d).merge(recipes: [r]))
   end
   4.times do
     ds = d.dreams.create(FactoryGirl.attributes_for(:dream))
