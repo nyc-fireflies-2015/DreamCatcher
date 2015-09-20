@@ -31,7 +31,10 @@ class DreamsController < ApplicationController
       end
     else
       flash[:error] = @dream.errors.full_messages
-      redirect_to new_dream_path
+      respond_to do |format|
+        format.html { redirect_to new_dream_path }
+        format.js { render :file => "layouts/errors.js.erb" }
+      end
     end
   end
 
