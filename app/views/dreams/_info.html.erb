@@ -5,6 +5,14 @@
     <div class="right">
       posted <%= dream.timestamp %> ago
     </div>
+      <div class="favorites">
+        <div data-favorite="new">
+      <%= render partial: "favorite", locals: {dream: dream} %>
+    </div>
+    <div data-favorite="destroy">
+    <%= render partial: "unfavorite", locals: {dream: dream} %>
+  </div>
+  </div>
   </div>
 </p>
 
