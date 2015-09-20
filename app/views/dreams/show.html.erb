@@ -12,7 +12,8 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <% end %>
 
 <% @dream.comments.each do |comment| %>
-  <p><%= comment.content %></p>
+  <p><%= comment.dreamer.username %><br>
+    <%= comment.content %></p>
 <% end %>
 
 <hr>

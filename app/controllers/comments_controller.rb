@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(comment_params.merge(dreamer_id: current_dreamer))
+    comment = Comment.new(comment_params.merge(dreamer_id: current_dreamer.id))
     if comment.save
       redirect_to dream_path(comment_params[:dream_id])
     else
