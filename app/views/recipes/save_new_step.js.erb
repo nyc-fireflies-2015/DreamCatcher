@@ -1,0 +1,7 @@
+$("[data-river=recipe_steps]")
+.prepend("<%= j render(:partial => 'step', locals: {step: @step}) %>");
+
+$("[data-form=new_step]").hide();
+$("[data-form=new_step]").find("form").trigger("reset");
+
+$("[data-link=new_step]").fadeIn("slow");

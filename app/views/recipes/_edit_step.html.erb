@@ -9,6 +9,8 @@
       <%= f.submit %>
     </p>
   <% end %>
-  <%= link_to 'Delete', url: remove_step_path(step), method: :post, data: { remote: true } %>
+  <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"}, remote: true do |f| %>
+  <%= f.submit "delete" %>
+  <% end %>
 </div>
 
