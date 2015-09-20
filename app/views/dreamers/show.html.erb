@@ -31,6 +31,8 @@
 <% else %>
   <% @dreamer.top_dreams.each do |dream| %>
     <%= dream.created_at.strftime("%B %d %Y") %>:
-    <%= link_to dream.title, dream_path(dream) %><br>
+    <%= link_to dream.title, dream_path(dream) %>
+    Lucid Rating: <%= calculate_lucidity(dream) %>
+    <br>
   <% end %>
 <% end %>
