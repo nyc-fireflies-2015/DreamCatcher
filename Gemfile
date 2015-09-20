@@ -28,6 +28,8 @@ gem 'validates_email_format_of'
 
 gem 'pry'
 
+gem 'going_postal'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
