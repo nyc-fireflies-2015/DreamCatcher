@@ -7,27 +7,22 @@ RSpec.describe RecipesController, type: :controller do
     login(@dreamer)
   end
 
-  describe "GET /recipes/:id" do
+  describe "GET #show" do
     it "assigns correct recipe to @recipe" do
       get :show, id: @recipe.id
       expect(assigns(:recipe)).to eq @recipe 
     end
   end
 
-  # describe "GET #show" do
+ describe "GET #new_step" do
+    it "assigns new step to @step" do
+      get :new_step
+      expect(assigns(:step)).to be_a_new Step
+    end
+  end
 
-  #   context 'user is not logged in' do
-  #     xit "renders the welcome page" do
-  #       get :show, id: dream.id
-  #       expect(response).to redirect_to root_path
-  #     end
-  #   end
-
-  #   context 'user is logged in' do
-  #     before :each do
-  #       login(dreamer)
-  #       get :show, id: dream.id
-  #     end
+ describe "Post #add_step" do
+ end
 
   #     xit "assigns the requested dream to @dream" do
   #       expect(assigns(:dream)).to eq dream
