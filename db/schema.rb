@@ -65,12 +65,12 @@ ActiveRecord::Schema.define(version: 20150920025045) do
   end
 
   create_table "steps", force: :cascade do |t|
-    t.string   "description",         limit: 2048,                 null: false
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-    t.boolean  "default",                          default: false
+    t.string   "description",   limit: 2048,                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.boolean  "default",                    default: false
     t.integer  "creator_id"
-    t.integer  "recipes_steps_count",              default: 0
+    t.integer  "recipes_count",              default: 0
   end
 
 end

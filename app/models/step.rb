@@ -5,6 +5,6 @@ class Step < ActiveRecord::Base
     where(default: true)
   end
   def self.top
-    order('recipes_steps_count DESC').limit(10)
+    order('recipes_count DESC').limit(10)
   end
 end
