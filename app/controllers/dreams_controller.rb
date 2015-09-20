@@ -3,18 +3,17 @@ class DreamsController < ApplicationController
   before_filter :find_dream, except: [:index, :create, :new]
 
   def index
-    @dreams = Dream.order('created_at').reverse_order
+    @dreams = Dream.order('created_at DESC')
     @new_dream = Dream.new
     redirect_to welcome_path unless current_dreamer
   end
 
   def show
-    @dream = Dream.find(params[:id])
     @comment = Comment.new
   end
 
   def new
-    @dream = current_dreamer.dreams.build()
+    @dream = Dream.new
     respond_to do |format|
       format.html { render "new" }
       format.js { render "new.js.erb" }
