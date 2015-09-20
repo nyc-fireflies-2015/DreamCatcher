@@ -12,6 +12,7 @@ class DreamersController < ApplicationController
     @num_of_dreams = @dreamer.dreams.count
   end
 
+  def edit
     respond_to do |format|
       format.html { render "edit" }
       format.js { render "edit.js.erb" }
@@ -67,3 +68,4 @@ class DreamersController < ApplicationController
     dreamer.dreams.all.where('"decision_clarity?" = true')
   end
 
+end
