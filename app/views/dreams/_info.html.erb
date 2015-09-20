@@ -1,8 +1,12 @@
-<%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
+<p>
+  <div class="dream-info">
+    <%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
 
-<div class="right">
-  posted <%= dream.timestamp %> ago
-</div>
+    <div class="right">
+      posted <%= dream.timestamp %> ago
+    </div>
+  </div>
+</p>
 
 <%= dream.story %><br>
 <sub class="right"><%= link_to "read more >>", dream_path(dream) %></sub>
