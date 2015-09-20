@@ -24,8 +24,8 @@ class RecipesController < ApplicationController
   end
 
   def create_step
-    @recipe = current_dreamer.recipe
-    @step = @recipe.steps.build(step_params.merge(creator: current_dreamer))
+    @step = Step.new(step_params.merge(creator: current_dreamer))
+    current_dreamer.recipe.steps << @step
     unless @step.save
       flash[:error] = @step.errors.full_messages
     end
@@ -36,7 +36,8 @@ class RecipesController < ApplicationController
   end
 
   def add_step
-    current_dreamer.recipe.steps << @step
+    @recipe = current_dreamer.recipe
+    @recipe.steps << @step
     respond_to do |format|
       format.html { redirect_to :back }
       format.js { render "step.js.erb" }
@@ -54,10 +55,10 @@ class RecipesController < ApplicationController
   private
 
   def step_params
-    params.require(:step).permit(:description)
+    params.require(:step).permit(:description, :creator)
   end
 
   def find_step
-     @recipe = Step.find(params[:id])
+     @step = Step.find(params[:id])
   end
 end
