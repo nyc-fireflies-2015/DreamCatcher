@@ -7,7 +7,7 @@
     <%= render partial: "info", locals: {dream: dream} %>
   </div>
 
-  <% if dream.dreamer.id == session[:dreamer_id] %>
+  <% if dream.dreamer == current_dreamer %>
     <%= link_to "Edit", edit_dream_path(dream), data: { link: "edit-dream" }, remote: true %>
   <% end %>
 </li>
