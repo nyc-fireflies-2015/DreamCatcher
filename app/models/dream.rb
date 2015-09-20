@@ -5,6 +5,10 @@ class Dream < ActiveRecord::Base
 
   validates_presence_of :story, :title
 
+  def favorite_by(dreamer)
+    Favorite.where(dream: self, fan: dreamer)
+  end
+
   def timestamp
     seconds = (Time.now - self.created_at).to_i
     minutes = seconds/60
