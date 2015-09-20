@@ -8,8 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @step.update_attributes(step_params)
-    unless @step.save
+    unless @step.update_attributes(step_params)
       flash[:error] = @step.errors.full_messages
     end
     respond_to do |format|
@@ -42,7 +41,7 @@ class RecipesController < ApplicationController
     end
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js { render "save_step.js.erb" }
+      format.js { render "save_new_step.js.erb" }
     end
   end
 

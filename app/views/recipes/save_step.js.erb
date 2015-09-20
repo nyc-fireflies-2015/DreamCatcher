@@ -1,7 +1,8 @@
-$("[data-river=recipe_steps]")
-.prepend("<%= j render(:partial => 'step', locals: {step: @step}) %>");
-
-$("[data-form=new_step]").hide();
-$("[data-form=new_step]").find("form").trigger("reset");
-
-$("[data-link=new_step]").fadeIn("slow");
+$("[data-form=edit-step]").on("ajax:success", function(event){
+  var step = $(event.target).closest("[data-li=step]");
+  $(step)
+  .find("[data-form=edit-step]").hide();
+  $(step)
+  .find("[data-div=step-info]")
+  .html("<%= j render(:partial => 'info_step', locals: {step: @step}) %>")
+});

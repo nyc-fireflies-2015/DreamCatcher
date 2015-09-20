@@ -1,12 +1,12 @@
 <div data-div="step-form">
   <h1>Edit Step</h1>
-  <%= form_for step, url: update_recipe_step_path(step) do |f| %>
+  <%= form_for step, url: update_recipe_step_path(step), remote: true do |f| %>
       <p>
       <%= f.label :description %>
       <%= f.text_area :description, placeholder: "description" %>
     </p>
     <p>
-      <% f.submit %>
+      <%= f.submit %>
     </p>
   <% end %>
   <%= link_to 'Delete', url: remove_step_path(step), method: :post, data: { remote: true } %>
