@@ -1,5 +1,5 @@
-<div class="trend-container">
-  <div data-form="new">
+<div class="recipe-container">
+  <div data-form="new_step">
    <%= render partial: "new_step", locals: {step: @new_step} %>
   </div>
 
@@ -8,7 +8,7 @@
     <h3>My Recipe</h3>
   </div>
 
-  <div class="trend-river">
+  <div class="recipe-steps-river">
     <ul>
     <% @recipe.steps.each do |step| %>
       <%= render partial: "step", locals: {step: step} %>
@@ -17,12 +17,12 @@
   </div>
 </div>
 
-<div class="dreams-container">
+<div class="popular-steps-container">
   <div class="center">
     <h3>Popular Steps</h3>
   </div>
-  <div class="dream-river">
-    <ul data-river="dreams">
+  <div class="popular-steps-river">
+    <ul data-river="popular_steps">
       <% @popular_steps.each do |step| %>
         <%= render partial: "step", locals: {step: step} %>
       <% end %>
