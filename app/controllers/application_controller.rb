@@ -5,10 +5,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :set_query
+  before_action :clear_errors
   layout proc { false if request.xhr? }
 
   def authenticate_dreamer
     redirect_to root_path if !session[:dreamer_id]
+  end
+
+  def clear_errors
+    flash.clear
   end
 
   def current_dreamer
