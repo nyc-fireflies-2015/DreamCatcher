@@ -4,7 +4,7 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <hr>
 <p><%= @dream.story %></p>
 
-<h3>Comments</h3>
+<h3><%= @dream.comments.count %> Comments</h3>
 
 <% if @dream.comments.empty? %>
   <p>This dream currently has no comments.<br>
@@ -12,8 +12,17 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <% end %>
 
 <% @dream.comments.each do |comment| %>
-  <p><%= comment.dreamer.username %><br>
-    <%= comment.content %></p>
+  <ul class="comment">
+    <li>
+      <div class="left">
+        <%= image_tag(comment.dreamer.avatar_url, class: "icon") %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
+      </div>
+      <div class="right">
+        <%= comment.created_at.strftime("%B %d %Y") %>
+      </div>
+      <p><%= comment.content %></p>
+    </li>
+  </ul>
 <% end %>
 
 <hr>
