@@ -21,4 +21,5 @@ class Dream < ActiveRecord::Base
       return "#{days} days"
     end
   end
+
 end

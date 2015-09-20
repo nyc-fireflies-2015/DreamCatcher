@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/dreamers_controller_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/dreamers_controller_spec.rb": [
         1,
         null,
         1,
@@ -89,7 +89,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/rails_helper.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/rails_helper.rb": [
         null,
         1,
         null,
@@ -152,14 +152,14 @@
         1,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/environment.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/application.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/application.rb": [
         1,
         null,
         1,
@@ -196,12 +196,12 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/boot.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/environments/test.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/environments/test.rb": [
         1,
         null,
         null,
@@ -245,7 +245,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/assets.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -258,7 +258,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/backtrace_silencers.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -267,18 +267,18 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/cookies_serializer.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/filter_parameter_logging.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/inflections.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -296,18 +296,18 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/mime_types.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/session_store.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/initializers/wrap_parameters.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -323,7 +323,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/factories/dream.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/dream.rb": [
         1,
         1,
         27,
@@ -335,7 +335,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/factories/dreamer.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/dreamer.rb": [
         1,
         1,
         37,
@@ -359,21 +359,21 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/factories/recipe.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/recipe.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/factories/step.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/factories/step.rb": [
         1,
         1,
         9,
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/config/routes.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/config/routes.rb": [
         1,
         1,
         null,
@@ -404,26 +404,33 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/support/factory_girl.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/support/factory_girl.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/support/login_macros.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/support/login_macros.rb": [
         1,
         1,
         27,
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/dreamers_controller.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/dreamers_controller.rb": [
         1,
         1,
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         1,
@@ -454,6 +461,9 @@
         null,
         1,
         1,
+        2,
+        1,
+        null,
         null,
         null,
         null,
@@ -466,14 +476,28 @@
         1,
         5,
         null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/application_controller.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null,
         null,
+        1,
         1,
         1,
         37,
@@ -483,15 +507,29 @@
         null,
         null,
         1,
-        19,
+        45,
+        null,
+        null,
+        1,
+        21,
         null,
         null,
         1,
         45,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/dreams_controller_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/dreams_controller_spec.rb": [
         1,
         null,
         1,
@@ -675,7 +713,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/dreams_controller.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/dreams_controller.rb": [
         1,
         1,
         1,
@@ -710,6 +748,9 @@
         null,
         2,
         2,
+        4,
+        2,
+        null,
         null,
         null,
         null,
@@ -729,6 +770,9 @@
         null,
         2,
         2,
+        4,
+        2,
+        null,
         null,
         null,
         null,
@@ -773,7 +817,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/recipes_controller_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/recipes_controller_spec.rb": [
         1,
         null,
         1,
@@ -862,16 +906,43 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/recipes_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
+      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/recipes_controller.rb": [
         1,
         1,
         null,
+        1,
+        1,
+        1,
+        2,
+        1,
         null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         0,
@@ -885,29 +956,8 @@
         1,
         1,
         1,
-        2,
-        1,
-        null,
-        null,
-        null,
         1,
         1,
-        1,
-        2,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        0,
-        null,
-        1,
-        2,
-        1,
-        null,
         null,
         null,
         1,
@@ -942,7 +992,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -972,7 +1022,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/controllers/sessions_controller.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -995,7 +1045,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/dream_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/dream_spec.rb": [
         1,
         null,
         1,
@@ -1017,7 +1067,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/dream.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/models/dream.rb": [
         1,
         1,
         1,
@@ -1039,11 +1089,12 @@
         0,
         null,
         0,
+        null,
         null,
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/dreamer_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/dreamer_spec.rb": [
         1,
         null,
         1,
@@ -1071,7 +1122,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/dreamer.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/models/dreamer.rb": [
         1,
         null,
         1,
@@ -1097,7 +1148,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/favorite_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/favorite_spec.rb": [
         1,
         null,
         1,
@@ -1111,13 +1162,13 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/favorite.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/models/favorite.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/recipe_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/recipe_spec.rb": [
         1,
         null,
         1,
@@ -1128,7 +1179,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/recipe.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/models/recipe.rb": [
         1,
         1,
         1,
@@ -1137,7 +1188,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/spec/models/step_spec.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/spec/models/step_spec.rb": [
         1,
         null,
         1,
@@ -1151,7 +1202,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/step.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/models/step.rb": [
         1,
         1,
         1,
@@ -1180,7 +1231,7 @@
         null,
         null
       ],
-      "/Users/Abby/Documents/Dev Bootcamp/DreamCatcher/app/models/comment.rb": [
+      "/Users/ddgs89/Desktop/DreamCatcher/app/models/comment.rb": [
         1,
         1,
         1,
@@ -1189,6 +1240,6 @@
         null
       ]
     },
-    "timestamp": 1442767588
+    "timestamp": 1442785640
   }
 }

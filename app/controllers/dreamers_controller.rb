@@ -5,6 +5,13 @@ class DreamersController < ApplicationController
     @dreamer = Dreamer.new
   end
 
+  def show
+    @awareness_dreams = find_awareness_dreams(@dreamer)
+    @free_decision_dreams = find_decision_making_dreams(@dreamer)
+    @vivid_dreams = find_vivid_dreams(@dreamer)
+    @num_of_dreams = @dreamer.dreams.count
+  end
+
   def edit
     respond_to do |format|
       format.html { render "edit" }
@@ -48,4 +55,17 @@ class DreamersController < ApplicationController
   def find_dreamer
     @dreamer = Dreamer.find_by(id: params[:id])
   end
+
+  def find_vivid_dreams(dreamer)
+    dreamer.dreams.all.where('"consciousness_clarity?" = true')
+  end
+
+  def find_awareness_dreams(dreamer)
+    dreamer.dreams.all.where('"dream_state_clarity?" = true')
+  end
+
+  def find_decision_making_dreams(dreamer)
+    dreamer.dreams.all.where('"decision_clarity?" = true')
+  end
+
 end

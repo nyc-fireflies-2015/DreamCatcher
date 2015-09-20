@@ -23,4 +23,14 @@ class ApplicationController < ActionController::Base
   def set_query
     @q = Dream.ransack(params[:q])
   end
+
+  def calculate_lucidity(dream)
+    lucidity_rating = 0
+    lucidity_rating += 1 if dream.consciousness_clarity? == true
+    lucidity_rating += 1 if dream.dream_state_clarity? == true
+    lucidity_rating += 1 if dream.decision_clarity? == true
+    return lucidity_rating
+  end
+
+  helper_method :calculate_lucidity
 end
