@@ -1,3 +1,1 @@
-<%= form_for dream, url: unfavorite_path(dream), method: "delete", data: {form: "unfavorite"}, remote: true do |f| %>
-  <%= f.submit "UNFAVORITE" %>
-<% end %>
+<%= link_to 'Delete', unfavorite_path(dream), method: :delete, data: {remote: true, form: "unfavorite" } %>
