@@ -1,4 +1,3 @@
-require 'twilio-ruby'
 class TwilioController < ApplicationController
 
   # include Webhookify
@@ -33,7 +32,12 @@ class TwilioController < ApplicationController
 
     @call = @client.account.calls.create({:to => "+1"+"#{number}",
                                                 :from => "+13157074332",
-                                                :url => 'file:///Users/ddgs89/Desktop/DreamCatcher/response_twilio.xml' })
+                                                :url => 'https://rawgit.com/nyc-fireflies-2015/DreamCatcher/twilio_call/response_twilio.xml' })
+
+    end
+    # binding.pry
+
+    # redirect_to '/connect'
   end
 
   def connect
@@ -43,9 +47,9 @@ class TwilioController < ApplicationController
 
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Helloooooo', :voice => 'alice'
+    render xml: response.to_xml
     end
     # set_header
-    # render_twiml response
   end
 
   private
@@ -65,7 +69,5 @@ class TwilioController < ApplicationController
       render :xml => (Twilio::TwiML::Response.new {|r| r.Hangup}).text, :status => :unauthorized
       false
     end
-  end
-
 
 end
