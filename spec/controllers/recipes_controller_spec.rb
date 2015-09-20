@@ -22,6 +22,11 @@ RSpec.describe RecipesController, type: :controller do
   end
 
  describe "Post #add_step" do
+    let!(:borrowed_step) { FactoryGirl.create(:step) }
+    it "assigns step in question to recipe in question" do
+      post :add_step, id: borrowed_step.id
+      expect(@recipe.steps.last).to eq(borrowed_step)
+    end
  end
 
   #     xit "assigns the requested dream to @dream" do
