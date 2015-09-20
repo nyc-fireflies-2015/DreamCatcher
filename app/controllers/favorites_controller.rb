@@ -2,16 +2,16 @@ class FavoritesController < ApplicationController
   before_action :find_dream
 
   def create
-
-    @favorite = Favorite.new(dream: @dream, fan: current_dreamer)
-
+    @favorite = Favorite.create(dream: @dream, fan: current_dreamer)
+    respond_to do |format|
+      format.js { render "favorite.js.erb" }
+    end
   end
 
   def destroy
-    dream = Dream.find_by(params[:id])
-    dream.favorite_by(current_dreamer).destroy
+    @dream.favorite_by(current_dreamer).destroy
     respond_to do |format|
-      render "un_favorite.js.erb"
+      format.js { render "un_favorite.js.erb" }
     end
   end
 
