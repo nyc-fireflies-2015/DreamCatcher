@@ -58,6 +58,10 @@ class RecipesController < ApplicationController
     else
       current_dreamer.recipe.steps.delete(@step)
     end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render "remove_step.js.erb" }
+    end
   end
 
   private
