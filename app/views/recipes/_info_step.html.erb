@@ -1,9 +1,9 @@
 <div class="step-info">
-    <% if step.creator %>
-      <%= link_to "#{step.creator.username}", profile_path(step.creator)%>
-    <% end %>
+  <% if step.creator %>
+    <%= link_to "#{step.creator.username}", profile_path(step.creator)%>
+  <% end %>
+
+  <div class="right">
     <%= step.description %>
-    <div class="right">
-      posted <%= step.timestamp %> ago
-    </div>
   </div>
+</div>
