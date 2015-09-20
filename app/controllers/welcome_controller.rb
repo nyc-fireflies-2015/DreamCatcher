@@ -4,8 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def search
-    @q = Dream.ransack(params[:q])
-    @query = params[:q]
+    @query = params[:q][:title_cont]
     @dreams = @q.result(distinct: true)
   end
 end
