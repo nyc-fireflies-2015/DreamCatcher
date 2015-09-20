@@ -9,6 +9,10 @@ class Dream < ActiveRecord::Base
     Favorite.where(dream: self, fan: dreamer)
   end
 
+  def favorite?(dreamer)
+    !!Favorite.where(dream: self, fan: dreamer)
+  end
+
   def timestamp
     seconds = (Time.now - self.created_at).to_i
     minutes = seconds/60
