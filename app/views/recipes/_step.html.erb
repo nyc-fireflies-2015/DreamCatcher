@@ -1,14 +1,11 @@
+<li data-li="step">
 <p>
-  <div class="step-info">
-    <% if step.creator %>
-      <%= link_to "#{step.creator.username}", profile_path(step.creator)%>
-    <% end %>
-
-    <div class="right">
-      posted <%= step.timestamp %> ago
-    </div>
+  <div data-div="step-info">
+    <%= render partial: "info", locals: {step: step} %>
   </div>
-</p>
-
 <%= step.description %><br>
+  <% if step.creator == current_dreamer %>
+    <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" }, remote: true %>
+  <% end %>
+  <li>
 <hr>
