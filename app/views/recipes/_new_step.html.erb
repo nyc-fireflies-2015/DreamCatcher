@@ -2,6 +2,12 @@
   <h1>Create New Step</h1>
   
   <%= form_for step, url: create_step_path do |f| %>
-    <%= render partial: "step_form", locals: { step: step } %>
+     <p>
+      <%= f.label :description %>
+      <%= f.textarea :description, placeholder: "description" %>
+    </p>
+    <p>
+      <% f.submit %>
+    </p>
   <% end %>
 </div>
