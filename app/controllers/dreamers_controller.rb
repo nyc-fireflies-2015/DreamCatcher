@@ -5,6 +5,11 @@ class DreamersController < ApplicationController
     @dreamer = Dreamer.new
   end
 
+  def edit
+    respond_to do |format|
+    end
+  end
+
   def create
     dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png").merge(
       recipe: Recipe.default))
