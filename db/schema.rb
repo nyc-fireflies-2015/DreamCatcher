@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20150920003020) do
   end
 
   create_table "recipes_steps", force: :cascade do |t|
-    t.integer  "recipes_id"
-    t.integer  "steps_id"
+    t.integer  "recipe_id"
+    t.integer  "step_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
