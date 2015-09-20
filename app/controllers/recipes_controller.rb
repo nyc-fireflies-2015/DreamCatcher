@@ -2,11 +2,13 @@ class RecipesController < ApplicationController
   before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
   def show
     @recipe = Recipe.find(params[:id])
+    @new_step = Step.new
+    @popular_steps = Step.top
+    redirect_to welcome_path unless current_dreamer
   end
 
   def update
-    @step.update_attributes(step_params)
-    unless @step.save
+    unless @step.update_attributes(step_params)
       flash[:error] = @step.errors.full_messages
     end
     respond_to do |format|
@@ -39,7 +41,7 @@ class RecipesController < ApplicationController
     end
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js { render "save_step.js.erb" }
+      format.js { render "save_new_step.js.erb" }
     end
   end
 

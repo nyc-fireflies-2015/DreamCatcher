@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post '/steps/:id' => 'recipes#add_step', as: 'add_step'
   get '/steps/:id/edit' => 'recipes#edit_step', as: 'edit_step'
   patch '/steps/:id' => 'recipes#update', as: 'update_recipe_step'
-  post '/steps/:id/remove' => 'recipes#remove_step', as: 'remove_step'
+  patch '/steps/:id/remove' => 'recipes#remove_step', as: 'remove_step'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
