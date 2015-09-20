@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(comment_params.merge(dreamer_id: current_dreamer.id))
+    comment = Comment.new(comment_params.merge(dreamer: current_dreamer))
     if comment.save
       redirect_to dream_path(comment_params[:dream_id])
     else
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :dreamer_id, :dream_id)
+    params.require(:comment).permit(:content, :dreamer, :dream_id)
   end
 
 end
