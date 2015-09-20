@@ -1,6 +1,8 @@
 <div data-div="step-form">
-  <%= form_for step, url: update_recipe_step(@recipe) do |f| %>
+  <h1>Edit Step</h1>
+  <%= form_for step, url: update_recipe_step_path(step) do |f| %>
     <%= render partial: "step_form", locals: { step: step } %>
   <% end %>
+  <%= link_to 'Delete', remove_step(step), method: :post, data: { remote: true } %>
 </div>
 
