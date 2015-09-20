@@ -4,5 +4,5 @@ $("[data-form=dream]").on("ajax:success", function(event){
   .find("[data-form=edit]").hide();
   $(dream)
   .find("[data-div=info]")
-  .html("<%= j render(:partial => 'info', locals: {dream: @dream}) %>");
+  .html("<%= j render(:partial => 'info', locals: {dream: @dream}) %>")
 });
