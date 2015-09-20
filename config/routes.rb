@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get '/recipes/:id' => 'recipes#show', as: 'recipe'
-  get '/recipes/:id/edit' => 'recipes#edit', as: 'edit_recipe'
-  get '/steps/new' => 'recipes#add_step', as: 'new_step'
-  post '/recipes/:id/steps' => 'recipes#create_step', as: 'create_step'
+  get '/steps/new' => 'recipes#new_step', as: 'new_step'
+  post '/recipes/steps' => 'recipes#create_step', as: 'create_step'
+  post '/steps/:id' => 'recipes#add_step', as: 'add_step'
   patch '/steps/:id' => 'recipes#update', as: 'update_recipe_step'
+  post '/steps/:id/remove' => 'recipes#remove_step', as: 'remove_step'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
