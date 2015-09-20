@@ -1,8 +1,9 @@
+require 'twilio-ruby'
 class TwilioController < ApplicationController
 
-  include Webhookify
+  # include Webhookify
 
-  after_filter :set_header
+  # after_filter :set_header
 
   skip_before_action :verify_authenticity_token
 
@@ -28,26 +29,23 @@ class TwilioController < ApplicationController
     number = params[:number]
     account_sid = 'AC40f31b05ec16c2c813436c84ada30a6f'
     auth_token = '6866e1d92472d67960fe7173589eac33'
-
     @client = Twilio::REST::Client.new account_sid, auth_token
 
-    # binding.pry
-
-    @call = @client.account.calls.create({to: "+1"+"#{number}",
-                                                from: "+13157074332",
-                                                url: "#{root_url}connect" })
-    redirect_to '/'
+    @call = @client.account.calls.create({:to => "+1"+"#{number}",
+                                                :from => "+13157074332",
+                                                :url => 'file:///Users/ddgs89/Desktop/DreamCatcher/response_twilio.xml' })
   end
 
   def connect
     # Our response to this request will be an XML document in the "TwiML"
     # format. Our Ruby library provides a helper for generating one
     # of these documents
+
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Helloooooo', :voice => 'alice'
     end
-    set_header
-    render_twiml response
+    # set_header
+    # render_twiml response
   end
 
   private
