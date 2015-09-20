@@ -6,5 +6,7 @@
   <%= f.text_field :zipcode, placeholder: "zip code" %>
   <%= f.password_field :password, placeholder: "password", data: {field: "password"} %>
   <%= f.text_area :about, placeholder: "tell us about yourself" %>
+  <div data-handler="errors">
+</div>
   <%= f.submit "Submit", class: "button" %>
 <% end %>
