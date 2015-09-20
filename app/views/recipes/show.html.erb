@@ -1,22 +1,3 @@
-<div class="recipe-container">
-  <div data-form="new_step">
-   <%= render partial: "steps/new", locals: {step: @new_step} %>
-  </div>
-
-  <div class="center">
-    <p><%= link_to 'Create New Step', new_step_path, class: "button", data: {link: "new_ step" }, remote: true %></p>
-    <h3>My Dream Recipe</h3>
-  </div>
-
-  <div class="recipe-steps-river">
-    <ul data-river="recipe_steps">
-    <% @recipe.steps.each do |step| %>
-      <%= render partial: "step", locals: {step: step} %>
-    <% end %>
-    </ul>
-  </div>
-</div>
-
 <div class="popular-steps-container">
   <div class="center">
     <h3>Popular Steps</h3>
@@ -26,6 +7,25 @@
       <% @popular_steps.each do |step| %>
         <%= render partial: "step", locals: {step: step} %>
       <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="recipe-container">
+  <div data-form="new_step">
+   <%= render partial: "steps/new", locals: {step: @new_step} %>
+  </div>
+
+  <div class="center">
+    <p><%= link_to "Add to Recipe", new_step_path, class: "button", data: {link: "new_ step" }, remote: true %></p>
+    <h3>My Dream Recipe</h3>
+  </div>
+
+  <div class="recipe-steps-river">
+    <ul data-river="recipe_steps">
+    <% @recipe.steps.each do |step| %>
+      <%= render partial: "step", locals: {step: step} %>
+    <% end %>
     </ul>
   </div>
 </div>

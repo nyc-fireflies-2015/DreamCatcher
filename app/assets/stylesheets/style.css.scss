@@ -26,30 +26,6 @@ nav {
   }
 }
 
-.dreams-container, .trend-container {
-  float: right;
-  text-align: left;
-  width: 50%;
-  height: 29em;
-  padding: 1em;
-}
-
-.trend-container {
-  float: left;
-}
-
-.dream-river, trend-river {
-  border: 1px solid #999;
-  overflow: scroll;
-  text-align: left;
-  height: 25em;
-  padding: 0 1em;
-
-  ul {
-    list-style-type: none;
-  }
-}
-
 .edit-icon {
   width: 0.8em;
   height: 0.8em;
@@ -71,14 +47,9 @@ sub {
 .dreams-container, .trend-container,
 .recipe-container, .popular-steps-container {
   float: right;
-  text-align: left;
   width: 50%;
   height: 29em;
   padding: 1em;
-}
-
-.trend-container, .recipe-container {
-  float: left;
 }
 
 .dream-river, .trend-river,
@@ -87,11 +58,19 @@ sub {
   overflow: scroll;
   text-align: left;
   height: 25em;
-  padding: 0 1em;
+  padding: 0 2em;
 
   ul {
     list-style-type: none;
   }
+}
+
+.trend-container, .recipe-container {
+  float: left;
+}
+
+.recipe-steps-river {
+  height: 19.5em;
 }
 
 footer {
