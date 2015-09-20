@@ -1,1 +1,12 @@
-<li><%= step.description %></li>
+<p>
+  <div class="step-info">
+    <%= link_to "#{step.creator.username}", profile_path(step.creator)%>
+
+    <div class="right">
+      posted <%= step.timestamp %> ago
+    </div>
+  </div>
+</p>
+
+<%= step.description %><br>
+<hr>
