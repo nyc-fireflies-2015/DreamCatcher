@@ -11,7 +11,7 @@ RSpec.describe RecipesController, type: :controller do
   describe "GET #show" do
     it "assigns correct recipe to @recipe" do
       get :show, id: @recipe.id
-      expect(assigns(:recipe)).to eq @recipe 
+      expect(assigns(:recipe)).to eq @recipe
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe RecipesController, type: :controller do
  describe "Post #create_step" do
     it "increases @recipe.steps.count by 1" do
       expect {
-        post :create_step, step: FactoryGirl.attributes_for(:step) 
+        post :create_step, step: FactoryGirl.attributes_for(:step)
         @recipe.reload
       }.to change{@recipe.reload; @recipe.steps.count}.by 1
     end
