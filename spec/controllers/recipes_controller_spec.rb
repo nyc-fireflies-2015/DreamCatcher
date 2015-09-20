@@ -51,4 +51,13 @@ RSpec.describe RecipesController, type: :controller do
       expect(step.description).to eq(new_description)
     end
   end
+
+  describe "get #edit" do
+    let!(:step){ Step.create(FactoryGirl.attributes_for(:step).merge(creator: @dreamer)) }
+    it "assigns requested step to @step" do
+      get :edit_step, id: step.id
+      expect(assigns(:step)).to eq(step)
+    end
+  end
+
 end
