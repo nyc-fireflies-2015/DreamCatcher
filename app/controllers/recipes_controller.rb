@@ -1,27 +1,76 @@
 class RecipesController < ApplicationController
+  before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
   def show
-    @dreamer = Dreamer.find(params[:id])
-    @recipe = @dreamer.recipe
-  end
-
-  def edit
-    @dreamer = Dreamer.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def update
-    @dreamer = Dreamer.find(params[:id])
-    @dreamer.update_attributes(recipe_params)
-    if @dreamer.save
-      redirect_to recipe_path(@dreamer)
+    @step.update_attributes(step_params)
+    unless @step.save
+      flash[:error] = @step.errors.full_messages
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render "save_step.js.erb"}
+    end
+  end
+
+  def edit_step
+    redirect_to :back unless current_dreamer == @step.creator
+    respond_to do |format|
+      format.html { render "edit" }
+      format.js { render "edit_step.js.erb" }
+    end
+  end
+
+  def new_step
+    @step = Step.new
+    respond_to do |format|
+      format.html { render partial: "new_step", locals: {step: @step} }
+      format.js { render "new_step.js.erb" }
+    end
+  end
+
+  def create_step
+    @step = Step.new(step_params.merge(creator: current_dreamer))
+    current_dreamer.recipe.steps << @step
+    unless @step.save
+      flash[:error] = @step.errors.full_messages
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render "save_step.js.erb" }
+    end
+  end
+
+  def add_step
+    @recipe = current_dreamer.recipe
+    @recipe.steps << @step
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render "step.js.erb" }
+    end
+  end
+
+  def remove_step
+    if @step.creator == current_dreamer
+      @step.destroy
     else
-      flash[:error] = "Something went wrong."
-      redirect_to edit_recipe_path(@dreamer)
+      current_dreamer.recipe.steps.delete(@step)
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { render "remove_step.js.erb" }
     end
   end
 
   private
 
-  def recipe_params
-    params.require(:dreamer).permit(:recipe, :password)
+  def step_params
+    params.require(:step).permit(:description, :creator)
+  end
+
+  def find_step
+     @step = Step.find(params[:id])
   end
 end
