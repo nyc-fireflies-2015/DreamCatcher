@@ -32,7 +32,10 @@ class DreamersController < ApplicationController
       end
     else
       flash[:error] = @dreamer.errors.full_messages
-      redirect_to edit_dreamer_path(@dreamer)
+      respond_to do |format|
+        format.html { redirect_to edit_dreamer_path(@dreamer) }
+        format.js { render :file => "layouts/errors.js.erb" }
+      end
     end
   end
 
