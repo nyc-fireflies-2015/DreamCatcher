@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_dreamer
-    @current_dreamer ||= Dreamer.find(session[:dreamer_id])
+    @current_dreamer ||= Dreamer.find_by(id: session[:dreamer_id])
   end
 
   def set_query
