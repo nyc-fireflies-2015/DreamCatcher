@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150920025045) do
     t.string   "password_digest",                          null: false
     t.text     "about"
     t.integer  "level",                        default: 0
-    t.integer  "zipcode",                                  null: false
+    t.string   "zipcode",                                  null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.string   "email"

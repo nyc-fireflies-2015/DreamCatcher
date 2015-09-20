@@ -1,7 +1,20 @@
+<<<<<<< HEAD
 <div class="recipe-container">
   <div data-form="new_step">
    <%= render partial: "new_step", locals: {step: @new_step} %>
   </div>
+=======
+<h1><%= @recipe.name %></h1>
+<h1>Recipe</h1>
+<ul>
+  <% @recipe.steps.each do |step| %>
+    <li>
+      <%= step.description %>
+      <%= link_to 'delete', remove_step_path(step), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+>>>>>>> 05fb7787bb6a8f9b1a93663f3091528e5c3f73ca
 
   <div class="center">
     <p><%= link_to 'Create New Step', new_step_path, class: "button", data: {link: "new_ step" }, remote: true %></p>
