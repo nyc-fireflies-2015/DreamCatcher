@@ -26,30 +26,6 @@ nav {
   }
 }
 
-.dreams-container, .trend-container {
-  float: right;
-  text-align: left;
-  width: 50%;
-  height: 29em;
-  padding: 1em;
-}
-
-.trend-container {
-  float: left;
-}
-
-.dream-river, trend-river {
-  border: 1px solid #999;
-  overflow: scroll;
-  text-align: left;
-  height: 25em;
-  padding: 0 1em;
-
-  ul {
-    list-style-type: none;
-  }
-}
-
 .edit-icon {
   width: 0.8em;
   height: 0.8em;
@@ -68,29 +44,35 @@ sub {
   color: #999;
 }
 
-.recipe-container, popular-steps-container {
+.dreams-container, .trend-container,
+.recipe-container, .popular-steps-container {
   float: right;
-  text-align: left;
   width: 50%;
   height: 29em;
   padding: 1em;
 }
 
-.recipe-container {
-  float: left;
-}
-
-.popular-steps-river, recipe-steps-river {
+.dream-river, .trend-river,
+.popular-steps-river, .recipe-steps-river {
   border: 1px solid #999;
+  height: 21.4em;
   overflow: scroll;
   text-align: left;
-  height: 25em;
-  padding: 0 1em;
+  padding: 0 2em;
 
   ul {
     list-style-type: none;
   }
 }
+
+.trend-container, .recipe-container {
+  float: left;
+}
+
+.recipe-steps-river, .dream-river {
+  height: 27em;
+}
+
 
 footer {
   font-size: 0.7em;

@@ -1,12 +1,15 @@
 <li data-li="step">
-<div data-form="edit-step">
-   <%= render partial: "edit_step", locals: {step: step} %>
+  <div data-form="edit-step">
+    <%= render partial: "steps/edit", locals: {step: step} %>
   </div>
   <div data-div="step-info">
-    <%= render partial: "info_step", locals: {step: step} %>
+    <%= render partial: "steps/show", locals: {step: step} %>
   </div>
   <% if step.creator == current_dreamer %>
     <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" }, remote: true %>
+    <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"}, remote: true do |f| %>
+      <%= f.submit "Delete" %>
+    <% end %>
   <% end %>
   <hr>
-  </li>
+</li>
