@@ -1,0 +1,38 @@
+<p>
+  <h1 class="center">
+    <% if current_dreamer == dreamer %>
+      <%= link_to image_tag("edit-icon.png", class: "edit-icon"), edit_dreamer_path(current_dreamer), remote: true %>
+    <% end %>
+    <%= dreamer.username %>'s Profile
+  </h1>
+</p>
+
+<%= image_tag("#{dreamer.avatar_url}", class: "left avatar") %>
+
+<div class="profile-container">
+  <ul>
+    <li>Level: <%= dreamer.level %></li>
+    <li>
+      <% if dreamer.gender %>
+      Gender: <%= dreamer.gender %>
+      <% end %>
+    </li>
+    <li>
+      <% if dreamer.country %>
+      Country: <%= dreamer.country %>
+      <% end %>
+    </li>
+    <li>
+      <% if dreamer.state %>
+      State: <%= dreamer.state %>
+      <% end %>
+    </li>
+    <li><%= link_to "Dream Recipe", recipe_path(dreamer) %></li>
+  </ul>
+</div>
+
+<% if dreamer.about %>
+<hr>
+<h6>About <%= dreamer.username %></h6>
+<%= dreamer.about %>
+<% end %>
