@@ -31,11 +31,4 @@ class Dreamer < ActiveRecord::Base
   def vivid_dreams
    dreams.where(dreamer: self, consciousness_clarity: true)
   end
-
-  private
-
-  def us_zipcode?
-    errors.add(:zipcode, "invalid. Please enter a valid US zipcode.") unless GoingPostal.postcode?(zipcode, "US")
-  end
-
 end

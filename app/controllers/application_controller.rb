@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
   include Ransack::Helpers::FormHelper
   protect_from_forgery with: :exception
-  before_filter :set_query
   helper_method :current_dreamer
   helper_method :calculate_lucidity
   layout proc { false if request.xhr? }
+
+  before_filter :set_query
 
   def authenticate_dreamer
     redirect_to root_path unless current_dreamer
