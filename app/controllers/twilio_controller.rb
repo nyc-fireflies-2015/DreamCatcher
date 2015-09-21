@@ -12,7 +12,7 @@ class TwilioController < ApplicationController
                                                 from: "+13157074332",
                                                 body: "#{message}" })
     # binding.pry
-    redirect_to profile_path()
+    redirect_to profile_path(current_dreamer)
   end
 
 end
