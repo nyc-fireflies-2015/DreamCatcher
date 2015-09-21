@@ -21,18 +21,18 @@ class Dreamer < ActiveRecord::Base
   end
 
   def top_dreams
-    Dream.order('created_at DESC').limit(5)
+    dreams.order('created_at DESC').limit(5)
   end
 
   def awareness_dreams
-    Dream.where(dreamer: self, dream_state_clarity?: true)
+    dreams.where(dreamer: self, dream_state_clarity?: true)
   end
 
   def decision_making_dreams
-    Dream.where(dreamer: self, decision_clarity?: true)
+   dreams.where(dreamer: self, decision_clarity?: true)
   end
 
   def vivid_dreams
-    Dream.where(dreamer: self, consciousness_clarity?: true)
+   dreams.where(dreamer: self, consciousness_clarity?: true)
   end
 end
