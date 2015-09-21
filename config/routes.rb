@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  resources :steps, except: [:destroy, :index]
   get 'dreamers/:id/steps' => 'steps#index', as: 'steps'
+  resources :steps, except: [:destroy, :index]
   post '/steps/:id' => 'steps#add_step', as: 'add_step'
   patch '/steps/:id/remove' => 'steps#remove_step', as: 'remove_step'
 
