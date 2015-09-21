@@ -12,7 +12,7 @@ RSpec.describe StepsController, type: :controller do
 
   describe "GET #index" do
     it "assigns correct steps to @steps" do
-      get :index
+      get :index, @dreamer.id
       expect(assigns(:steps)).to eq @dreamer.steps
     end
   end
