@@ -9,7 +9,6 @@ Binder.bind = function(args){
 
 var Obj = {};
 Obj.fromForm = function(args){
-   var formData = {};
    if(args.type === undefined){
       args.type = $(args.form).attr("method");
     } 

@@ -30,7 +30,7 @@ class DreamersController < ApplicationController
 
   def update
     if @dreamer.update_attributes(dreamer_params)
-      render partial: "profile", locals: {dreamer: @dreamer}
+      render partial: "stats", locals: {dreamer: @dreamer}
     else
       flash[:error] = @dreamer.errors.full_messages
       respond_to do |format|
