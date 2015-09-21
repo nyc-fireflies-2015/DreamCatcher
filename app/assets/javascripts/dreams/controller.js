@@ -7,3 +7,6 @@ DreamsController.prototype.updateDream = function(eventTarget){
   DreamCatcher.send({data: Obj.fromForm(eventTarget),
                     callback: DreamView.showUpdatedDream});
 };
+DreamsController.prototype.getNewDreamForm = function(){
+  DreamCatcher.send({callback: DreamView.showNewDreamForm});
+};

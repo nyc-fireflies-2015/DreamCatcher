@@ -6,4 +6,7 @@ $(document).ready(function(){
   Binder.bind({event: "submit",
                 selector: "[data-form=new] form",
                 callback: ctrl.postDream });
+  Binder.bind({event: "click",
+                selector: "[data-link=add-dream]",
+                callback: ctrl.getNewDreamForm });
 });

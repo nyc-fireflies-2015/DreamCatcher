@@ -12,3 +12,8 @@ DreamView.showUpdatedDream = function(el, updatedDreamInfo){
   $(dream).find("[data-div=info]")
   .html(updatedDreamInfo)
 };
+DreamView.showNewDreamForm = function(){
+  $("[data-form=new]").fadeIn("slow");
+  $("[data-link=add-dream]").hide();
+  $(".trend-river").hide();
+};
