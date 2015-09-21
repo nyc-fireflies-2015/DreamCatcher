@@ -38,7 +38,7 @@ class DreamsController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html { render "edit" }
+      format.html { render partial: "edit", locals: { dream: @dream } }
       format.js { render "edit.js.erb" }
     end
   end
@@ -52,7 +52,7 @@ class DreamsController < ApplicationController
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
-        format.html { render "edit" }
+        format.html { render partial: "edit", locals: { dream: @dream } }
         format.js { render :file => "layouts/errors.js.erb" }
       end
     end
