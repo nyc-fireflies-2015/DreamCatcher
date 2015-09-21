@@ -44,7 +44,7 @@ RSpec.describe DreamersController, type: :controller do
   describe "GET #edit" do
     it "renders the :edit view when logged in" do
       get :edit, id: @dreamer
-      expect(response).to render_template :edit
+      expect(response).to render_template partial: "dreamers/_edit"
     end
 
     it "located the requested @question" do

@@ -23,8 +23,6 @@ describe DreamsController do
         expect(response).to render_template :index
       end
 
-      it "populates an array of all dreams" do
-      end
     end
   end
 
@@ -111,12 +109,13 @@ describe DreamsController do
     it "saves the new valid dream" do
       expect{
         post :create, dream: FactoryGirl.attributes_for(:dream)
-        }.to change(Dream,:count).by(1)
+      }.to change(Dream,:count).by(1)
     end
+
     it "does not save new invalid dream" do
       expect{
         post :create, dream: @dreamer_attributes.merge(title: nil)
-        }.to_not change(Dream,:count)
+      }.to_not change(Dream,:count)
     end
 
     it "redirects to dreams index if valid" do
@@ -137,10 +136,11 @@ describe DreamsController do
     end
 
     it "updates the dream if valid" do
-      put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: "title", story: "title story")
+      attributes = FactoryGirl.attributes_for(:dream)
+      put :update, id: @dream, dream: attributes
       @dream.reload
-      expect(@dream.title).to eq("title")
-      expect(@dream.story).to eq("title story")
+      expect(@dream.title).to eq(attributes[:title])
+      expect(@dream.story).to eq(attributes[:story])
     end
     it "does not update the dream if invalid" do
       put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: nil, story: "title story")
