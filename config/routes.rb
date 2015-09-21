@@ -7,13 +7,14 @@ Rails.application.routes.draw do
   get '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
 
   resources :dreamers, except: [:index, :show, :new, :destroy]
+  get '/dreamers/:id/setting' => 'dreamers#setting', as: 'setting'
   get '/profile/:id' => 'dreamers#show', as: 'profile'
   get '/signup' => 'dreamers#new', as: 'signup'
   get '/welcome' => 'welcome#index', as: 'welcome'
   get '/search' => 'welcome#search'
 
-  get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
+  get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
 
   resources :steps, except: [:destroy, :index]
