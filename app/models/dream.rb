@@ -5,6 +5,26 @@ class Dream < ActiveRecord::Base
 
   validates_presence_of :story, :title
 
+  def favorite_by(dreamer)
+    Favorite.where(dream: self, fan: dreamer)
+  end
+
+  def favorite?(dreamer)
+    !!Favorite.where(dream: self, fan: dreamer)
+  end
+
+  def decision_clarity=(decision_clarity)
+    write_attribute(:decision_clarity?, decision_clarity)
+  end
+
+  def consciousness_clarity=(consciousness_clarity)
+    write_attribute(:consciousness_clarity?, consciousness_clarity)
+  end
+
+  def dream_state_clarity=(dream_state_clarity)
+    write_attribute(:dream_state_clarity?, dream_state_clarity)
+  end
+
   def timestamp
     seconds = (Time.now - self.created_at).to_i
     minutes = seconds/60

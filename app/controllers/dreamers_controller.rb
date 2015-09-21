@@ -6,25 +6,24 @@ class DreamersController < ApplicationController
   end
 
   def show
-    @awareness_dreams = find_awareness_dreams(@dreamer)
-    @free_decision_dreams = find_decision_making_dreams(@dreamer)
-    @vivid_dreams = find_vivid_dreams(@dreamer)
+    @awareness_dreams = @dreamer.awareness_dreams
+    @free_decision_dreams = @dreamer.decision_making_dreams
+    @vivid_dreams = @dreamer.vivid_dreams
     @num_of_dreams = @dreamer.dreams.count
   end
 
   def edit
     respond_to do |format|
-      format.html { render "edit" }
+      format.html { render partial: "edit", locals: { dreamer: @dreamer } }
       format.js { render "edit.js.erb" }
     end
   end
 
   def create
-    dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png").merge(
-      recipe: Recipe.default))
+    dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png", recipe: Recipe.default))
     if dreamer.save
       session[:dreamer_id] = dreamer.id
-      redirect_to root_path, notice: "Account Has Created!!"
+      redirect_to root_path, notice: "Account has been created!!"
     else
       flash[:error] = dreamer.errors.full_messages
       redirect_to signup_path
@@ -53,19 +52,7 @@ class DreamersController < ApplicationController
   end
 
   def find_dreamer
-    @dreamer = Dreamer.find_by(id: params[:id])
-  end
-
-  def find_vivid_dreams(dreamer)
-    dreamer.dreams.all.where('"consciousness_clarity?" = true')
-  end
-
-  def find_awareness_dreams(dreamer)
-    dreamer.dreams.all.where('"dream_state_clarity?" = true')
-  end
-
-  def find_decision_making_dreams(dreamer)
-    dreamer.dreams.all.where('"decision_clarity?" = true')
+    @dreamer = Dreamer.find(params[:id])
   end
 
 end

@@ -5,19 +5,20 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(comment_params.merge(dreamer_id: current_dreamer.id))
+    dream = Dream.find(comment_params[:dream_id])
+    comment = Comment.new(comment_params.merge(dreamer: current_dreamer, dream: dream))
     if comment.save
-      redirect_to dream_path(comment_params[:dream_id])
+      redirect_to dream_path(dream)
     else
       flash[:error] = comment.errors.full_messages
-      redirect_to dream_path(comment_params[:dream_id])
+      redirect_to dream_path(dream)
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :dreamer_id, :dream_id)
+    params.require(:comment).permit(:content, :dreamer, :dream_id)
   end
 
 end

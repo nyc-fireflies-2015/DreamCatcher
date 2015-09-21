@@ -5,12 +5,12 @@
     <div class="right">
       posted <%= dream.timestamp %> ago
     </div>
-      <div class="favorites">
+      <div class="favorites" data-div="favorite" data-div="<%= "hidden" unless dream.favorite?(current_dreamer) %>" >
         <div data-favorite="new">
-      <%= render partial: "favorite", locals: {dream: dream} %>
+      <%= render partial: "favorites/favorite", locals: {dream: dream} %>
     </div>
-    <div data-favorite="destroy">
-    <%= render partial: "unfavorite", locals: {dream: dream} %>
+    <div data-favorite="destroy" data-div="<%= "hidden" if dream.favorite?(current_dreamer)%>" >
+    <%= render partial: "favorites/un_favorite", locals: {dream: dream} %>
   </div>
   </div>
   </div>

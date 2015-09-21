@@ -1,15 +1,14 @@
 class ApplicationController < ActionController::Base
   include Ransack::Helpers::FormHelper
   helper_method :current_dreamer
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  helper_method :calculate_lucidity
   protect_from_forgery with: :exception
   before_filter :set_query
   before_action :clear_errors
   layout proc { false if request.xhr? }
 
   def authenticate_dreamer
-    redirect_to root_path if !session[:dreamer_id]
+    redirect_to root_path unless current_dreamer
   end
 
   def clear_errors
@@ -26,11 +25,10 @@ class ApplicationController < ActionController::Base
 
   def calculate_lucidity(dream)
     lucidity_rating = 0
-    lucidity_rating += 1 if dream.consciousness_clarity? == true
-    lucidity_rating += 1 if dream.dream_state_clarity? == true
-    lucidity_rating += 1 if dream.decision_clarity? == true
+    lucidity_rating += 1 if dream.consciousness_clarity?
+    lucidity_rating += 1 if dream.dream_state_clarity?
+    lucidity_rating += 1 if dream.decision_clarity?
     return lucidity_rating
   end
 
-  helper_method :calculate_lucidity
 end

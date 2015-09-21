@@ -1,0 +1,7 @@
+$("[data-form=favorite]").on("ajax:success", function(event){
+  var dream = $(event.target).closest("[data-div=favorite]");
+  $(dream)
+  .find("[data-favorite=destroy]").show();
+  $(dream)
+  .find("[data-favorite=new]").hide();
+});
