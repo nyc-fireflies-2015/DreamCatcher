@@ -1,6 +1,5 @@
 class StepsController < ApplicationController
-before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
-
+before_action :find_step, except: [:index, :new, :create]
   def index
     @steps = current_dreamer.steps
     @new_step = Step.new
@@ -54,7 +53,7 @@ before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
   def add_step
     current_dreamer.steps << @step
     respond_to do |format|
-      format.html { redirect_to recipe_path(current_dreamer.recipe) }
+      format.html { redirect_to :back }
       format.js { render "step.js.erb" }
     end
   end
