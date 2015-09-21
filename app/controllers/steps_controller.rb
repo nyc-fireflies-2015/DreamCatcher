@@ -31,10 +31,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def edit
     redirect_to :back unless current_dreamer == @step.creator
-    respond_to do |format|
-      format.html { render partial: "edit", locals: {step: @step} }
-      format.js { render "edit.js.erb" }
-    end
+    render partial: "edit", locals: {step: @step} 
   end
 
   def update
