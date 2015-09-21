@@ -1,10 +1,10 @@
 function DreamsController(){}
 DreamsController.prototype.postDream = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm(eventTarget),
+  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
                     callback: DreamView.showNewDream});
 };
 DreamsController.prototype.updateDream = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm(eventTarget),
+  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
                     callback: DreamView.showUpdatedDream,
                     params: eventTarget});
 };

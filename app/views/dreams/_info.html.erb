@@ -3,7 +3,7 @@
     <%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
 
     <div class="right">
-      posted <%= dream.timestamp %> ago
+      posted <%= elapsed_time(dream.created_at) %> ago
     </div>
     <div class="favorites" data-div="favorite">
       <div data-favorite="new" data-div="<%= "hidden" if @dream.favorite?(current_dreamer) %>">

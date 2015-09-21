@@ -8,12 +8,17 @@ Binder.bind = function(args){
 
 
 var Obj = {};
-Obj.fromForm = function(form){
-   var formData = {};
-   formData.type = $(form).attr("method");
-   formData.url = $(form).attr("action");
-   formData.data = $(form).serialize();
-   return formData;
+Obj.fromForm = function(args){
+   if(args.type === undefined){
+      args.type = $(args.form).attr("method");
+    } 
+   if(args.url === undefined){
+      args.url = $(args.form).attr("action");
+   }
+   if(args.data === undefined){
+      args.data = $(args.form).serialize();
+   }
+   return args;
 };
 Obj.fromLink = function(link){
   return $(link).attr("href");
@@ -34,6 +39,6 @@ DreamCatcher.send = function(args){
     args.callback(args.params, element);
   });
   if(args.data === undefined){
-    args.callback(args.params)
+    args.callback(args.params);
   }
 };

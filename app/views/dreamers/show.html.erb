@@ -5,7 +5,7 @@
 <p>
   <h1 class="center">
     <% if @dreamer == current_dreamer %>
-      <%= link_to image_tag("edit-icon.png", class: "edit-icon"), edit_dreamer_path(current_dreamer), remote: true %>
+    <a><img data-link="edit-profile" class="edit-icon" src="<%=image_path("edit-icon.png")%>"/></a>
     <% end %>
     <%= @dreamer.username %>'s Profile
   </h1>

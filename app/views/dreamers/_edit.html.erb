@@ -1,6 +1,6 @@
 <h1>Edit Profile</h1>
 
-<%= form_for dreamer, remote: true do |f| %>
+<%= form_for dreamer, url: dreamer_path, method: "PUT", data: {form: "dreamer"} do |f| %>
   <%= f.text_field :email, placeholder: "email" %>
   <%= f.text_field :avatar_url, placeholder: "avatar url" %>
   <%= f.password_field :password, placeholder: "password", data: {field: "password"} %>
