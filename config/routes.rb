@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :dreams
   resources :comments, except: [:show]
   post '/favorite/:dream_id' => 'favorites#create', as: 'favorite'
-  get '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
+  delete '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
 
   resources :dreamers, except: [:index, :show, :new, :destroy]
   get '/dreamers/:id/setting' => 'dreamers#setting', as: 'setting'

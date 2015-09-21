@@ -8,11 +8,11 @@ class Dream < ActiveRecord::Base
   scope :popular, -> {order('favorites_count DESC').limit(10)}
 
   def favorite_by(dreamer)
-    Favorite.where(dream: self, fan: dreamer)
+    favorites.where(fan: dreamer)
   end
 
   def favorite?(dreamer)
-    !!Favorite.where(dream: self, fan: dreamer)
+    favorites.where(fan: dreamer).any?
   end
 
   def timestamp

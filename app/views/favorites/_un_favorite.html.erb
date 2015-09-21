@@ -1,1 +1,1 @@
-<%= link_to image_tag("fav-icon.png", class: "fav-icon"), unfavorite_path(dream), data: {remote: true, form: "unfavorite" } %>
+<a><img data-href="<%=unfavorite_path(dream)%>" data-form="unfavorite" data-method="delete" class="fav-icon" src="<%=image_path("unfav-icon.png")%>"/></a>

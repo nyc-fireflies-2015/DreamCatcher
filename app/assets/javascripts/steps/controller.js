@@ -1,4 +1,4 @@
-StepsController = function(){}
+function StepsController(){};
 StepsController.prototype.getNewDreamForm = function(eventTarget){
   DreamCatcher.send({callback: StepView.showNewDreamForm,
                     params: eventTarget});
