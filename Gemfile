@@ -16,6 +16,7 @@ gem 'pry'
 gem 'going_postal'
 gem 'ransack'
 gem 'bcrypt', '~> 3.1.7'
+gem 'mailboxer'
 
 group :development, :test do
   gem 'simplecov', :require => false
