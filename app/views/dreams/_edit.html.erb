@@ -1,9 +1,5 @@
 <div data-div="dream-form">
-<h1>Edit Dream</h1>
+  <h2>Edit Dream</h2>
 
-<%= render partial: "form", locals: {dream: dream} %>
-
-<%= form_for dream, method: "Delete", data: { dream: "delete"} do |f| %>
-  <%= f.submit "Delete" %>
-<% end %>
+  <%= render "form" %>
 </div>

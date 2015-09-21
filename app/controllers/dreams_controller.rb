@@ -4,7 +4,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.order('created_at DESC')
-    @new_dream = Dream.new
+    @dream = Dream.new
     @popular_dreams = Dream.popular
     redirect_to welcome_path unless current_dreamer
   end
@@ -28,12 +28,12 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update_attributes(dream_params)
-      render partial: "info", locals: {dream: @dream}
+      redirect_to @dream
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
-        format.html { render partial: "edit", locals: { dream: @dream } }
-        format.js { render :file => "layouts/errors.js.erb" }
+        redirect_to edit_dream_path(@dream)
+        format.js { render file: "layouts/errors.js.erb" }
       end
     end
   end
@@ -41,8 +41,9 @@ class DreamsController < ApplicationController
   def destroy
     unless @dream.destroy
       flash[:error] = @dream.errors.full_messages
+      render nothing: true
     end
-    render nothing: true
+    redirect_to root_path
   end
 
   private

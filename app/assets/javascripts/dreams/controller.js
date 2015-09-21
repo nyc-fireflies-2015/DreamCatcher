@@ -15,8 +15,3 @@ DreamsController.prototype.getEditDreamForm = function(eventTarget){
   DreamCatcher.send({callback: DreamView.showEditDreamForm,
                       params: eventTarget});
 };
-DreamsController.prototype.destroyDream = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
-                      callback: DreamView.removeDream,
-                      params: eventTarget});
-};
