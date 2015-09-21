@@ -7,7 +7,7 @@
 <p>
   <% if @dream.dreamer == current_dreamer %>
     <%= link_to "Edit", edit_dream_path(@dream), data: { link: "edit-dream" } %><br>
-    <%= link_to "Delete", dream_path(@dream), method: "delete", data: { dream: "delete" } %>
+    <%= link_to "Delete", dream_path(@dream), method: "delete" %>
   <% end %>
 </p>
 
