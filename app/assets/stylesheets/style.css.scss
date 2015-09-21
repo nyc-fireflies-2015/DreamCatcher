@@ -1,8 +1,13 @@
+body {
+  background-image:url("dream_catcher_bg.gif") !important ;
+}
+
 main {
   width: 50%;
   padding: 1em;
   font-family: 'Inconsolata', sans-serif;
   min-height: 30em;
+  background: #FFF;
 }
 
 .title-area {
@@ -22,7 +27,7 @@ main {
 
 nav {
   a {
-    border: 1px solid #999;
+    border-left: 1px solid #999;
   }
 }
 
@@ -54,7 +59,6 @@ sub {
 
 .dream-river, .trend-river,
 .popular-steps-river, .recipe-steps-river {
-  border: 1px solid #999;
   height: 21.4em;
   overflow: scroll;
   text-align: left;
@@ -77,7 +81,8 @@ sub {
 footer {
   font-size: 0.7em;
   padding: 1em;
-  width: 100%;
+  width: 89.2em;
+  background: #FFF;
 }
 
 .icon {
