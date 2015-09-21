@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   include Ransack::Helpers::FormHelper
   protect_from_forgery with: :exception
   before_filter :set_query
-  before_action :clear_errors
   helper_method :current_dreamer
   helper_method :calculate_lucidity
   layout proc { false if request.xhr? }
