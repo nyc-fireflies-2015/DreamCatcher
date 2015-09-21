@@ -14,9 +14,11 @@
 posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <%= image_tag(@dream.dreamer.avatar_url, class: "icon") %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
 <hr>
-<p><%= @dream.story %></p>
+<p>
+  <%= @dream.story %>
+</p>
 
-<h3><%= @dream.comments.count %> Comments</h3>
+  <h3><%= @dream.comments.count %> Comments</h3>
 
 <% if @dream.comments.empty? %>
   <p>This dream currently has no comments.<br>

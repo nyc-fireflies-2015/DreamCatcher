@@ -21,19 +21,19 @@ class DreamsController < ApplicationController
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
         format.html { redirect_to new_dream_path }
-        format.js { render :file => "layouts/errors.js.erb" }
+        format.js { render file: "layouts/errors.js.erb" }
       end
     end
   end
 
   def update
     if @dream.update_attributes(dream_params)
-      render partial: "info", locals: {dream: @dream}
+      redirect_to dream_path(@dream)
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
-        format.html { render partial: "edit", locals: { dream: @dream } }
-        format.js { render :file => "layouts/errors.js.erb" }
+        redirect_to edit_dream_path(@dream)
+        format.js { render file: "layouts/errors.js.erb" }
       end
     end
   end
