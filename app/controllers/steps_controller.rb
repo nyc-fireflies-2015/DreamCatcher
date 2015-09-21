@@ -2,7 +2,7 @@ class StepsController < ApplicationController
 before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
 
   def index
-    @recipe = Recipe.find(params[:id])
+    @steps = current_dreamer.steps
     @new_step = Step.new
     @popular_steps = Step.top
     redirect_to welcome_path unless current_dreamer
