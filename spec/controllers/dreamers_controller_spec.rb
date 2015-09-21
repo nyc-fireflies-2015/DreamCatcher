@@ -41,18 +41,6 @@ RSpec.describe DreamersController, type: :controller do
     end
   end
 
-  describe "GET #edit" do
-    it "renders the :edit view when logged in" do
-      get :edit, id: @dreamer
-      expect(response).to render_template partial: "dreamers/_edit"
-    end
-
-    it "located the requested @question" do
-      get :edit, id: @dreamer
-      expect(assigns(:dreamer)).to eq(@dreamer)
-    end
-  end
-
   describe "PUT #update" do
     before :each do
       @dreamer = FactoryGirl.create(:dreamer, username: "username")
