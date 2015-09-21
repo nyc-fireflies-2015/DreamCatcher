@@ -1,6 +1,6 @@
 class StepsController < ApplicationController
 before_action :find_step, except: [:index, :new, :create]
-  def index
+  def recipe
     @creator = Dreamer.find(params[:id])
     @steps = @creator.steps
     @new_step = Step.new
