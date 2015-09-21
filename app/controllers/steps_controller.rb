@@ -21,10 +21,10 @@ before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
     end
   end
 
-  def edit_step
+  def edit
     redirect_to :back unless current_dreamer == @step.creator
     respond_to do |format|
-      format.html { render partial: "steps/edit" }
+      format.html { render partial: "edit", locals: {step: @step} }
       format.js { render "edit_step.js.erb" }
     end
   end
