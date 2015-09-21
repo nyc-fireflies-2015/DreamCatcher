@@ -132,30 +132,32 @@ describe DreamsController do
   describe "PATCH #update" do
     before :each do
       login(dreamer)
-      @dream = FactoryGirl.create(:dream, title: "something", story: "something story")
+      @dream = FactoryGirl.create(:dream)
+      @attributes = FactoryGirl.attributes_for(:dream)
+      @invalid_attributes = FactoryGirl.attributes_for(:invalid_dream)
     end
 
     it "updates the dream if valid" do
-      attributes = FactoryGirl.attributes_for(:dream)
-      put :update, id: @dream, dream: attributes
+      put :update, id: @dream, dream: @attributes
       @dream.reload
-      expect(@dream.title).to eq(attributes[:title])
-      expect(@dream.story).to eq(attributes[:story])
+      expect(@dream.title).to eq(@attributes[:title])
+      expect(@dream.story).to eq(@attributes[:story])
     end
     it "does not update the dream if invalid" do
-      put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: nil, story: "title story")
+      dream = Dream.create(@attributes)
+      put :update, id: dream, dream: @invalid_attributes
       @dream.reload
-      expect(@dream.title).to eq("something")
-      expect(@dream.story).to eq("something story")
+      expect(dream.title).to eq(@attributes[:title])
+      expect(dream.story).to eq(@attributes[:story])
     end
 
     it "redirects to dream/:id if valid" do
-      put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: "title", story: "title story")
+      put :update, id: @dream, dream: @attributes
       @dream.reload
       expect(response).to redirect_to dream_path(@dream)
     end
     it "re-renders :edit template if invalid" do
-      put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: nil, story: "title story")
+      put :update, id: @dream, dream: @invalid_attributes
       @dream.reload
       expect(response).to render_template partial: "dreams/_edit"
     end
