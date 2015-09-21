@@ -44,4 +44,12 @@ class Dream < ActiveRecord::Base
     end
   end
 
+  def calculate_lucidity
+    lucidity_rating = 0
+    lucidity_rating += 1 if self.consciousness_clarity?
+    lucidity_rating += 1 if self.dream_state_clarity?
+    lucidity_rating += 1 if self.decision_clarity?
+    return lucidity_rating
+  end
+
 end

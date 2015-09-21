@@ -26,11 +26,4 @@ class ApplicationController < ActionController::Base
     @steps = Step.search(description_cont: @query).result
   end
 
-  def calculate_lucidity(dream)
-    lucidity_rating = 0
-    lucidity_rating += 1 if dream.consciousness_clarity?
-    lucidity_rating += 1 if dream.dream_state_clarity?
-    lucidity_rating += 1 if dream.decision_clarity?
-    return lucidity_rating
-  end
 end
