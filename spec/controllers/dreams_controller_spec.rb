@@ -62,7 +62,7 @@ describe DreamsController do
 
     it "does not save new invalid dream" do
       expect{
-        post :create, dream: @dreamer_attributes.merge(title: nil)
+        post :create, dream: @dreamer_attributes.merge(title: nil), format: :js
       }.to_not change(Dream,:count)
     end
 
@@ -72,8 +72,8 @@ describe DreamsController do
     end
 
     it "re-directs to new_dream_path if invalid" do
-      post :create, dream: @dreamer_attributes.merge(title: nil)
-      expect(response).to redirect_to new_dream_path
+      post :create, dream: @dreamer_attributes.merge(title: nil), format: :js
+      expect(response).to render_template "shared/errors.js.erb"
     end
   end
 
@@ -94,7 +94,7 @@ describe DreamsController do
 
     it "does not update the dream if invalid" do
       dream = Dream.create(@attributes)
-      put :update, id: dream, dream: @invalid_attributes
+      put :update, id: dream, dream: @invalid_attributes, format: :js
       @dream.reload
       expect(dream.title).to eq(@attributes[:title])
       expect(dream.story).to eq(@attributes[:story])
@@ -103,13 +103,13 @@ describe DreamsController do
     it "redirects to dream/:id if valid" do
       put :update, id: @dream, dream: @attributes
       @dream.reload
-      expect(response).to render_template(partial: "dreams/_info")
+      expect(response).to redirect_to @dream
     end
 
     it "re-renders :edit template if invalid" do
-      put :update, id: @dream, dream: @invalid_attributes
+      put :update, id: @dream, dream: @invalid_attributes, format: :js
       @dream.reload
-      expect(response).to render_template(partial: "dreams/_edit")
+      expect(response).to render_template "shared/errors.js.erb"
     end
 
   end
