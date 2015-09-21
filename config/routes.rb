@@ -19,11 +19,6 @@ Rails.application.routes.draw do
   resources :step, except: [:destroy]
   post '/steps/:id' => 'steps#add_step', as: 'add_step'
   patch '/steps/:id/remove' => 'steps#remove_step', as: 'remove_step'
-  # get '/steps/new' => 'recipes#new_step', as: 'new_step'
-  # post '/recipes/steps' => 'recipes#create_step', as: 'create_step'
-  # get '/recipes/:id' => 'recipes#show', as: 'recipe'
-  # get '/steps/:id/edit' => 'recipes#edit_step', as: 'edit_step'
-  # patch '/steps/:id' => 'recipes#update', as: 'update_recipe_step'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
