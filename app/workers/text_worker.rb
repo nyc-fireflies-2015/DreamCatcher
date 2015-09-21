@@ -1,8 +1,11 @@
+require 'twilio-ruby'
+require 'sidekiq'
+require 'sidekiq/web'
 class TextWorker
   include Sidekiq::Worker
 
   def perform(message, number)
-    binding.pry
+
     number = number
     message = message
     account_sid = 'AC40f31b05ec16c2c813436c84ada30a6f'

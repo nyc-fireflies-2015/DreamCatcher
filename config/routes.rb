@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   root 'dreams#index'
 
@@ -38,5 +39,5 @@ Rails.application.routes.draw do
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
-
+  mount Sidekiq::Web, at: '/sidekiq'
 end

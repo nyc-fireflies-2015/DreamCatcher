@@ -3,6 +3,8 @@ gem 'rspec_junit_formatter', '0.2.2'
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sidekiq'
+gem 'slim'
+gem 'sinatra', require: false
 gem 'twilio-rb'
 gem 'twilio-ruby'
 gem 'foundation-rails'
