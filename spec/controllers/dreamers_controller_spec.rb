@@ -70,16 +70,16 @@ RSpec.describe DreamersController, type: :controller do
       it "redirects to the updated dreamer profile" do
         session[:dreamer_id] = @dreamer.id
         put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, avatar_url: "avatar.png")
-        expect(response).to redirect_to profile_path(@dreamer)
+        expect(response).to render_template "dreamers/_stats"
       end
     end
 
     context "invalid attributes" do
       it "does not change dreamer's attributes" do
-        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: nil)
+        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: nil), format: :js
         @dreamer.reload
         expect(@dreamer.username).to eq("username")
-        expect(response).to redirect_to edit_dreamer_path(@dreamer)
+        expect(response).to render_template "shared/errors.js.erb"
       end
     end
   end

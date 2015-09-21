@@ -34,8 +34,7 @@ class DreamersController < ApplicationController
     else
       flash[:error] = @dreamer.errors.full_messages
       respond_to do |format|
-        format.html { render nothing: true }
-        format.js { render :file => "layouts/errors.js.erb" }
+        format.js { render :file => "shared/errors.js.erb" }
       end
     end
   end
