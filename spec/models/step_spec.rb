@@ -6,7 +6,7 @@ describe Step do
       should belong_to(:creator).class_name(Dreamer)
     end
     it "have many dreamers" do
-      should have_may(:dreamers).through(:recipes)
+      should have_many(:dreamers).through(:recipes)
     end
   end
 end
