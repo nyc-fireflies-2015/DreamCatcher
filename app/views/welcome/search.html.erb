@@ -6,36 +6,42 @@
     Your query might be too specific.</p>
 <% else %>
   <div class="search">
-    <% if !@dreams.empty? %>
+    <ul>
       <h3 class="left search">Dreams</h3>
       <hr>
-      <ul>
-        <% @dreams.each do |dream| %>
-          <li>
-            <div class="left">
-              <%= link_to dream.title, dream_path(dream) %>
-            </div>
-            <sub class="right">posted <%= dream.timestamp %></sub>
-            <p><%= dream.story %></p>
-          </li>
-        <% end %>
-    <% end %>
-
-      <% if !@dreamers.empty? %>
-        <h3 class="left">Dreamers</h3>
-        <hr>
-          <% @dreamers.each do |dreamer| %>
-            <li><%= link_to dreamer.username, profile_path(dreamer) %></li>
-          <% end %>
+      <% if @dreams.empty? %>
+        <p>There are no dreams that match your search.</p>
       <% end %>
 
-      <% if !@steps.empty? %>
-        <h3 class="left">Recipes</h3>
-        <hr>
-          <% @steps.each do |step| %>
-            <li><%= link_to step.description, step_path(step) %></li>
-          <% end %>
-        </ul>
+      <% @dreams.each do |dream| %>
+        <li>
+          <div class="left">
+            <%= link_to dream.title, dream_path(dream) %>
+          </div>
+          <sub class="right">posted <%= dream.timestamp %></sub>
+          <p><%= dream.story %></p>
+        </li>
       <% end %>
-    </div>
+
+      <h3 class="left">Dreamers</h3>
+      <hr>
+      <% if @dreamers.empty? %>
+        <p>There are no dreamers that match your search.</p>
+      <% end %>
+
+      <% @dreamers.each do |dreamer| %>
+        <li><%= link_to dreamer.username, profile_path(dreamer) %></li>
+      <% end %>
+
+      <h3 class="left">Recipes</h3>
+      <hr>
+      <% if @steps.empty? %>
+        <p>There are no recipes that match your search.</p>
+      <% end %>
+
+      <% @steps.each do |step| %>
+        <li><%= link_to step.description, step_path(step) %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
