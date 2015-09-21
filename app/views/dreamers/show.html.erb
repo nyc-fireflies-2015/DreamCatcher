@@ -21,7 +21,7 @@
   <p>This dreamer has not registered any dreams yet.</p>
 <% else %>
   <% @dreamer.top_dreams.each do |dream| %>
-    <%= dream.created_at.strftime("%B %d %Y") %>:
+    <%= display_date(dream.created_at) %>:
     <%= link_to dream.title, dream_path(dream) %>
     Lucid Rating: <%= dream.calculate_lucidity %>
     <br>

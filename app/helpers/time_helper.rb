@@ -17,4 +17,8 @@ module TimeHelper
     end
   end
 
+  def display_date(time)
+    time.strftime("%B %d %Y")
+  end
+
 end
