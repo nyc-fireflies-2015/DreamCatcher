@@ -1,10 +1,10 @@
 function DreamsController(){}
 DreamsController.prototype.postDream = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm(eventTarget),
+  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
                     callback: DreamView.showNewDream});
 };
 DreamsController.prototype.updateDream = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm(eventTarget),
+  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
                     callback: DreamView.showUpdatedDream,
                     params: eventTarget});
 };
@@ -16,7 +16,7 @@ DreamsController.prototype.getEditDreamForm = function(eventTarget){
                       params: eventTarget});
 };
 DreamsController.prototype.destroyDream = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm(eventTarget),
+  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
                       callback: DreamView.removeDream,
                       params: eventTarget});
 };
