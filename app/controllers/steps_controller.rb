@@ -1,6 +1,13 @@
 class StepsController < ApplicationController
 before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
 
+  def index
+    @recipe = Recipe.find(params[:id])
+    @new_step = Step.new
+    @popular_steps = Step.top
+    redirect_to welcome_path unless current_dreamer
+  end
+
   def new
     @step = Step.new
     respond_to do |format|
@@ -17,7 +24,7 @@ before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
     end
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js { render "save_new_step.js.erb" }
+      format.js { render "create.js.erb" }
     end
   end
 
@@ -25,15 +32,15 @@ before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
     redirect_to :back unless current_dreamer == @step.creator
     respond_to do |format|
       format.html { render partial: "edit", locals: {step: @step} }
-      format.js { render "edit_step.js.erb" }
+      format.js { render "edit.js.erb" }
     end
   end
 
   def update
     if @step.update_attributes(step_params)
       respond_to do |format|
-        format.html { redirect_to recipe_path(current_dreamer.recipe) }
-        format.js { render "save_step.js.erb"}
+        format.html { redirect_to :back }
+        format.js { render "update.js.erb"}
       end
     else
       flash[:error] = @step.errors.full_messages
