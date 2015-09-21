@@ -3,7 +3,7 @@ before_action :find_step, except: [:recipe, :new, :create]
   def recipe
     @creator = Dreamer.find(params[:id])
     @steps = @creator.steps
-    @new_step = Step.new
+    @step = Step.new
     @popular_steps = Step.top
     redirect_to welcome_path unless current_dreamer
     render "index"
@@ -25,7 +25,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def edit
     redirect_to :back unless current_dreamer == @step.creator
-    render partial: "edit", locals: {step: @step} 
+    render partial: "edit", locals: {step: @step}
   end
 
   def update

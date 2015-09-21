@@ -1,17 +1,20 @@
-<li data-li="step">
-  <div data-form="edit-step">
-    <%= render partial: "edit", locals: {step: step} %>
-  </div>
-  <div data-div="step-info">
-    <%= render partial: "show", locals: {step: step} %>
-  <% if step.creator == current_dreamer %>
-    <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" } %>
+<% @steps.each do |step| %>
+  <li data-li="step">
+    <div data-form="edit-step">
+      <%= render partial: "edit", locals: {step: step} %>
+    </div>
+
+    <div data-div="step-info">
+      <%= render partial: "show", locals: {step: step} %>
+    <% if step.creator == current_dreamer %>
+      <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" } %>
+      <% end %>
+    <% if step.dreamers.includes(current_dreamer) %>
+      <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"} do |f| %>
+        <%= f.submit "Delete" %>
+      <% end %>
     <% end %>
-  <% if step.dreamers.includes(current_dreamer) %>
-    <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"} do |f| %>
-      <%= f.submit "Delete" %>
-    <% end %>
-  <% end %>
-  </div>
-  <hr>
-</li>
+    </div>
+    <hr>
+  </li>
+<% end %>
