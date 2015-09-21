@@ -11,10 +11,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def new
     @step = Step.new
-    respond_to do |format|
-      format.html { render partial: "new", locals: {step: @step} }
-      format.js { render "new.js.erb" }
-    end
+    render :nothing => true, :status => 200
   end
 
   def create
@@ -23,26 +20,17 @@ before_action :find_step, except: [:recipe, :new, :create]
     unless @step.save
       flash[:error] = @step.errors.full_messages
     end
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js { render "create.js.erb" }
-    end
+    render @step
   end
 
   def edit
     redirect_to :back unless current_dreamer == @step.creator
-    respond_to do |format|
-      format.html { render partial: "edit", locals: {step: @step} }
-      format.js { render "edit.js.erb" }
-    end
+    render partial: "edit", locals: {step: @step} 
   end
 
   def update
     if @step.update_attributes(step_params)
-      respond_to do |format|
-        format.html { redirect_to :back }
-        format.js { render "update.js.erb"}
-      end
+      render @step
     else
       flash[:error] = @step.errors.full_messages
       respond_to do |format|
@@ -66,10 +54,8 @@ before_action :find_step, except: [:recipe, :new, :create]
     else
       current_dreamer.steps.delete(@step)
     end
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js { render "remove_step.js.erb" }
-    end
+    redirect_to :back unless request.xhr?
+    render :nothing => true, :status => 200
   end
 
   private

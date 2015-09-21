@@ -4,14 +4,14 @@
   </div>
   <div data-div="step-info">
     <%= render partial: "show", locals: {step: step} %>
-  </div>
   <% if step.creator == current_dreamer %>
-    <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" }, remote: true %>
+    <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" } %>
     <% end %>
   <% if step.dreamers.includes(current_dreamer) %>
-    <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"}, remote: true do |f| %>
+    <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"} do |f| %>
       <%= f.submit "Delete" %>
     <% end %>
   <% end %>
+  </div>
   <hr>
 </li>
