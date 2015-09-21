@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :find_dream
 
   def create
-    @favorite = Favorite.create(dream: @dream, fan: current_dreamer)
+    Favorite.create(dream: @dream, fan: current_dreamer)
     @dream.save
     respond_to do |format|
       format.js { render "favorite.js.erb" }
@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @dream.favorite_by(current_dreamer).destroy
+    @dream.favorite_by(current_dreamer).destroy_all
     @dream.save
     respond_to do |format|
       format.js { render "un_favorite.js.erb" }
