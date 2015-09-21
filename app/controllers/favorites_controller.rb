@@ -13,6 +13,8 @@ class FavoritesController < ApplicationController
 
   def destroy
     @dream.favorite_by(current_dreamer).destroy
+    @dream.favorites_count -= 1
+    @dream.save
     respond_to do |format|
       format.js { render "favorites/un_favorite.js.erb" }
     end
