@@ -3,7 +3,6 @@ class DreamersController < ApplicationController
 
   def new
     @dreamer = Dreamer.new
-    render partial: "new", locals: { dreamer: @dreamer }
   end
 
   def show

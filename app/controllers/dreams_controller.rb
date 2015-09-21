@@ -15,7 +15,7 @@ class DreamsController < ApplicationController
   def new
     @dream = Dream.new
     respond_to do |format|
-      format.html { render "new" }
+      format.html { render partial: "new", locals: { dream: @dream } }
       format.js { render "new.js.erb" }
     end
   end
