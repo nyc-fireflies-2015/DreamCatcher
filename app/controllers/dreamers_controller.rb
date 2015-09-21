@@ -6,10 +6,8 @@ class DreamersController < ApplicationController
   end
 
   def show
-    @awareness_dreams = @dreamer.awareness_dreams
-    @free_decision_dreams = @dreamer.decision_making_dreams
-    @vivid_dreams = @dreamer.vivid_dreams
-    @num_of_dreams = @dreamer.dreams.count
+    @dreams_count = @dreamer.dreams.count
+    @comments_count = @dreamer.comments.count
   end
 
   def edit

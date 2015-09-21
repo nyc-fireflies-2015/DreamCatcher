@@ -1,18 +1,11 @@
-<p>
-  <h1 class="center">
-    <% if current_dreamer == dreamer %>
-      <%= link_to image_tag("edit-icon.png", class: "edit-icon"), edit_dreamer_path(current_dreamer), remote: true %>
-    <% end %>
-    <%= dreamer.username %>'s Profile
-  </h1>
-</p>
-
 <%= image_tag("#{dreamer.avatar_url}", class: "left avatar") %>
 
 <div class="profile-container">
   <ul>
+    <li>Dreaming since: <%= dreamer.created_at.strftime("%B %d %Y")%></li>
     <li>Level: <%= dreamer.level %></li>
-    <li>Total Dreams: <%= @num_of_dreams %>
+    <li>Dreams: <%= @dreams_count %></li>
+    <li>Comments: <%= @comments_count %></li>
     <li>
       <% if dreamer.gender %>
       Gender: <%= dreamer.gender %>
@@ -28,7 +21,7 @@
       State: <%= dreamer.state %>
       <% end %>
     </li>
-    <li><%= link_to "Dream Recipe", recipe_path(dreamer.id) %></li>
+    <li><%= link_to "#{dreamer.username}'s Dream Recipe", steps_path %></li>
   </ul>
 </div>
 

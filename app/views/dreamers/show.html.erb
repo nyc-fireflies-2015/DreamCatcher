@@ -1,8 +1,18 @@
 <div data-form="profile">
   <%= render partial: "edit", locals: {dreamer: @dreamer} %>
 </div>
+
+<p>
+  <h1 class="center">
+    <% if @dreamer == current_dreamer %>
+      <%= link_to image_tag("edit-icon.png", class: "edit-icon"), edit_dreamer_path(current_dreamer), remote: true %>
+    <% end %>
+    <%= @dreamer.username %>'s Profile
+  </h1>
+</p>
+
 <div data-div="profile">
-  <%= render partial: "profile", locals: {dreamer: @dreamer} %>
+  <%= render partial: "stats", locals: {dreamer: @dreamer} %>
 </div>
 <hr>
 
@@ -15,9 +25,6 @@
     <button type="submit">Submit</button>
   <% end %>
 <%end%>
-
-<h3 class="subtitle">My Lucid Dreams</h3>
-  <%= render partial: "lucid_dreams", locals: {dreamer: @dreamer} %>
 
 <hr>
 <h3 class="subtitle">Recent Dreams</h3>
