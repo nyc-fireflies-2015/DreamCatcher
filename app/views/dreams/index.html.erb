@@ -9,8 +9,8 @@
   </div>
 
   <div class="trend-river">
-    <% Dream.popular.each do |dream| %>
-      <%=link_to dream.title, dream_path(dream) %>
+    <% @popular_dreams.each do |dream| %>
+       <%= link_to dream.title, dream_path(dream) %><br>
     <%end%>
   </div>
 </div>
