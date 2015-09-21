@@ -5,6 +5,8 @@ class Dream < ActiveRecord::Base
 
   validates_presence_of :story, :title
 
+  scope :popular, -> {order('favorites_count DESC').limit(10)}
+
   def favorite_by(dreamer)
     Favorite.where(dream: self, fan: dreamer)
   end
