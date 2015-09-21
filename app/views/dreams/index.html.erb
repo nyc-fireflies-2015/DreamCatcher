@@ -5,11 +5,13 @@
 
   <div class="center">
     <p><%= link_to 'Add New Dream', new_dream_path, class: "button", data: {link: "add-dream" }, remote: true %></p>
-    <h3>Trending</h3>
+    <h3>Popular Dreams</h3>
   </div>
 
   <div class="trend-river">
-    trending dreams go here...
+    <% Dream.popular.each do |dream| %>
+      <%=link_to dream.title, dream_path(dream) %>
+    <%end%>
   </div>
 </div>
 

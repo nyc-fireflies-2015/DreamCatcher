@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150920155141) do
     t.boolean  "consciousness_clarity?",             default: false
     t.boolean  "dream_state_clarity?",               default: false
     t.integer  "lucidity_rating",                    default: 0
+    t.integer  "favorites_count",                    default: 0
     t.integer  "dreamer_id"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
