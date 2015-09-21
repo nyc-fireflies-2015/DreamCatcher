@@ -91,11 +91,11 @@ footer {
   height: 2.5em;
 }
 
-.comment {
-  list-style-type: none;
+.comment, .search {
 
   li {
     padding: 1.5em;
+    list-style-type: none;
   }
 
   li:nth-child(even) {

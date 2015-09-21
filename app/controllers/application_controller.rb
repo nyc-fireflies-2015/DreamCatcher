@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   include Ransack::Helpers::FormHelper
-  helper_method :current_dreamer
-  helper_method :calculate_lucidity
   protect_from_forgery with: :exception
   before_filter :set_query
   before_action :clear_errors
+  helper_method :current_dreamer
+  helper_method :calculate_lucidity
   layout proc { false if request.xhr? }
 
   def authenticate_dreamer
@@ -20,7 +20,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_query
-    @q = Dream.ransack(params[:q])
+    @query = params[:q]
+    @dreams = Dream.ransack(title_cont: @query).result
+    @dreamers = Dreamer.search(username_cont: @query).result
+    @recipes = Recipe.search(description_cont: @query).result
   end
 
   def calculate_lucidity(dream)
@@ -30,5 +33,4 @@ class ApplicationController < ActionController::Base
     lucidity_rating += 1 if dream.decision_clarity?
     return lucidity_rating
   end
-
 end
