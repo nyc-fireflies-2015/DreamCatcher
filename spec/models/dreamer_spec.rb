@@ -22,8 +22,5 @@ describe Dreamer do
     it "validates presence of email" do
       should validate_presence_of :email
     end
-    it "validates presence of zipcode" do
-      should validate_presence_of :zipcode
-    end
   end
 end

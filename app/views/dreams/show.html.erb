@@ -19,7 +19,8 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
             <%= image_tag(comment.dreamer.avatar_url, class: "icon") %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
           </div>
           <div class="right">
-            <%= comment.created_at.strftime("%B %d %Y") %>
+            <p><%= comment.created_at.strftime("%B %d %Y") %></p>
+            <p><%= link_to "Edit", edit_comment_path(comment) %></p>
           </div>
           <p><%= comment.content %></p>
         </li>

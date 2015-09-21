@@ -1,0 +1,7 @@
+<h6>Edit Comment</h6>
+
+<%= form_for @comment, method: "patch" do |f| %>
+  <%= f.hidden_field :dream_id, value: params[:id] %>
+  <%= f.text_field :content, placeholder: "add a comment" %>
+  <%= f.submit "Submit", class: "button" %>
+<% end %>
