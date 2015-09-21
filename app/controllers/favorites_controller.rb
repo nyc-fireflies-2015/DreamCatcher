@@ -4,17 +4,13 @@ class FavoritesController < ApplicationController
   def create
     Favorite.create(dream: @dream, fan: current_dreamer)
     @dream.save
-    respond_to do |format|
-      format.js { render "favorite.js.erb" }
-    end
+    render :nothing => true, :status => 200
   end
 
   def destroy
     @dream.favorite_by(current_dreamer).destroy_all
     @dream.save
-    respond_to do |format|
-      format.js { render "un_favorite.js.erb" }
-    end
+    render :nothing => true, :status => 200
   end
 
   private

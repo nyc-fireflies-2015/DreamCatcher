@@ -6,6 +6,7 @@ Binder.bind = function(args){
   });
 };
 
+
 var Obj = {};
 Obj.fromForm = function(form){
    var formData = {};
@@ -16,6 +17,12 @@ Obj.fromForm = function(form){
 };
 Obj.fromLink = function(link){
   return $(link).attr("href");
+};
+Obj.fromDCLink = function(link){
+  var linkData = {};
+  linkData.type = $(link).data("method");
+  linkData.url = $(link).data("href");
+  return linkData;
 };
 
 var DreamCatcher = {};
