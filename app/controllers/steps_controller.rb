@@ -63,10 +63,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     else
       current_dreamer.steps.delete(@step)
     end
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js { render "remove_step.js.erb" }
-    end
+    redirect_to :back unless request.xhr?
   end
 
   private
