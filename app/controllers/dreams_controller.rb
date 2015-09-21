@@ -20,8 +20,7 @@ class DreamsController < ApplicationController
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
-        format.html { redirect_to new_dream_path }
-        format.js { render :file => "layouts/errors.js.erb" }
+        format.js { render :file => "shared/errors.js.erb" }
       end
     end
   end
@@ -32,8 +31,7 @@ class DreamsController < ApplicationController
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
-        redirect_to edit_dream_path(@dream)
-        format.js { render file: "layouts/errors.js.erb" }
+        format.js { render file: "shared/errors.js.erb" }
       end
     end
   end
