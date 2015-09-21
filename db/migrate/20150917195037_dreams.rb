@@ -6,6 +6,7 @@ class Dreams < ActiveRecord::Migration
       t.boolean :consciousness_clarity?, default: false
       t.boolean :dream_state_clarity?, default: false
       t.integer :lucidity_rating, default: 0
+      t.integer :favorites_count, default: 0
       t.references :dreamer
 
       t.timestamps null: false
