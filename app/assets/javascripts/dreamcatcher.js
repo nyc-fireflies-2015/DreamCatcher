@@ -26,4 +26,7 @@ DreamCatcher.send = function(args){
   $.ajax(args.data).done(function(element){
     args.callback(element, args.params);
   });
+  if(args.data === undefined){
+    args.callback(args.params)
+  }
 };
