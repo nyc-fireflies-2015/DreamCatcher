@@ -16,10 +16,6 @@ class Dreamer < ActiveRecord::Base
   validates_presence_of :email, :username
   validates_uniqueness_of :username
 
-  def us_zipcode?
-    errors.add(:zipcode, "invalid. Please enter a valid US zipcode.") unless GoingPostal.postcode?(zipcode, "US")
-  end
-
   def top_dreams
     dreams.order('created_at DESC').limit(5)
   end
@@ -35,4 +31,11 @@ class Dreamer < ActiveRecord::Base
   def vivid_dreams
    dreams.where(dreamer: self, consciousness_clarity: true)
   end
+
+  private
+
+  def us_zipcode?
+    errors.add(:zipcode, "invalid. Please enter a valid US zipcode.") unless GoingPostal.postcode?(zipcode, "US")
+  end
+
 end
