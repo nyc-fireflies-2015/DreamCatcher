@@ -30,14 +30,11 @@ class DreamersController < ApplicationController
 
   def update
     if @dreamer.update_attributes(dreamer_params)
-      respond_to do |format|
-        format.html { redirect_to profile_path(@dreamer) }
-        format.js { render "save_profile.js.erb" }
-      end
+      render partial: "profile", locals: {dreamer: @dreamer}
     else
       flash[:error] = @dreamer.errors.full_messages
       respond_to do |format|
-        format.html { redirect_to edit_dreamer_path(@dreamer) }
+        format.html { render nothing: true }
         format.js { render :file => "layouts/errors.js.erb" }
       end
     end

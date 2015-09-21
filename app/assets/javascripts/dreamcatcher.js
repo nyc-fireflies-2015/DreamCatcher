@@ -34,6 +34,6 @@ DreamCatcher.send = function(args){
     args.callback(args.params, element);
   });
   if(args.data === undefined){
-    args.callback(args.params)
+    args.callback(args.params);
   }
 };
