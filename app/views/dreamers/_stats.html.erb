@@ -21,7 +21,7 @@
       State: <%= dreamer.state %>
       <% end %>
     </li>
-    <li><%= link_to "#{dreamer.username}'s Dream Recipe", steps_path %></li>
+    <li><%= link_to "#{dreamer.username}'s Dream Recipe", recipe_path(dreamer) %></li>
   </ul>
 </div>
 
