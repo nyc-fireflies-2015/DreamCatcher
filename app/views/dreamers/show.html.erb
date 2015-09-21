@@ -14,17 +14,6 @@
 <div data-div="profile">
   <%= render partial: "stats", locals: {dreamer: @dreamer} %>
 </div>
-<hr>
-
-<% if @dreamer == current_dreamer %>
-  <h3 class="subtitle">Set Up Dream Checks</h3>
-
-  <%= form_tag('/send_sms', method: 'POST') do %>
-    <input type="text" placeholder="enter number" name="number">
-    <input type="text" placeholder="enter message here" name="message">
-    <button type="submit">Submit</button>
-  <% end %>
-<%end%>
 
 <hr>
 <h3 class="subtitle">Recent Dreams</h3>
