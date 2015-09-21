@@ -14,14 +14,14 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
+    <%= render "shared/header" %>
+    <% if flash[:error] %>
+      <%= render partial: "shared/errors", locals: { errors: flash[:error] } %>
+    <% end %>
     <main class="center row">
       <%= yield %>
     </main>
-    <% if flash[:error] %>
-      <%= render partial: "layouts/errors", locals: { errors: flash[:error] } %>
-    <% end %>
-    <%= render "layouts/footer" %>
+    <%= render "shared/footer" %>
   </body>
 
 </html>
