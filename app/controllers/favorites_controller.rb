@@ -2,21 +2,18 @@ class FavoritesController < ApplicationController
   before_action :find_dream
 
   def create
-    @favorite = Favorite.create(dream: @dream, fan: current_dreamer)
-    binding.pry
-    @dream.favorites_count += 1
+    Favorite.create(dream: @dream, fan: current_dreamer)
     @dream.save
     respond_to do |format|
-      format.js { render "favorites/favorite.js.erb" }
+      format.js { render "favorite.js.erb" }
     end
   end
 
   def destroy
-    @dream.favorite_by(current_dreamer).destroy
-    @dream.favorites_count -= 1
+    @dream.favorite_by(current_dreamer).destroy_all
     @dream.save
     respond_to do |format|
-      format.js { render "favorites/un_favorite.js.erb" }
+      format.js { render "un_favorite.js.erb" }
     end
   end
 
