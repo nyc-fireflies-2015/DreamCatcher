@@ -23,7 +23,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     unless @step.save
       flash[:error] = @step.errors.full_messages
     end
-    render partial: "step", locals: {step: @step}
+    render @step
   end
 
   def edit
@@ -33,10 +33,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def update
     if @step.update_attributes(step_params)
-      respond_to do |format|
-        format.html { redirect_to :back }
-        format.js { render "update.js.erb"}
-      end
+      render @step
     else
       flash[:error] = @step.errors.full_messages
       respond_to do |format|

@@ -4,7 +4,6 @@
   </div>
   <div data-div="step-info">
     <%= render partial: "show", locals: {step: step} %>
-  </div>
   <% if step.creator == current_dreamer %>
     <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" } %>
     <% end %>
@@ -13,5 +12,6 @@
       <%= f.submit "Delete" %>
     <% end %>
   <% end %>
+  </div>
   <hr>
 </li>
