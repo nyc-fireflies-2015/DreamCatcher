@@ -3,6 +3,9 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.create(dream: @dream, fan: current_dreamer)
+    binding.pry
+    @dream.favorites_count += 1
+    @dream.save
     respond_to do |format|
       format.js { render "favorites/favorite.js.erb" }
     end
