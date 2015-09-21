@@ -11,10 +11,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def new
     @step = Step.new
-    respond_to do |format|
-      format.html { render partial: "new", locals: {step: @step} }
-      format.js { render "new.js.erb" }
-    end
+    render :nothing => true, :status => 200
   end
 
   def create

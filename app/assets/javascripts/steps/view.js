@@ -1,5 +1,9 @@
 var StepView = {};
-StepView.showDreamForm = function(eventTarget){
+StepView.showNewDreamForm = function(eventTarget){
+  $("[data-form=new_step]").fadeIn("slow");
+  $("[data-link=new_step]").hide();
+};
+StepView.showEditDreamForm = function(eventTarget){
   var step = $(eventTarget).closest("[data-li=step]");
   $(step)
   .find("[data-form=edit-step]").fadeIn("slow");
