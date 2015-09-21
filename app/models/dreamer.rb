@@ -25,14 +25,14 @@ class Dreamer < ActiveRecord::Base
   end
 
   def awareness_dreams
-    dreams.where(dreamer: self, dream_state_clarity?: true)
+    dreams.where(dreamer: self, dream_state_clarity: true)
   end
 
   def decision_making_dreams
-   dreams.where(dreamer: self, decision_clarity?: true)
+   dreams.where(dreamer: self, decision_clarity: true)
   end
 
   def vivid_dreams
-   dreams.where(dreamer: self, consciousness_clarity?: true)
+   dreams.where(dreamer: self, consciousness_clarity: true)
   end
 end
