@@ -1,17 +1,11 @@
 class TwilioController < ApplicationController
-
+  include Sidekiq::Worker
   def send_sms
     message = params[:message]
+    # time = params[:time].to_i
     number = params[:number]
-    account_sid = 'AC40f31b05ec16c2c813436c84ada30a6f'
-    auth_token = '6866e1d92472d67960fe7173589eac33'
+    TextWorker.perform(message, number)
 
-    @client = Twilio::REST::Client.new account_sid, auth_token
-
-    @message = @client.account.messages.create({to: "+1"+"#{number}",
-                                                from: "+13157074332",
-                                                body: "#{message}" })
-    # binding.pry
     redirect_to profile_path(current_dreamer)
   end
 
