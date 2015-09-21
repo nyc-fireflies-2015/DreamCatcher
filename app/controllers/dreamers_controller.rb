@@ -1,5 +1,6 @@
 class DreamersController < ApplicationController
   before_action :find_dreamer, only: [:show, :edit, :update]
+  before_filter :authenticate_dreamer, except: [:new, :create]
 
   def new
     @dreamer = Dreamer.new
@@ -8,13 +9,6 @@ class DreamersController < ApplicationController
   def show
     @dreams_count = @dreamer.dreams.count
     @comments_count = @dreamer.comments.count
-  end
-
-  def edit
-    respond_to do |format|
-      format.html { render partial: "edit", locals: { dreamer: @dreamer } }
-      format.js { render "edit.js.erb" }
-    end
   end
 
   def create
@@ -42,11 +36,10 @@ class DreamersController < ApplicationController
   private
 
   def dreamer_params
-    params.require(:dreamer).permit(:username, :email, :password, :avatar_url, :about, :recipe)
+    params.require(:dreamer).permit(:username, :email, :password, :avatar_url, :about, :recipe, :city, :state, :gender)
   end
 
   def find_dreamer
     @dreamer = Dreamer.find(params[:id])
   end
-
 end
