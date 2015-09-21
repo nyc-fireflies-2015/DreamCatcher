@@ -51,17 +51,8 @@ before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
     end
   end
 
-
-  def show
-    @recipe = Recipe.find(params[:id])
-    @new_step = Step.new
-    @popular_steps = Step.top
-    redirect_to welcome_path unless current_dreamer
-  end
-
   def add_step
-    @recipe = current_dreamer.recipe
-    @recipe.steps << @step
+    current_dreamer.steps << @step
     respond_to do |format|
       format.html { redirect_to recipe_path(current_dreamer.recipe) }
       format.js { render "step.js.erb" }
@@ -72,7 +63,7 @@ before_action :find_step, only: [:update, :add_step, :edit_step, :remove_step]
     if @step.creator == current_dreamer
       @step.destroy
     else
-      current_dreamer.recipe.steps.delete(@step)
+      current_dreamer.steps.delete(@step)
     end
     respond_to do |format|
       format.html { redirect_to :back }
