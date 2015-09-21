@@ -4,15 +4,12 @@
  <%= render "edit" %>
 </div>
 
-<% if @dream.dreamer == current_dreamer %>
-  <%= link_to "Edit", edit_dream_path(@dream), data: { link: "edit-dream" } %>
-<% end %>
-
-<% if @dream.dreamer == current_dreamer %>
-  <%= form_for @dream, method: "Delete", data: { dream: "delete"} do |f| %>
-    <%= f.submit "Delete" %>
+<p>
+  <% if @dream.dreamer == current_dreamer %>
+    <%= link_to "Edit", edit_dream_path(@dream), data: { link: "edit-dream" } %><br>
+    <%= link_to "Delete", dream_path(@dream), method: "delete", data: { dream: "delete" } %>
   <% end %>
-<% end %>
+</p>
 
 posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <%= image_tag(@dream.dreamer.avatar_url, class: "icon") %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>

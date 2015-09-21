@@ -41,8 +41,9 @@ class DreamsController < ApplicationController
   def destroy
     unless @dream.destroy
       flash[:error] = @dream.errors.full_messages
+      render nothing: true
     end
-    render nothing: true
+    redirect_to root_path
   end
 
   private
