@@ -15,7 +15,6 @@ class Dreamer < ActiveRecord::Base
   validates :password, length: {minimum: 6}
   validates_presence_of :email, :username
   validates_uniqueness_of :username
-  validate :us_zipcode?
 
   def us_zipcode?
     errors.add(:zipcode, "invalid. Please enter a valid US zipcode.") unless GoingPostal.postcode?(zipcode, "US")
