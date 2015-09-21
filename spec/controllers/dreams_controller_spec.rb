@@ -71,7 +71,7 @@ describe DreamsController do
       it "renders the :new template" do
         login(dreamer)
         get :new
-        expect(response).to render_template :new
+        expect(response).to render_template partial: "dreams/_new"
       end
     end
   end
@@ -95,7 +95,7 @@ describe DreamsController do
         expect(assigns(:dream)).to eq dream
       end
       it "renders the :edit template" do
-        expect(response).to render_template :edit
+        expect(response).to render_template partial: "dreams/_edit"
       end
     end
   end
@@ -157,7 +157,7 @@ describe DreamsController do
     it "re-renders :edit template if invalid" do
       put :update, id: @dream, dream: FactoryGirl.attributes_for(:dream, title: nil, story: "title story")
       @dream.reload
-      expect(response).to render_template :edit
+      expect(response).to render_template partial: "dreams/_edit"
     end
 
   end
