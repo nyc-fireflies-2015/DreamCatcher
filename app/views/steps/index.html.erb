@@ -1,6 +1,6 @@
 <div class="popular-steps-container">
   <div data-form="new_step">
-   <%= render partial: "steps/new", locals: {step: @new_step} %>
+   <%= render partial: "new", locals: {step: @new_step} %>
   </div>
 
   <div class="center">
@@ -24,7 +24,7 @@
 
   <div class="recipe-steps-river">
     <ul data-river="recipe_steps">
-    <% @recipe.steps.each do |step| %>
+    <% @steps.each do |step| %>
       <%= render partial: "step", locals: {step: step} %>
     <% end %>
     </ul>

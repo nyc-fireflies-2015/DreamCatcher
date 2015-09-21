@@ -20,7 +20,7 @@ class DreamersController < ApplicationController
   end
 
   def create
-    dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png", recipe: Recipe.default))
+    dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png", steps: Step.default))
     if dreamer.save
       session[:dreamer_id] = dreamer.id
       redirect_to root_path, notice: "Account has been created!!"

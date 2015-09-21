@@ -1,42 +1,44 @@
 require 'rails_helper'
 
-RSpec.describe RecipesController, type: :controller do
+RSpec.describe StepsController, type: :controller do
   before(:each) do
     @request.env['HTTP_REFERER'] = 'http://localhost:3000/'
-    @recipe = Recipe.default
-    @dreamer = Dreamer.create!(FactoryGirl.attributes_for(:dreamer).merge(recipe: @recipe))
+    @dreamer = Dreamer.create!(FactoryGirl.attributes_for(:dreamer))
+    10.times do
+      @dreamer.steps << FactoryGirl.create(:step)
+    end
     login(@dreamer)
   end
 
-  describe "GET #show" do
-    it "assigns correct recipe to @recipe" do
-      get :show, id: @recipe.id
-      expect(assigns(:recipe)).to eq @recipe 
+  describe "GET #index" do
+    it "assigns correct steps to @steps" do
+      get :index
+      expect(assigns(:steps)).to eq @dreamer.steps
     end
   end
 
- describe "GET #new_step" do
+ describe "GET #new" do
     it "assigns new step to @step" do
-      get :new_step
+      get :new
       expect(assigns(:step)).to be_a_new Step
     end
   end
 
  describe "Post #add_step" do
     let!(:borrowed_step) { FactoryGirl.create(:step) }
-    it "assigns step in question to recipe in question" do
+    it "assigns step in question to dreamer in question" do
       post :add_step, id: borrowed_step.id
-      @recipe.reload
-      expect(@recipe.steps.last).to eq(borrowed_step)
+      @dreamer.reload
+      expect(@dreamer.steps.last).to eq(borrowed_step)
     end
  end
 
- describe "Post #create_step" do
-    it "increases @recipe.steps.count by 1" do
+ describe "Post #create" do
+    it "increases @dreamer.steps.count by 1" do
       expect {
-        post :create_step, step: FactoryGirl.attributes_for(:step) 
-        @recipe.reload
-      }.to change{@recipe.reload; @recipe.steps.count}.by 1
+        post :create, step: FactoryGirl.attributes_for(:step)
+        @dreamer.reload
+      }.to change{@dreamer.reload; @dreamer.steps.count}.by 1
     end
   end
 
@@ -55,23 +57,23 @@ RSpec.describe RecipesController, type: :controller do
   describe "get #edit" do
     let!(:step){ Step.create(FactoryGirl.attributes_for(:step).merge(creator: @dreamer)) }
     it "assigns requested step to @step" do
-      get :edit_step, id: step.id
+      get :edit, id: step.id
       expect(assigns(:step)).to eq(step)
     end
   end
 
   describe "post #remove_step" do
     context "current dreamer is not creator" do
-      it "removes step from dreamer's recipes" do
+      it "removes step from dreamer's Steps" do
         @borrowed_step = Step.create(FactoryGirl.attributes_for(:step))
         post :remove_step, id: @borrowed_step.id
-        @recipe.reload
-        expect(@recipe.steps).not_to include(@borrowed_step)
+        @dreamer.reload
+        expect(@dreamer.steps).not_to include(@borrowed_step)
       end
       it "does not delete step" do
         @borrowed_step = Step.create(FactoryGirl.attributes_for(:step))
         post :remove_step, id: @borrowed_step.id
-        @recipe.reload
+        @dreamer.reload
         expect(Step.all).to include(@borrowed_step)
       end
     end
@@ -85,3 +87,4 @@ RSpec.describe RecipesController, type: :controller do
     end
   end
 end
+

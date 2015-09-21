@@ -6,7 +6,9 @@ class Dreamer < ActiveRecord::Base
   has_many :dreams
   has_many :comments
   has_many :favorites, foreign_key: :fan_id
-  has_one :recipe, foreign_key: :creator_id
+  has_many :recipes
+  has_many :steps, through: :recipes
+  has_many :created_steps, class_name: "Step"
 
   validates_email_format_of :email, message: "Please enter valid email"
   validates :avatar_url, format: {with: /\.(png|jpe?g|gif)\Z/i}, on: [:update]
@@ -24,7 +26,7 @@ class Dreamer < ActiveRecord::Base
 
   def awareness_dreams
     Dream.where(dreamer: self, dream_state_clarity?: true)
-  end 
+  end
 
   def decision_making_dreams
     Dream.where(dreamer: self, decision_clarity?: true)
