@@ -1,3 +1,7 @@
+<!--
 <%= form_for dream, url: favorite_path(dream), method: "post", data: {form: "favorite"}, remote: true do |f| %>
-  <%= f.submit "FAVORITE" %>
+  <%= image_submit_tag("unfav-icon.png", class: "fav-icon") %>
 <% end %>
+-->
+
+<%= link_to image_tag("unfav-icon.png", class: "fav-icon"), favorite_path(dream), data: {remote: true, form: "unfavorite" } %>
