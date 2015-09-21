@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-21T15:30:35-04:00">2015-09-21T15:30:35-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-21T16:18:29-04:00">2015-09-21T16:18:29-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -995,7 +995,7 @@
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">    @new_dream = Dream.new</code>
+          <code class="ruby">    @dream = Dream.new</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="8">
@@ -1565,7 +1565,7 @@
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">    Favorite.where(dream: self, fan: dreamer)</code>
+          <code class="ruby">    favorites.where(fan: dreamer)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -1589,7 +1589,7 @@
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">    !!Favorite.where(dream: self, fan: dreamer)</code>
+          <code class="ruby">    favorites.where(fan: dreamer).any?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -2969,7 +2969,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;/favorite/:dream_id&#39; =&gt; &#39;favorites#destroy&#39;, as: &#39;unfavorite&#39;</code>
+          <code class="ruby">  delete &#39;/favorite/:dream_id&#39; =&gt; &#39;favorites#destroy&#39;, as: &#39;unfavorite&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">

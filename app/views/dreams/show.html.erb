@@ -1,4 +1,19 @@
 <h1><%= @dream.title %></h1>
+
+<div data-form="edit">
+ <%= render "edit" %>
+</div>
+
+<% if @dream.dreamer == current_dreamer %>
+  <%= link_to "Edit", edit_dream_path(@dream), data: { link: "edit-dream" } %>
+<% end %>
+
+<% if @dream.dreamer == current_dreamer %>
+  <%= form_for @dream, method: "Delete", data: { dream: "delete"} do |f| %>
+    <%= f.submit "Delete" %>
+  <% end %>
+<% end %>
+
 posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
 <%= image_tag(@dream.dreamer.avatar_url, class: "icon") %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
 <hr>

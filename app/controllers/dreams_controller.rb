@@ -4,7 +4,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.order('created_at DESC')
-    @new_dream = Dream.new
+    @dream = Dream.new
     @popular_dreams = Dream.popular
     redirect_to welcome_path unless current_dreamer
   end
