@@ -24,7 +24,7 @@
 
   <div class="recipe-steps-river">
     <ul data-river="recipe_steps">
-    <% @recipe.steps.each do |step| %>
+    <% @steps.each do |step| %>
       <%= render partial: "step", locals: {step: step} %>
     <% end %>
     </ul>
