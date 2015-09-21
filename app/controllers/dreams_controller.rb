@@ -43,10 +43,7 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update_attributes(dream_params)
-      respond_to do |format|
-        format.html { redirect_to dream_path(@dream) }
-        format.js { render "info.js.erb" }
-      end
+      render partial: "info", locals: {dream: @dream}
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|

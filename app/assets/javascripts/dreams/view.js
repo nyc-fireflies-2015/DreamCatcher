@@ -5,4 +5,10 @@ DreamView.showNewDream = function(el, newDreamSummary){
   $("[data-form=new]").find("form").trigger("reset");
   $("[data-link=add-dream]").fadeIn("slow");
   $(".trend-river").fadeIn("slow");
-}
+};
+DreamView.showUpdatedDream = function(el, updatedDreamInfo){
+  var dream = $(evenTarget).closest("[data-li=summary]");
+  $(dream).find("[data-form=edit]").hide();
+  $(dream).find("[data-div=info]")
+  .html(updatedDreamInfo)
+};
