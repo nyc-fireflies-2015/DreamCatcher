@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
     q = params[:q]
     @dreams = Dream.ransack(title_cont: q).result
     @dreamers = Dreamer.search(username_cont: q).result
+    @recipes = Recipe.search(description_cont: q).result
   end
 
   def calculate_lucidity(dream)

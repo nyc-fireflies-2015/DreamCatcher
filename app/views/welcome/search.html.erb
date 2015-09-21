@@ -26,4 +26,11 @@
         <%= link_to dreamer.username, profile_path(dreamer) %>
       <% end %>
     <% end %>
+
+      <% if !@recipes.empty? %>
+      <h3 class="left">Recipes</h3>
+      <% @recipes.each do |recipe| %>
+        <%= link_to recipe.step.description, root_path %>
+      <% end %>
+    <% end %>
 <% end %>
