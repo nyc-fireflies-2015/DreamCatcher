@@ -29,11 +29,11 @@
           <% end %>
       <% end %>
 
-      <% if !@recipes.empty? %>
+      <% if !@steps.empty? %>
         <h3 class="left">Recipes</h3>
         <hr>
-          <% @recipes.each do |recipe| %>
-            <li><%= link_to recipe.step.description, root_path %></li>
+          <% @steps.each do |step| %>
+            <li><%= link_to step.description, step_path(step) %></li>
           <% end %>
         </ul>
       <% end %>
