@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150921010715) do
     t.string   "password_digest",                          null: false
     t.text     "about"
     t.integer  "level",                        default: 0
-    t.string   "zipcode",                                  null: false
+    t.integer  "zipcode",                                  null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.string   "email"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150921010715) do
     t.boolean  "consciousness_clarity?",             default: false
     t.boolean  "dream_state_clarity?",               default: false
     t.integer  "lucidity_rating",                    default: 0
-    t.integer  "favorites_count",                    default: 0
     t.integer  "dreamer_id"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
