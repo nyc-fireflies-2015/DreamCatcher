@@ -10,9 +10,9 @@ RSpec.describe StepsController, type: :controller do
     login(@dreamer)
   end
 
-  describe "GET #index" do
+  describe "GET #recipe" do
     it "assigns correct steps to @steps" do
-      get :index
+      get :recipe, @dreamer.id
       expect(assigns(:steps)).to eq @dreamer.steps
     end
   end
