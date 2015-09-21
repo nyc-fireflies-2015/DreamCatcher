@@ -1,9 +1,5 @@
 class TwilioController < ApplicationController
 
-  def index
-
-  end
-
   def send_sms
     message = params[:message]
     number = params[:number]
@@ -15,7 +11,8 @@ class TwilioController < ApplicationController
     @message = @client.account.messages.create({to: "+1"+"#{number}",
                                                 from: "+13157074332",
                                                 body: "#{message}" })
-    redirect_to '/'
+    # binding.pry
+    redirect_to profile_path()
   end
 
 end

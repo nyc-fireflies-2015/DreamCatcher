@@ -6,13 +6,15 @@
 </div>
 <hr>
 
-<h3 class="subtitle">Set Up Dream Checks</h3>
+<% if @dreamer == current_dreamer %>
+  <h3 class="subtitle">Set Up Dream Checks</h3>
 
-<%= form_tag('/send_sms', method: 'POST') do %>
-  <input type="text" placeholder="enter number" name="number">
-  <input type="text" placeholder="enter message here" name="message">
-  <button type="submit">Submit</button>
-<% end %>
+  <%= form_tag('/send_sms', method: 'POST') do %>
+    <input type="text" placeholder="enter number" name="number">
+    <input type="text" placeholder="enter message here" name="message">
+    <button type="submit">Submit</button>
+  <% end %>
+<%end%>
 
 <h3 class="subtitle">My Lucid Dreams</h3>
   <%= render partial: "lucid_dreams", locals: {dreamer: @dreamer} %>
