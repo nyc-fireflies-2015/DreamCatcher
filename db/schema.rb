@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 20150921150118) do
     t.boolean  "consciousness_clarity?",             default: false
     t.boolean  "dream_state_clarity?",               default: false
     t.integer  "lucidity_rating",                    default: 0
-    t.integer  "favorites_count",                    default: 0
     t.integer  "dreamer_id"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.string   "title",                  limit: 128
+    t.integer  "favorites_count"
   end
 
   create_table "favorites", force: :cascade do |t|
