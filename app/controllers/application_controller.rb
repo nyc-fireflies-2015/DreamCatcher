@@ -11,10 +11,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_path unless current_dreamer
   end
 
-  def clear_errors
-    flash.clear
-  end
-
   def current_dreamer
     @current_dreamer ||= Dreamer.find_by(id: session[:dreamer_id])
   end
