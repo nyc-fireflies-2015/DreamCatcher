@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
 
   def set_query
     @query = params[:q]
-    @dreams = Dream.ransack(title_cont: @query).result
+    @dreams = Dream.ransack(title_or_story_cont: @query).result
     @dreamers = Dreamer.search(username_cont: @query).result
-    @recipes = Recipe.search(description_cont: @query).result
+    @steps = Step.search(description_cont: @query).result
   end
 
   def calculate_lucidity(dream)
