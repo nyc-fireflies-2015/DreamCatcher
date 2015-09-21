@@ -4,7 +4,8 @@
   <ul>
     <li>Dreaming since: <%= dreamer.created_at.strftime("%B %d %Y")%></li>
     <li>Level: <%= dreamer.level %></li>
-    <li>Total Dreams: <%= @num_of_dreams %></li>
+    <li>Dreams: <%= @dreams_count %></li>
+    <li>Comments: <%= @comments_count %></li>
     <li>
       <% if dreamer.gender %>
       Gender: <%= dreamer.gender %>
@@ -20,7 +21,7 @@
       State: <%= dreamer.state %>
       <% end %>
     </li>
-    <li><%= link_to "Dream Recipe", steps_path %></li>
+    <li><%= link_to "#{dreamer.username}'s Dream Recipe", steps_path %></li>
   </ul>
 </div>
 
