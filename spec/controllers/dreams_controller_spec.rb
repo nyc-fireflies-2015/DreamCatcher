@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe DreamsController do
-
-  let!(:dream) { FactoryGirl.create(:dream) }
-  let!(:dreamer) { FactoryGirl.create(:dreamer) }
+  let(:dream) { FactoryGirl.create(:dream) }
+  let(:dreamer) { FactoryGirl.create(:dreamer) }
 
   describe "GET /" do
     context 'user is not logged in' do
@@ -27,7 +26,6 @@ describe DreamsController do
   end
 
   describe "GET #show" do
-
     context 'user is not logged in' do
       it "renders the welcome page" do
         get :show, id: dream.id
@@ -46,56 +44,6 @@ describe DreamsController do
       end
       it "renders the :show template" do
         expect(response).to render_template :show
-      end
-    end
-
-  end
-
-  describe "GET #new" do
-    let!(:dreamer) { FactoryGirl.create(:dreamer) }
-    let!(:dream) { FactoryGirl.create(:dream)}
-
-    context 'user is not logged in' do
-      it "renders the welcome page" do
-        get :new, id: dream.id
-        expect(response).to redirect_to root_path
-      end
-    end
-
-    context 'user is logged in' do
-      it "assigns an empty dream to @dream" do
-        login(dreamer)
-        get :new
-        expect(assigns(:dream)).to be_a_new Dream
-      end
-      it "renders the :new template" do
-        login(dreamer)
-        get :new
-        expect(response).to render_template partial: "dreams/_new"
-      end
-    end
-  end
-
-  describe "GET #edit" do
-
-    context 'user not logged in' do
-      it "renders the welcome page" do
-        get :edit, id: dream.id
-        expect(response).to redirect_to root_path
-      end
-    end
-
-    context 'user is logged in' do
-      before :each do
-        login(dreamer)
-        get :edit, id: dream.id
-      end
-
-      it "assigns the requested dream to @dream" do
-        expect(assigns(:dream)).to eq dream
-      end
-      it "renders the :edit template" do
-        expect(response).to render_template partial: "dreams/_edit"
       end
     end
   end
@@ -120,7 +68,7 @@ describe DreamsController do
 
     it "redirects to dreams index if valid" do
       post :create, dream: FactoryGirl.attributes_for(:dream)
-      expect(response).to redirect_to dreams_path
+      expect(response).to render_template "dreams/_dream"
     end
 
     it "re-directs to new_dream_path if invalid" do
@@ -143,6 +91,7 @@ describe DreamsController do
       expect(@dream.title).to eq(@attributes[:title])
       expect(@dream.story).to eq(@attributes[:story])
     end
+
     it "does not update the dream if invalid" do
       dream = Dream.create(@attributes)
       put :update, id: dream, dream: @invalid_attributes
@@ -154,12 +103,13 @@ describe DreamsController do
     it "redirects to dream/:id if valid" do
       put :update, id: @dream, dream: @attributes
       @dream.reload
-      expect(response).to redirect_to dream_path(@dream)
+      expect(response).to render_template(partial: "dreams/_info")
     end
+
     it "re-renders :edit template if invalid" do
       put :update, id: @dream, dream: @invalid_attributes
       @dream.reload
-      expect(response).to render_template partial: "dreams/_edit"
+      expect(response).to render_template(partial: "dreams/_edit")
     end
 
   end
@@ -174,11 +124,6 @@ describe DreamsController do
       expect{
         delete :destroy, id: @dream
       }.to change(Dream,:count).by(-1)
-    end
-
-    it "redirects to /" do
-      delete :destroy, id: @dream
-      expect(response).to redirect_to dreams_path
     end
   end
 end

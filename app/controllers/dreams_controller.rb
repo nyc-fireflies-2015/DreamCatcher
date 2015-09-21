@@ -13,11 +13,6 @@ class DreamsController < ApplicationController
     @comment = Comment.new
   end
 
-  def new
-    @dream = Dream.new
-    render :nothing => true, :status => 200
-  end
-
   def create
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
@@ -29,10 +24,6 @@ class DreamsController < ApplicationController
         format.js { render :file => "layouts/errors.js.erb" }
       end
     end
-  end
-
-  def edit
-    render :nothing => true, :status => 200
   end
 
   def update
@@ -48,12 +39,10 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    if @dream.destroy
-      render :nothing => true, :status => 200
-    else
+    unless @dream.destroy
       flash[:error] = @dream.errors.full_messages
-      redirect_to dream_path(dream)
     end
+    render nothing: true
   end
 
   private
