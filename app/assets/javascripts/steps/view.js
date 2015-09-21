@@ -7,6 +7,6 @@ StepView.showDreamForm = function(eventTarget){
   .find("[data-div=step-info]").empty();
 };
 StepView.removeStepDiv = function(eventTarget){
-  $(eventTarget).closest("[data-li=step]").remove();;
+  $(eventTarget).closest("[data-li=step]").remove();
 };
 

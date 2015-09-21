@@ -64,6 +64,7 @@ before_action :find_step, except: [:recipe, :new, :create]
       current_dreamer.steps.delete(@step)
     end
     redirect_to :back unless request.xhr?
+    render :nothing => true, :status => 200
   end
 
   private
