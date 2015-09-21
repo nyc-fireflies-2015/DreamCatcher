@@ -10,13 +10,6 @@ class DreamersController < ApplicationController
     @comments_count = @dreamer.comments.count
   end
 
-  def edit
-    respond_to do |format|
-      format.html { render partial: "edit", locals: { dreamer: @dreamer } }
-      format.js { render "edit.js.erb" }
-    end
-  end
-
   def create
     dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png", steps: Step.default))
     if dreamer.save
