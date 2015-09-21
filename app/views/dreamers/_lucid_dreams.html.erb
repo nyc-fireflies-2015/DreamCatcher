@@ -1,0 +1,16 @@
+<% if dreamer.dreams.empty? %>
+  <p>This dreamer has not registered any dreams yet.</p>
+<% else %>
+  <p> My Dreams With Clarity </p>
+  <% @awareness_dreams.each do |dream| %>
+    <%=link_to dream.title, dream_path(dream) %>
+  <%end%>
+  <p> Dreams Where I Had Control </p>
+  <% @free_decision_dreams.each do |dream| %>
+    <%=link_to dream.title, dream_path(dream) %>
+  <%end%>
+  <p> My Vivid Dreams </p>
+  <% @vivid_dreams.each do |dream| %>
+    <%=link_to dream.title, dream_path(dream) %>
+  <%end%>
+<% end %>
