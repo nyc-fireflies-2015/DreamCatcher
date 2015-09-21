@@ -1,7 +1,0 @@
-$("[data-link=edit-dream]").on("ajax:success", function(event){
-  var dream = $(event.target).closest("[data-li=summary]");
-  $(dream)
-  .find("[data-form=edit]").fadeIn("slow");
-  $(dream)
-  .find("[data-div=info]").empty();
-});

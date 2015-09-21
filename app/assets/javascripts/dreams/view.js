@@ -6,8 +6,8 @@ DreamView.showNewDream = function(el, newDreamSummary){
   $("[data-link=add-dream]").fadeIn("slow");
   $(".trend-river").fadeIn("slow");
 };
-DreamView.showUpdatedDream = function(el, updatedDreamInfo){
-  var dream = $(evenTarget).closest("[data-li=summary]");
+DreamView.showUpdatedDream = function(eventTarget, updatedDreamInfo){
+  var dream = $(eventTarget).closest("[data-li=summary]");
   $(dream).find("[data-form=edit]").hide();
   $(dream).find("[data-div=info]")
   .html(updatedDreamInfo)
@@ -16,4 +16,11 @@ DreamView.showNewDreamForm = function(){
   $("[data-form=new]").fadeIn("slow");
   $("[data-link=add-dream]").hide();
   $(".trend-river").hide();
+};
+DreamView.showEditDreamForm = function(eventTarget){
+   var dream = $(eventTarget).closest("[data-li=summary]");
+  $(dream)
+  .find("[data-form=edit]").fadeIn("slow");
+  $(dream)
+  .find("[data-div=info]").empty();
 };

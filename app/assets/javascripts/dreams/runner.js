@@ -9,4 +9,7 @@ $(document).ready(function(){
   Binder.bind({event: "click",
                 selector: "[data-link=add-dream]",
                 callback: ctrl.getNewDreamForm });
+  Binder.bind({event: "click",
+                selector: "[data-link=edit-dream]",
+                callback: ctrl.getEditDreamForm });
 });
