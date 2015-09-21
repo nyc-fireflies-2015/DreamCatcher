@@ -1,7 +1,0 @@
-$("[data-link=edit-step]").on("ajax:success", function(event){
-  var step = $(event.target).closest("[data-li=step]");
-  $(step)
-  .find("[data-form=edit-step]").show();
-  $(step)
-  .find("[data-div=step-info]").empty();
-});
