@@ -3,15 +3,17 @@
    <%= render partial: "new", locals: {step: @new_step} %>
   </div>
 
+  <% if current_dreamer == @creator %>
   <div class="center">
     <p><%= link_to "Add to Recipe", new_step_path, class: "button", data: {link: "new_step" }, remote: true %></p>
     <h3>Popular Steps</h3>
   </div>
+  <% end %>
 
   <div class="popular-steps-river">
     <ul data-river="popular_steps">
       <% @popular_steps.each do |step| %>
-        <%= render partial: "step", locals: {step: step} %>
+        <%= render partial: "popular_step", locals: {step: step} %>
       <% end %>
     </ul>
   </div>
