@@ -3,7 +3,7 @@
    <%= render partial: "new", locals: {step: @new_step} %>
   </div>
 
-  <div class="center">
+  <div class="center" class=<%= "hidden" unless current_dreamer == @creator %>>
     <p><%= link_to "Add to Recipe", new_step_path, class: "button", data: {link: "new_step" }, remote: true %></p>
     <h3>Popular Steps</h3>
   </div>

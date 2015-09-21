@@ -7,6 +7,8 @@
   </div>
   <% if step.creator == current_dreamer %>
     <%= link_to "Edit", edit_step_path(step), data: { link: "edit-step" }, remote: true %>
+    <% end %>
+  <% if step.dreamers.include(current_dreamer) %>
     <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"}, remote: true do |f| %>
       <%= f.submit "Delete" %>
     <% end %>
