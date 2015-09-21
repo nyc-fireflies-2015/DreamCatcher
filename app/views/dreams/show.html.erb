@@ -18,7 +18,7 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
   <%= @dream.story %>
 </p>
 
-  <h3><%= @dream.comments.count %> Comments</h3>
+<h3><%= @dream.comments.count %> Comments</h3>
 
 <% if @dream.comments.empty? %>
   <p>This dream currently has no comments.<br>

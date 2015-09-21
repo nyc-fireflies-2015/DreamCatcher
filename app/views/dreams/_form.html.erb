@@ -6,14 +6,16 @@
   <p class="dream-input">
     <%= f.text_area :story, placeholder: "tell us about your dream" %>
   </p>
-    <%= f.check_box(:decision_clarity) %>
-    <%= f.label('Were you able to make decisions?') %><br>
 
-    <%= f.check_box(:consciousness_clarity) %>
-    <%= f.label('Were you aware that you were dreaming?') %><br>
+  <%= f.check_box(:decision_clarity) %>
+  <%= f.label('Were you able to make decisions?') %><br>
 
-    <%= f.check_box(:dream_state_clarity) %>
-    <%= f.label('Were your experiences vivid?') %>
+  <%= f.check_box(:consciousness_clarity) %>
+  <%= f.label('Were you aware that you were dreaming?') %><br>
+
+  <%= f.check_box(:dream_state_clarity) %>
+  <%= f.label('Were your experiences vivid?') %>
+
   <p>
     <div data-handler="errors"></div>
     <%= f.submit "Submit" %>

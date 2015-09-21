@@ -1,6 +1,6 @@
 <div class="trend-container">
   <div data-form="new">
-   <%= render "new" %>
+    <%= render partial: "new", locals: {dream: @dream} %>
   </div>
 
   <div class="center">
@@ -22,11 +22,7 @@
   <div class="dream-river">
     <ul data-river="dreams">
       <% @dreams.each do |dream| %>
-        <li data-li="summary">
-          <div data-div="info">
-            <%= render partial: "info", locals: {dream: dream} %>
-          </div>
-        </li>
+        <%= render partial: "dream", locals: {dream: dream} %>
       <% end %>
     </ul>
   </div>
