@@ -24,10 +24,7 @@ class DreamsController < ApplicationController
   def create
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
-      respond_to do |format|
-        format.html { redirect_to dreams_path }
-        format.js { render "summary.js.erb" }
-      end
+      render @dream
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|

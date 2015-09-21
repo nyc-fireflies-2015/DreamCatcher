@@ -22,7 +22,7 @@
   <div class="dream-river">
     <ul data-river="dreams">
       <% @dreams.each do |dream| %>
-        <%= render partial: "summary", locals: {dream: dream} %>
+        <%= render partial: "dream", locals: {dream: dream} %>
       <% end %>
     </ul>
   </div>
