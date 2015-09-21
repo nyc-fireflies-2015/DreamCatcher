@@ -8,6 +8,6 @@
   </div>
 
   <% if dream.dreamer == current_dreamer %>
-    <%= link_to "Edit", edit_dream_path(dream), data: { link: "edit-dream" }, remote: true %>
+    <%= link_to "Edit", edit_dream_path(dream), data: { link: "edit-dream" } %>
   <% end %>
 </li>
