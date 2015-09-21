@@ -2,7 +2,7 @@
 
 <div class="profile-container">
   <ul>
-    <li>Dreaming since: <%= @dreamer.created_at.strftime("%B %d %Y")%></li>
+    <li>Dreaming since: <%= display_date(@dreamer.created_at) %></li>
     <li>Level: <%= @dreamer.level %></li>
     <li>Dreams: <%= @dreams_count %></li>
     <li>Comments: <%= @comments_count %></li>
