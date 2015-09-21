@@ -11,7 +11,7 @@
   <% end %>
 </p>
 
-posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
+posted on <%= display_date(@dream.created_at) %><br>
 <%= image_tag(@dream.dreamer.avatar_url, class: "icon") %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
 <hr>
 <p>
@@ -33,7 +33,7 @@ posted on <%= @dream.created_at.strftime("%B %d %Y") %><br>
             <%= image_tag(comment.dreamer.avatar_url, class: "icon") %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
           </div>
           <div class="right">
-            <p><%= comment.created_at.strftime("%B %d %Y") %></p>
+            <p><%= display_date(comment.created_at) %></p>
             <p><%= link_to "Edit", edit_comment_path(comment) %></p>
           </div>
           <p><%= comment.content %></p>
