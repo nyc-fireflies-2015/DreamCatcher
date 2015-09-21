@@ -1,5 +1,6 @@
 class DreamersController < ApplicationController
   before_action :find_dreamer, only: [:show, :edit, :update]
+  before_filter :authenticate_dreamer, except: [:new, :create]
 
   def new
     @dreamer = Dreamer.new
@@ -41,5 +42,4 @@ class DreamersController < ApplicationController
   def find_dreamer
     @dreamer = Dreamer.find(params[:id])
   end
-
 end
