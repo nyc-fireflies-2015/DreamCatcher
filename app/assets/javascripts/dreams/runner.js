@@ -12,4 +12,7 @@ $(document).ready(function(){
   Binder.bind({event: "click",
                 selector: "[data-link=edit-dream]",
                 callback: ctrl.getEditDreamForm });
+  Binder.bind({event: "click",
+                selector: "[data-dream=delete]",
+                callback: ctrl.destroyDream });
 });

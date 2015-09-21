@@ -24,3 +24,6 @@ DreamView.showEditDreamForm = function(eventTarget){
   $(dream)
   .find("[data-div=info]").empty();
 };
+DreamView.removeDream = function(eventTarget){
+  $(eventTarget).closest("[data-li=summary]").remove();
+};

@@ -32,10 +32,7 @@ class DreamsController < ApplicationController
   end
 
   def edit
-    respond_to do |format|
-      format.html { render partial: "edit", locals: { dream: @dream } }
-      format.js { render "edit.js.erb" }
-    end
+    render :nothing => true, :status => 200
   end
 
   def update
@@ -52,10 +49,7 @@ class DreamsController < ApplicationController
 
   def destroy
     if @dream.destroy
-      respond_to do |format|
-        format.html { redirect_to dreams_path }
-        format.js { render "destroy.js.erb" }
-      end
+      render :nothing => true, :status => 200
     else
       flash[:error] = @dream.errors.full_messages
       redirect_to dream_path(dream)

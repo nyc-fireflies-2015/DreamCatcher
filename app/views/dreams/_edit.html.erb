@@ -3,5 +3,7 @@
 
 <%= render partial: "form", locals: {dream: dream} %>
 
-<%= link_to 'Delete', dream_path(dream), method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
+<%= form_for dream, method: "Delete", data: { dream: "delete"} do |f| %>
+  <%= f.submit "Delete" %>
+<% end %>
 </div>
