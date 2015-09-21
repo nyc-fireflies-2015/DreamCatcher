@@ -15,6 +15,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+
+    if @comment.update_attributes(comment_params)
+      redirect_to dream_path(@comment.dream)
+    else
+      flash[:error] = comment.errors.full_messages
+      redirect_to dream_path(@comment.dream)
+    end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
   private
 
   def comment_params
