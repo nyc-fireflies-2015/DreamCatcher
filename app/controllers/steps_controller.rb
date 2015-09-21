@@ -1,11 +1,12 @@
 class StepsController < ApplicationController
-before_action :find_step, except: [:index, :new, :create]
+before_action :find_step, except: [:recipe, :new, :create]
   def recipe
     @creator = Dreamer.find(params[:id])
     @steps = @creator.steps
     @new_step = Step.new
     @popular_steps = Step.top
     redirect_to welcome_path unless current_dreamer
+    render "index"
   end
 
   def new
