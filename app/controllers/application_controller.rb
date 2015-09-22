@@ -32,7 +32,23 @@ class ApplicationController < ActionController::Base
 
   def check_rank
     if current_dreamer.points >= 25
+      current_dreamer.rank = "Novice"
+      current_dreamer.save(validate: false)
+
+    elsif current_dreamer.points >= 75
+      current_dreamer.rank = "Apprentice"
+      current_dreamer.save(validate: false)
+
+    elsif current_dreamer.points >= 150
       current_dreamer.rank = "Daydreamer"
+      current_dreamer.save(validate: false)
+
+    elsif current_dreamer.points >= 300
+      current_dreamer.rank = "Sandman"
+      current_dreamer.save(validate: false)
+
+    elsif current_dreamer.points > 500
+      current_dreamer.rank = "Dream Master"
       current_dreamer.save(validate: false)
     end
   end
