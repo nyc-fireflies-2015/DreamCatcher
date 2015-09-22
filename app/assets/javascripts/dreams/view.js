@@ -5,6 +5,7 @@ DreamView.showNewDream = function(el, newDreamSummary){
   $("[data-form=new]").find("form").trigger("reset");
   $("[data-link=add-dream]").fadeIn("slow");
   $(".trend-river").fadeIn("slow");
+  $(".popular-dreams-title").fadeIn("slow");
 };
 DreamView.showUpdatedDream = function(eventTarget, updatedDreamInfo){
   var dream = $(eventTarget).closest(document);
@@ -16,6 +17,7 @@ DreamView.showNewDreamForm = function(){
   $("[data-form=new]").fadeIn("slow");
   $("[data-link=add-dream]").hide();
   $(".trend-river").hide();
+  $(".popular-dreams-title").hide();
 };
 DreamView.showEditDreamForm = function(eventTarget){
    var dream = $(eventTarget).closest(document);

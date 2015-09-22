@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   def create
     dream = Dream.find(comment_params[:dream_id])
     comment = Comment.new(comment_params.merge(dreamer: current_dreamer, dream: dream))
+
     if comment.save
       redirect_to dream_path(dream)
     else
@@ -18,7 +19,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
 
-    if @comment.update_attributes(comment_params)
+    if @comment.update_attributes(content: params[:comment][:content])
       redirect_to dream_path(@comment.dream)
     else
       flash[:error] = comment.errors.full_messages
