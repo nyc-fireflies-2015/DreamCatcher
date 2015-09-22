@@ -1,0 +1,5 @@
+<% conversation.participants.each do |participant| %>
+  <% unless participant == current_dreamer %>
+    <%= image_tag("#{participant.avatar_url}", class: "icon") %>
+  <% end %>
+<% end %>

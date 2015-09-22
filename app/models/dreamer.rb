@@ -30,4 +30,8 @@ class Dreamer < ActiveRecord::Base
   def vivid_dreams
    dreams.where(dreamer: self, consciousness_clarity: true)
   end
+
+  def mailboxer_email(object)
+    return self.email
+  end
 end

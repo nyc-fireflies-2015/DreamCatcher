@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150921235729) do
   create_table "dreamers", force: :cascade do |t|
     t.string   "username",        limit: 64,               null: false
     t.string   "password_digest",                          null: false
+    t.string   "name"
     t.text     "about"
     t.integer  "level",                        default: 0
     t.string   "zipcode"
