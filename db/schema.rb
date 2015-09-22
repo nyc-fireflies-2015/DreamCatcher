@@ -151,7 +151,7 @@ ActiveRecord::Schema.define(version: 20150922143017) do
     t.integer  "recipes_count",              default: 0
   end
 
-  create_table "table_taggings", force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "hashtag_id"
     t.integer "dream_id"
   end
