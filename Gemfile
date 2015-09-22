@@ -3,7 +3,6 @@ gem 'rspec_junit_formatter', '0.2.2'
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sidekiq'
-gem "sidekiq-cron", "~> 0.3.0"
 gem 'slim'
 gem 'sinatra', require: false
 gem 'twilio-rb'

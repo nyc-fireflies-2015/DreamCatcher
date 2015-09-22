@@ -1,9 +1,7 @@
+# require File.expand_path(File.dirname(__FILE__) + "/environment")
 namespace :text_sender do
   task :send => :environment do
-    @subscribed.each do |dreamer|
-      number = dreamer.phone_num
-      TextWorker.perform_at(5.seconds, number)
-    end
+    number = Dreamer.first.phone_num
+    TextWorker.perform_in(1.seconds, number)
   end
-
 end

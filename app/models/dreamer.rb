@@ -18,6 +18,10 @@ class Dreamer < ActiveRecord::Base
     dreams.order('created_at DESC').limit(5)
   end
 
+  def self.reality_testers
+    where('reality_check = true')
+  end
+
   def awareness_dreams
     dreams.where(dreamer: self, dream_state_clarity: true)
   end

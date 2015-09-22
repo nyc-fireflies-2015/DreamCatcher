@@ -10,7 +10,14 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150921150118) do
+=======
+
+ActiveRecord::Schema.define(version: 20150921235729) do
+
+  # These are extensions that must be enabled in order to support this database
+>>>>>>> cron tasks, twilio text and sidekiq working
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
@@ -22,14 +29,19 @@ ActiveRecord::Schema.define(version: 20150921150118) do
   end
 
   create_table "dreamers", force: :cascade do |t|
+<<<<<<< HEAD
     t.string   "username",        limit: 64,                    null: false
     t.string   "password_digest",                               null: false
     t.string   "password_digest",                          null: false
+=======
+    t.string   "username",        limit: 64,                   null: false
+    t.string   "password_digest",                              null: false
+>>>>>>> cron tasks, twilio text and sidekiq working
     t.string   "name"
     t.text     "about"
     t.integer  "level",                        default: 0
     t.string   "zipcode"
-    t.integer  "phone_num"
+    t.string   "phone_num"
     t.boolean  "reality_check",                default: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
