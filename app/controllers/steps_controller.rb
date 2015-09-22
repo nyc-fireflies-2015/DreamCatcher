@@ -18,7 +18,7 @@ before_action :find_step, except: [:recipe, :new, :create]
       @step = Step.new(step_params.merge(creator: current_dreamer))
       current_dreamer.steps << @step
     if @step.save
-      render @step
+      render partial: "step", locals: {step: @step}
     else
       error(@step.errors.messages)
     end
