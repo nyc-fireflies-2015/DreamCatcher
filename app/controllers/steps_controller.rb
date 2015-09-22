@@ -15,9 +15,11 @@ before_action :find_step, except: [:recipe, :new, :create]
   end
 
   def create
-      @step = Step.new(step_params.merge(creator: current_dreamer))
-      current_dreamer.steps << @step
+    @step = Step.new(step_params.merge(creator: current_dreamer))
+    current_dreamer.steps << @step
     if @step.save
+      current_dreamer.points += 2
+      check_rank
       render @step
     else
       error(@step.errors.messages)
@@ -44,6 +46,8 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def remove_step
     if @step.creator == current_dreamer
+      current_dreamer.points -= 2
+      check_rank
       @step.destroy
     else
       current_dreamer.steps.delete(@step)
