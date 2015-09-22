@@ -33,10 +33,13 @@ Obj.fromDCLink = function(link){
 var DreamCatcher = {};
 DreamCatcher.send = function(args){
   if(args.params === undefined){
-    args.params = "";
+    args.params = "body";
   }
   $.ajax(args.data).done(function(element){
     args.callback(args.params, element);
+  }).fail(function(error){
+    var errorDiv = $(args.params).find("[data-handler=errors]");
+    $(errorDiv).html(error.responseText);
   });
   if(args.data === undefined){
     args.callback(args.params);

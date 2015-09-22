@@ -14,34 +14,30 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @dream = current_dreamer.dreams.new(dream_params)
-    if @dream.save
+    begin
+      @dream = current_dreamer.dreams.create!(dream_params)
       render @dream
-    else
-      flash[:error] = @dream.errors.full_messages
-      respond_to do |format|
-        format.js { render :file => "shared/errors.js.erb" }
-      end
+    rescue ActiveRecord::RecordInvalid => e
+      error(e)
     end
   end
 
   def update
-    if @dream.update_attributes(dream_params)
-      redirect_to @dream
-    else
-      flash[:error] = @dream.errors.full_messages
-      respond_to do |format|
-        format.js { render file: "shared/errors.js.erb" }
-      end
+    begin
+      @dream.update_attributes!(dream_params)
+      render nothing: true
+    rescue ActiveRecord::RecordInvalid => e
+      error(e)
     end
   end
 
   def destroy
-    unless @dream.destroy
-      flash[:error] = @dream.errors.full_messages
-      render nothing: true
+    begin
+      @dream.destroy!
+      redirect_to root_path
+    rescue ActiveRecord::RecordInvalid => e
+      error(e)
     end
-    redirect_to root_path
   end
 
   private

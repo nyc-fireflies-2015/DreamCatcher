@@ -67,7 +67,7 @@ RSpec.describe DreamersController, type: :controller do
         put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: nil), format: :js
         @dreamer.reload
         expect(@dreamer.username).to eq("username")
-        expect(response).to render_template "shared/errors.js.erb"
+        expect(response).to have_http_status(400)
       end
     end
   end
