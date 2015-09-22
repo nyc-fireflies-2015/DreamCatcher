@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
     @steps = Step.search(description_cont: @query).result
   end
 
-  def error(e)
+  def error(full_messages)
     respond_to do |format|
-      format.js { render :text => e.message.split(": ")[1], :status => 400 }
+      format.js { render :text => full_messages.join("\n"), :status => 400 }
     end
   end
 
