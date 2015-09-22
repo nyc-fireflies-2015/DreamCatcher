@@ -17,6 +17,7 @@ gem 'going_postal'
 gem 'ransack'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mailboxer'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'simplecov', :require => false
