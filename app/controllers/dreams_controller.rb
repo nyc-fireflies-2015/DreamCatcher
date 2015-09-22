@@ -17,7 +17,6 @@ class DreamsController < ApplicationController
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
       current_dreamer.points += 5
-      current_dreamer.save(validate: false)
       check_rank
       if dream_params[:hashtag_string]
         @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])

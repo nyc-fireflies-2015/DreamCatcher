@@ -31,6 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_rank
+    current_dreamer.save(validate: false)
+
     if current_dreamer.points >= 25
       current_dreamer.rank = "Novice"
       current_dreamer.save(validate: false)
