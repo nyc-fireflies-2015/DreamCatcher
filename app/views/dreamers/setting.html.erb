@@ -1,5 +1,7 @@
 <h3 class="subtitle">Set Up Reality Checks</h3>
 
-<%= form_tag('/send_sms', method: 'POST') do %>
-  <button type="submit">Submit</button>
+<%= form_for current_dreamer, url: reality_check_path, method: "PUT" do |f| %>
+  <%= f.text_field :phone_num, placeholder: "phone number" %>
+  <%= f.password_field :password, placeholder: "*password", data: {field: "password"} %>
+  <button type="submit">Send Me Reality Checks!</button>
 <% end %>

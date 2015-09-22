@@ -4,10 +4,20 @@ class TwilioController < ApplicationController
 
   include Sidekiq::Worker
 
-  def send_sms
-    current_dreamer.reality_check = true
-    current_dreamer.save
-    redirect_to profile_path(current_dreamer)
+  def reality_check
+    @dreamer = current_dreamer
+    @dreamer.update_attributes(dream_params.merge(reality_check:  true))
+    if @dreamer.save
+      redirect_to profile_path(current_dreamer)
+    else
+      redirect setting_path
+    end
+  end
+
+  private
+
+  def dream_params
+    params.require(:dreamer).permit(:password, :reality_check, :phone_num)
   end
 
 end
