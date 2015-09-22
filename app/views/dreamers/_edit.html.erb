@@ -1,8 +1,9 @@
 <h1>Edit Profile</h1>
 
+<p>To update your avatar, make sure your email is connected to <%= link_to "gravatar", "https://en.gravatar.com/", target: "_blank" %> and update your avatar through gravatar.</p>
+
 <%= form_for @dreamer, url: dreamer_path, method: "PUT", data: {form: "dreamer"} do |f| %>
   <%= f.text_field :email, placeholder: "*email" %>
-  <%= f.text_field :avatar_url, placeholder: "avatar url" %>
   <%= f.text_field :country, placeholder: "country" %>
   <%= f.text_field :state, placeholder: "state" %>
   <%= f.text_field :gender, placeholder: "gender" %>
