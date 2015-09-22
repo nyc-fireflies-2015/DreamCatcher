@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 gem 'rspec_junit_formatter', '0.2.2'
 gem 'rails', '4.2.4'
 gem 'pg'
+gem 'sidekiq'
+gem 'slim'
+gem 'sinatra', require: false
 gem 'twilio-rb'
 gem 'twilio-ruby'
 gem 'foundation-rails'
@@ -9,6 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'whenever', :require => false
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'validates_email_format_of'

@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   root 'dreams#index'
 
@@ -37,6 +38,6 @@ Rails.application.routes.draw do
   patch '/steps/:id/remove' => 'steps#remove_step', as: 'remove_step'
 
   get '/twilio' => 'twilio#index'
-  post '/send_sms' => 'twilio#send_sms'
-
+  put '/reality_check' => 'twilio#reality_check'
+  mount Sidekiq::Web, at: '/sidekiq'
 end
