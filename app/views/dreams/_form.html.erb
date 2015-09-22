@@ -7,6 +7,9 @@
   <p class="dream-input">
     <%= f.text_area :story, placeholder: "tell us about your dream" %>
   </p>
+  <p class="hashtag-input dream-input">
+  <%= f.text_area :hashtag_string, placeholder: "hashtags" %>
+</p>
 
   <%= f.check_box(:decision_clarity) %>
   <%= f.label('Were you able to make decisions?') %><br>
@@ -16,7 +19,6 @@
 
   <%= f.check_box(:dream_state_clarity) %>
   <%= f.label('Were your experiences vivid?') %>
-
   <p>
     <%= f.submit "Submit" %>
   </p>
