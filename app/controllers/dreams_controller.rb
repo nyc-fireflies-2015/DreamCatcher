@@ -28,9 +28,7 @@ class DreamsController < ApplicationController
   def update
     @dream.update_attributes!(dream_params)
     rescue ActiveRecord::RecordInvalid => e
-    respond_to do |format|
-      format.js { render :text => e.message, :status => 400 }
-    end
+    error(e)
   end
 
   def destroy
@@ -51,13 +49,6 @@ class DreamsController < ApplicationController
 
   def find_dream
     @dream = Dream.find(params[:id])
-  end
-
-  def error(error_messages)
-    flash[:error] = error_messages
-    respond_to do |format|
-      format.js { render file: "shared/errors.js.erb" }
-    end
   end
 
 end
