@@ -6,6 +6,8 @@ class MessagesController < ApplicationController
   end
 
   def create
+    current_dreamer.points += 2
+    check_rank
     recipients = Dreamer.where(id: params['recipients'])
     conversation = current_dreamer.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
     flash[:success] = "Message has been sent!"
