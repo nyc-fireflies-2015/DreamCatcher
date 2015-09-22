@@ -2,7 +2,7 @@ class StepsController < ApplicationController
 before_action :find_step, except: [:recipe, :new, :create]
   def recipe
     @creator = Dreamer.find(params[:id])
-    @steps = @creator.steps
+    @steps = @creator.steps.order('created_at DESC')
     @step = Step.new
     @popular_steps = Step.top
     redirect_to welcome_path unless current_dreamer
