@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe DreamersController, type: :controller do
   before(:all) do
+    @admin = Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreamingfireflies", email: "dreamcatcher@gmail.com")
     @dreamer = FactoryGirl.create(:dreamer)
     @dreamer_attributes = @dreamer.attributes
-    @admin = Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreamingfireflies", email: "dreamcatcher@gmail.com")
   end
 
   describe 'GET #new' do
