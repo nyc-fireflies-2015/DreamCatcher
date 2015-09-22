@@ -16,6 +16,9 @@ class DreamsController < ApplicationController
   def create
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
+      if dream_params[:hashtag_string]
+        @dream.hashtags << HashTag.parse(dream_params[:hashtag_string])
+      end
       render @dream
     else
       error(@dream.errors.full_messages)
