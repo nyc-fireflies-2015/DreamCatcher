@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :dreamers, except: [:index, :show, :new, :destroy]
   get '/dreamers/:id/setting' => 'dreamers#setting', as: 'setting'
+  get '/dreamers/:id/inbox' => 'dreamers#inbox', as: 'inbox'
   get '/profile/:id' => 'dreamers#show', as: 'profile'
   get '/signup' => 'dreamers#new', as: 'signup'
   get '/welcome' => 'welcome#index', as: 'welcome'

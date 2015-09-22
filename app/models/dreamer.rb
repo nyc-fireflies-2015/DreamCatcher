@@ -1,6 +1,5 @@
-require 'going_postal'
-
 class Dreamer < ActiveRecord::Base
+  acts_as_messageable
   has_secure_password
 
   has_many :dreams
