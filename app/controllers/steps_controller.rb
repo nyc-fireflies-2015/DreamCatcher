@@ -17,11 +17,10 @@ before_action :find_step, except: [:recipe, :new, :create]
   def create
       @step = Step.new(step_params.merge(creator: current_dreamer))
       current_dreamer.steps << @step
-    begin
-      @step.save!
+    if @step.save
       render @step
-    rescue ActiveRecord::RecordInvalid => e
-      error(e)
+    else
+      error(@step.errors.messages)
     end
   end
 
@@ -31,11 +30,10 @@ before_action :find_step, except: [:recipe, :new, :create]
   end
 
   def update
-    begin
-      @step.update_attributes!(step_params)
+    if @step.update_attributes(step_params)
       render @step
-    rescue ActiveRecord::RecordInvalid => e
-      error(e)
+    else
+      error(@step.errors.full_messages)
     end
   end
 

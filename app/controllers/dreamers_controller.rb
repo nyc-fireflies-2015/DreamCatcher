@@ -23,11 +23,10 @@ class DreamersController < ApplicationController
   end
 
   def update
-    begin
-      @dreamer.update_attributes!(dreamer_params)
+    if @dreamer.update_attributes(dreamer_params)
       render partial: "stats", locals: {dreamer: @dreamer}
-    rescue ActiveRecord::RecordInvalid => e
-      error(e)
+    else
+      error(@dreamer.errors.full_messages)
     end
   end
 
