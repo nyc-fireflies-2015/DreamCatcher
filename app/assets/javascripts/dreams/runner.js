@@ -12,4 +12,6 @@ $(document).ready(function(){
   Binder.bind({event: "click",
                 selector: "[data-link=edit-dream]",
                 callback: ctrl.getEditDreamForm });
+  Binder.setInterval({interval: 1000,
+                callback: ctrl.updateDreamRiver });
 });
