@@ -1,6 +1,6 @@
 class DreamsController < ApplicationController
   before_filter :authenticate_dreamer, except: [:index]
-  before_filter :find_dream, except: [:index, :create, :new]
+  before_filter :find_dream, except: [:index, :create, :new, :shortpoll]
 
   def index
     @dreams = Dream.order('created_at DESC').limit(20)
@@ -48,14 +48,24 @@ class DreamsController < ApplicationController
     hashtag = Hashtag.find(params[:hashtag_id])
     @dream.hashtags.delete(hashtag)
     hashtag.destroy if hashtag.dreams.empty?
-    render nothing: true, response: 200 
+    render nothing: true, response: 200
+  end
+
+  def shortpoll
+    @new_dreams = Dream.where(created_at: Time.at(params[:timestamp].to_i))
+
+    if @new_dreams.empty?
+      render nothing: true, status: 306
+    else
+      render @new_dreams
+    end
   end
 
   private
 
   def dream_params
-    params.require(:dream).permit(:title, :story, :decision_clarity, 
-                      :consciousness_clarity, :dream_state_clarity, 
+    params.require(:dream).permit(:title, :story, :decision_clarity,
+                      :consciousness_clarity, :dream_state_clarity,
                       :hashtag_string)
   end
 
