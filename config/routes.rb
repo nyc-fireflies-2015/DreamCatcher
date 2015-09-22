@@ -3,11 +3,14 @@ Rails.application.routes.draw do
 
   resources :dreams
   resources :comments, except: [:show]
+  resources :conversations, only: [:index, :show, :destroy]
+  resources :messages, only: [:new, :create]
   post '/favorite/:dream_id' => 'favorites#create', as: 'favorite'
   delete '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
 
   resources :dreamers, except: [:index, :show, :new, :destroy]
   get '/dreamers/:id/setting' => 'dreamers#setting', as: 'setting'
+  get '/dreamers/:id/inbox' => 'dreamers#inbox', as: 'inbox'
   get '/profile/:id' => 'dreamers#show', as: 'profile'
   get '/signup' => 'dreamers#new', as: 'signup'
   get '/welcome' => 'welcome#index', as: 'welcome'
