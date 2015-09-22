@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   resources :dreams
   resources :comments, except: [:show]
   resources :conversations, only: [:index, :show, :destroy] do
+    collection do
+      delete :empty_trash
+    end
+
+    member do
+      post :restore
+    end
+
     member do
       post :reply
     end
