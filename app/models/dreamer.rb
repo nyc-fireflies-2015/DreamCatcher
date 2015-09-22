@@ -10,7 +10,6 @@ class Dreamer < ActiveRecord::Base
   has_many :created_steps, class_name: "Step"
 
   validates_email_format_of :email, message: "Please enter valid email"
-  validates :avatar_url, format: {with: /\.(png|jpe?g|gif)\Z/i}, on: [:update]
   validates :password, length: {minimum: 6}
   validates_presence_of :email, :username
   validates_uniqueness_of :username
