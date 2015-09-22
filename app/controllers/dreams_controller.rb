@@ -48,13 +48,6 @@ class DreamsController < ApplicationController
     end
   end
 
-  def remove_hashtag
-    hashtag = Hashtag.find(params[:hashtag_id])
-    @dream.hashtags.delete(hashtag)
-    hashtag.destroy if hashtag.dreams.empty?
-    render nothing: true, response: 200
-  end
-
   private
 
   def dream_params
@@ -66,5 +59,4 @@ class DreamsController < ApplicationController
   def find_dream
     @dream = Dream.find(params[:id])
   end
-
 end
