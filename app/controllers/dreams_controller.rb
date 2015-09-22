@@ -17,7 +17,7 @@ class DreamsController < ApplicationController
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
       if dream_params[:hashtag_string]
-        @dream.hashtags << HashTag.parse(dream_params[:hashtag_string])
+        @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
       end
       render @dream
     else
@@ -44,7 +44,9 @@ class DreamsController < ApplicationController
   private
 
   def dream_params
-    params.require(:dream).permit(:title, :story, :decision_clarity, :consciousness_clarity, :dream_state_clarity)
+    params.require(:dream).permit(:title, :story, :decision_clarity, 
+                      :consciousness_clarity, :dream_state_clarity, 
+                      :hashtag_string)
   end
 
   def find_dream
