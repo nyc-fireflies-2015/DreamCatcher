@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   resources :dreams
   resources :comments, except: [:show]
-  resources :conversations, only: [:index, :show, :destroy]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
   resources :messages, only: [:new, :create]
   post '/favorite/:dream_id' => 'favorites#create', as: 'favorite'
   delete '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
