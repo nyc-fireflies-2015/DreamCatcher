@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     member do
       post :reply
     end
+
+    member do
+      post :mark_as_read
+    end
   end
   resources :messages, only: [:new, :create]
   post '/favorite/:dream_id' => 'favorites#create', as: 'favorite'

@@ -42,6 +42,12 @@ class ConversationsController < ApplicationController
     redirect_to conversations_path
   end
 
+  def mark_as_read
+    @conversation.mark_as_read(current_dreamer)
+    flash[:success] = 'The conversation was marked as read.'
+    redirect_to conversations_path
+  end
+
   private
 
   def get_mailbox
