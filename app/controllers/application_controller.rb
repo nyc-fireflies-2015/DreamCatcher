@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_dreamer
   helper_method :calculate_lucidity
+  helper_method :error
   layout proc { false if request.xhr? }
 
   before_filter :set_query
@@ -20,6 +21,12 @@ class ApplicationController < ActionController::Base
     @dreams = Dream.ransack(title_or_story_cont: @query).result
     @dreamers = Dreamer.search(username_cont: @query).result
     @steps = Step.search(description_cont: @query).result
+  end
+
+  def error(e)
+    respond_to do |format|
+      format.js { render :text => e.message.split(": ")[1], :status => 400 }
+    end
   end
 
 end
