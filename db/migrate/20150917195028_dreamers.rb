@@ -3,6 +3,7 @@ class Dreamers < ActiveRecord::Migration
     create_table :dreamers do |t|
       t.string :username, null: false, limit: 64
       t.string :password_digest, null: false
+      t.string :name
       t.text :about, limit: 1024
       t.text :recipe, limit: 2048
       t.integer :level, default: 0
