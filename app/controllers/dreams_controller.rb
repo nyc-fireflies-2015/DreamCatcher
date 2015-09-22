@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
   before_filter :find_dream, except: [:index, :create, :new]
 
   def index
-    @dreams = Dream.order('created_at DESC')
+    @dreams = Dream.order('created_at DESC').limit(20)
     @dream = Dream.new
     @popular_dreams = Dream.popular
     redirect_to welcome_path unless current_dreamer
