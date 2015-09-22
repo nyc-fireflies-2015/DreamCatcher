@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150922204235) do
     t.string   "state",           limit: 2
     t.string   "gender",          limit: 16
     t.string   "rank",                       default: "Newbie"
-    t.integer  "experience",                 default: 0
+    t.integer  "points",                     default: 0
   end
 
   create_table "dreams", force: :cascade do |t|

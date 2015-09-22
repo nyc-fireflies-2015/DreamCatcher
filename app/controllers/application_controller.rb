@@ -30,4 +30,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_rank
+    if current_dreamer.points >= 25
+      current_dreamer.rank = "Daydreamer"
+      current_dreamer.save(validate: false)
+    end
+  end
 end

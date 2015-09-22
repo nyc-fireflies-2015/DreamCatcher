@@ -16,6 +16,9 @@ class DreamsController < ApplicationController
   def create
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
+      current_dreamer.points += 5
+      current_dreamer.save(validate: false)
+      check_rank
       if dream_params[:hashtag_string]
         @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
       end
@@ -38,7 +41,9 @@ class DreamsController < ApplicationController
 
   def destroy
     if @dream.destroy
-    redirect_to root_path
+      current_dreamer.points -= 5
+      check_rank
+      redirect_to root_path
     else
       error(@dream.errors.full_messages)
     end
@@ -48,14 +53,14 @@ class DreamsController < ApplicationController
     hashtag = Hashtag.find(params[:hashtag_id])
     @dream.hashtags.delete(hashtag)
     hashtag.destroy if hashtag.dreams.empty?
-    render nothing: true, response: 200 
+    render nothing: true, response: 200
   end
 
   private
 
   def dream_params
-    params.require(:dream).permit(:title, :story, :decision_clarity, 
-                      :consciousness_clarity, :dream_state_clarity, 
+    params.require(:dream).permit(:title, :story, :decision_clarity,
+                      :consciousness_clarity, :dream_state_clarity,
                       :hashtag_string)
   end
 
