@@ -3,15 +3,15 @@
 </p>
 
 <div class="panel panel-default">
-  <div class="panel-heading"><%= @conversation.subject %></div>
+  <div class="panel-heading"><h1><%= @conversation.subject %></h1></div>
 
   <div class="panel-body">
     <div class="messages">
       <% @conversation.receipts_for(current_dreamer).each do |receipt| %>
         <% message = receipt.message %>
 
-        <%= message.sender.name %>
-          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+        <%= link_to message.sender.name, profile_path(message.sender) %>
+          on <%= message.created_at.strftime("%B %d %Y, %H:%M:%S") %>:
         <%= message.body %>
       <% end %>
     </div>
@@ -24,3 +24,5 @@
   </div>
   <%= submit_tag "Send Message", class: 'btn btn-primary' %>
 <% end %>
+
+<%= link_to "Back to Inbox", conversations_path, class: "button" %>
