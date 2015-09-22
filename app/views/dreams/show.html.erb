@@ -17,6 +17,9 @@ posted on <%= display_date(@dream.created_at) %><br>
 <p>
   <%= @dream.story %>
 </p>
+<p>
+  dreamtags: <%= render @dream.hashtags %>
+</p>
 
 <h3><%= @dream.comments.count %> Comments</h3>
 
@@ -40,7 +43,6 @@ posted on <%= display_date(@dream.created_at) %><br>
         </li>
     <% end %>
   </div>
-<ul>
-
+</ul>
 <hr>
 <%= render "comments/new" %>
