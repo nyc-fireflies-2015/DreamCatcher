@@ -1,13 +1,14 @@
 require 'sidekiq/web'
+require 'rake'
+# DreamCatcher::Application.load_tasks
 class TwilioController < ApplicationController
 
   include Sidekiq::Worker
-  def send_sms
-    message = params[:message]
-    # time = params[:time].to_i
-    number = params[:number]
-    TextWorker.perform_at(5.seconds, message, number)
 
+  def send_sms
+    current_dreamer.reality_check = true
+    current_dreamer.save
+    binding.pry
     redirect_to profile_path(current_dreamer)
   end
 
