@@ -7,4 +7,4 @@ You have received a new message:
 <%= @message.body.html_safe? ? @message.body : strip_tags(@message.body) %>
 -----------------------------------------------
 
-Visit <%= root_url %> and go to your inbox for more info.
+Visit <%= conversations_path %> and go to your inbox for more info.
