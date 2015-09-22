@@ -12,9 +12,11 @@ class DreamersController < ApplicationController
   end
 
   def create
-    dreamer = Dreamer.new(dreamer_params.merge(avatar_url: "avatar.png", steps: Step.default))
+    dreamer = Dreamer.new(dreamer_params.merge(steps: Step.default))
     if dreamer.save
       session[:dreamer_id] = dreamer.id
+      admin = Dreamer.find_by(username: "DreamCatcher")
+      admin.send_message(dreamer, body, "Welcome to DreamCatcher!")
       redirect_to root_path, notice: "Account has been created!!"
     else
       flash[:error] = dreamer.errors.full_messages
@@ -38,5 +40,9 @@ class DreamersController < ApplicationController
 
   def find_dreamer
     @dreamer = Dreamer.find(params[:id])
+  end
+
+  def body
+    "Are you dreaming right now?"
   end
 end

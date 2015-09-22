@@ -10,6 +10,8 @@ Step.create(description: "Awaken one hour earlier than usual, stay awake for 30 
 Step.create(description: "Imagine your surroundings are a dream. Intently imagine that what you are seeing, hearing, smelling, and feeling is all a dream.", default: true)
 Step.create(description: "Try to fly! If it works, you're most likely dreaming", default: true)
 
+Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreamingfireflies", email: "dreamcatcher@gmail.com")
+
 10.times do
   c = FactoryGirl.create(:dreamer)
   c.steps << Step.all
