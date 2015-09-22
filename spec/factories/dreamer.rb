@@ -4,7 +4,6 @@ FactoryGirl.define do
     name { Faker::Name.name }
     email { Faker::Internet.email }
     about { Faker::Lorem.paragraph }
-    avatar_url { Faker::Avatar.image }
     country "US"
     state "NY"
     gender "queer"

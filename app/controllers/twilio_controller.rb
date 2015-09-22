@@ -1,6 +1,5 @@
 require 'sidekiq/web'
 require 'rake'
-# DreamCatcher::Application.load_tasks
 class TwilioController < ApplicationController
 
   include Sidekiq::Worker

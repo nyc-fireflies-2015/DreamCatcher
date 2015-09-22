@@ -35,11 +35,9 @@ class DreamersController < ApplicationController
   private
 
   def dreamer_params
-<<<<<<< HEAD
-    params.require(:dreamer).permit(:username, :name, :email, :password, :about, :recipe, :city, :state, :gender)
-=======
+
     params.require(:dreamer).permit(:username, :email, :password, :avatar_url, :about, :recipe, :city, :state, :gender, :phone_num)
->>>>>>> cron tasks, twilio text and sidekiq working
+
   end
 
   def find_dreamer
