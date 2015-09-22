@@ -14,24 +14,30 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @dream = current_dreamer.dreams.create!(dream_params)
-    render @dream
+    begin
+      @dream = current_dreamer.dreams.create!(dream_params)
+      render @dream
     rescue ActiveRecord::RecordInvalid => e
-    error(e)
+      error(e)
+    end
   end
 
   def update
-    @dream.update_attributes!(dream_params)
-    render nothing: true
+    begin
+      @dream.update_attributes!(dream_params)
+      render nothing: true
     rescue ActiveRecord::RecordInvalid => e
-    error(e)
+      error(e)
+    end
   end
 
   def destroy
-    @dream.destroy!
-    redirect_to root_path
+    begin
+      @dream.destroy!
+      redirect_to root_path
     rescue ActiveRecord::RecordInvalid => e
-    error(e)
+      error(e)
+    end
   end
 
   private
