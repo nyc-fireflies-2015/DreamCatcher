@@ -20,26 +20,25 @@ class DreamsController < ApplicationController
     else
       flash[:error] = @dream.errors.full_messages
       respond_to do |format|
-        format.js { render :file => "shared/errors.js.erb" }
+        format.js { render file: "shared/errors.js.erb" }
       end
     end
   end
 
   def update
-    if @dream.update_attributes(dream_params)
-      redirect_to @dream
-    else
-      flash[:error] = @dream.errors.full_messages
-      respond_to do |format|
-        format.js { render file: "shared/errors.js.erb" }
-      end
+    @dream.update_attributes!(dream_params)
+    rescue ActiveRecord::RecordInvalid => e
+    respond_to do |format|
+      format.js { render :text => e.message, :status => 400 }
     end
   end
 
   def destroy
     unless @dream.destroy
       flash[:error] = @dream.errors.full_messages
-      render nothing: true
+      respond_to do |format|
+        format.js { render file: "shared/errors.js.erb" }
+      end
     end
     redirect_to root_path
   end
@@ -52,6 +51,13 @@ class DreamsController < ApplicationController
 
   def find_dream
     @dream = Dream.find(params[:id])
+  end
+
+  def error(error_messages)
+    flash[:error] = error_messages
+    respond_to do |format|
+      format.js { render file: "shared/errors.js.erb" }
+    end
   end
 
 end
