@@ -1,1 +1,4 @@
-  <%= hashtag.name %>
+   <%= form_for hashtag, url: search_path, method: "get", class: "hashtag" do |f| %>
+    <%=f.submit hashtag.name %>
+    <% f.hidden_field :q, value: :name %>
+    <% end %>
