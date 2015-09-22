@@ -39,4 +39,5 @@ Rails.application.routes.draw do
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
 
+  get '/shortpoll' => 'dreams#shortpoll'
 end
