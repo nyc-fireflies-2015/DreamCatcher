@@ -1,0 +1,5 @@
+<% hashtags.each do |hashtag| %>
+  <% hashtag.dreams.each do |dream| %>
+    <%= render partial: "dream_results.html.erb", locals: {dream: dream} %>
+  <% end %>
+<% end %>
