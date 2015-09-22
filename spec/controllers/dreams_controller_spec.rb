@@ -52,7 +52,7 @@ describe DreamsController do
     before :each do
       login(dreamer)
       @dreamer_attributes = dreamer.attributes
-      @hashtag_string = "what, do, how, this"
+      @hashtag_string = "how, what, for, the"
     end
 
     it "saves the new valid dream" do
@@ -64,7 +64,7 @@ describe DreamsController do
     it "parses and assigns new hashtags" do
       expect{
         post :create, dream: FactoryGirl.attributes_for(:dream).merge(hashtag_string: @hashtag_string)
-        }.to change{Dream.all.last.hashtags.count}.by(4)
+        }.to change(Hashtag,:count).by(4)
     end
 
     it "does not save new invalid dream" do
@@ -90,7 +90,7 @@ describe DreamsController do
       @dream = FactoryGirl.create(:dream)
       @attributes = FactoryGirl.attributes_for(:dream)
       @invalid_attributes = FactoryGirl.attributes_for(:invalid_dream)
-      @hashtag_string = "what, do, how, this"
+      @hashtag_string = "how, what, where, why"
     end
 
     it "updates the dream if valid" do
