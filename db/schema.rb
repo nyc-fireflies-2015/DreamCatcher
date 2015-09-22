@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921235729) do
+ActiveRecord::Schema.define(version: 20150922141233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,22 @@ ActiveRecord::Schema.define(version: 20150921235729) do
     t.string   "title",                 limit: 128
   end
 
+  create_table "dreams_hashtags", force: :cascade do |t|
+    t.integer "hashtag_id"
+    t.integer "dream_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer  "dream_id"
     t.integer  "fan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
