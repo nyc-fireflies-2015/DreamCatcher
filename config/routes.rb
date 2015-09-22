@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :messages, only: [:new, :create]
+  post '/dreams/hashtags' => 'dreams#remove_hashtag', as: 'remove_hashtag'
   post '/favorite/:dream_id' => 'favorites#create', as: 'favorite'
   delete '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
 
