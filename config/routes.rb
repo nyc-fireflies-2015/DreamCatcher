@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'dreams#index'
 
+  patch '/dreams/:id/hashtags' => 'dreams#remove_hashtag', as: 'remove_hashtag'
   resources :dreams
   resources :comments, except: [:show]
   resources :conversations, only: [:index, :show, :destroy] do

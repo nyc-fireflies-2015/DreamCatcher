@@ -52,12 +52,19 @@ describe DreamsController do
     before :each do
       login(dreamer)
       @dreamer_attributes = dreamer.attributes
+      @hashtag_string = "how, what, for, the"
     end
 
     it "saves the new valid dream" do
       expect{
         post :create, dream: FactoryGirl.attributes_for(:dream)
       }.to change(Dream,:count).by(1)
+    end
+
+    it "parses and assigns new hashtags" do
+      expect{
+        post :create, dream: FactoryGirl.attributes_for(:dream).merge(hashtag_string: @hashtag_string)
+        }.to change(Hashtag,:count).by(4)
     end
 
     it "does not save new invalid dream" do
@@ -83,6 +90,7 @@ describe DreamsController do
       @dream = FactoryGirl.create(:dream)
       @attributes = FactoryGirl.attributes_for(:dream)
       @invalid_attributes = FactoryGirl.attributes_for(:invalid_dream)
+      @hashtag_string = "how, what, where, why"
     end
 
     it "updates the dream if valid" do
@@ -90,6 +98,13 @@ describe DreamsController do
       @dream.reload
       expect(@dream.title).to eq(@attributes[:title])
       expect(@dream.story).to eq(@attributes[:story])
+    end
+
+    it "parses and assigns new hashtags" do
+      expect{
+        post :update, id: @dream, dream: @attributes.merge(hashtag_string: @hashtag_string)
+        @dream.reload
+        }.to change{@dream.hashtags.count}.by(4)
     end
 
     it "does not update the dream if invalid" do
@@ -112,6 +127,37 @@ describe DreamsController do
       expect(response).to have_http_status(400)
     end
 
+  end
+  describe "post #remove_hashtag" do
+      before :each do
+        login(dreamer)
+        @dream = FactoryGirl.create(:dream)
+        @hashtag = FactoryGirl.create(:hashtag)
+        @dream.hashtags << @hashtag
+      end
+    context "hashtag has one association" do
+      it "hashtag should be destroyed" do
+        @dream.hashtags << @hashtag
+        expect {
+          patch :remove_hashtag, id: @dream.id, hashtag_id: @hashtag.id
+        }.to change(Hashtag, :count).by -1
+      end
+    end
+    context "hashtag has more than one association" do
+      before :each do
+        @hashtag.dreams << FactoryGirl.create(:dream)
+      end
+      it "hashtag should not be destroyed" do
+        expect {
+          patch :remove_hashtag, id: @dream.id, hashtag_id: @hashtag.id
+        }.not_to change(Hashtag, :count)
+      end
+      it "hashtag should no longer be associated with dream" do
+        patch :remove_hashtag, id: @dream.id, hashtag_id: @hashtag.id
+        @dream.reload
+        expect(@dream.hashtags).not_to include(@hashtag)
+      end
+    end
   end
 
   describe "DELETE #destroy" do

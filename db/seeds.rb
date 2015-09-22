@@ -15,6 +15,7 @@ Step.create(description: "Try to fly! If it works, you're most likely dreaming",
   c.steps << Step.all
   4.times do
     ds = c.dreams.create(FactoryGirl.attributes_for(:dream))
+    ds.hashtags << Array.new(3){ FactoryGirl.create(:hashtag) }
     5.times do
       ds.favorites.create(fan: c)
     end

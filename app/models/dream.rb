@@ -1,8 +1,12 @@
 class Dream < ActiveRecord::Base
+  attr_accessor :hashtag_string
   belongs_to :dreamer
   has_many :comments
   has_many :favorites
-
+  has_many :taggings
+  has_many :hashtags, through: :taggings
+  accepts_nested_attributes_for :hashtags, :allow_destroy => true
+  
   validates_presence_of :story, :title
 
   scope :popular, -> {order('favorites_count DESC').limit(10)}
