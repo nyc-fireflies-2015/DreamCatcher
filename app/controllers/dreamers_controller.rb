@@ -16,7 +16,7 @@ class DreamersController < ApplicationController
     if dreamer.save
       session[:dreamer_id] = dreamer.id
       admin = Dreamer.find_by(username: "DreamCatcher")
-      admin.send_message(dreamer, body, "Welcome to DreamCatcher!")
+      admin.send_message(dreamer, body, "Are you dreaming right now?")
       redirect_to root_path, notice: "Account has been created!!"
     else
       flash[:error] = dreamer.errors.full_messages
@@ -43,6 +43,6 @@ class DreamersController < ApplicationController
   end
 
   def body
-    "Are you dreaming right now?"
+    "Welcome to DreamCatcher! Create and experiment with other dreamer's 'Dream Recipes' to increase your chances of having lucid dreams. Post your dreams - lucid or not - and explore what other's are dreaming about. Get out and start dreaming!"
   end
 end
