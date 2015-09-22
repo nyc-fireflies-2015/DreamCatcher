@@ -73,7 +73,7 @@ describe DreamsController do
 
     it "re-directs to new_dream_path if invalid" do
       post :create, dream: @dreamer_attributes.merge(title: nil), format: :js
-      expect(response).to render_template "shared/errors.js.erb"
+      expect(response).to have_http_status(400)
     end
   end
 
@@ -100,16 +100,16 @@ describe DreamsController do
       expect(dream.story).to eq(@attributes[:story])
     end
 
-    it "redirects to dream/:id if valid" do
+    it "responds with 200 if valid" do
       put :update, id: @dream, dream: @attributes
       @dream.reload
-      expect(response).to redirect_to @dream
+      expect(response).to have_http_status(200)
     end
 
-    it "re-renders :edit template if invalid" do
+    it "renders response code 400 if invalid" do
       put :update, id: @dream, dream: @invalid_attributes, format: :js
       @dream.reload
-      expect(response).to render_template "shared/errors.js.erb"
+      expect(response).to have_http_status(400)
     end
 
   end
