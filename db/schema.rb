@@ -73,6 +73,12 @@ ActiveRecord::Schema.define(version: 20150922185618) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hashtags", force: :cascade do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
     t.string  "unsubscriber_type"
@@ -141,6 +147,11 @@ ActiveRecord::Schema.define(version: 20150922185618) do
     t.boolean  "default",                    default: false
     t.integer  "creator_id"
     t.integer  "recipes_count",              default: 0
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "hashtag_id"
+    t.integer "dream_id"
   end
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"

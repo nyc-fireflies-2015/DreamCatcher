@@ -16,6 +16,9 @@ class DreamsController < ApplicationController
   def create
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
+      if dream_params[:hashtag_string]
+        @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
+      end
       render @dream
     else
       error(@dream.errors.full_messages)
@@ -24,6 +27,9 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update_attributes(dream_params)
+      if dream_params[:hashtag_string]
+        @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
+      end
       render nothing: true
     else
       error(@dream.errors.full_messages)
@@ -38,10 +44,19 @@ class DreamsController < ApplicationController
     end
   end
 
+  def remove_hashtag
+    hashtag = Hashtag.find(params[:hashtag_id])
+    @dream.hashtags.delete(hashtag)
+    hashtag.destroy if hashtag.dreams.empty?
+    render nothing: true, response: 200 
+  end
+
   private
 
   def dream_params
-    params.require(:dream).permit(:title, :story, :decision_clarity, :consciousness_clarity, :dream_state_clarity)
+    params.require(:dream).permit(:title, :story, :decision_clarity, 
+                      :consciousness_clarity, :dream_state_clarity, 
+                      :hashtag_string)
   end
 
   def find_dream
