@@ -18,6 +18,7 @@ gem 'ransack'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mailboxer'
 gem 'will_paginate'
+gem 'gravatarify', '~> 3.0.0'
 
 group :development, :test do
   gem 'simplecov', :require => false

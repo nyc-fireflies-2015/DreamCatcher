@@ -90,6 +90,7 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     going_postal (0.1.5)
+    gravatarify (3.0.0)
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -256,6 +257,7 @@ DEPENDENCIES
   faker
   foundation-rails
   going_postal
+  gravatarify (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   launchy
