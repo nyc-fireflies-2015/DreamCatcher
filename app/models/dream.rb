@@ -2,8 +2,8 @@ class Dream < ActiveRecord::Base
   belongs_to :dreamer
   has_many :comments
   has_many :favorites
-  has_many :dream_hashtags
-  has_many :hashtags, through: :dream_hashtags
+  has_many :taggings
+  has_many :hashtags, through: :taggings
 
   validates_presence_of :story, :title
 

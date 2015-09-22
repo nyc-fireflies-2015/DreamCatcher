@@ -1,4 +1,4 @@
 class Hashtag < ActiveRecord::Base
-  has_many :dream_hashtags
-  has_many :dreams, through: :dream_hashtags
+  has_many :taggings
+  has_many :dreams, through: :taggings
 end
