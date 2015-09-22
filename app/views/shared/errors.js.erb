@@ -1,5 +1,0 @@
-$(document).on("ajax:success", function(event){
-  var errorDiv = $(event.target).find("[data-handler=errors]");
-  $(errorDiv).html("<%= j render :file => "shared/_errors.html.erb", locals: {errors: flash[:error]} %>")
-});
-
