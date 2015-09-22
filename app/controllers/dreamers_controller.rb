@@ -23,14 +23,10 @@ class DreamersController < ApplicationController
   end
 
   def update
-    if @dreamer.update_attributes(dreamer_params)
-      render partial: "stats", locals: {dreamer: @dreamer}
-    else
-      flash[:error] = @dreamer.errors.full_messages
-      respond_to do |format|
-        format.js { render :file => "shared/errors.js.erb" }
-      end
-    end
+    @dreamer.update_attributes!(dreamer_params)
+    render partial: "stats", locals: {dreamer: @dreamer}
+    rescue ActiveRecord::RecordInvalid => e
+    error(e)
   end
 
   private

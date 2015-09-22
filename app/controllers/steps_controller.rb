@@ -17,10 +17,10 @@ before_action :find_step, except: [:recipe, :new, :create]
   def create
     @step = Step.new(step_params.merge(creator: current_dreamer))
     current_dreamer.steps << @step
-    unless @step.save
-      flash[:error] = @step.errors.full_messages
-    end
+    @step.save!
     render @step
+    rescue ActiveRecord::RecordInvalid => e
+    error(e)
   end
 
   def edit
@@ -29,23 +29,15 @@ before_action :find_step, except: [:recipe, :new, :create]
   end
 
   def update
-    if @step.update_attributes(step_params)
-      render @step
-    else
-      flash[:error] = @step.errors.full_messages
-      respond_to do |format|
-        format.html { redirect_to recipe_path(current_dreamer.recipe) }
-        format.js { render :file => "layouts/errors.js.erb"}
-      end
-    end
+    @step.update_attributes!(step_params)
+    render @step
+    rescue ActiveRecord::RecordInvalid => e
+    error(e)
   end
 
   def add_step
     current_dreamer.steps << @step
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js { render "step.js.erb" }
-    end
+    render :nothing => true, :status => 200
   end
 
   def remove_step
@@ -54,7 +46,6 @@ before_action :find_step, except: [:recipe, :new, :create]
     else
       current_dreamer.steps.delete(@step)
     end
-    redirect_to :back unless request.xhr?
     render :nothing => true, :status => 200
   end
 

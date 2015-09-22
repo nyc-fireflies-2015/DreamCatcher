@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       flash[:error] = ['Unsuccessful Login!']
       render 'new'
     end
+    error(['Unsuccessful Login!'])
   end
 
   def destroy
