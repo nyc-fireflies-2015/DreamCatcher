@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%= @conversation.subject %></div>
+
+  <div class="panel-body">
+    <div class="messages">
+      <% @conversation.receipts_for(current_dreamer).each do |receipt| %>
+        <% message = receipt.message %>
+
+        <%= message.sender.name %>
+          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+        <%= message.body %>
+      <% end %>
+    </div>
+  </div>
+</div>
