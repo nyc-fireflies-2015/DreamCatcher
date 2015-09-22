@@ -1,5 +1,4 @@
 module TimeHelper
-
   def elapsed_time(time)
     seconds = (Time.now - time).to_i
     minutes = seconds/60
@@ -20,5 +19,4 @@ module TimeHelper
   def display_date(time)
     time.strftime("%B %d %Y")
   end
-
 end
