@@ -128,6 +128,34 @@ describe DreamsController do
     end
 
   end
+  describe "post #remove_hashtag" do
+    before :each do
+      @dream = FactoryGirl.create(:dream)
+      @hashtag = FactoryGirl.create(:hashtag)
+      @dream.hashtags << @hashtag
+    end
+    context "hashtag has one association" do
+      it "hashtag should be destroyed" do
+        expect {
+          post :remove_hashtag, id: @hashtag.id
+        }.to change(Hashtag, :count).by -1
+      end
+    end
+    context "hashtag has more than one association" do
+      before :each do
+        @hashtag.dreams << FactoryGirl.create(:dream)
+      end
+      it "hashtag should not be destroyed" do
+        expect {
+          post :remove_hashtag, id: @hashtag.id
+        }.not_to change(Hashtag, :count)
+      end
+      it "hashtag should no longer be associated with dream" do
+        post :remove_hashtag, id: @hashtag.id
+        expect(@dream.hashtags).not_to include(@hashtag)
+      end
+    end
+  end
 
   describe "DELETE #destroy" do
     before :each do
