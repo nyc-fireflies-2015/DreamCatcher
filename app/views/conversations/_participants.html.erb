@@ -1,5 +1,5 @@
 <% conversation.participants.each do |participant| %>
   <% unless participant == current_dreamer %>
-    <%= image_tag("#{participant.avatar_url}", class: "icon") %>
+    <%= link_to image_tag("#{participant.avatar_url}", class: "icon"), profile_path(participant) %>
   <% end %>
 <% end %>

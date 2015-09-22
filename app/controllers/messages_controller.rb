@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_dreamer
 
   def new
+    @chosen_recipient = Dreamer.find_by(id: params[:to].to_i) if params[:to]
   end
 
   def create
