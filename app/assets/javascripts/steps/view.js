@@ -3,6 +3,7 @@ StepView.showNewDreamForm = function(eventTarget){
   $("[data-form=new_step]").fadeIn("slow");
   $("[data-link=new_step]").hide();
   $(".popular-steps-river").hide();
+  $(".popular-title").hide();
 };
 StepView.showEditDreamForm = function(eventTarget){
   var step = $(eventTarget).closest("[data-li=step]");
@@ -20,6 +21,7 @@ StepView.showNewStep = function(eventTarget, newStep){
   $("[data-form=new_step]").find("form").trigger("reset");
   $("[data-link=new_step]").fadeIn("slow");
   $(".popular-steps-river").fadeIn("slow");
+  $(".popular-title").fadeIn("slow");
 };
 StepView.showUpdatedStep = function(eventTarget, savedStep){
   var step = $(eventTarget).closest("[data-li=step]");
