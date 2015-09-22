@@ -10,6 +10,7 @@ class DreamsController < ApplicationController
   end
 
   def show
+    @q = Hashtag.ransack(params[:q])
     @comment = Comment.new
   end
 

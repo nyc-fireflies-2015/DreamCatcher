@@ -1,6 +1,6 @@
 <h1 class="center">Searching for "<%= @query %>"</h1>
 
-<% if [@dreams, @dreamers, @steps, @hashtags].all?(&:empty?) %>
+<% if [@dreams, @dreamers, @steps].all?(&:empty?) %>
   <hr>
   <p>There are no results for your search.<br>
     Your query might be too specific.</p>
@@ -16,15 +16,6 @@
       <% @dreams.each do |dream| %>
       <%= render partial: "dream_results.html.erb", locals: {dream: dream} %>
       <% end %>
-
-      <h3 class="left">Dreamtags</h3>
-      <hr>
-
-       <% if @hashtags.empty? %>
-        <p>There are no dreamtags that match your search.</p>
-      <% end %>
-
-      <%= render partial: "hashtag_results.html.erb", locals: {hashtags: @hashtags} %>
 
       <h3 class="left">Dreamers</h3>
       <hr>
