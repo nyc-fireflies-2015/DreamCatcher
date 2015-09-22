@@ -27,6 +27,9 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update_attributes(dream_params)
+      if dream_params[:hashtag_string]
+        @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
+      end
       render nothing: true
     else
       error(@dream.errors.full_messages)
