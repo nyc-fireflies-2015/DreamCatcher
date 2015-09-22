@@ -4,6 +4,7 @@ RSpec.describe DreamersController, type: :controller do
   before(:all) do
     @dreamer = FactoryGirl.create(:dreamer)
     @dreamer_attributes = @dreamer.attributes
+    @admin = Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreamingfireflies", email: "dreamcatcher@gmail.com")
   end
 
   describe 'GET #new' do
@@ -22,7 +23,7 @@ RSpec.describe DreamersController, type: :controller do
       end
 
       it "redirects to homepage with successful sign up" do
-        post :create, dreamer: FactoryGirl.attributes_for(:dreamer)
+        post :create, dreamer: {username: "abby", name: "something", password: "password", email: "email@gmail.com"}
         expect(response).to redirect_to root_path
       end
     end
@@ -49,15 +50,14 @@ RSpec.describe DreamersController, type: :controller do
 
     context "valid attributes" do
       it "changes dreamer's attributes" do
-        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: "updated username", avatar_url: "avatar.png")
+        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, username: "updated username")
         @dreamer.reload
         expect(@dreamer.username).to eq("updated username")
-        expect(@dreamer.avatar_url).to eq("avatar.png")
       end
 
       it "redirects to the updated dreamer profile" do
         session[:dreamer_id] = @dreamer.id
-        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer, avatar_url: "avatar.png")
+        put :update, id: @dreamer, dreamer: FactoryGirl.attributes_for(:dreamer)
         expect(response).to render_template "dreamers/_stats"
       end
     end

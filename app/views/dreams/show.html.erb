@@ -30,7 +30,7 @@ posted on <%= display_date(@dream.created_at) %><br>
     <% @dream.comments.each do |comment| %>
         <li>
           <div class="left">
-            <%= image_tag(comment.dreamer.avatar_url, class: "icon") %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
+            <%= gravatar_tag comment.dreamer.email, class: "icon", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png" %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
           </div>
           <div class="right">
             <p><%= display_date(comment.created_at) %></p>
