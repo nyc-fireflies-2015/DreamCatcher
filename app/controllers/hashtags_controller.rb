@@ -1,9 +1,11 @@
 class HashtagsController < ApplicationController
   def destroy
-    hashtag = Hashtag.find(params[:hashtag_id])
-    @dream.hashtags.delete(hashtag)
+    hashtag = Hashtag.find(params[:id])
+    dream = Dream.find(params[:dream_id])
+    dream.hashtags.delete(hashtag)
     hashtag.destroy if hashtag.dreams.empty?
-    render nothing: true, response: 200
+    redirect_to dream_path(dream)
+    # render nothing: true, response: 200
   end
 
   def search
