@@ -6,6 +6,7 @@ class TextWorker
   include Sidekiq::Worker
 
   def self.send_text_to_all
+    binding.pry
     subs = Dreamer.reality_testers
     subs.each do |dreamer|
       TextWorker.perform_async(dreamer.phone_num)
