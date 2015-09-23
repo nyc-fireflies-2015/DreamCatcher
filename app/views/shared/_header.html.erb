@@ -10,7 +10,7 @@
       <ul>
         <li>
           <%= form_tag search_path, method: :get do %>
-            <%= text_field_tag :q, "search" %>
+            <%= text_field_tag :q, nil, placeholder: "search" %>
           <% end %>
         </li>
         <% if current_dreamer %>
