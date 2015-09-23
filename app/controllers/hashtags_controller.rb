@@ -9,6 +9,7 @@ class HashtagsController < ApplicationController
   end
 
   def index
+    @count = 0
     @dreams = @hashtag.dreams
   end
 

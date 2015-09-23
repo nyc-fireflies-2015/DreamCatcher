@@ -16,6 +16,7 @@ class DreamsController < ApplicationController
   end
 
   def create
+    @count = 0
     @dream = current_dreamer.dreams.new(dream_params)
     if @dream.save
       current_dreamer.points += 5
@@ -62,6 +63,7 @@ class DreamsController < ApplicationController
     if new_dreams.empty?
       render nothing: true, status: 306
     else
+      @count = 0
       @dreams = Dream.order('created_at DESC').limit(20)
       render @dreams
     end
