@@ -9,9 +9,7 @@
   </div>
 
   <div class="trend-river">
-    <% @popular_dreams.each do |dream| %>
-       <%= link_to dream.title, dream_path(dream) %><br>
-    <%end%>
+    <%= render @popular_hashtags %>
   </div>
 </div>
 
