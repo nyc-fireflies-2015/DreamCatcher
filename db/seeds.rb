@@ -2,6 +2,7 @@ Dreamer.delete_all
 Recipe.delete_all
 Dream.delete_all
 Step.delete_all
+Hashtag.delete_all
 
 Step.create(description: "Upon awakening, remain absolutely still while you recall the essential elements of the dream and log it in DreamCatcher.", default: true)
 Step.create(description: "Wear a digital watch and read the words or numbers on the watch. If the characters are normal, stable, and sensible, then you probably aren't dreaming.", default: true)
@@ -17,7 +18,8 @@ Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreami
   c.steps << Step.all
   4.times do
     ds = c.dreams.create(FactoryGirl.attributes_for(:dream))
-    Array.new(3){ FactoryGirl.create(:hashtag) }.each do |hashtag|
+    3.times do 
+      hashtag = FactoryGirl.create(:hashtag)
       ds.hashtags << hashtag
       hashtag.dreams << ds
     end
