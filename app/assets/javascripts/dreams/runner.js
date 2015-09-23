@@ -1,7 +1,5 @@
 var DreamsRunner = {};
 DreamsRunner.index = function(){
-  var d = new Date();
-  $("[data-info=timestamp]").data("timestamp", d.getTime().toString());
   var ctrl = new DreamsController();
   Binder.bind({event: "submit",
                 selector: "[data-form=new] form",
@@ -15,6 +13,7 @@ DreamsRunner.index = function(){
   Binder.bind({event: "click",
                 selector: "[data-link=edit-dream]",
                 callback: ctrl.getEditDreamForm });
+  DreamView.setTimeStamp("[data-info=timestamp]");
   Binder.setInterval({interval: 10000,
                 callback: ctrl.updateDreamRiver });
 };

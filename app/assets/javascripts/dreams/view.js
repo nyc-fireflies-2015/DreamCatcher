@@ -1,4 +1,8 @@
 DreamView = {};
+DreamView.setTimeStamp = function(selector){
+  var d = new Date();
+  $(selector).data("timestamp", d.getTime().toString());
+};
 DreamView.showNewDream = function(el, newDreamSummary){
   $("[data-river=dreams]").prepend(newDreamSummary);
   $("[data-form=new]").hide();

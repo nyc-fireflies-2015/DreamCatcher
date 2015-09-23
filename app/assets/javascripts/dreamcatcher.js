@@ -36,7 +36,9 @@ Obj.fromElement = function(selector){
   var elementData = {};
   elementData.type = $(selector).data("method");
   elementData.url = $(selector).data("action");
-  elementData.data = {timestamp: $(selector).data("timestamp")};
+  var key = $(selector).data("info");
+  elementData.data = {};
+  elementData.data[key] = $(selector).data("timestamp");
   return elementData;
 };
 

@@ -5,6 +5,7 @@ $(document).ready(function(){
   }
   if($("#dream-show").length >= 0){
     DreamsRunner.show();
+    CommentsRunner.show();
   }
   if($("#step-index").length >= 0){
     StepsRunner.index();

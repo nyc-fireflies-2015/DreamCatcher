@@ -6,15 +6,13 @@ class CommentsController < ApplicationController
 
   def create
     dream = Dream.find(comment_params[:dream_id])
-    comment = Comment.new(comment_params.merge(dreamer: current_dreamer, dream: dream))
-
-    if comment.save
+    @comment = dream.comments.new(comment_params.merge(dreamer: current_dreamer))
+    if @comment.save
       current_dreamer.points += 2
       check_rank
-      redirect_to dream_path(dream)
+      render @comment
     else
-      flash[:error] = comment.errors.full_messages
-      redirect_to dream_path(dream)
+      error(comment.errors.full_messages)
     end
   end
 
@@ -22,10 +20,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update_attributes(content: params[:comment][:content])
-      redirect_to dream_path(@comment.dream)
+      render @comment
     else
-      flash[:error] = comment.errors.full_messages
-      redirect_to dream_path(@comment.dream)
+      error(comment.errors.full_messages)
     end
   end
 
