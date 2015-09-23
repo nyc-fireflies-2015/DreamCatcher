@@ -1,4 +1,5 @@
-$(document).ready(function(){
+var DreamersRunner = {};
+DreamersRunner.profile = function(){
   var ctrl = new DreamersController();
   Binder.bind({event: "submit",
                 selector: "[data-form=dreamer]",
@@ -6,4 +7,4 @@ $(document).ready(function(){
   Binder.bind({event: "click",
                 selector: "[data-link=edit-profile]",
                 callback: ctrl.getProfileForm});
-});
+}

@@ -9,5 +9,7 @@ $(document).ready(function(){
   if($("#step-index")){
     StepsRunner.index();
   }
-
+  if($("#dreamers-profile")){
+    DreamersRunner.profile();
+  }
 });
