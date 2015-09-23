@@ -28,7 +28,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def clone
     current_dreamer.steps << @step
-    redirect_to :back
+    render partial: "step", locals: {step: @step}
   end
 
   def destroy
