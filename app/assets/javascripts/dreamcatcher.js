@@ -33,11 +33,10 @@ Obj.fromDCLink = function(link){
   return linkData;
 };
 Obj.fromElement = function(selector){
-  $(selector).data("timestamp");
   var elementData = {};
   elementData.type = $(selector).data("method");
   elementData.url = $(selector).data("action");
-  elementData.data = $(selector).data("timestamp");
+  elementData.data = {timestamp: $(selector).data("timestamp")};
   return elementData;
 };
 
@@ -63,4 +62,6 @@ DreamCatcher.base = function(args){
     var errorDiv = $(args.params).find("[data-handler=errors]");
     $(errorDiv).html(error.responseText);
   });
-}
+};
+
+
