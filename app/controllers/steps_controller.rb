@@ -27,8 +27,12 @@ before_action :find_step, except: [:recipe, :new, :create]
   end
 
   def clone
-    current_dreamer.steps << @step
-    render partial: "step", locals: {step: @step}
+    unless current_dreamer.steps.include?(@step)
+      current_dreamer.steps << @step
+      render partial: "step", locals: {step: @step}
+    else
+      render nothing: true, status: 306
+    end
   end
 
   def destroy
