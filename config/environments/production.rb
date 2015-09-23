@@ -28,5 +28,5 @@ Rails.application.configure do
 
   config.middleware.use Rack::TwilioWebhookAuthentication, Rails.application.secrets.twilio_auth_token, '/voice'
 
-  ENV["REDISTOGO_URL"] = 'redis://aderend:dreamcatchers@my.host:6789'
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:4246ff61c9921280a10349c647378277@tetra.redistogo.com:9967/'
 end
