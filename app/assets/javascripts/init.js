@@ -6,7 +6,8 @@ $(document).ready(function(){
   if($("#dream-show").length){
     DreamsRunner.show();
   }
-  if($()){
-    StepsRunner.recipe();
+  if($("#step-index")){
+    StepsRunner.index();
   }
+
 });
