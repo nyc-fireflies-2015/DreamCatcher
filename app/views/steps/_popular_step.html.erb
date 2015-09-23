@@ -1,7 +1,9 @@
 <li data-li="step">
   <div data-div="step-info">
-    <%= link_to image_tag("add-icon.png", class: "icon"), clone_path(step), method: "post", action: "clone" %>
-    <%= render partial: "show", locals: {step: step} %>
+    <% unless step.creator != current_dreamer && current_dreamer.steps.include?(step)%>
+      <%= link_to image_tag("add-icon.png", class: "icon"), clone_path(step), method: "post", action: "clone" %>
+    <% end %>
+    <%= step.description %>
   </div>
   <hr>
 </li>
