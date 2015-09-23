@@ -14,8 +14,8 @@ class TextWorker
 
   def self.perform(number)
     number = number
-    message = 'This is a test'
-    twilio_num =
+    message = 'Finale'
+    twilio_number = ENV["TWILIO_NUMBER"]
     account_sid = ENV["TWILIO_ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
     binding.pry
