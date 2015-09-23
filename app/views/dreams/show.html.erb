@@ -4,15 +4,15 @@
  <%= render "edit" %>
 </div>
 
-<p>
-  <% if @dream.dreamer == current_dreamer %>
-    <%= link_to "Edit", edit_dream_path(@dream), data: { link: "edit-dream" } %><br>
-    <%= link_to "Delete", dream_path(@dream), method: "delete" %>
-  <% end %>
-</p>
-
 posted on <%= display_date(@dream.created_at) %><br>
-<%= gravatar_tag @dream.dreamer.email, class: "avatar left", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png" %> <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %>
+
+<%= gravatar_tag @dream.dreamer.email, class: "avatar left", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png" %>
+<%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %><br>
+<% if @dream.dreamer == current_dreamer %>
+  <%= link_to image_tag("edit-icon.png", class: "icon"), edit_dream_path(@dream), data: { link: "edit-dream" } %>
+  <%= link_to image_tag("delete-icon.png", class: "icon"), dream_path(@dream), method: "delete" %>
+<% end %>
+
 <hr>
 <p>
   <%= @dream.story %>
