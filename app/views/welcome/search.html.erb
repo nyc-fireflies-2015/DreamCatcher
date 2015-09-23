@@ -1,4 +1,4 @@
-<h1 class="center">Searching for "<%= @query %>"</h1>
+<p><h1 class="center">Searching for "<%= @query %>"</h1></p>
 
 <% if [@dreams, @dreamers, @steps].all?(&:empty?) %>
   <hr>
@@ -7,7 +7,7 @@
 <% else %>
   <div class="search">
     <ul>
-      <h3 class="left search">Dreams</h3>
+      <h3 class="left">Dreams</h3>
       <hr>
       <% if @dreams.empty? %>
         <p>There are no dreams that match your search.</p>
@@ -42,7 +42,6 @@
         <li><%= link_to step.description, step_path(step) %></li>
       <% end %>
       <%= will_paginate @steps %>
-
     </ul>
   </div>
 <% end %>

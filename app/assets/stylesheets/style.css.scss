@@ -3,7 +3,6 @@ html, body {
 }
 
 main {
-  position: realtive;
   width: 100%;
   font-family: 'Inconsolata', sans-serif;
   min-height: 100%;
@@ -80,6 +79,8 @@ sub {
 }
 
 .comment, .search {
+  text-align: left;
+
   li {
     padding: 1.5em;
     list-style-type: none;
