@@ -21,7 +21,6 @@ Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreami
     3.times do 
       hashtag = FactoryGirl.create(:hashtag)
       ds.hashtags << hashtag
-      hashtag.dreams << ds
     end
     5.times do
       ds.favorites.create(fan: c)
