@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: LucidDreamer_development
+  database: DreamCatcher_development
 
 test:
   <<: *default
-  database: LucidDreamer_test
+  database: DreamCatcher_test
 
 production:
   <<: *default
-  database: LucidDreamer_production
-  username: LucidDreamer
+  database: DreamCatcher_production
+  username: DreamCatcher
   password: <%= ENV['LUCIDDREAMER_DATABASE_PASSWORD'] %>

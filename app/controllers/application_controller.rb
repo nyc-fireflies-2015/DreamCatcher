@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :calculate_lucidity
   helper_method :error
   layout proc { false if request.xhr? }
+  before_action :clear_flash
 
   before_filter :set_query
 
@@ -53,4 +54,9 @@ class ApplicationController < ActionController::Base
       current_dreamer.save(validate: false)
     end
   end
+
+  def clear_flash
+    flash.clear
+  end
+
 end

@@ -13,9 +13,14 @@ class Dreamer < ActiveRecord::Base
   validates :password, length: {minimum: 6}
   validates_presence_of :email, :username
   validates_uniqueness_of :username
+  validates :phone_num, :phony_plausible => true
 
   def top_dreams
     dreams.order('created_at DESC').limit(5)
+  end
+
+  def self.reality_testers
+    where('reality_check = true')
   end
 
   def awareness_dreams

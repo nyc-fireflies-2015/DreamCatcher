@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   root 'dreams#index'
 
@@ -42,4 +43,7 @@ Rails.application.routes.draw do
 
   get '/hashtags/search' => 'hashtags#search', as: 'hashtag_search'
   delete '/dreams/:dream_id/hashtag/:id' => 'hashtags#destroy', as: 'hashtag'
+
+  put '/reality_check' => 'twilio#reality_check'
+  mount Sidekiq::Web, at: '/sidekiq'
 end
