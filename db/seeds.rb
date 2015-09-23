@@ -17,13 +17,12 @@ Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreami
   c.steps << Step.all
   4.times do
     ds = c.dreams.create(FactoryGirl.attributes_for(:dream))
-    hashtags = Array.new(3){ FactoryGirl.create(:hashtag) }
-    ds.hashtags << hashtags
+    Array.new(3){ FactoryGirl.create(:hashtag) }.each do |hashtag|
+      ds.hashtags << hashtag
+      hashtag.dreams << ds
+    end
     5.times do
       ds.favorites.create(fan: c)
     end
   end
-  popular_hashtag = FactoryGirl.create(:hashtag)
-  dreams = Array.new(20) { FactoryGirl.create(:dream) }
-  popular_hashtag.dreams << dreams
 end
