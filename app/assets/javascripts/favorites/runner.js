@@ -1,4 +1,5 @@
-$(document).ready(function(){
+var FavoritesRunner = {};
+FavoritesRunner.index = function(){
   var ctrl = new FavoritesController();
   Binder.bind({event: "click",
              selector: "[data-form=favorite]",
@@ -6,6 +7,6 @@ $(document).ready(function(){
   Binder.bind({event: "click",
              selector: "[data-form=unfavorite]",
              callback: ctrl.unFavorite });
-});
+};
 
 

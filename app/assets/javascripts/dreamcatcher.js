@@ -6,12 +6,15 @@ Binder.bind = function(args){
   });
 };
 
+Binder.setInterval = function(args){
+  setInterval(args.callback, args.interval);
+};
 
 var Obj = {};
 Obj.fromForm = function(args){
    if(args.type === undefined){
       args.type = $(args.form).attr("method");
-    } 
+    }
    if(args.url === undefined){
       args.url = $(args.form).attr("action");
    }
@@ -29,6 +32,13 @@ Obj.fromDCLink = function(link){
   linkData.url = $(link).data("href");
   return linkData;
 };
+Obj.fromElement = function(selector){
+  var elementData = {};
+  elementData.type = $(selector).data("method");
+  elementData.url = $(selector).data("action");
+  elementData.data = {timestamp: $(selector).data("timestamp")};
+  return elementData;
+};
 
 var DreamCatcher = {};
 DreamCatcher.send = function(args){
@@ -45,3 +55,13 @@ DreamCatcher.send = function(args){
     args.callback(args.params);
   }
 };
+DreamCatcher.base = function(args){
+  $.ajax(args.data).done(function(element){
+    args.callback(element);
+  }).fail(function(error){
+    var errorDiv = $(args.params).find("[data-handler=errors]");
+    $(errorDiv).html(error.responseText);
+  });
+};
+
+

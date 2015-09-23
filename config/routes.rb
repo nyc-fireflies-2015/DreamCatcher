@@ -46,4 +46,5 @@ Rails.application.routes.draw do
 
   put '/reality_check' => 'twilio#reality_check'
   mount Sidekiq::Web, at: '/sidekiq'
+  get '/shortpoll' => 'dreams#shortpoll'
 end
