@@ -31,7 +31,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     render :nothing => true, :status => 200
   end
 
-  def remove_step
+  def destroy
     if @step.creator == current_dreamer
       current_dreamer.points -= 2
       check_rank
