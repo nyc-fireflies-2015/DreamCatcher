@@ -1,5 +1,5 @@
 var StepsRunner = {};
-StepsRunner.recipe = function(){
+StepsRunner.index = function(){
   ctrl = new StepsController();
   Binder.bind({event: "click",
             selector: "[data-link=new_step]",
