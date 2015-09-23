@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gem 'rspec_junit_formatter', '0.2.2'
 gem 'rails', '4.2.4'
 gem 'pg'
+gem 'phony_rails'
 gem 'sidekiq'
 gem 'slim'
 gem 'sinatra', require: false
