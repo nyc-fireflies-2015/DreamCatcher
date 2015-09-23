@@ -26,19 +26,6 @@ before_action :find_step, except: [:recipe, :new, :create]
     end
   end
 
-  def edit
-    redirect_to :back unless current_dreamer == @step.creator
-    render partial: "edit", locals: {step: @step}
-  end
-
-  def update
-    if @step.update_attributes(step_params)
-      render @step
-    else
-      error(@step.errors.full_messages)
-    end
-  end
-
   def add_step
     current_dreamer.steps << @step
     render :nothing => true, :status => 200
