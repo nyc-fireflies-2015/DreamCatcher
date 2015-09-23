@@ -1,7 +1,12 @@
-<h1>Log In</h1>
+<div class="intro-page">
+  <div class="intro-container">
+    <p><%= link_to "Don't already have an account? Sign up!", signup_path, class: "log-in" %></p>
 
-<%= form_for :session, url: sessions_path  do |f| %>
-  <%= f.text_field :username, placeholder: "username" %>
-  <%= f.password_field :password, placeholder: "password" %>
-  <%= f.submit 'Submit', class: "button" %>
-<%end%>
+    <h4>Log In</h4>
+    <%= form_for :session, url: sessions_path  do |f| %>
+      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.password_field :password, placeholder: "password" %>
+      <%= f.submit 'Submit', class: "button" %>
+    <%end%>
+  </div>
+</div>

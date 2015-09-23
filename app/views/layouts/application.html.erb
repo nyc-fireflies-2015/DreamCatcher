@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <%= render "shared/header" unless current_page?(welcome_path) %>
+    <%= render "shared/header" if current_dreamer %>
 
     <% if flash[:error] %>
       <%= render partial: "shared/errors", locals: { errors: flash[:error] } %>
