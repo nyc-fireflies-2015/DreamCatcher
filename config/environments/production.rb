@@ -27,4 +27,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.middleware.use Rack::TwilioWebhookAuthentication, Rails.application.secrets.twilio_auth_token, '/voice'
+
+  ENV["REDISTOGO_URL"] = 'redis://aderend:dreamcatchers@my.host:6789'
 end
