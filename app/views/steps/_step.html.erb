@@ -2,7 +2,7 @@
   <div data-div="step-info">
     <%= render partial: "show", locals: {step: step} %>
     <% if step.dreamers.includes(current_dreamer) %>
-      <%= link_to image_tag("delete-icon.png", class: "icon"), step_path(step), method: "delete", data: {form: "remove-step"} %>
+      <a><img data-href="<%=step_path(step)%>" data-form="remove-step" data-method="delete" class="icon" src="<%=image_path("delete-icon.png")%>"/></a>
     <% end %>
   </div>
   <hr>

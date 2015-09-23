@@ -41,7 +41,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     else
       current_dreamer.steps.delete(@step)
     end
-    render nothing: true, status: 200
+    render :nothing => true, :status => 200
   end
 
   private

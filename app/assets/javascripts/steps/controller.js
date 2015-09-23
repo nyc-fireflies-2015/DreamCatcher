@@ -8,7 +8,7 @@ StepsController.prototype.getEditDreamForm = function(eventTarget){
                     params: eventTarget});
 };
 StepsController.prototype.removeStep = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
+  DreamCatcher.send({data: Obj.fromDCLink(eventTarget),
                     callback: StepView.removeStepDiv,
                     params: eventTarget});
 };
