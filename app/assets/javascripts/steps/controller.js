@@ -17,8 +17,3 @@ StepsController.prototype.postStep = function(eventTarget){
                     callback: StepView.showNewStep,
                     params: eventTarget});
 };
-StepsController.prototype.updateStep = function(eventTarget){
-  DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
-                    callback: StepView.showUpdatedStep,
-                    params: eventTarget});
-};
