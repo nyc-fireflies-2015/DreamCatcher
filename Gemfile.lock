@@ -149,7 +149,6 @@ GEM
     ffi (1.9.10)
     figaro (1.1.1)
       thor (~> 0.14)
-    ffi (1.9.10)
     foreigner (1.7.4)
       activerecord (>= 3.0.0)
     foundation-rails (5.5.2.1)
@@ -205,6 +204,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.14.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -380,9 +380,11 @@ DEPENDENCIES
   pg
   phony_rails
   pry
+  puma
   rails (= 4.2.4)
   rails_12factor
   ransack
+  redis
   rspec-rails
   rspec_junit_formatter (= 0.2.2)
   sass-rails (~> 5.0)
