@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   resources :steps, except: [:index]
   get 'dreamers/:id/steps' => 'steps#recipe', as: 'recipe'
-  post '/steps/:id' => 'steps#add_step', as: 'add_step'
+  post '/steps/:id' => 'steps#clone', as: 'clone'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'

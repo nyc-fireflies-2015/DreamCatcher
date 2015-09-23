@@ -1,9 +1,9 @@
 <li data-li="step">
   <div data-div="step-info">
     <%= render partial: "show", locals: {step: step} %>
-  <% if step.dreamers.includes(current_dreamer) %>
-    <%= link_to image_tag("delete-icon.png", class: "fav-icon"), step_path(step), action: "destroy", method: "delete", data: {form: "remove-step"} %>
-  <% end %>
+    <% if step.dreamers.includes(current_dreamer) %>
+      <%= link_to image_tag("delete-icon.png", class: "icon"), step_path(step), method: "delete", data: {form: "remove-step"} %>
+    <% end %>
   </div>
   <hr>
 </li>

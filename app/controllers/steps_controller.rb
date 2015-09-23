@@ -26,7 +26,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     end
   end
 
-  def add_step
+  def clone
     # unless current_dreamer.steps.includes(@step)
       current_dreamer.steps << @step
     # end
