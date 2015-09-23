@@ -14,7 +14,7 @@ class TextWorker
 
   def perform(number)
     number = number
-    message = 'Poop???'
+    message = 'This is a reality check!'
     twilio_number = ENV["TWILIO_NUMBER"]
     account_sid = ENV["TWILIO_ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
