@@ -16,11 +16,17 @@
         <% if current_dreamer %>
           <li><%= link_to "Dreams", root_path %></li>
           <li><%= link_to "Recipe", recipe_path(current_dreamer) %></li>
+          <li>
+            <% if got_mail?(current_dreamer) %>
+              <%= link_to image_tag("full-mail-icon.png", class: "mail-icon"), conversations_path %>
+            <% else %>
+              <%= link_to image_tag("empty-mail-icon.png", class: "mail-icon"), conversations_path %>
+            <% end %>
+          </li>
           <li class="has-dropdown">
             <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
             <ul class="dropdown">
               <li><%= link_to "Profile", profile_path(current_dreamer) %></li>
-              <li><%= link_to "Inbox", conversations_path %></li>
               <li><%= link_to "Settings", setting_path(current_dreamer) %></li>
               <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
             </ul>

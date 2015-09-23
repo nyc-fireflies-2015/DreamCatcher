@@ -83,8 +83,8 @@ footer {
 
 .avatar-icon {
   border: 1px solid #999;
-  width: 2.5em;
-  height: 2.5em;
+  width: 3.5em;
+  height: 3.5em;
 }
 
 .icon {
@@ -126,9 +126,20 @@ footer {
 .list-group-item:nth-child(even) {
   background: #F0F0F5;
 }
+
+.mail-icon {
+  width: 2em;
+  height: 2em;
+  }
+
 .hashtag-dreams{
   list-style-type: none;
 }
-.hashtag-dreams a{
-  
+
+.hashtag {
+  list-style-type: none;
+  background: #CCC;
+  padding: 0.2em 0.4em;
+  border-radius: 0.7em;
+  color: #000;
 }

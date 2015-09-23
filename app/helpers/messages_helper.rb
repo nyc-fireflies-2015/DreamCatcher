@@ -8,4 +8,11 @@ module MessagesHelper
     end
     s.html_safe
   end
+
+  def got_mail?(current_dreamer)
+    current_dreamer.mailbox.conversations.each do |conv|
+      return true if conv.is_unread?(current_dreamer)
+    end
+    false
+  end
 end
