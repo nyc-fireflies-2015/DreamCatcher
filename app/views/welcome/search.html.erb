@@ -19,6 +19,7 @@
           <p><%= truncate(dream.story, :length => 200) %></p>
         </li>
       <% end %>
+      <%= will_paginate @dreams %>
 
       <h3 class="left">Dreamers</h3>
       <hr>
@@ -29,6 +30,7 @@
       <% @dreamers.each do |dreamer| %>
         <li><%= link_to dreamer.username, profile_path(dreamer) %></li>
       <% end %>
+      <%= will_paginate @dreamers %>
 
       <h3 class="left">Recipes</h3>
       <hr>
@@ -39,6 +41,8 @@
       <% @steps.each do |step| %>
         <li><%= link_to step.description, step_path(step) %></li>
       <% end %>
+      <%= will_paginate @steps %>
+
     </ul>
   </div>
 <% end %>
