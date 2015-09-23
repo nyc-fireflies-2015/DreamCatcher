@@ -8,6 +8,8 @@ class Dreamers < ActiveRecord::Migration
       t.text :recipe, limit: 2048
       t.integer :level, default: 0
       t.string :zipcode
+      t.string :phone_num
+      t.boolean :reality_check, default: false
 
       t.timestamps null: false
     end

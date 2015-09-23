@@ -1,18 +1,23 @@
+require 'sidekiq/web'
+require 'rake'
 class TwilioController < ApplicationController
 
-  def send_sms
-    message = params[:message]
-    number = params[:number]
-    account_sid = 'AC40f31b05ec16c2c813436c84ada30a6f'
-    auth_token = '6866e1d92472d67960fe7173589eac33'
+  include Sidekiq::Worker
 
-    @client = Twilio::REST::Client.new account_sid, auth_token
+  def reality_check
+    @dreamer = current_dreamer
+    @dreamer.update_attributes(dream_params.merge(reality_check:  true))
+    if @dreamer.save
+      redirect_to profile_path(current_dreamer)
+    else
+      redirect setting_path
+    end
+  end
 
-    @message = @client.account.messages.create({to: "+1"+"#{number}",
-                                                from: "+13157074332",
-                                                body: "#{message}" })
-    # binding.pry
-    redirect_to profile_path(current_dreamer)
+  private
+
+  def dream_params
+    params.require(:dreamer).permit(:password, :reality_check, :phone_num)
   end
 
 end

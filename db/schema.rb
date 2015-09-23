@@ -24,26 +24,13 @@ ActiveRecord::Schema.define(version: 20150922204235) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "delayed_jobs", force: :cascade do |t|
-    t.integer  "dreamer_id"
-    t.integer  "priority",   default: 0
-    t.integer  "attempts",   default: 0
-    t.text     "handler"
-    t.text     "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string   "locked_by"
-    t.string   "queue"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "dreamers", force: :cascade do |t|
     t.string   "username",        limit: 64,                    null: false
     t.string   "password_digest",                               null: false
     t.string   "name"
     t.text     "about"
+    t.string   "phone_num"
+    t.boolean  "reality_check",              default: false
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
     t.string   "email"
