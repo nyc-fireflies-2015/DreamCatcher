@@ -1,0 +1,37 @@
+.intro-page {
+  background: url(http://images.nationalgeographic.com/wpf/media-live/photos/000/709/cache/fireflies-forest-north-carolina_70949_990x742.jpg) no-repeat;
+  background-color: #333;
+  color: #FFF;
+  min-height: 40em;
+
+  h1, h4, h6 {
+    color: #FFF;
+  }
+}
+
+.intro-container {
+  position: relative;
+  top: 5em;
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  color: #FFF;
+  background: #333;
+  background: rgba(51, 51, 51, 0.7);
+}
+
+.welcome-title {
+  position: relative;
+  font-size: 3em;
+  top: 2em;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.welcome-button {
+  position: relative;
+  top: 6em;
+}
+
+.log-in {
+  color: #CCCC7A;
+}

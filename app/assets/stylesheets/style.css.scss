@@ -1,9 +1,13 @@
+html, body {
+  height: 100%;
+}
+
 main {
-  width: 50%;
-  padding: 1em;
+  position: realtive;
+  width: 100%;
   font-family: 'Inconsolata', sans-serif;
-  min-height: 30em;
-  background: #FFF;
+  min-height: 100%;
+  background: #333;
 }
 
 .title-area {
@@ -25,11 +29,6 @@ nav {
   a {
     border-left: 1px solid #999;
   }
-}
-
-.edit-icon {
-  width: 0.8em;
-  height: 0.8em;
 }
 
 sub {
@@ -64,14 +63,6 @@ sub {
   height: 27em;
 }
 
-
-footer {
-  font-size: 0.7em;
-  padding-top: 2em;
-  width: 89.2em;
-  background: #FFF;
-}
-
 .avatar-icon {
   border: 1px solid #999;
   width: 3.5em;
@@ -90,7 +81,6 @@ footer {
 }
 
 .comment, .search {
-
   li {
     padding: 1.5em;
     list-style-type: none;
@@ -99,10 +89,6 @@ footer {
   li:nth-child(even) {
     background: #F0F0F5;
   }
-}
-
-#welcome-list ul {
-  list-style-type: none;
 }
 
 .messages {
@@ -124,11 +110,6 @@ footer {
   background: #F0F0F5;
 }
 
-.mail-icon {
-  width: 2em;
-  height: 2em;
-  }
-
 .hashtag-dreams{
   list-style-type: none;
 }
@@ -139,4 +120,10 @@ footer {
   padding: 0.2em 0.4em;
   border-radius: 0.7em;
   color: #000;
+}
+
+footer {
+  font-size: 0.7em;
+  width: 100%;
+  background: #333;
 }
