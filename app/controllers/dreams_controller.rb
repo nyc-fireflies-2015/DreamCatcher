@@ -3,6 +3,7 @@ class DreamsController < ApplicationController
   before_filter :find_dream, except: [:index, :create, :new, :shortpoll]
 
   def index
+    @count = 0
     @dreams = Dream.order('created_at DESC').limit(20)
     @dream = Dream.new
     @popular_hashtags = Hashtag.popular
@@ -15,16 +16,18 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @dream = current_dreamer.dreams.new(dream_params)
-    if @dream.save
+    dream = current_dreamer.dreams.new(dream_params)
+    if dream.save
       current_dreamer.points += 5
       check_rank
       if dream_params[:hashtag_string]
-        @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
+        dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
       end
-      render @dream
+      @count = 0
+      @dreams = Dream.order('created_at DESC').limit(20)
+      render @dreams
     else
-      error(@dream.errors.full_messages)
+      error(dream.errors.full_messages)
     end
   end
 
@@ -61,6 +64,7 @@ class DreamsController < ApplicationController
     if new_dreams.empty?
       render nothing: true, status: 306
     else
+      @count = 0
       @dreams = Dream.order('created_at DESC').limit(20)
       render @dreams
     end

@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   def error(full_messages)
     respond_to do |format|
-      format.js { render :text => full_messages.join("<br>"), :status => 400 }
+      format.js { render :text => full_messages.join("<br>"), :status => 306 }
     end
   end
 
