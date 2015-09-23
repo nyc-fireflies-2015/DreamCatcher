@@ -6,7 +6,7 @@
 
 posted on <%= display_date(@dream.created_at) %><br>
 
-<%= gravatar_tag @dream.dreamer.email, class: "avatar left", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png" %>
+<%= gravatar_tag @dream.dreamer.email, default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png", :html => {:class => "avatar-icon"} %>
 <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %><br>
 <% if @dream.dreamer == current_dreamer %>
   <%= link_to image_tag("edit-icon.png", class: "icon"), edit_dream_path(@dream), data: { link: "edit-dream" } %>
@@ -39,7 +39,7 @@ posted on <%= display_date(@dream.created_at) %><br>
     <% @dream.comments.each do |comment| %>
         <li>
           <div class="left">
-            <%= gravatar_tag comment.dreamer.email, class: "icon", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png" %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
+            <%= gravatar_tag comment.dreamer.email, class: "icon", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png", :html => {:class => "avatar-icon"} %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
           </div>
           <div class="right">
             <p><%= display_date(comment.created_at) %></p>
