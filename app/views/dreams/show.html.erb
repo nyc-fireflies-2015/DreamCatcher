@@ -20,7 +20,7 @@ posted on <%= display_date(@dream.created_at) %><br>
 <p>
   Tags:
   <% @dream.hashtags.each do |hashtag| %>
-    <% link_to hashtag.name, hashtag_dreams(hashtag) %>
+    <%= link_to hashtag.name, hashtag_dreams_path(hashtag) %>
     <%= link_to "Delete", hashtag_path(dream_id: @dream, id: hashtag), method: "delete" %>
   <% end %>
 </p>

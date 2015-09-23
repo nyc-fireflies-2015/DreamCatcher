@@ -9,7 +9,7 @@ class HashtagsController < ApplicationController
   end
 
   def index
-    render @hashtag.dreams
+    @dreams = @hashtag.dreams
   end
 
   private
