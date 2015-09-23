@@ -1,0 +1,41 @@
+.dreams-container, .trend-container,
+.recipe-container, .popular-steps-container {
+  float: right;
+  width: 50%;
+  height: 29em;
+  padding: 1em;
+}
+
+.dream-river, .trend-river,
+.popular-steps-river, .recipe-steps-river {
+  height: 20em;
+  overflow: scroll;
+  text-align: left;
+  padding: 1em;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.trend-container, .recipe-container {
+  float: left;
+  width: 30%;
+}
+
+.recipe-steps-river, .dream-river {
+  height: 27em;
+}
+
+.dreams-container {
+  width: 70%;
+}
+
+.dream-river {
+  border: 1px solid #CCC;
+}
+
+.add-dream {
+  position: relative;
+  top: 5em;
+}

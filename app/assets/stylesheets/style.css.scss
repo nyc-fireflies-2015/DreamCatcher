@@ -33,34 +33,6 @@ sub {
   color: #999;
 }
 
-.dreams-container, .trend-container,
-.recipe-container, .popular-steps-container {
-  float: right;
-  width: 50%;
-  height: 29em;
-  padding: 1em;
-}
-
-.dream-river, .trend-river,
-.popular-steps-river, .recipe-steps-river {
-  height: 21.4em;
-  overflow: scroll;
-  text-align: left;
-  padding: 0 2em;
-
-  ul {
-    list-style-type: none;
-  }
-}
-
-.trend-container, .recipe-container {
-  float: left;
-}
-
-.recipe-steps-river, .dream-river {
-  height: 27em;
-}
-
 .avatar-icon {
   border: 1px solid #999;
   width: 3.5em;

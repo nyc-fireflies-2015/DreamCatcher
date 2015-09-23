@@ -1,12 +1,5 @@
 <div id="dream-index" class="trend-container">
-  <div data-form="new">
-    <%= render "new" %>
-  </div>
-
-  <div class="center">
-    <p><%= link_to 'Add New Dream', new_dream_path, class: "button", data: {link: "add-dream" } %></p>
-    <h3 class="popular-dreams-title">Trending</h3>
-  </div>
+  <h3 class="popular-dreams-title center">Trending</h3>
 
   <div class="trend-river">
     <ul>
@@ -15,6 +8,15 @@
     <% end %>
   </ul>
   </div>
+
+  <div data-form="new">
+    <%= render "new" %>
+  </div>
+
+  <div class="center add-dream">
+    <p><%= link_to 'Add New Dream', new_dream_path, class: "button", data: {link: "add-dream" } %></p>
+  </div>
+
 </div>
 
 <div class="dreams-container">
@@ -22,7 +24,8 @@
     <h3>Recent Dreams</h3>
   </div>
   <div data-timestamp="" data-method="get" data-action="/shortpoll" data-info="timestamp" class="dream-river">
-    <ul data-river="dreams">
+
+    <ul data-river="dreams" class="accordion" data-accordion>
       <%= render @dreams %>
     </ul>
   </div>

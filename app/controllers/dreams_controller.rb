@@ -3,6 +3,7 @@ class DreamsController < ApplicationController
   before_filter :find_dream, except: [:index, :create, :new, :shortpoll]
 
   def index
+    @count = 0
     @dreams = Dream.order('created_at DESC').limit(20)
     @dream = Dream.new
     @popular_hashtags = Hashtag.popular

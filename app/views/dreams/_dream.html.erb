@@ -1,5 +1,7 @@
-<li data-li="summary">
-  <div data-div="info">
+<li class="accordion-navigation" data-li="summary">
+  <% @count += 1 %>
+  <%= link_to "#{dream.title}", "#panel#{@count}a"%>
+  <div data-div="info" id="panel<%= @count %>a" class="content" >
     <%= render partial: "info", locals: {dream: dream} %>
   </div>
 </li>
