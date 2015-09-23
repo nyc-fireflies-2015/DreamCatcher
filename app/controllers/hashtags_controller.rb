@@ -10,7 +10,7 @@ class HashtagsController < ApplicationController
 
   def index
     @count = 0
-    @dreams = @hashtag.dreams
+    @dreams = @hashtag.dreams.paginate(:page => params[:page], :per_page => 10)
   end
 
   private
