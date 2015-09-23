@@ -14,7 +14,10 @@
       <% end %>
 
       <% @dreams.each do |dream| %>
-      <%= render partial: "dream_results.html.erb", locals: {dream: dream} %>
+        <li>
+          <%= link_to dream.title, dream_path(dream) %>
+          <p><%= truncate(dream.story, :length => 200) %></p>
+        </li>
       <% end %>
 
       <h3 class="left">Dreamers</h3>
