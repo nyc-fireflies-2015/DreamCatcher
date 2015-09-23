@@ -1,6 +1,6 @@
 class Hashtag < ActiveRecord::Base
   has_many :taggings
-  has_many :dreams, through: :taggings, counter_cache: true
+  has_many :dreams, through: :taggings
   scope :popular, -> {order('dreams_count DESC').limit(10)}
 
   def self.parse(hashtag_string)
