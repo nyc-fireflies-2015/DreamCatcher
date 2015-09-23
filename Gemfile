@@ -10,9 +10,7 @@ gem 'sinatra', require: false
 gem 'twilio-rb'
 gem 'twilio-ruby'
 gem 'foundation-rails'
-gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'whenever', :require => false
 gem 'jbuilder', '~> 2.0'
@@ -45,4 +43,12 @@ end
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :assets do
+  gem 'sass-rails', '~> 5.0'
+  gem 'coffee-rails', '~> 4.1.0'
+
+  gem 'compass-rails'
+  gem 'zurb-foundation'
 end
