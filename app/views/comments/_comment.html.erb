@@ -5,7 +5,5 @@
           <div class="right">
             <p><%= display_date(comment.created_at) %><br>
             <%= link_to  image_tag("delete-icon.png", class: "icon"), edit_comment_path(comment) %></p>
-            <p><%= display_date(comment.created_at) %></p>
-            <p><%= link_to "Edit", edit_comment_path(comment), data: {link: "edit-comment"} %></p>
           </div>
           <p><%= comment.content %></p>
