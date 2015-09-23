@@ -14,14 +14,15 @@
   </head>
 
   <body>
-    <%= render "shared/header" %>
+    <%= render "shared/header" unless current_page?(welcome_path) %>
+
     <% if flash[:error] %>
       <%= render partial: "shared/errors", locals: { errors: flash[:error] } %>
     <% end %>
     <main class="center row">
       <%= yield %>
     </main>
-    <%= render "shared/footer" %>
+    <%= render "shared/footer" unless current_dreamer.nil? %>
   </body>
 
 </html>

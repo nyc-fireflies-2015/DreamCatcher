@@ -1,17 +1,12 @@
-<h1>Lucid Dream</h1>
-<h4>- any dream in which one is aware that one is dreaming -</h4>
+<div class="intro-page">
+  <h1 class="welcome-title">DreamCatcher</h1>
+  <p><%= link_to "Already have an account? Log In.", login_path, class: "log-in" %></p>
+  <div class="intro-container">
+    <h4>Lucid Dream</h4>
+    <h6>- any dream in which one is aware that one is dreaming -</h6>
 
-<div id="welcome-list">
-  <ul>
-    <li>Learn simple steps to help you achieve a lucid dream</li>
-    <li>Keep a journal of you dreams by logging them into your DreamCatcher Dream Log</li>
-    <li>Share your dreams and see what others are dreaming about</li>
-    <li>Level up your dream skills and become a Dream Master!<li>
-  </ul>
+    <p><em>"often when one is asleep, there is something in consciousness which declares that what then presents itself is but a dream"</em> ~Aristotle</p>
+  </div>
+
+  <p class="welcome-button"><%= link_to 'Start Dreaming', signup_path, class: "button" %></p>
 </div>
-
-<div class="quote">
-  "often when one is asleep, there is something in consciousness which declares that what then presents itself is but a dream" ~Aristotle
-</div>
-
-<%= link_to 'Start Dreaming', signup_path, class: "button" %>
