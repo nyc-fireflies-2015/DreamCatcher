@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923132001) do
+ActiveRecord::Schema.define(version: 20150923133439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,10 +62,9 @@ ActiveRecord::Schema.define(version: 20150923132001) do
   end
 
   create_table "hashtags", force: :cascade do |t|
-    t.string   "name",         limit: 64,             null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "dreams_count",            default: 1
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -141,6 +140,7 @@ ActiveRecord::Schema.define(version: 20150923132001) do
   create_table "taggings", force: :cascade do |t|
     t.integer "hashtag_id"
     t.integer "dream_id"
+    t.integer "dreams_count", default: 0
   end
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
