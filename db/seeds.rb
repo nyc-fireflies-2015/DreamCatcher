@@ -22,4 +22,6 @@ Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreami
       ds.favorites.create(fan: c)
     end
   end
+  popular_hashtag = FactoryGirl.create(:hashtag)
+  popular_hashtag.dreams << Array.new(20) { FactoryGirl.create(:dream) }
 end
