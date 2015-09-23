@@ -1,5 +1,4 @@
 class Dream < ActiveRecord::Base
-  after_save :associate_hashtags
   attr_accessor :hashtag_string
   belongs_to :dreamer
   has_many :comments
@@ -26,14 +25,6 @@ class Dream < ActiveRecord::Base
     lucidity_rating += 1 if self.dream_state_clarity?
     lucidity_rating += 1 if self.decision_clarity?
     return lucidity_rating
-  end
-
-  private
-
-  def associate_hashtags
-    hashtags.includes(:dreams).where.not(id: id).each do |hashtag|
-      hashtag.dreams << self
-    end
   end
 
 end
