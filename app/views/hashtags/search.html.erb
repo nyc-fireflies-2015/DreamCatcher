@@ -1,0 +1,19 @@
+<h3 class="left">Dreams with tag "<%= @query %>"</h3>
+<hr>
+
+<% if @hashtags.empty? %>
+  <p>There are no dreamtags that match your search.</p>
+<% end %>
+
+<% @hashtags.each do |hashtag| %>
+  <h6><%= hashtag.name %></h6>
+  <% hashtag.dreams.each do |dream| %>
+    <li>
+      <div class="left">
+        <%= link_to dream.title, dream_path(dream) %>
+      </div>
+      <sub class="right">posted <%= elapsed_time(dream.created_at) %></sub>
+      <p><%= dream.story %></p>
+    </li>
+  <% end %>
+<% end %>

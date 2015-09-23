@@ -2,9 +2,9 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   root 'dreams#index'
 
-  patch '/dreams/:id/hashtags' => 'dreams#remove_hashtag', as: 'remove_hashtag'
   resources :dreams
   resources :comments, except: [:show]
+
   resources :conversations, only: [:index, :show, :destroy] do
     collection do
       delete :empty_trash
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       post :mark_as_read
     end
   end
+
   resources :messages, only: [:new, :create]
   post '/favorite/:dream_id' => 'favorites#create', as: 'favorite'
   delete '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
@@ -38,6 +39,11 @@ Rails.application.routes.draw do
   patch '/steps/:id/remove' => 'steps#remove_step', as: 'remove_step'
 
   get '/twilio' => 'twilio#index'
+  post '/send_sms' => 'twilio#send_sms'
+
+  get '/hashtags/search' => 'hashtags#search', as: 'hashtag_search'
+  delete '/dreams/:dream_id/hashtag/:id' => 'hashtags#destroy', as: 'hashtag'
+
   put '/reality_check' => 'twilio#reality_check'
   mount Sidekiq::Web, at: '/sidekiq'
 end
