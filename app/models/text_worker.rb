@@ -13,11 +13,14 @@ class TextWorker
   end
 
   def self.perform(number)
-    # dreamer = Dreamer.find(dreamer_id)
     number = number
-    message = 'This is a test'
-    @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-    @message = @client.account.messages.create({to: "+1"+"#{number}",
+    message = 'Finale'
+    twilio_number = ENV["TWILIO_NUMBER"]
+    account_sid = ENV["TWILIO_ACCOUNT_SID"]
+    auth_token = ENV["TWILIO_AUTH_TOKEN"]
+    binding.pry
+    @client = Twilio::REST::Client.new account_sid, auth_token
+    @message = @client.account.messages.create({to: "#{number}",
                                                   from: "+13157074332",
                                                   body: "#{message}" })
   end
