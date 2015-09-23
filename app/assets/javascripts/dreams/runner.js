@@ -1,4 +1,5 @@
-$(document).ready(function(){
+var DreamsRunner = {};
+DreamsRunner.index = function(){
   var d = new Date();
   $("[data-info=timestamp]").data("timestamp", d.getTime().toString());
   var ctrl = new DreamsController();
@@ -16,4 +17,12 @@ $(document).ready(function(){
                 callback: ctrl.getEditDreamForm });
   Binder.setInterval({interval: 10000,
                 callback: ctrl.updateDreamRiver });
-});
+};
+DreamsRunner.show = function(){
+  Binder.bind({event: "click",
+                selector: "[data-link=edit-dream]",
+                callback: ctrl.getEditDreamForm });
+  Binder.bind({event: "submit",
+                selector: "[data-form=edit] form",
+                callback: ctrl.updateDream })
+};
