@@ -147,7 +147,6 @@ GEM
     ffi (1.9.10)
     figaro (1.1.1)
       thor (~> 0.14)
-    ffi (1.9.10)
     foreigner (1.7.4)
       activerecord (>= 3.0.0)
     foundation-rails (5.5.2.1)
