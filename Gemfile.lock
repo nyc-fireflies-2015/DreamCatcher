@@ -94,6 +94,7 @@ GEM
       nenv
       rspec-logsplit (>= 0.1.2)
       timers (>= 4.1.1)
+    chronic (0.10.2)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -103,7 +104,10 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     connection_pool (2.2.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
     crack (0.3.2)
+    currencies (0.4.2)
     database_cleaner (1.5.0)
     debug_inspector (0.0.2)
     devise (3.5.2)
@@ -169,6 +173,11 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.3)
+    phony (2.2.14)
+    phony_rails (0.6.1)
+      activesupport (>= 3.0)
+      countries (>= 0.8.2)
+      phony (~> 2.1)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     pry (0.10.1)
@@ -332,6 +341,7 @@ DEPENDENCIES
   launchy
   mailboxer
   pg
+  phony_rails
   pry
   rails (= 4.2.4)
   ransack
