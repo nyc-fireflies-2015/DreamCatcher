@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       check_rank
       render @comment
     else
-      error(comment.errors.full_messages)
+      render nothing: true, status: 400
     end
   end
 

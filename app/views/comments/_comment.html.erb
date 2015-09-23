@@ -6,5 +6,6 @@
             <p><%= display_date(comment.created_at) %><br>
             <a><img data-href="<%=comment_path(comment)%>" data-form="delete-comment" data-method="delete" class="icon" src="<%=image_path("delete-icon.png")%>"/></a>
           </div>
+          <div data-handler="errors"></div>
           <p><%= comment.content %></p>
 </li>
