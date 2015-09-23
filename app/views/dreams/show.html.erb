@@ -16,7 +16,7 @@ posted on <%= display_date(@dream.created_at) %><br>
 <p>
   <% unless @dream.hashtags.empty? %>
     <% @dream.hashtags.each do |hashtag| %>
-      <%= link_to hashtag.name, hashtag_dreams_path(hashtag) %>
+      <%= link_to hashtag.name, hashtag_dreams_path(hashtag), class: "hashtag" %>
       <% if @dream.dreamer == current_dreamer %>
         <%= link_to  image_tag("delete-icon.png", class: "icon"), hashtag_path(dream_id: @dream, id: hashtag), method: "delete" %>
       <% end %>
