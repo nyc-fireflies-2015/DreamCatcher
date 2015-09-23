@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
 
-  get '/hashtags/search' => 'hashtags#search', as: 'hashtag_search'
+  get '/hashtags/:id/dreams' => 'hashtags#index', as: 'hashtag_dreams'
   delete '/dreams/:dream_id/hashtag/:id' => 'hashtags#destroy', as: 'hashtag'
 
   put '/reality_check' => 'twilio#reality_check'

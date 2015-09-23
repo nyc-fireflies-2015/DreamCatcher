@@ -1,0 +1,21 @@
+<p>
+  <div class="dream-info" data-id="<%=dream.id%>">
+    <%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
+
+    <div class="right">
+      posted <%= elapsed_time(dream.created_at) %> ago
+    </div>
+    <div class="favorites" data-div="favorite">
+      <div data-favorite="new" data-div="<%= "hidden" if dream.favorite?(current_dreamer) %>">
+        <%= render partial: "favorites/favorite", locals: {dream: dream} %>
+      </div>
+      <div data-favorite="destroy" data-div="<%= "hidden" unless dream.favorite?(current_dreamer)%>" >
+        <%= render partial: "favorites/un_favorite", locals: {dream: dream} %>
+      </div>
+    </div>
+  </div>
+</p>
+
+<%= dream.story %><br>
+<sub class="right"><%= link_to "read more >>", dream_path(dream) %></sub>
+<hr>
