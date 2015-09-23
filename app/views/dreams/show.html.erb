@@ -58,14 +58,9 @@ posted on <%= display_date(@dream.created_at) %><br>
 
 <ul>
   <div data-div="new-comment" class="comment">
-   <% @dream.comments.each do |comment| %>
    <div data-div="edit-comment">
-    <%= render partial: "comments/edit", locals: { comment: comment } %>
-    <li data-li="comment">
-    <%= render comment %>
-      </li>
+    <%= render @dream.comments %>
   </div>
-   <% end %>
   </div>
 </ul>
 <hr>

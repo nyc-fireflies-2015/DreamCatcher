@@ -1,11 +1,11 @@
-
+<li data-li="destroy-comment">
           <div class="left">
             <%= gravatar_tag comment.dreamer.email, class: "icon", default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png", :html => {:class => "avatar-icon"} %> <%= link_to comment.dreamer.username, profile_path(comment.dreamer) %>
           </div>
           <div class="right">
             <p><%= display_date(comment.created_at) %><br>
-            <%= link_to  image_tag("delete-icon.png", class: "icon"), edit_comment_path(comment) %></p>
-            <p><%= display_date(comment.created_at) %></p>
-            <p><%= link_to "Edit", edit_comment_path(comment), data: {link: "edit-comment"} %></p>
+            <a><img data-href="<%=comment_path(comment)%>" data-form="delete-comment" data-method="delete" class="icon" src="<%=image_path("delete-icon.png")%>"/></a>
           </div>
+          <div data-handler="errors"></div>
           <p><%= comment.content %></p>
+</li>

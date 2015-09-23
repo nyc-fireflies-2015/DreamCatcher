@@ -12,22 +12,13 @@ class CommentsController < ApplicationController
       check_rank
       render @comment
     else
-      error(comment.errors.full_messages)
+      render nothing: true, status: 400
     end
   end
 
-  def update
-    @comment = Comment.find(params[:id])
-
-    if @comment.update_attributes(content: params[:comment][:content])
-      render @comment
-    else
-      error(comment.errors.full_messages)
-    end
-  end
-
-  def edit
-    @comment = Comment.find(params[:id])
+  def destroy
+    Comment.find(params[:id]).destroy
+    render nothing: true, status: 200
   end
 
   private

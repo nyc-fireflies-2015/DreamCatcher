@@ -5,17 +5,7 @@ var CommentsView = {
     $("[data-form=new-comment]").trigger("reset");
     $("[data-form=new-comment]").fadeIn("slow");
   },
-  showEditForm: function(eventTarget){
-    var editCommentDiv = $(eventTarget).closest("[data-div=edit-comment]");
-    $(editCommentDiv).find("[data-li=comment]").empty();
-    $(editCommentDiv).find("[data-form=edit-comment]").fadeIn("slow");
-  },
-  showSavedComment: function(eventTarget, savedComment){
-    var savedCommentDiv = $(eventTarget).closest("[data-div=edit-comment]");
-    $(savedCommentDiv).find("[data-form=edit-comment]").hide();
-    var commentLi = $(savedCommentDiv).find("[data-li=comment]")
-    $(commentLi).hide();
-    $(commentLi).prepend(savedComment);
-    $(commentLi).fadeIn("slow");
+  removeComment: function(eventTarget){
+    $(eventTarget).closest("[data-li=destroy-comment]").remove();
   }
 };
