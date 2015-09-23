@@ -13,16 +13,20 @@ posted on <%= display_date(@dream.created_at) %><br>
   <%= link_to image_tag("delete-icon.png", class: "icon"), dream_path(@dream), method: "delete" %>
 <% end %>
 
+<p>
+  <% unless @dream.hashtags.empty? %>
+    <% @dream.hashtags.each do |hashtag| %>
+      <%= link_to hashtag.name, hashtag_dreams_path(hashtag) %>
+      <% if @dream.dreamer == current_dreamer %>
+        <%= link_to  image_tag("delete-icon.png", class: "icon"), hashtag_path(dream_id: @dream, id: hashtag), method: "delete" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</p>
+
 <hr>
 <p>
   <%= @dream.story %>
-</p>
-<p>
-  Tags:
-  <% @dream.hashtags.each do |hashtag| %>
-    <%= link_to hashtag.name, hashtag_dreams_path(hashtag) %>
-    <%= link_to  image_tag("delete-icon.png", class: "icon"), hashtag_path(dream_id: @dream, id: hashtag), method: "delete" %>
-  <% end %>
 </p>
 
 <h3><%= @dream.comments.count %> Comments</h3>
