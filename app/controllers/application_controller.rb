@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
   def set_query
     @query = params[:q]
     @dreams = Dream.ransack(title_or_story_cont: @query).result
-    @hashtags = Hashtag.ransack(name_cont: @query).result.includes(:dreams)
     @dreamers = Dreamer.ransack(username_cont: @query).result
     @steps = Step.ransack(description_cont: @query).result
   end
