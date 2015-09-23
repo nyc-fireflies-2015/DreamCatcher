@@ -13,6 +13,9 @@ var CommentsView = {
   showSavedComment: function(eventTarget, savedComment){
     var savedCommentDiv = $(eventTarget).closest("[data-div=edit-comment]");
     $(savedCommentDiv).find("[data-form=edit-comment]").hide();
-    $(savedCommentDiv).find("[data-li=comment]").prepend(savedComment);
+    var commentLi = $(savedCommentDiv).find("[data-li=comment]")
+    $(commentLi).hide();
+    $(commentLi).prepend(savedComment);
+    $(commentLi).fadeIn("slow");
   }
 };

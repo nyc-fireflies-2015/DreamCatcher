@@ -8,7 +8,7 @@ CommentsController.prototype.getCommentForm = function(eventTarget){
                       params: eventTarget})
 };
 CommentsController.prototype.updateComment = function(eventTarget){
-    DreamCatcher.send({data: Obj.fromForm(eventTarget)
+    DreamCatcher.send({data: Obj.fromForm({form: eventTarget}),
                       callback: CommentsView.showSavedComment,
                       params: eventTarget});
 }
