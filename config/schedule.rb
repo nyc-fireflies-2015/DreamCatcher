@@ -1,6 +1,6 @@
-set :environment, 'development'
+# set :environment, 'production'
 
-every 1.minute do
-  runner "TextWorker.send_text_to_all", output: '~/Desktop/test.log'
-end
+# every 1.minute do
+#   runner "TextWorker.send_text_to_all", output: './log/cron.log'
+# end
 

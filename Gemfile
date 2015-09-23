@@ -5,14 +5,13 @@ gem 'pg'
 gem 'figaro'
 gem 'phony_rails'
 gem 'sidekiq'
+gem 'redis'
 gem 'slim'
 gem 'sinatra', require: false
 gem 'twilio-rb'
 gem 'twilio-ruby'
 gem 'foundation-rails'
-gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'whenever', :require => false
 gem 'jbuilder', '~> 2.0'
@@ -25,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'mailboxer'
 gem 'will_paginate'
 gem 'gravatarify', '~> 3.0.0'
+gem 'puma'
 
 group :development, :test do
   gem 'simplecov', :require => false
@@ -45,4 +45,21 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'thin'
+end
+
+group :assets do
+  gem 'sass-rails', '~> 5.0'
+  gem 'coffee-rails', '~> 4.1.0'
+
+  gem 'compass-rails'
+  gem 'zurb-foundation'
+end
+
+group :assets do
+  gem 'sass-rails', '~> 5.0'
+  gem 'coffee-rails', '~> 4.1.0'
+
+  gem 'compass-rails'
+  gem 'zurb-foundation'
 end
