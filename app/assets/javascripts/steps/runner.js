@@ -10,5 +10,12 @@ StepsRunner.index = function(){
   Binder.bind({event: "click",
             selector: "[data-form=remove-step]",
             callback: ctrl.removeStep });
+  Binder.bind({event: "click",
+            selector: "[data-form=remove-step]",
+            callback: ctrl.removeStep });
+  Binder.bind({event: "click",
+            selector: "[data-info=add-step]",
+            callback: ctrl.addStep})
+
 };
 
