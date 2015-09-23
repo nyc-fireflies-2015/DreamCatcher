@@ -9,7 +9,11 @@
   </div>
 
   <div class="trend-river">
-    <%= render @popular_hashtags %>
+    <ul>
+    <% @popular_hashtags.each do |hashtag| %>
+      <li><%= render hashtag %></li>
+    <% end %>
+  </ul>
   </div>
 </div>
 
