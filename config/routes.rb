@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'dreams#index'
 
-  patch '/dreams/:id/hashtags' => 'dreams#remove_hashtag', as: 'remove_hashtag'
   resources :dreams
   resources :comments, except: [:show]
 
@@ -42,4 +41,5 @@ Rails.application.routes.draw do
   post '/send_sms' => 'twilio#send_sms'
 
   get '/hashtags/search' => 'hashtags#search', as: 'hashtag_search'
+  delete '/dreams/:dream_id/hashtag/:id' => 'hashtags#destroy', as: 'hashtag'
 end

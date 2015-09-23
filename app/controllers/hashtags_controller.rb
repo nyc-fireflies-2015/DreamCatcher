@@ -5,7 +5,6 @@ class HashtagsController < ApplicationController
     dream.hashtags.delete(hashtag)
     hashtag.destroy if hashtag.dreams.empty?
     redirect_to dream_path(dream)
-    # render nothing: true, response: 200
   end
 
   def search
