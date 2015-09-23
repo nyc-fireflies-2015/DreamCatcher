@@ -1,7 +1,7 @@
 <li class="accordion-navigation" data-li="summary">
   <% @count += 1 %>
   <%= link_to "#{dream.title}", "#panel#{@count}a"%>
-  <div data-div="info" id="panel<%= @count %>a" class="content" >
+  <div data-div="info" id="panel<%= @count %>a" class="content <%= "active" if @count == 1 %>">
     <%= render partial: "info", locals: {dream: dream} %>
   </div>
 </li>
