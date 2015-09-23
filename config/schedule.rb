@@ -1,4 +1,4 @@
-set :environment, 'development', 'production'
+set :environment, 'production'
 
 every 1.minute do
   runner "TextWorker.send_text_to_all", output: '~/Desktop/test.log'
