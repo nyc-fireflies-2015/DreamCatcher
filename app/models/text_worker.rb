@@ -6,15 +6,17 @@ class TextWorker
   include Sidekiq::Worker
 
   def self.send_text_to_all
+    binding.pry
     subs = Dreamer.reality_testers
     subs.each do |dreamer|
       TextWorker.perform_async(dreamer.phone_num)
     end
+    # TextWorker.perform_async('17328951996')
   end
 
   def perform(number)
     number = number
-    message = 'This is a reality check FUCK!'
+    message = 'Heroku Test!'
     twilio_number = ENV["TWILIO_NUMBER"]
     account_sid = ENV["TWILIO_ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
