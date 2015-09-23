@@ -1,14 +1,20 @@
 class HashtagsController < ApplicationController
+  before_filter :find_hashtag
+
   def destroy
-    hashtag = Hashtag.find(params[:id])
     dream = Dream.find(params[:dream_id])
-    dream.hashtags.delete(hashtag)
-    hashtag.destroy if hashtag.dreams.empty?
+    dream.hashtags.delete(@hashtag)
+    @hashtag.destroy if @hashtag.dreams.empty?
     redirect_to dream_path(dream)
   end
 
-  def search
-    @query = params[:q][:name_eq]
-    @hashtags = Hashtag.ransack(params[:q][:name_eq]).result
+  def index
+    @dreams = @hashtag.dreams
+  end
+
+  private
+
+  def find_hashtag
+    @hashtag = Hashtag.find(params[:id])
   end
 end
