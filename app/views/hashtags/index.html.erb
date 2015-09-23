@@ -1,11 +1,8 @@
-
-<div class="center">
-  <div>
-    <h3><%= @hashtag.name %> </h3>
-  </div>
-    <ul class="hashtag-dreams">
-      <%= render @dreams %>
-    </ul>
+<div class="hashtag-search">
+  <h2>Searching dreams with tag "<%= @hashtag.name %>"</h2>
+  <ul class="hashtag-dreams" class="accordion" data-accordion>
+    <%= render @dreams %>
+  </ul>
 </div>
 
 
