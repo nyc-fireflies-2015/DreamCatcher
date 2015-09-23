@@ -114,3 +114,15 @@ footer {
   margin-bottom: 1em;
   margin-top: 1em;
 }
+
+.nav-stacked {
+  list-style-type: none;
+}
+
+.list-group {
+  list-style-type: none;
+}
+
+.list-group-item:nth-child(even) {
+    background: #F0F0F5;
+}
