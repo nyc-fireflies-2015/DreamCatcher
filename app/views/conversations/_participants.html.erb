@@ -1,5 +1,5 @@
 <% conversation.participants.each do |participant| %>
   <% unless participant == current_dreamer %>
-    <%= participant.username %> <%= link_to gravatar_tag participant.email, default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png", html: {class: "avatar-icon"} %>
+    <%= link_to participant.username, profile_path(participant) %> <%= link_to gravatar_tag participant.email, default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png", html: {class: "avatar-icon"} %>
   <% end %>
 <% end %>

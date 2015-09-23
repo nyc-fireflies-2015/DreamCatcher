@@ -17,6 +17,5 @@
 
   <p><%= render 'conversations/participants', conversation: conversation %></p>
 
-  <p><%= conversation.last_message.body %>
-  <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+  <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small>
 </li>
