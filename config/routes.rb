@@ -33,10 +33,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
 
-  resources :steps, except: [:destroy, :index]
+  resources :steps, except: [:index]
   get 'dreamers/:id/steps' => 'steps#recipe', as: 'recipe'
   post '/steps/:id' => 'steps#add_step', as: 'add_step'
-  patch '/steps/:id/remove' => 'steps#remove_step', as: 'remove_step'
 
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
