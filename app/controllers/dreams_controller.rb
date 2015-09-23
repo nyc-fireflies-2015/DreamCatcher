@@ -57,12 +57,12 @@ class DreamsController < ApplicationController
   end
 
   def shortpoll
-    @new_dreams = Dream.where(created_at: Time.at(params[:timestamp].to_i))
-
-    if @new_dreams.empty?
+    new_dreams = Dream.where("created_at >= ?", Time.at(params[:timestamp].to_f/1000.0).to_datetime)
+    if new_dreams.empty?
       render nothing: true, status: 306
     else
-      render @new_dreams
+      @dreams = Dream.order('created_at DESC').limit(20)
+      render @dreams
     end
   end
 
