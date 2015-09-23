@@ -32,15 +32,6 @@ nav {
   height: 0.8em;
 }
 
-.avatar {
-  border: 1px solid #999;
-  position: relative;
-  left: 12em;
-  width: 9em;
-  height: 9em;
-  margin-bottom: 2em;
-}
-
 sub {
   color: #999;
 }
@@ -85,6 +76,12 @@ footer {
   border: 1px solid #999;
   width: 3.5em;
   height: 3.5em;
+}
+
+.avatar {
+  border: 1px solid #999;
+  width: 6em;
+  height: 6em;
 }
 
 .icon {

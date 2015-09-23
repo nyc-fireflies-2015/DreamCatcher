@@ -1,17 +1,20 @@
+<div class="panel-heading"><h1><%= @conversation.subject %></h1></div>
+
 <p>Chatting with
   <%= render 'conversations/participants', conversation: @conversation %>
 </p>
 
 <div class="panel panel-default">
-  <div class="panel-heading"><h1><%= @conversation.subject %></h1></div>
-
   <div class="panel-body">
     <div class="messages">
       <% @conversation.receipts_for(current_dreamer).each do |receipt| %>
         <% message = receipt.message %>
 
-        <%= link_to message.sender.name, profile_path(message.sender) %>
+        <strong>
+          <%= link_to message.sender.name, profile_path(message.sender) %>
           on <%= message.created_at.strftime("%B %d %Y, %H:%M:%S") %>:
+        </strong>
+
         <%= message.body %>
       <% end %>
     </div>

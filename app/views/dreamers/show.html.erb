@@ -27,7 +27,7 @@
   <% @dreamer.top_dreams.each do |dream| %>
     <%= display_date(dream.created_at) %>:
     <%= link_to dream.title, dream_path(dream) %>
-    Lucid Rating: <%= dream.calculate_lucidity %>
+    <%= image_tag("fav-icon.png", class: "icon")%><%= dream.favorites.count %>
     <br>
   <% end %>
 <% end %>
