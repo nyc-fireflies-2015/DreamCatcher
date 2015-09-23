@@ -19,6 +19,7 @@ DreamsRunner.index = function(){
                 callback: ctrl.updateDreamRiver });
 };
 DreamsRunner.show = function(){
+  var ctrl = new DreamsController();
   Binder.bind({event: "click",
                 selector: "[data-link=edit-dream]",
                 callback: ctrl.getEditDreamForm });
