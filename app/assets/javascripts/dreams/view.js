@@ -26,3 +26,8 @@ DreamView.showEditDreamForm = function(eventTarget){
   $(dream)
   .find(".dream").empty();
 };
+DreamView.appendNewDream = function(newDreams){
+  var d = new Date();
+  $("[data-river=dreams]").html(newDreams);
+  $("[data-info=timestamp]").data("timestamp", d.getTime().toString());
+};

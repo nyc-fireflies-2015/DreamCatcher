@@ -16,7 +16,6 @@ DreamsController.prototype.getEditDreamForm = function(eventTarget){
                       params: eventTarget});
 };
 DreamsController.prototype.updateDreamRiver = function(){
-  var data = {type: "get", url: "/shortpoll", data: {"timestamp": Date.now().toString()} }
-  DreamCatcher.base({data: data});
+  DreamCatcher.base({data: Obj.fromElement("[data-info=timestamp]"),
+                    callback: DreamView.appendNewDream});
 };
-Obj.fromElement("[data-info=timestamp]");
