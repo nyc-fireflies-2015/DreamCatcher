@@ -5,6 +5,7 @@ gem 'pg'
 gem 'figaro'
 gem 'phony_rails'
 gem 'sidekiq'
+gem 'redis'
 gem 'slim'
 gem 'sinatra', require: false
 gem 'twilio-rb'
