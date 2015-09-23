@@ -1,6 +1,9 @@
 <li data-li="step">
   <div data-div="step-info">
     <%= render partial: "show", locals: {step: step} %>
+    <%= form_for "", url: add_step_path(step), action: "add_step" do |f| %>
+      <%= f.submit "add to my recipe" %>
+    <% end %>
   </div>
   <hr>
 </li>
