@@ -50,8 +50,10 @@ DreamCatcher.send = function(args){
   $.ajax(args.data).done(function(element){
     args.callback(args.params, element);
   }).fail(function(error){
+    if(error.status == 306){
     var errorDiv = $(args.params).find("[data-handler=errors]");
     $(errorDiv).html(error.responseText);
+    }
   });
   if(args.data === undefined){
     args.callback(args.params);
@@ -61,8 +63,10 @@ DreamCatcher.base = function(args){
   $.ajax(args.data).done(function(element){
     args.callback(element);
   }).fail(function(error){
+    if(error.status == 306){
     var errorDiv = $(args.params).find("[data-handler=errors]");
     $(errorDiv).html(error.responseText);
+    }
   });
 };
 
