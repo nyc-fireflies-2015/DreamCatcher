@@ -26,14 +26,12 @@ before_action :find_step, except: [:recipe, :new, :create]
     end
   end
 
-  def add_step
-    # unless current_dreamer.steps.includes(@step)
-      current_dreamer.steps << @step
-    # end
+  def clone
+    current_dreamer.steps << @step
     redirect_to :back
   end
 
-  def remove_step
+  def destroy
     if @step.creator == current_dreamer
       current_dreamer.points -= 2
       check_rank
@@ -41,7 +39,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     else
       current_dreamer.steps.delete(@step)
     end
-    render nothing: true, status: 200
+    render :nothing => true, :status => 200
   end
 
   private

@@ -24,10 +24,10 @@ RSpec.describe StepsController, type: :controller do
     end
   end
 
- describe "Post #add_step" do
+ describe "Post #clone" do
     let!(:borrowed_step) { FactoryGirl.create(:step) }
     it "assigns step in question to dreamer in question" do
-      post :add_step, id: borrowed_step.id
+      post :clone, id: borrowed_step.id
       @dreamer.reload
       expect(@dreamer.steps.last).to eq(borrowed_step)
     end

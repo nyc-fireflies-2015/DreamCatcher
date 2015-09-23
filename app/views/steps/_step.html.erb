@@ -1,11 +1,9 @@
 <li data-li="step">
   <div data-div="step-info">
-    <%= render partial: "show", locals: {step: step} %>
-  <% if step.dreamers.includes(current_dreamer) %>
-    <%= form_for step, url: remove_step_path(step), data: {form: "remove-step"} do |f| %>
-      <%= f.submit "Delete" %>
+    <% if step.dreamers.includes(current_dreamer) %>
+      <a><img data-href="<%=step_path(step)%>" data-form="remove-step" data-method="delete" class="icon" src="<%=image_path("delete-icon.png")%>"/></a>
+      <%= step.description %>
     <% end %>
-  <% end %>
   </div>
   <hr>
 </li>
