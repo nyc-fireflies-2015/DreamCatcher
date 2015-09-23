@@ -11,7 +11,7 @@ before_action :find_step, except: [:recipe, :new, :create]
 
   def new
     @step = Step.new
-    render :nothing => true, :status => 200
+    render nothing: true, status: 200
   end
 
   def create
@@ -27,8 +27,10 @@ before_action :find_step, except: [:recipe, :new, :create]
   end
 
   def add_step
-    current_dreamer.steps << @step
-    render :nothing => true, :status => 200
+    # unless current_dreamer.steps.includes(@step)
+      current_dreamer.steps << @step
+    # end
+    redirect_to :back
   end
 
   def destroy
@@ -39,7 +41,7 @@ before_action :find_step, except: [:recipe, :new, :create]
     else
       current_dreamer.steps.delete(@step)
     end
-    render :nothing => true, :status => 200
+    render nothing: true, status: 200
   end
 
   private
