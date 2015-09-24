@@ -14,4 +14,7 @@ $(document).ready(function(){
   if($("#dreamers-profile").length >= 0){
     DreamersRunner.profile();
   }
+  if($("#conversation-index").length >= 0){
+    ConversationsRunner.index();
+  }
 });

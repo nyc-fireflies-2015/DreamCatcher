@@ -1,7 +1,7 @@
 <li data-li="step">
   <div data-div="step-info">
     <% if step.dreamers.includes(current_dreamer) %>
-      <%= link_to image_tag("delete-icon.png", class: "icon"), step_path(step), method: "delete", data: {form: "remove-step"} %>
+  <a><img data-form="remove-step" data-href="<%=step_path(step)%>" data-method="delete" class="icon" src="<%= image_path("delete-icon.png")%>"/></a>
       <%= step.description %>
     <% end %>
   </div>

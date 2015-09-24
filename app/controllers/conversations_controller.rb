@@ -24,8 +24,7 @@ class ConversationsController < ApplicationController
 
   def destroy
     @conversation.move_to_trash(current_dreamer)
-    flash[:success] = 'The conversation was moved to trash.'
-    redirect_to conversations_path
+    render nothing: true, status: 200
   end
 
   def restore
