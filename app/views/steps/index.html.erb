@@ -29,6 +29,11 @@
       <ul data-river="recipe_steps">
       <%= render @steps %>
       </ul>
+      <% if @steps.empty? %>
+        <p>Your recipe is currently empty.<br>
+          Check out popular tips other dreamers are using to increase their chances of lucid dreaming and add them to your own recipe list.<br>
+          Did you stumble upon something that possibly got you dreaming? Add it and share it with others!</p>
+      <% end %>
     </div>
   </div>
 <% end %>
