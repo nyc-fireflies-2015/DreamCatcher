@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       delete :empty_trash
     end
+  get 'conversations/shortpoll' => 'conversations#shortpoll', as: "shortpoll"
 
     member do
       post :restore
