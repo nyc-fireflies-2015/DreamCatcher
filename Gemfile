@@ -11,7 +11,7 @@ gem 'sinatra', require: false
 gem 'twilio-rb'
 gem 'twilio-ruby'
 gem 'foundation-rails'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 2.7'
 gem 'jquery-rails'
 gem 'whenever', :require => false
 gem 'jbuilder', '~> 2.0'
