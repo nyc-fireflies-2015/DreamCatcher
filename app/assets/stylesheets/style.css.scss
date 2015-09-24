@@ -50,7 +50,8 @@ sub {
   height: 0.9em;
 }
 
-.comment, .search, .hashtag-search {
+.comment, .search,
+.hashtag-search, .messages {
   text-align: left;
 
   li {
@@ -64,10 +65,22 @@ sub {
 }
 
 .messages {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  text-align: left;
+
+  li {
+    padding: 1.5em;
+    list-style-type: none;
+    border-radius: 1em;
+    clear: both;
+    width: 50%;
+  }
+
+  .current {
+    float: right;
+    background: #F0F0F5;
+    border-radius: 1em;
+    width: 50%;
+  }
 }
 
 .nav-stacked {
