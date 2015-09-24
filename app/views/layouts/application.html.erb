@@ -14,14 +14,16 @@
     <%= favicon_link_tag 'favicon.png' %>
   </head>
 
-  <body class=<%= "intro-bg" unless current_dreamer %>>
+  <body>
     <%= render "shared/header" if current_dreamer %>
 
     <% if flash[:error] %>
       <%= render partial: "shared/errors", locals: { errors: flash[:error] } %>
     <% end %>
-    <main class="center row">
-      <%= yield %>
+    <main class='center row'>
+      <div id="<%= 'container' if current_dreamer %>">
+        <%= yield %>
+      </div>
     </main>
     <%= render "shared/footer" unless current_dreamer.nil? %>
   </body>

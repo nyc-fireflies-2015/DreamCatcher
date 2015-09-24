@@ -1,11 +1,21 @@
 html, body {
   width: 100%;
+  background: url(welcome-bg.jpg) no-repeat;
+  background-size: cover;
+  background-color: #333;
 }
 
 main {
-  width: 100%;
+  position: relative;
   font-family: 'Inconsolata', sans-serif;
   min-height: 100%;
+}
+
+#container {
+  background-color: #FFF;
+  height: 36em;
+  width: 80%;
+  margin: auto;
 }
 
 .title-area {
