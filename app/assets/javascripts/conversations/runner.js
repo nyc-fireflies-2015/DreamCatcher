@@ -3,6 +3,6 @@ var ConversationsRunner = {
     var ctrl = new ConversationsController();
     Binder.bind({event: "click",
                 selector: "[data-link=delete-conversation]",
-                callback: ctrl.destroyConversation})
+                callback: ctrl.destroyConversation});
   }
 };

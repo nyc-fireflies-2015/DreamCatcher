@@ -1,11 +1,9 @@
-<li id="conversation-index" class="list-group-item clearfix">
+<li id="conversation-index" class="list-group-item clearfix" data-li="conversation">
   <div class="btn-group-vertical pull-right">
     <% if conversation.is_trashed?(current_dreamer) %>
       <%= link_to 'Restore', restore_conversation_path(conversation), class: 'btn btn-xs btn-info sub-button', method: :post %>
     <% else %>
- <!--      <%= link_to image_tag("trash-bin.png", class: "icon"), conversation_path(conversation), class: 'btn btn-xs btn-danger sub-button', method: :delete,
-                  data: {confirm: 'Are you sure?'} %> -->
-<a class="btn btn-xs btn-danger sub-button"><img  data-href="<%=conversation_path(conversation)%>" data-method="delete" data-link="delete-conversation" class="icon" src='<%= image_path('trash-bin.png') %>'/></a>
+<a><img data-link="delete-conversation" data-href="<%= conversation_path(conversation) %>" data-method="delete"  class="btn btn-xs btn-danger sub-button icon" src='<%= image_path('trash-bin.png') %>'/></a>
       <% if conversation.is_unread?(current_dreamer) %>
         <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation),
                   class: 'btn btn-xs btn-info sub-button', method: :post %>
