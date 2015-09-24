@@ -4,5 +4,8 @@ var ConversationsRunner = {
     Binder.bind({event: "click",
                 selector: "[data-link=delete-conversation]",
                 callback: ctrl.destroyConversation});
+  },
+  show: function(){
+    
   }
 };

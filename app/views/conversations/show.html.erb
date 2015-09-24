@@ -1,4 +1,4 @@
-<div class="panel-heading"><h3><%= @conversation.subject %></h3></div>
+<div id="conversation-show" class="panel-heading"><h3><%= @conversation.subject %></h3></div>
 
 <p>Chatting with <%= render 'conversations/participants', conversation: @conversation %></p>
 
@@ -17,7 +17,7 @@
   </ul>
 </div>
 
-<%= form_tag reply_conversation_path(@conversation), method: :post do %>
+<%= form_tag reply_conversation_path(@conversation), method: :post, data: {form: conversation} do %>
   <div class="form-group">
     <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
   </div>
