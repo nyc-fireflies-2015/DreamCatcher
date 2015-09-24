@@ -1,0 +1,50 @@
+/* line 1, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.intro-bg {
+  background: url(welcome-bg.jpg) no-repeat !important;
+  background-size: cover !important;
+  background-color: #333 !important;
+}
+
+/* line 7, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.intro-page {
+  color: #FFF;
+}
+/* line 10, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.intro-page h1, .intro-page h4, .intro-page h6 {
+  color: #FFF;
+}
+
+/* line 15, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.intro-container {
+  position: relative;
+  top: 5em;
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  color: #FFF;
+  background: #333;
+  background: rgba(51, 51, 51, 0.7);
+}
+
+/* line 26, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.welcome-title {
+  position: relative;
+  font-size: 3em;
+  top: 2em;
+  font-family: 'Fredericka the Great', cursive;
+}
+/* line 32, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.welcome-title a {
+  color: #FFF;
+}
+
+/* line 37, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.welcome-button {
+  position: relative;
+  top: 6em;
+}
+
+/* line 42, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/welcome.css.scss */
+.log-in {
+  color: #CCCC7A;
+}

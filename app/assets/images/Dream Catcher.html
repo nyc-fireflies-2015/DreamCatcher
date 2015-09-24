@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dream Catcher</title>
+    <link href="./Dream Catcher_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" media="screen" href="./Dream Catcher_files/ajax.self-fb75270b6da36267ccbec7459102521dc2bf4f49b00f68564a2b1310f0e7c47e.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/dream.self-79a42f5f7f6e4178b045a82478621bb4a4df321dc1159f8a1e5037a42b5d4508.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/foundation_and_overrides.self-70999c1dd366c5f3c715710a122c1c2c4a6cb2cc96bf0444960d3e63837a3ef6.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/hashtags.self-139e107dd57a8bcc8c696a60a6dcbefa6febc2b41151a4021be6c9958f4fea9e.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/header.self-30d14da2d8acb2f603fc5d59c70b2aa175cb1b6ee2d342b5e20b5380ca2f4695.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/normalize.self-333ce827f60870acbaa5a751d49889465ce84697ee03980558f7d38405f670da.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/style.self-1eb63e82841536d65010a2a9334585232504d916dd8cb3b7a4eb479c738fe804.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/welcome.self-851673dfff77e1d46e1c03b09b8400bffce9c3b6b30b6f6ca52cfab3c52ed544.css">
+<link rel="stylesheet" media="screen" href="./Dream Catcher_files/application.self-f9ecc503685523b804a0f02a2ae501bb190b025b8354ec053661d70988296034.css">
+    <script type="text/javascript" src="./Dream Catcher_files/twilio.min.js"></script><script src="./Dream Catcher_files/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js"></script><style type="text/css"></style>
+    <script src="./Dream Catcher_files/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/controller.self-2918b74c273355f4e300abacfe8feaa80e9185ddd14b48d5de96fba6a54f6230.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/runner.self-e5b610b5a884ba3c1a2a543b830390c60471762c72394b9fd49c5c5f07e9718c.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/view.self-4d5ebe45762bf23300e779fb8ffa8e6b3121c8e1753b017f071f8e1978bc1329.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/dreamcatcher.self-0dff0cebe368bb8f11f19a2ee1e607331d66329a6d7d0c07f5ac35ee7203fd52.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/controller.self-bf0bbda54677ad082cdbe721e6f753f8eebb695eb2b0b36823b7c17a987f96ce.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/runner.self-81820120e1bebdfb0e3e853a23cd7d995a30272407a37937b58644f333a008ad.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/view.self-688cc37d37ea9884116254b4d73abbe0a1474ced77e4e754913f7f5752e58cf8.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/controller.self-0b4023f4566a69b786c904e0e84e3c9cfe43d21942fe812d32c529896ce56b7b.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/runner.self-bf21e093de707cfef9a4ef502d9c3deb901a0b9c5786f09904db79c21a3e46f3.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/view.self-19ffd3080a7b8bb556f962a0c3448d7f10eaebf7e89d3a4065d99cdc84e49df5.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/controller.self-d07400aaa8e952903cac064b962c177245a4e28b7b9bbbded47bb34ccb47a785.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/runner.self-ddf8a7f527c6a3f03867a1ccedc933bd30bf4871e3695481c12b41ed88675202.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/view.self-2b67e79c0cc9e737bca73b8d783c287bb460faa83f3af72f56d346bfa461c77a.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/controller.self-76917bc1be88e6897d6542f02dcb0537e32c321c03e6b46f07a60ccaf91b5470.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/runner.self-2680e15c97bf1c368fb3c9a0ccad1e3972ddece20bcc39570ec822e3c00e9543.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/view.self-5884e5e3ed4c0675f58327685102104b16f0980d6ced33a4c4bd9dae6a38dfdf.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/init.self-e7d5b4cfd13e94cdde19e4043c1c19d3d2892625deafdef5cc8b1949bbddbcef.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/controller.self-314e22aa693ce035afcb05f82c4a0683102148d2cec3fc426e19f1431b2fbfb6.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/runner.self-817875a79f7bb3b248b50c55e85cbef7b4d31ae7e77b30e6954fc7623610f478.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/view.self-b36231507ec92436f02257e00d0cd6c1ca4869025691349110cb0922b128d021.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.self-ee5396739ce46beb039f26ea629172a74143752d74f703c6c3b219fc52aecf73.js" data-turbolinks-track="true"></script><meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large-only"><meta class="foundation-mq-large"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-small-only"><meta class="foundation-mq-small"><style></style>
+<script src="./Dream Catcher_files/foundation.abide.self-f8b56c707a79139807305a5f7efc2aaa0848f0c677abcc056496f507e0192b79.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.accordion.self-d55abdcb0a7a29512be2f31f63d418cc8cc4505a0a3c71946d25484b0a0b3f4e.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.alert.self-fbde7afb61e8ffd8ab9b717f0bed1e58cb9e0144a25cc773fea634d5554f62cd.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.clearing.self-54610737b435a97590fcb176848c3c7a44c4d55d369894260fa7c28c97a70a23.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.dropdown.self-c9ee29909e266373e5e814a73fc6ea062245ddd29466d35d232448f73350d78a.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.equalizer.self-7aa743bf4660deb2fb2f601c112806a1703c430067531da3f41e4afffe19fee9.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.interchange.self-dad8415355087cb21a16fa44bac20d602344d52de5aca9e588e3588fce5dd5a7.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.joyride.self-0a5271728699423f583dd5b3b8a11bfe0dc9fb5044446bcf3218ef8ca906a82d.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.magellan.self-a50193f172f11e57b373c3001072ba2d6b34b857ab251e9ded30af5242855687.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.offcanvas.self-75bffd0c7f4f0d2992ab95f0cc6959282ebb5807da70123d40c01d76e230ec88.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.orbit.self-f8d30eb1717c874db26723f9e07901ec0a325d59263f1404ee83a616bb597ad2.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.reveal.self-95f01feb3e25e47b58b78da0021ae2fffafdee70846682067c180e0e10f7b095.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.slider.self-8911a7352cb577b6b7973b0734d57d2b624c79286558ffa36fcac0c29b2d0bee.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.tab.self-9bf6791513d1b20e213bb1aee3df0bc17128c7e18421258dc68a2a4ccabe1647.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.tooltip.self-834156796c253580629cfffc720bdc3d191b1e5a5a6ddbc1102ecd08c876516c.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.topbar.self-105416f061562f07c6a0a8057d68282fdc1eeb5dc306713fcae6c9a53001fc55.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js" data-turbolinks-track="true"></script>
+<script src="./Dream Catcher_files/application.self-9052823ed3a564af1352a57b0fb1aebeb8c5300bacbf48a05e39463e091bc1e2.js" data-turbolinks-track="true"></script>
+    <script type="text/javascript" src="./Dream Catcher_files/twilio.min(1).js"></script>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="yvD6v0/57QQzm6hj8TEz5uzSDm32/kY67BRlemdVlPXIbyaaCm5DDYhcsBz2kEToX7lhQswRlcbcVXP3wqi5Gw==">
+  <meta class="foundation-mq-topbar"></head>
+
+  <body class="f-topbar-fixed">
+    <div class="sticky fixed">
+  <header class="top-bar" data-topbar="" role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1 class="title-area"><a href="./Dream Catcher_files/Dream Catcher.html">DreamCatcher</a></h1>
+      </li>
+    </ul>
+
+    
+  <nav class="right top-bar-section">
+      <ul>
+        <li>
+          <form action="http://localhost:3000/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+            <input type="text" name="q" id="q" placeholder="search">
+</form>        </li>
+          <li><a href="./Dream Catcher_files/Dream Catcher.html">Dreams</a></li>
+          <li><a href="http://localhost:3000/dreamers/16/steps">Recipe</a></li>
+          <li>
+              <a href="http://localhost:3000/conversations"><img class="mail-icon" src="./Dream Catcher_files/full-mail-icon-248589eeb5c32e6aa370e81fe795a5ad322d1fec1a951520954dad3dd3b8132f.png" alt="Full mail icon 248589eeb5c32e6aa370e81fe795a5ad322d1fec1a951520954dad3dd3b8132f"></a>
+          </li>
+          <li class="has-dropdown not-click">
+            <a href="http://localhost:3000/profile/16">adfsas</a>
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-medium-up"><a class="parent-link js-generated" href="http://localhost:3000/profile/16">adfsas</a></li>
+              <li><a href="http://localhost:3000/profile/16">Profile</a></li>
+              <li><a href="http://localhost:3000/dreamers/16/setting">Settings</a></li>
+              <li><a rel="nofollow" data-method="delete" href="http://localhost:3000/logout">Log Out</a></li>
+            </ul>
+          </li>
+      </ul>
+    </nav></header>
+</div>
+
+
+    <main class="center row">
+      <div id="dream-index" class="trend-container">
+  <h3 class="popular-dreams-title center" style="display: none;">Trending</h3>
+
+  <div class="trend-river" style="display: none;">
+    <ul>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/2/dreams">dolorem</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/3/dreams">ab</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/4/dreams">repellat</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/5/dreams">enim</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/6/dreams">consequatur</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/7/dreams">voluptatem</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/8/dreams">sit</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/9/dreams">consequatur</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/10/dreams">sed</a></p></li>
+      <li><p><a class="hashtag" href="http://localhost:3000/hashtags/1/dreams">sapiente</a></p></li>
+  </ul>
+  </div>
+
+  <div data-form="new" style="display: block;">
+    <div data-div="dream-form">
+  <h2>Add New Dream</h2>
+
+  <div data-handler="errors"></div>
+<form class="new_dream" id="new_dream" data-form="dream" action="http://localhost:3000/dreams" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="yvD6v0/57QQzm6hj8TEz5uzSDm32/kY67BRlemdVlPXIbyaaCm5DDYhcsBz2kEToX7lhQswRlcbcVXP3wqi5Gw==">
+  <p class="dream-input">
+    <input placeholder="title" type="text" name="dream[title]" id="dream_title">
+  </p>
+
+  <p class="dream-input">
+    <textarea placeholder="tell us about your dream" name="dream[story]" id="dream_story"></textarea>
+  </p>
+  <p class="hashtag-input dream-input">
+  <textarea placeholder="hashtags" name="dream[hashtag_string]" id="dream_hashtag_string"></textarea>
+</p>
+
+  <input name="dream[decision_clarity]" type="hidden" value="0"><input type="checkbox" value="1" name="dream[decision_clarity]" id="dream_decision_clarity">
+  <label for="dream_Were you able to make decisions">Were you able to make decisions?</label><br>
+
+  <input name="dream[consciousness_clarity]" type="hidden" value="0"><input type="checkbox" value="1" name="dream[consciousness_clarity]" id="dream_consciousness_clarity">
+  <label for="dream_Were you aware that you were dreaming">Were you aware that you were dreaming?</label><br>
+
+  <input name="dream[dream_state_clarity]" type="hidden" value="0"><input type="checkbox" value="1" name="dream[dream_state_clarity]" id="dream_dream_state_clarity">
+  <label for="dream_Were your experiences vivid">Were your experiences vivid?</label>
+  <p>
+    <input type="submit" name="commit" value="Submit">
+  </p>
+</form>
+</div>
+
+  </div>
+
+  <div class="center add-dream">
+    <p><a class="button" data-link="add-dream" href="http://localhost:3000/dreams/new" style="display: none;">Add New Dream</a></p>
+  </div>
+</div>
+
+<div class="dreams-container">
+  <div class="center">
+    <h3>Recent Dreams</h3>
+  </div>
+  <div data-timestamp="" data-method="get" data-action="/shortpoll" data-info="timestamp" class="dream-river">
+
+    <ul data-river="dreams" class="accordion" data-accordion="">
+      <li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel1a" aria-expanded="true">sint</a>
+  <div data-div="info" id="panel1a" class="content active">
+    <p>
+  </p><div class="dream-info" data-id="40">
+    <a href="http://localhost:3000/profile/11">Anne Bins</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/40" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/40" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Quae excepturi voluptatibus hic quo. Sed cum odio suscipit ratione possimus sint. Sed voluptas accusamus. Quo voluptatem dolorum optio laborum. Illum praesentium et mollitia.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/40">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel2a" aria-expanded="false">qui</a>
+  <div data-div="info" id="panel2a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="39">
+    <a href="http://localhost:3000/profile/11">Anne Bins</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/39" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/39" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Sequi ipsum quia ab culpa temporibus iure. Vel perferendis necessitatibus et autem. Nemo sit et veniam non. Eum consequatur aliquid fuga.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/39">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel3a" aria-expanded="false">ut</a>
+  <div data-div="info" id="panel3a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="38">
+    <a href="http://localhost:3000/profile/11">Anne Bins</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/38" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/38" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Dolorem minus ab. Quo autem sit voluptas ex architecto rem qui. Tenetur maiores explicabo sed. Illum natus enim debitis. Eius fuga ea.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/38">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel4a" aria-expanded="false">ut</a>
+  <div data-div="info" id="panel4a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="37">
+    <a href="http://localhost:3000/profile/11">Anne Bins</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/37" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/37" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Nobis quia est aut. Eveniet velit velit rerum qui sapiente. Fuga blanditiis vitae. Vel perferendis hic non ducimus ex quo et. Ut accusamus voluptas quisquam voluptatum nostrum.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/37">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel5a" aria-expanded="false">quidem</a>
+  <div data-div="info" id="panel5a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="36">
+    <a href="http://localhost:3000/profile/10">Aisha Heller</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/36" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/36" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Et aut autem modi consequatur non. Eaque sed quidem asperiores et sed. In quia consectetur non velit et maiores repellat.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/36">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel6a" aria-expanded="false">occaecati</a>
+  <div data-div="info" id="panel6a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="35">
+    <a href="http://localhost:3000/profile/10">Aisha Heller</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/35" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/35" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Praesentium aliquam inventore soluta ut est exercitationem vitae. Sit voluptatem accusamus sunt aliquam recusandae iste. Facilis quia sint earum hic. Incidunt ducimus quam aperiam. Aperiam temporibus est esse est.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/35">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel7a" aria-expanded="false">eos</a>
+  <div data-div="info" id="panel7a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="34">
+    <a href="http://localhost:3000/profile/10">Aisha Heller</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/34" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/34" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Omnis consequatur suscipit. Tempora est earum itaque quas. Qui pariatur quibusdam consequatur iure voluptatem. Repudiandae qui enim totam sapiente. Numquam necessitatibus esse beatae molestias reprehenderit.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/34">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel8a" aria-expanded="false">ut</a>
+  <div data-div="info" id="panel8a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="33">
+    <a href="http://localhost:3000/profile/10">Aisha Heller</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/33" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/33" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Rerum libero corrupti natus et. Nobis et eos voluptate vel dicta veritatis explicabo. Suscipit voluptas dicta qui est vitae molestiae.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/33">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel9a" aria-expanded="false">nisi</a>
+  <div data-div="info" id="panel9a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="32">
+    <a href="http://localhost:3000/profile/9">Ms. Kaela Morar</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/32" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/32" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Unde recusandae nisi tempore. Temporibus et fugiat expedita minima. Cupiditate pariatur est mollitia dolorum in dolorem.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/32">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel10a" aria-expanded="false">tempora</a>
+  <div data-div="info" id="panel10a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="31">
+    <a href="http://localhost:3000/profile/9">Ms. Kaela Morar</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/31" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/31" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Doloremque ab consectetur aut voluptatem esse hic. Asperiores ut sit neque ut ipsum reiciendis. Sit aut aliquam autem perferendis esse eius. Voluptas mollitia et consequatur tempora aut excepturi.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/31">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel11a" aria-expanded="false">esse</a>
+  <div data-div="info" id="panel11a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="30">
+    <a href="http://localhost:3000/profile/9">Ms. Kaela Morar</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/30" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/30" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Totam dolor cum. Ipsa magnam veritatis consequuntur sint iusto. Et quos quis recusandae. Voluptatibus commodi aperiam consequatur sunt rem. Veritatis molestias eius voluptatem.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/30">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel12a" aria-expanded="false">ut</a>
+  <div data-div="info" id="panel12a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="29">
+    <a href="http://localhost:3000/profile/9">Ms. Kaela Morar</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/29" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/29" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Eaque laudantium omnis et tempora maiores sunt id. Quam vero quaerat numquam quos consequatur. Dolor nobis consequuntur aliquam dignissimos deleniti autem.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/29">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel13a" aria-expanded="false">et</a>
+  <div data-div="info" id="panel13a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="28">
+    <a href="http://localhost:3000/profile/8">Laurence Mohr</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/28" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/28" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Veritatis repellat saepe et voluptatem nihil quo. Laudantium libero in temporibus dolorem facilis. Nihil possimus voluptate et ut.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/28">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel14a" aria-expanded="false">sunt</a>
+  <div data-div="info" id="panel14a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="27">
+    <a href="http://localhost:3000/profile/8">Laurence Mohr</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/27" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/27" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Nihil in aut. In doloribus qui. Omnis dolores dolor ratione in. Vel voluptates aut commodi autem cumque et. Cumque explicabo aut sint molestiae quae atque hic.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/27">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel15a" aria-expanded="false">autem</a>
+  <div data-div="info" id="panel15a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="26">
+    <a href="http://localhost:3000/profile/8">Laurence Mohr</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/26" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/26" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Consequuntur illum voluptas harum commodi consequatur. Ut vero sed facere. Adipisci nihil labore est possimus.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/26">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel16a" aria-expanded="false">deleniti</a>
+  <div data-div="info" id="panel16a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="25">
+    <a href="http://localhost:3000/profile/8">Laurence Mohr</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/25" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/25" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Distinctio ipsum exercitationem omnis velit. Quia cumque ab omnis cum est. Minus excepturi vitae ut totam voluptatem molestiae.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/25">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel17a" aria-expanded="false">voluptas</a>
+  <div data-div="info" id="panel17a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="24">
+    <a href="http://localhost:3000/profile/7">Dawson Reichel</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/24" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/24" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Inventore est qui quibusdam veritatis. Rem soluta temporibus molestias suscipit neque et. Non vel ratione velit.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/24">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel18a" aria-expanded="false">porro</a>
+  <div data-div="info" id="panel18a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="23">
+    <a href="http://localhost:3000/profile/7">Dawson Reichel</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/23" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/23" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Commodi temporibus perferendis. Et pariatur officia. Quo iste enim ratione omnis odit. Officia minima dolorum.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/23">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel19a" aria-expanded="false">cumque</a>
+  <div data-div="info" id="panel19a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="22">
+    <a href="http://localhost:3000/profile/7">Dawson Reichel</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/22" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/22" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Neque nostrum rerum debitis temporibus. Quia natus repellendus. Vero velit minima voluptatem non.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/22">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li><li class="accordion-navigation" data-li="summary">
+  <a href="http://localhost:3000/#panel20a" aria-expanded="false">et</a>
+  <div data-div="info" id="panel20a" class="content ">
+    <p>
+  </p><div class="dream-info" data-id="21">
+    <a href="http://localhost:3000/profile/7">Dawson Reichel</a>
+
+    <div class="right">
+      <small>posted 5 hours ago</small>
+    </div>
+      <div class="favorites" data-div="favorite">
+        <div data-favorite="new" data-div="">
+          <a><img data-href="/favorite/21" data-form="favorite" data-method="post" class="icon" src="./Dream Catcher_files/unfav-icon-961583f5782c8b0047e03330a10db215da355f20872bcdf48abe50bf5e13345d.png"></a>
+
+        </div>
+        <div data-favorite="destroy" data-div="hidden">
+          <a><img data-href="/favorite/21" data-form="unfavorite" data-method="delete" class="icon" src="./Dream Catcher_files/fav-icon-ca25754589a7585967303ae64ebedf45617d72eb8315998d80b2446a6fcd531a.png"></a>
+
+        </div>
+      </div>
+  </div>
+<p></p>
+
+Nulla laudantium non odio animi sint eius cum. Iste vel temporibus qui. Qui eius aut et aut sint. Laboriosam maxime neque incidunt et molestiae excepturi occaecati. Et harum consequatur sit.<br>
+<sub class="right"><a href="http://localhost:3000/dreams/21">read more &gt;&gt;</a></sub>
+<hr>
+
+  </div>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+
+    </main>
+    <footer class="center">
+  <p><sub>Designed by <a target="_blank" href="https://github.com/nyc-fireflies-2015/DreamCatcher">NYC Fireflies</a></sub></p>
+</footer>
+  
+
+
+<div style="position: fixed; z-index: 99999; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden; visibility: hidden;"><div style="margin: 10% auto 0px; width: 215px; border-radius: 8px; border: 8px solid rgb(160, 160, 160); background-color: rgb(248, 248, 248);"><button>Close</button></div></div></body></html>

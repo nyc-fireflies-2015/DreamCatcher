@@ -1,0 +1,116 @@
+/* line 1, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+html, body {
+  width: 100%;
+}
+
+/* line 5, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+main {
+  width: 100%;
+  font-family: 'Inconsolata', sans-serif;
+  min-height: 100%;
+}
+
+/* line 11, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.title-area {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+/* line 15, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+/* line 21, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.profile-container li {
+  list-style-type: none;
+}
+
+/* line 27, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+nav a {
+  border-left: 1px solid #999;
+}
+
+/* line 32, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+sub {
+  color: #999;
+}
+
+/* line 36, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.avatar-icon {
+  border: 1px solid #999;
+  width: 3.5em;
+  height: 3.5em;
+}
+
+/* line 42, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.avatar {
+  border: 1px solid #999;
+  width: 6em;
+  height: 6em;
+}
+
+/* line 48, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.icon {
+  width: 0.9em;
+  height: 0.9em;
+}
+
+/* line 53, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.comment, .search,
+.hashtag-search, .messages {
+  text-align: left;
+}
+/* line 57, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.comment li, .search li,
+.hashtag-search li, .messages li {
+  padding: 1.5em;
+  list-style-type: none;
+}
+/* line 62, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.comment li:nth-child(even), .search li:nth-child(even),
+.hashtag-search li:nth-child(even), .messages li:nth-child(even) {
+  background: #F0F0F5;
+}
+
+/* line 67, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.messages {
+  text-align: left;
+}
+/* line 70, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.messages li {
+  padding: 1.5em;
+  list-style-type: none;
+  border-radius: 1em;
+  clear: both;
+  width: 50%;
+}
+/* line 78, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.messages .current {
+  float: right;
+  background: #F0F0F5;
+  border-radius: 1em;
+  width: 50%;
+}
+
+/* line 86, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.nav-stacked {
+  list-style-type: none;
+}
+
+/* line 90, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.list-group {
+  list-style-type: none;
+}
+
+/* line 94, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+.list-group-item:nth-child(even) {
+  background: #F0F0F5;
+}
+
+/* line 98, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/style.css.scss */
+footer {
+  font-size: 0.7em;
+  width: 100%;
+  background: #333;
+}
