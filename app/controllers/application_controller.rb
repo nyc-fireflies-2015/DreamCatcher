@@ -22,10 +22,12 @@ class ApplicationController < ActionController::Base
     @dreams = Dream.ransack(title_or_story_cont: @query).result
     @dreamers = Dreamer.ransack(username_cont: @query).result
     @steps = Step.ransack(description_cont: @query).result
+    @hashtags = Hashtag.ransack(name_cont: @query).result
 
     @dreams = @dreams.paginate(:page => params[:page], :per_page => 10)
     @dreamers = @dreamers.paginate(:page => params[:page], :per_page => 10)
     @steps = @steps.paginate(:page => params[:page], :per_page => 10)
+    @hashtags = @hashtags.paginate(:page => params[:page], :per_page => 10)
   end
 
   def error(full_messages)

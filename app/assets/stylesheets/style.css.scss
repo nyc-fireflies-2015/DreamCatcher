@@ -64,8 +64,7 @@ sub {
 }
 
 .comment, .search,
-.hashtag-search, .messages,
-.inbox, .recipe {
+.hashtag-search, .inbox, .recipe {
   text-align: left;
 
   li {
@@ -101,14 +100,15 @@ sub {
     list-style-type: none;
     border-radius: 1em;
     clear: both;
-    width: 50%;
+    width: 60%;
+    background: #ECFBF8;
   }
 
   .current {
     float: right;
     background: #F0F0F5;
     border-radius: 1em;
-    width: 50%;
+    width: 60%;
   }
 }
 
@@ -140,6 +140,10 @@ a.sub-button {
   background: #CCC;
   padding: 0.2em;
   color: #000;
+}
+
+.empty-hr {
+  border: #FFF solid 1px;
 }
 
 
