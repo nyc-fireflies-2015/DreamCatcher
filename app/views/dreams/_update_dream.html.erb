@@ -1,0 +1,48 @@
+<h1>
+  <%= @dream.title %>
+</h1>
+
+<h3>
+  <% unless @dream.dreamer == current_dreamer %>
+    <div class="favorites" data-div="favorite">
+      <div data-favorite="new" data-div="<%= "hidden" if @dream.favorite?(current_dreamer) %>">
+        <%= render partial: "favorites/favorite", locals: {dream: @dream} %>
+        <%= @dream.favorites.count %>
+      </div>
+      <div data-favorite="destroy" data-div="<%= "hidden" unless @dream.favorite?(current_dreamer)%>" >
+        <%= render partial: "favorites/un_favorite", locals: {dream: @dream} %>
+        <%= @dream.favorites.count %>
+      </div>
+    </div>
+  <% end %>
+</h3>
+posted on <%= display_date(@dream.created_at) %><br>
+
+<p>
+  <%= gravatar_tag @dream.dreamer.email, default: "http://img1.wikia.nocookie.net/__cb20111127192946/frontierville/images/f/f0/Shaman_Dream_Catcher-icon.png", :html => {:class => "avatar-icon"} %>
+  <%= link_to @dream.dreamer.username, profile_path(@dream.dreamer) %><br>
+
+  <% if @dream.dreamer == current_dreamer %>
+    <%= link_to image_tag("edit-icon.png", class: "icon"), edit_dream_path(@dream), data: { link: "edit-dream" } %>
+    <%= link_to image_tag("delete-icon.png", class: "icon"), dream_path(@dream), method: "delete" %>
+  <% end %>
+</p>
+
+<p>
+  <% unless @dream.hashtags.empty? %>
+    <% @dream.hashtags.each do |hashtag| %>
+      <span data-span="hashtag">
+      <%= link_to hashtag.name, hashtag_dreams_path(hashtag), class: "hashtag" %>
+      <% if @dream.dreamer == current_dreamer %>
+        <%= link_to  image_tag("delete-icon.png", class: "icon"), hashtag_path(dream_id: @dream, id: hashtag), method: "delete" %>
+
+      </span>
+      <% end %>
+    <% end %>
+  <% end %>
+</p>
+
+<hr>
+<p>
+  <%= @dream.story %>
+</p>

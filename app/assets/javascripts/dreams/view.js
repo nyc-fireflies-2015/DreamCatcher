@@ -13,10 +13,8 @@ DreamView.showNewDream = function(el, newDreamSummary){
   $(".popular-dreams-title").fadeIn("slow");
 };
 DreamView.showUpdatedDream = function(eventTarget, updatedDreamInfo){
-  var dream = $(eventTarget).closest(document);
-  $(dream).find("[data-form=edit]").hide();
-  $(dream).find(".dream")
-  .html(updatedDreamInfo)
+  $("[data-form=edit]").hide();
+  $("[data-div=dream]").html(updatedDreamInfo);
 };
 DreamView.showNewDreamForm = function(){
   $("[data-form=new]").fadeIn("slow");
@@ -24,12 +22,9 @@ DreamView.showNewDreamForm = function(){
   $(".trend-river").hide();
   $(".popular-dreams-title").hide();
 };
-DreamView.showEditDreamForm = function(eventTarget){
-   var dream = $(eventTarget).closest(document);
-  $(dream)
-  .find("[data-form=edit]").fadeIn("slow");
-  $(dream)
-  .find(".dream").empty();
+DreamView.showEditDreamForm = function(){
+  $("[data-form=edit]").fadeIn("slow");
+  $("[data-div=dream]").empty();
 };
 DreamView.appendNewDream = function(newDreams){
   var d = new Date();

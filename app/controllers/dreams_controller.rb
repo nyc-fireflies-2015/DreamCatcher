@@ -36,9 +36,9 @@ class DreamsController < ApplicationController
       if dream_params[:hashtag_string]
         @dream.hashtags << Hashtag.parse(dream_params[:hashtag_string])
       end
-      render nothing: true
+      render partial: "update_dream", locals: {dream: @dream}
     else
-      error(@dream.errors.full_messages)
+      error(dream.errors.full_messages)
     end
   end
 
