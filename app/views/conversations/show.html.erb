@@ -5,19 +5,12 @@
 <div class="messages">
   <ul data-ul="messages">
     <% @conversation.receipts_for(current_dreamer).each do |receipt| %>
-      <% message = receipt.message %>
-      <li class=<%= "current" if message.sender == current_dreamer %>>
-        <strong>
-          <%= link_to message.sender.username, profile_path(message.sender) %>
-          on <%= message.created_at.strftime("%B %d %Y, %H:%M:%S") %>:
-        </strong>
-        <%= message.body %>
-      </li>
-    <% end %>
+      <%= render partial: "message", locals: {message: receipt.message}
+ %>    <% end %>
   </ul>
 </div>
 
-<%= form_tag reply_conversation_path(@conversation), method: :post, data: {form: reply} do %>
+<%= form_tag reply_conversation_path(@conversation), method: :post, data: {form: "reply"} do %>
   <div class="form-group">
     <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
   </div>
