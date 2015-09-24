@@ -26,6 +26,8 @@ class DreamersController < ApplicationController
 
   def update
     if @dreamer.update_attributes(dreamer_params)
+      @dreams_count = @dreamer.dreams.count
+      @comments_count = @dreamer.comments.count
       render partial: "stats", locals: {dreamer: @dreamer}
     else
       error(@dreamer.errors.full_messages)
