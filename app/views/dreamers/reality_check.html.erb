@@ -1,4 +1,5 @@
-<h3 class="subtitle">Set Up Reality Checks</h3>
+<h2>Set Up Reality Checks</h2>
+
 <p>Reality checking is an easy lucid dreaming technique designed to increase your self awareness by day and penetrate your dreams by night.</p>
 
 <p>When combined with other lucid dream exercises, reality checks can supercharge your efforts. Or they can produce lucid dreams in their own right, simply by creating a mental habit of reality testing.</p>
@@ -6,5 +7,5 @@
 <%= form_for current_dreamer, url: reality_check_path, method: "PUT" do |f| %>
   <%= f.text_field :phone_num, placeholder: "phone number" %>
   <%= f.password_field :password, placeholder: "*password", data: {field: "password"} %>
-  <button type="submit">Send Me Reality Checks!</button>
+  <button type="submit" class="button">Send Me Reality Checks!</button>
 <% end %>
