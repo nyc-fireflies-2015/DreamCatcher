@@ -10,7 +10,7 @@ class TwilioController < ApplicationController
     if @dreamer.save
       redirect_to profile_path(current_dreamer)
     else
-      redirect setting_path(@dreamer)
+      redirect reality_check_path(@dreamer)
     end
   end
 
