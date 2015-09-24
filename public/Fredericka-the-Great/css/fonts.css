@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Fredericka the Great';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/Fredericka-the-Great-regular/Fredericka-the-Great-regular.eot');
+  src: url('/fonts/Fredericka-the-Great-regular/Fredericka-the-Great-regular.eot?#iefix') format('embedded-opentype'),
+       local('Fredericka the Great'),
+       local('Fredericka-the-Great-regular'),
+       url('/fonts/Fredericka-the-Great-regular/Fredericka-the-Great-regular.woff2') format('woff2'),
+       url('/fonts/Fredericka-the-Great-regular/Fredericka-the-Great-regular.woff') format('woff'),
+       url('/fonts/Fredericka-the-Great-regular/Fredericka-the-Great-regular.ttf') format('truetype'),
+       url('/fonts/Fredericka-the-Great-regular/Fredericka-the-Great-regular.svg#FrederickatheGreat') format('svg');
+}
+
