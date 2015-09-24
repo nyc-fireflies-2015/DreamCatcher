@@ -1,0 +1,3 @@
+ <% conversation.receipts_for(current_dreamer).each do |receipt| %>
+      <%= render partial: "message", locals: {message: receipt.message}
+ %>    <% end %>

@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   resources :dreams
   resources :comments, except: [:show]
 
+  get 'conversations/shortpoll/:id' => 'conversations#shortpoll', as: "conversation_shortpoll"
   resources :conversations, only: [:index, :show, :destroy] do
     collection do
       delete :empty_trash
     end
-  get 'conversations/shortpoll' => 'conversations#shortpoll', as: "shortpoll"
 
     member do
       post :restore

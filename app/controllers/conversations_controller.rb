@@ -1,7 +1,7 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_dreamer
   before_action :get_mailbox
-  before_action :get_conversation, except: [:index, :empty_trash]
+  before_action :get_conversation, except: [:index, :empty_trash, :shortpoll]
   before_action :get_box, only: [:index]
 
   def index
@@ -46,6 +46,17 @@ class ConversationsController < ApplicationController
     flash[:success] = 'The conversation was marked as read.'
     redirect_to conversations_path
   end
+
+   def shortpoll
+    timestamp = Time.at(params[:timestamp].to_f/1000.0).to_datetime
+    new_messages = Mailboxer::Message.where(conversation_id: params[:id]).where("created_at >= ?", timestamp)
+    if new_messages.empty?
+      render nothing: true, status: 306
+    else
+      render partial: "conversation_river", locals: {conversation: get_conversation}
+    end
+  end
+
 
   private
 
