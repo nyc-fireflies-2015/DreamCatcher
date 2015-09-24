@@ -1,0 +1,14 @@
+<h1><%= @creator.username %>'s Dream Recipe</h1>
+
+<div class="recipe">
+  <ul>
+    <% @steps.each do |step| %>
+      <li>
+        <% unless step.creator != current_dreamer && current_dreamer.steps.include?(step) %>
+          <a><img src=<%= image_path("add-icon.png") %> class="icon" data-href="<%= clone_path(step) %>" data-method="post" data-info="add-step"/></a>
+        <% end %>
+        <%= step.description %>
+      </li>
+    <% end %>
+  </ul>
+</div>

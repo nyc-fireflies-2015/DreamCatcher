@@ -16,6 +16,7 @@ main {
   height: 36em;
   width: 80%;
   margin: auto;
+  padding: 1em;
 }
 
 .title-area {
@@ -61,7 +62,8 @@ sub {
 }
 
 .comment, .search,
-.hashtag-search, .messages, .inbox {
+.hashtag-search, .messages,
+.inbox, .recipe {
   text-align: left;
 
   li {

@@ -6,7 +6,9 @@ before_action :find_step, except: [:recipe, :new, :create]
     @step = Step.new
     @popular_steps = Step.top
     redirect_to welcome_path unless current_dreamer
-    render "index"
+    if @creator == current_dreamer
+      render "index"
+    end
   end
 
   def new
