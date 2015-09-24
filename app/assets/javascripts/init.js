@@ -1,23 +1,23 @@
 $(document).ready(function(){
-  if($("#dream-index").length >= 0){
+  if($("#dream-index").length > 0){
     DreamsRunner.index();
     FavoritesRunner.index();
   }
-  if($("#dream-show").length >= 0){
+  if($("#dream-show").length > 0){
     DreamsRunner.show();
     CommentsRunner.show();
     HashtagsRunner.show();
   }
-  if($("#step-index").length >= 0){
+  if($("#step-index").length > 0){
     StepsRunner.index();
   }
-  if($("#dreamers-profile").length >= 0){
+  if($("#dreamers-profile").length > 0){
     DreamersRunner.profile();
   }
-  if($("#conversation-index").length >= 0){
+  if($("#conversation-index").length > 0){
     ConversationsRunner.index();
   }
-  if($("#conversation-show").length >= 0){
+  if($("#conversation-show").length > 0){
     ConversationsRunner.show();
   }
 });
