@@ -10,14 +10,14 @@
 
   <p><%= link_to 'Send New', new_message_path, class: 'btn btn-lg btn-primary button' %>
     <% if @box == 'trash' %>
-      <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
+      <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger sub-button', method: :delete,
                    data: {confirm: 'Are you sure?'} %></p>
     <% end %>
     <hr>
-    <ul class="list-group">
+    <ul class="inbox list-group">
       <%= render partial: 'conversations/conversation', collection: @conversations %>
       <% if @conversations.empty? %>
-        <p>This inbox is empty!</p>
+        <p>This inbox is empty.</p>
       <% end %>
     </ul>
 

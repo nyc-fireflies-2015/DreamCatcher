@@ -51,7 +51,7 @@ sub {
 }
 
 .comment, .search,
-.hashtag-search, .messages {
+.hashtag-search, .messages, .inbox {
   text-align: left;
 
   li {
@@ -62,6 +62,10 @@ sub {
   li:nth-child(even) {
     background: #F0F0F5;
   }
+}
+
+.inbox {
+  text-align: center;
 }
 
 .avatar-icon {
@@ -116,6 +120,12 @@ sub-nav {
   dd {
     list-style-type: none;
   }
+}
+
+a.sub-button {
+  background: #CCC;
+  padding: 0.2em;
+  color: #000;
 }
 
 
