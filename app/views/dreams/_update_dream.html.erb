@@ -32,11 +32,13 @@ posted on <%= display_date(@dream.created_at) %><br>
   <% unless @dream.hashtags.empty? %>
     <% @dream.hashtags.each do |hashtag| %>
       <span data-span="hashtag">
-      <%= link_to hashtag.name, hashtag_dreams_path(hashtag), class: "hashtag" %>
-      <% if @dream.dreamer == current_dreamer %>
- <a><img data-link="hashtag-delete" data-href="<%= hashtag_path(dream_id: @dream, id: hashtag) %>" data-method="delete" class="icon" src='<%= image_path('delete-icon.png') %>'/></a> 
+        <a href="<%= hashtag_dreams_path(hashtag) %>" class="hashtag">
+          <%= hashtag.name %>
+          <% if @dream.dreamer == current_dreamer %>
+            <img data-link="hashtag-delete" data-href="<%= hashtag_path(dream_id: @dream, id: hashtag) %>" data-method="delete" class="icon" src='<%= image_path('delete-icon.png') %>'/>
+          <% end %>
+        </a>
       </span>
-      <% end %>
     <% end %>
   <% end %>
 </p>
