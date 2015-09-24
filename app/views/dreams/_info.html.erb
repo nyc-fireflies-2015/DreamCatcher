@@ -1,13 +1,15 @@
-<p>
-  <div class="dream-info" data-id="<%=dream.id%>">
-    by <%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
+<div class="dream-wrapper">
+  <p>
+    <div class="dream-info" data-id="<%=dream.id%>">
+      by <%= link_to "#{dream.dreamer.username}", profile_path(dream.dreamer)%>
 
-    <div class="right">
-      <small>posted <%= elapsed_time(dream.created_at) %> ago</small>
+      <div class="right">
+        <small>posted <%= elapsed_time(dream.created_at) %> ago</small>
+      </div>
     </div>
-  </div>
-</p>
+  </p>
 
-<%= truncate(dream.story, :length => 300) %><br>
-<sub class="right"><%= link_to "read more >>", dream_path(dream) %></sub>
-<hr>
+  <%= truncate(dream.story, :length => 300) %><br>
+  <sub class="right"><%= link_to "read more >>", dream_path(dream) %></sub>
+  <hr>
+</div>

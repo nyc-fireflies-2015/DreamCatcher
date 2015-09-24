@@ -10,7 +10,12 @@
       <% end %>
     <% end %>
   </div>
-  Subject: <%= link_to conversation.subject, conversation_path(conversation) %><br>
-  Date: <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small><br>
-  Sender: <%= render 'conversations/participants', conversation: conversation %>
+  <strong>Subject:</strong> <%= link_to conversation.subject, conversation_path(conversation) %><br>
+  <strong>Date:</strong> <span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span><br>
+  <strong>Sender:</strong>
+  <% conversation.participants.each do |sender| %>
+    <% unless sender == current_dreamer %>
+      <%= link_to sender.username, profile_path(sender) %>
+    <% end %>
+  <% end %>
 </li>
