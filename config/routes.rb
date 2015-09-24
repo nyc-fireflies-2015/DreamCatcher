@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   delete '/favorite/:dream_id' => 'favorites#destroy', as: 'unfavorite'
 
   resources :dreamers, except: [:index, :show, :new, :destroy]
-  get '/dreamers/:id/setting' => 'dreamers#setting', as: 'setting'
+  get '/dreamers/:id/reality_check' => 'dreamers#reality_check', as: 'reality_check'
   get '/dreamers/:id/inbox' => 'dreamers#inbox', as: 'inbox'
   get '/profile/:id' => 'dreamers#show', as: 'profile'
   get '/signup' => 'dreamers#new', as: 'signup'
