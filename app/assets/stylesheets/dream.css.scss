@@ -18,7 +18,8 @@
   }
 }
 
-.trend-container, .recipe-container {
+.trend-container, .recipe-container,
+.popular-steps-container {
   float: left;
   width: 30%;
 }
@@ -27,7 +28,7 @@
   height: 27em;
 }
 
-.dreams-container {
+.dreams-container, .recipe-container {
   width: 70%;
 }
 

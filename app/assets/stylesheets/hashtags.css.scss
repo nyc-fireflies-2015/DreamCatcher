@@ -4,8 +4,12 @@
 
 .hashtag {
   list-style-type: none;
-  background: #CCC;
+  background: #FFCCB2;
   padding: 0.2em 0.4em;
   border-radius: 0.7em;
+  color: #000;
+}
+
+a.hashtag:hover {
   color: #000;
 }
