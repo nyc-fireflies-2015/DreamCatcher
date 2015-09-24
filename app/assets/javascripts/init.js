@@ -17,4 +17,7 @@ $(document).ready(function(){
   if($("#conversation-index").length >= 0){
     ConversationsRunner.index();
   }
+  if($("#conversation-show").length >= 0){
+    ConversationsRunner.show();
+  }
 });

@@ -18,8 +18,8 @@ class ConversationsController < ApplicationController
 
   def reply
     current_dreamer.reply_to_conversation(@conversation, params[:body])
-    flash[:success] = 'Reply sent'
-    redirect_to conversation_path(@conversation)
+    receipt = @conversation.receipts_for(current_dreamer).last
+    render partial: "message", locals: {message: receipt.message }
   end
 
   def destroy
