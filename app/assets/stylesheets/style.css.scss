@@ -50,7 +50,8 @@ sub {
   height: 0.9em;
 }
 
-.comment, .search, .hashtag-search {
+.comment, .search,
+.hashtag-search, .messages {
   text-align: left;
 
   li {
