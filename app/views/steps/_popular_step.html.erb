@@ -1,7 +1,7 @@
 <li data-li="step">
   <div data-div="step-info">
     <% unless step.creator != current_dreamer && current_dreamer.steps.include?(step)%>
-      <%= link_to image_tag("add-icon.png", class: "icon"), clone_path(step), method: "post", action: "clone" %>
+    <a><img src=<%= image_path("add-icon.png") %> class="icon" data-href="<%= clone_path(step) %>" data-method="post" data-info="add-step"/></a>
     <% end %>
     <%= step.description %>
   </div>

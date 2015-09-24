@@ -12,8 +12,7 @@ DreamsController.prototype.getNewDreamForm = function(){
   DreamCatcher.send({callback: DreamView.showNewDreamForm});
 };
 DreamsController.prototype.getEditDreamForm = function(eventTarget){
-  DreamCatcher.send({callback: DreamView.showEditDreamForm,
-                      params: eventTarget});
+  DreamCatcher.send({callback: DreamView.showEditDreamForm});
 };
 DreamsController.prototype.updateDreamRiver = function(){
   DreamCatcher.base({data: Obj.fromElement("[data-info=timestamp]"),

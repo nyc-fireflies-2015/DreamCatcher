@@ -2,6 +2,8 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   root 'dreams#index'
 
+  get '/hashtags/:id/dreams' => 'hashtags#index', as: 'hashtag_dreams'
+  delete '/dreams/:dream_id/hashtag/:id' => 'hashtags#destroy', as: 'hashtag'
   resources :dreams
   resources :comments, except: [:show]
 
@@ -40,8 +42,6 @@ Rails.application.routes.draw do
   get '/twilio' => 'twilio#index'
   post '/send_sms' => 'twilio#send_sms'
 
-  get '/hashtags/:id/dreams' => 'hashtags#index', as: 'hashtag_dreams'
-  delete '/dreams/:dream_id/hashtag/:id' => 'hashtags#destroy', as: 'hashtag'
 
   put '/reality_check' => 'twilio#reality_check'
   mount Sidekiq::Web, at: '/sidekiq'

@@ -47,6 +47,7 @@ DreamCatcher.send = function(args){
   if(args.params === undefined){
     args.params = "body";
   }
+  debugger
   $.ajax(args.data).done(function(element){
     args.callback(args.params, element);
   }).fail(function(error){

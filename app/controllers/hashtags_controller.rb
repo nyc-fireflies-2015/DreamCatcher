@@ -5,7 +5,7 @@ class HashtagsController < ApplicationController
     dream = Dream.find(params[:dream_id])
     dream.hashtags.delete(@hashtag)
     @hashtag.destroy if @hashtag.dreams.empty?
-    redirect_to dream_path(dream)
+    render nothing: true, response: 200
   end
 
   def index
