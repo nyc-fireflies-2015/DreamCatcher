@@ -39,7 +39,7 @@
       <% end %>
 
       <% @steps.each do |step| %>
-        <li><%= link_to step.description, step_path(step) %></li>
+        <li><%= link_to step.description, recipe_path(step.creator) %></li>
       <% end %>
       <%= will_paginate @steps %>
 
