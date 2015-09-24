@@ -1,9 +1,15 @@
-<h1 class="subtitle">Sign Up</h1>
+<div class="intro-page">
+  <h1 class="welcome-title"><%= link_to "DreamCatcher", welcome_path %></h1>
+  <div class="intro-container">
+    <p><%= link_to "Already have an account? Log in.", login_path, class: "log-in" %></p>
+    <h4>Sign Up</h4>
 
-<%= form_for @dreamer do |f| %>
-  <%= f.text_field :username, placeholder: "username" %>
-  <%= f.text_field :email, placeholder: "email" %>
-  <%= f.password_field :password, placeholder: "password" %>
-  <%= f.submit "Submit", class: "button" %>
-<% end %>
+    <%= form_for @dreamer do |f| %>
+      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.text_field :email, placeholder: "email" %>
+      <%= f.password_field :password, placeholder: "password" %>
+      <%= f.submit "Submit", class: "button" %>
+    <% end %>
+  </div>
+</div>
 
