@@ -27,7 +27,7 @@
             <%= link_to "#{current_dreamer.username}", profile_path(current_dreamer) %>
             <ul class="dropdown">
               <li><%= link_to "Profile", profile_path(current_dreamer) %></li>
-              <li><%= link_to "Settings", setting_path(current_dreamer) %></li>
+              <li><%= link_to "Reality Check", reality_check_path(current_dreamer) %></li>
               <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
             </ul>
           </li>
