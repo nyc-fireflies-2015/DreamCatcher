@@ -34,8 +34,7 @@ posted on <%= display_date(@dream.created_at) %><br>
       <span data-span="hashtag">
       <%= link_to hashtag.name, hashtag_dreams_path(hashtag), class: "hashtag" %>
       <% if @dream.dreamer == current_dreamer %>
-        <%= link_to  image_tag("delete-icon.png", class: "icon"), hashtag_path(dream_id: @dream, id: hashtag), method: "delete" %>
-
+ <a><img data-link="hashtag-delete" data-href="<%= hashtag_path(dream_id: @dream, id: hashtag) %>" data-method="delete" class="icon" src='<%= image_path('delete-icon.png') %>'/></a> 
       </span>
       <% end %>
     <% end %>
