@@ -13,17 +13,19 @@ Step.create(description: "Try to fly! If it works, you're most likely dreaming",
 
 Dreamer.create(name: "DreamCatcher", username: "DreamCatcher", password: "dreamingfireflies", email: "dreamcatcher@gmail.com")
 
-10.times do
-  c = FactoryGirl.create(:dreamer)
-  c.steps << Step.all
-  4.times do
-    ds = c.dreams.create(FactoryGirl.attributes_for(:dream))
-    3.times do 
-      hashtag = FactoryGirl.create(:hashtag)
-      ds.hashtags << hashtag
-    end
-    5.times do
-      ds.favorites.create(fan: c)
+a = Dreamer.create(name: "Deren", username: "ddog", password: "password", email: "deren@gmail.com")
+b = Dreamer.create(name: "Abby", username: "downtonabby", password: "password", email: "abby@gmail.com")
+c = Dreamer.create(name: "James", username: "rickjames", password: "password", email: "james@gmail.com")
+d = Dreamer.create(name: "Ramon", username: "razorramon", password: "password", email: "ramon@gmail.com")
+
+users = [a, b, c, d]
+
+users.each do |user|
+  2.times do
+    dream = user.dreams.create(title: Faker::Book.title, story: Faker::Company.bs, consciousness_clarity: [true, false].sample , decision_clarity: [true, false].sample, dream_state_clarity: [true, false].sample )
+    2.times do
+      hashtag = Hashtag.create(name: Faker::Hacker.ingverb)
+      dream.hashtags << hashtag
     end
   end
 end
