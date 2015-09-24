@@ -2,7 +2,7 @@
 
 <p>Chatting with <%= render 'conversations/participants', conversation: @conversation %></p>
 
-<div class="messages">
+<div class="messages" data-timestamp="" data-method="get" data-action="<%=conversation_shortpoll_path%>" data-info="timestamp">
   <ul data-ul="messages">
     <% @conversation.receipts_for(current_dreamer).each do |receipt| %>
       <%= render partial: "message", locals: {message: receipt.message}

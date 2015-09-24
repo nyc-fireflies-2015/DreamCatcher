@@ -10,5 +10,7 @@ var ConversationsRunner = {
     Binder.bind({event: "submit",
                 selector: "[data-form=reply]",
                 callback: ctrl.postMessage});
+    Binder.setInterval({interval: 5000,
+                callback: ctrl.updateMessages });
   }
 };
