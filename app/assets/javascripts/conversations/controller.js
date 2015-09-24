@@ -4,3 +4,7 @@ ConversationsController.prototype.destroyConversation = function(eventTarget){
                     callback: ConversationsView.removeConversation,
                     params: eventTarget});
 };
+ConversationsController.prototype.postMessage = function(eventTarget){
+  DreamCatcher.send({data: Obj.fromForm(eventTarget),
+                    callback: ConversationsView.showMessage});
+};

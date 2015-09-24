@@ -6,6 +6,8 @@ var ConversationsRunner = {
                 callback: ctrl.destroyConversation});
   },
   show: function(){
-    
+    Binder.bind({event: "submit",
+                selector: "[data-form=reply]",
+                callback: ctrl.postMessage});
   }
 };
