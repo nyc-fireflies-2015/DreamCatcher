@@ -3,7 +3,7 @@
 
 <p>When combined with other lucid dream exercises, reality checks can supercharge your efforts. Or they can produce lucid dreams in their own right, simply by creating a mental habit of reality testing.</p>
 
-<%= form_for current_dreamer, url: reality_check_path, method: "PUT" do |f| %>
+<%= form_for current_dreamer, url: '/reality_check', method: "PUT" do |f| %>
   <%= f.text_field :phone_num, placeholder: "phone number" %>
   <%= f.password_field :password, placeholder: "*password", data: {field: "password"} %>
   <button type="submit">Send Me Reality Checks!</button>
