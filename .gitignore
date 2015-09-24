@@ -6,4 +6,8 @@
 
 # Ignore application configuration
 /config/application.yml
+<<<<<<< HEAD
+=======
+
+>>>>>>> Removes compiled assets
 /public/assets/*
