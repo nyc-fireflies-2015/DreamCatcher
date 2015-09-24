@@ -19,5 +19,6 @@ StepsController.prototype.postStep = function(eventTarget){
 };
 StepsController.prototype.addStep = function(eventTarget){
   DreamCatcher.send({data: Obj.fromDCLink(eventTarget),
-                    callback: StepView.showNewStep});
+                    callback: StepView.showNewStep,
+                    params: eventTarget});
 };
