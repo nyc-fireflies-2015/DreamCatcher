@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class=<%= "intro-bg" unless current_dreamer %>>
     <%= render "shared/header" if current_dreamer %>
 
     <% if flash[:error] %>
