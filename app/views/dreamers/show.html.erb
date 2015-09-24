@@ -10,7 +10,9 @@
     <%= @dreamer.username %>'s Profile
   </h1>
 
-    <% unless current_dreamer == @dreamer %>
+    <% if current_dreamer == @dreamer %>
+      <%= link_to 'Set up Reality Check', reality_check_path, class: 'btn btn-default btn-sm' %>
+    <% else %>
       <%= link_to 'Send message', new_message_path(to: @dreamer.id), class: 'btn btn-default btn-sm' %>
     <% end %>
 </p>
