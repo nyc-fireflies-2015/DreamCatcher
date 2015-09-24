@@ -6,7 +6,6 @@
 
 .intro-page {
   color: #FFF;
-  min-height: 40em;
 
   h1, h4, h6 {
     color: #FFF;
@@ -29,6 +28,10 @@
   font-size: 3em;
   top: 2em;
   font-family: 'Fredericka the Great', cursive;
+
+  a {
+    color: #FFF;
+  }
 }
 
 .welcome-button {
