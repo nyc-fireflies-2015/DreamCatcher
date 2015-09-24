@@ -1,0 +1,7 @@
+      <li class=<%= "current" if message.sender == current_dreamer %>>
+        <strong>
+          <%= link_to message.sender.username, profile_path(message.sender) %>
+          on <%= message.created_at.strftime("%B %d %Y, %H:%M:%S") %>:
+        </strong>
+        <%= message.body %>
+      </li>
