@@ -42,6 +42,17 @@
         <li><%= link_to step.description, step_path(step) %></li>
       <% end %>
       <%= will_paginate @steps %>
+
+      <h3 class="left">Hashtags</h3>
+      <hr>
+      <% if @hashtags.empty? %>
+        <p>There are no hashtags that match your search.</p>
+      <% end %>
+
+      <% @hashtags.each do |hashtag| %>
+        <li><%= link_to hashtag.name, hashtag_dreams_path(hashtag) %></li>
+      <% end %>
+      <%= will_paginate @hashtags %>
     </ul>
   </div>
 <% end %>
