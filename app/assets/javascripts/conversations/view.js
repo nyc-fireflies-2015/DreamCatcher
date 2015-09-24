@@ -10,7 +10,9 @@ var ConversationsView = {
   $(selector).data("timestamp", d.getTime().toString());
   },
   appendNewMessage: function(eventTarget, newMessages){
-      $("data-ul=messages").html(newMessages);
-      this.setTimeStamp("[data-info=timestamp]");
+    debugger
+      $("[data-ul=messages]").html(newMessages);
+      var d = new Date();
+      $("[data-info=timestamp]").data("timestamp", d.getTime().toString());
   }
 };
