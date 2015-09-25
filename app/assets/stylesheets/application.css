@@ -8,40 +8,40 @@
   font-family: 'Inconsolata';
   font-weight: 400;
   font-style: normal;
-  src: url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCGfQcKutQXcIrRfyR5jdjY8.eot');
-  src: url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCGfQcKutQXcIrRfyR5jdjY8.eot?#iefix') format('embedded-opentype'),
+  src: font-url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCGfQcKutQXcIrRfyR5jdjY8.eot');
+  src: font-url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCGfQcKutQXcIrRfyR5jdjY8.eot?#iefix') format('embedded-opentype'),
        local('Inconsolata'),
        local('Inconsolata-regular'),
-       url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCIgp9Q8gbYrhqGlRav_IXfk.woff2') format('woff2'),
-       url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCLrIa-7acMAeDBVuclsi6Gc.woff') format('woff'),
-       url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCJ0EAVxt0G0biEntp43Qt6E.ttf') format('truetype'),
-       url('http://fonts.gstatic.com/l/font?kit=BjAYBlHtW3CJxDcjzrnZCHNsigHlcrQGNV8nkUSFQfc#Inconsolata') format('svg');
+       font-url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCIgp9Q8gbYrhqGlRav_IXfk.woff2') format('woff2'),
+       font-url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCLrIa-7acMAeDBVuclsi6Gc.woff') format('woff'),
+       font-url('http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCJ0EAVxt0G0biEntp43Qt6E.ttf') format('truetype'),
+       font-url('http://fonts.gstatic.com/l/font?kit=BjAYBlHtW3CJxDcjzrnZCHNsigHlcrQGNV8nkUSFQfc#Inconsolata') format('svg');
 }
 
 @font-face {
   font-family: 'Fredericka the Great';
   font-weight: 400;
   font-style: normal;
-  src: url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18kLzRiPHQLkuFZv2gk0ljvI.eot');
-  src: url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18kLzRiPHQLkuFZv2gk0ljvI.eot?#iefix') format('embedded-opentype'),
+  src: font-url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18kLzRiPHQLkuFZv2gk0ljvI.eot');
+  src: font-url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18kLzRiPHQLkuFZv2gk0ljvI.eot?#iefix') format('embedded-opentype'),
        local('Fredericka the Great'),
        local('Fredericka-the-Great-regular'),
-       url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18k-V1Rr5FrXsa4CVETJgBSz3rGVtsTkPsbDajuO5ueQw.woff2') format('woff2'),
-       url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18uNtPus5Q24fzFZQPskWbXv3rGVtsTkPsbDajuO5ueQw.woff') format('woff'),
-       url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18oRQ8DD0aAk7ES4QQYHqQcw.ttf') format('truetype'),
-       url('http://fonts.gstatic.com/l/font?kit=7Es8Lxoku-e5eOZWpxw18rcJGWqSLpeSpZOiOfNRws0&skey=e76684586970fdda#FrederickatheGreat') format('svg');
+       font-url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18k-V1Rr5FrXsa4CVETJgBSz3rGVtsTkPsbDajuO5ueQw.woff2') format('woff2'),
+       font-url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18uNtPus5Q24fzFZQPskWbXv3rGVtsTkPsbDajuO5ueQw.woff') format('woff'),
+       font-url('http://fonts.gstatic.com/s/frederickathegreat/v5/7Es8Lxoku-e5eOZWpxw18oRQ8DD0aAk7ES4QQYHqQcw.ttf') format('truetype'),
+       font-url('http://fonts.gstatic.com/l/font?kit=7Es8Lxoku-e5eOZWpxw18rcJGWqSLpeSpZOiOfNRws0&skey=e76684586970fdda#FrederickatheGreat') format('svg');
 }
 
 @font-face {
   font-family: 'Special Elite';
   font-weight: 400;
   font-style: normal;
-  src: url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot');
-  src: url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot?#iefix') format('embedded-opentype'),
+  src: font-url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot');
+  src: font-url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot?#iefix') format('embedded-opentype'),
        local('Special Elite'),
        local('Special-Elite-regular'),
-       url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35JmwYWpCd0FFfjqwFBDnEN0bM.woff2') format('woff2'),
-       url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff') format('woff'),
-       url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35JmybsRidxnYrfzLNRqJkHfFo.ttf') format('truetype'),
-       url('http://fonts.gstatic.com/l/font?kit=9-wW4zu3WNoD5Fjka35JmzyKAGS2js9R2mTcvyyc0eU#SpecialElite') format('svg');
+       font-url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35JmwYWpCd0FFfjqwFBDnEN0bM.woff2') format('woff2'),
+       font-url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff') format('woff'),
+       font-url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35JmybsRidxnYrfzLNRqJkHfFo.ttf') format('truetype'),
+       font-url('http://fonts.gstatic.com/l/font?kit=9-wW4zu3WNoD5Fjka35JmzyKAGS2js9R2mTcvyyc0eU#SpecialElite') format('svg');
 }
