@@ -20,4 +20,7 @@ $(document).ready(function(){
   if($("#conversation-show").length > 0){
     ConversationsRunner.show();
   }
+  if($("#hashtag-search").length > 0){
+    FavoritesRunner.index();
+  }
 });
