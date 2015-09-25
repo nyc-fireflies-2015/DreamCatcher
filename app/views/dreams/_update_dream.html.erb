@@ -7,11 +7,11 @@
     <div class="favorites" data-div="favorite">
       <div data-favorite="new" data-div="<%= "hidden" if @dream.favorite?(current_dreamer) %>">
         <%= render partial: "favorites/favorite", locals: {dream: @dream} %>
-        <%= @dream.favorites.count %>
+        <span data-span="favorites-count"><%= @dream.favorites.count %></span>
       </div>
       <div data-favorite="destroy" data-div="<%= "hidden" unless @dream.favorite?(current_dreamer)%>" >
         <%= render partial: "favorites/un_favorite", locals: {dream: @dream} %>
-        <%= @dream.favorites.count %>
+        <span data-span="unfavorites-count"><%= @dream.favorites.count %></span>
       </div>
     </div>
   <% end %>

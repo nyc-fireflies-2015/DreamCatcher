@@ -1,10 +1,10 @@
 $(document).ready(function(){
   if($("#dream-index").length > 0){
     DreamsRunner.index();
-    FavoritesRunner.index();
   }
   if($("#dream-show").length > 0){
     DreamsRunner.show();
+    FavoritesRunner.index();
     CommentsRunner.show();
     HashtagsRunner.show();
   }

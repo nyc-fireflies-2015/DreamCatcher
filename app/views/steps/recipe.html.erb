@@ -1,7 +1,7 @@
 <h1><%= @creator.username %>'s Dream Recipe</h1>
 
-<div class="recipe">
-  <ul>
+<div id="step-index" class="recipe">
+  <ul id="step-show">
     <% @steps.each do |step| %>
       <li>
         <% unless step.creator != current_dreamer && current_dreamer.steps.include?(step) %>

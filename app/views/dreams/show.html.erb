@@ -5,7 +5,7 @@
  <%= render "edit" %>
 </div>
 
-<h3><%= @dream.comments.count %> Comments</h3>
+<h3><span data-header="comments-count"><%= @dream.comments.count %></span> Comments</h3>
 
 <% if @dream.comments.empty? %>
   <p>This dream currently has no comments.<br>
