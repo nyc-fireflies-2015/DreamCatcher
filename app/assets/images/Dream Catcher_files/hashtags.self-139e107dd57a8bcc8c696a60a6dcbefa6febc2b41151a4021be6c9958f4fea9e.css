@@ -1,0 +1,13 @@
+/* line 1, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/hashtags.css.scss */
+.hashtag-dreams {
+  list-style-type: none;
+}
+
+/* line 5, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/hashtags.css.scss */
+.hashtag {
+  list-style-type: none;
+  background: #CCC;
+  padding: 0.2em 0.4em;
+  border-radius: 0.7em;
+  color: #000;
+}
