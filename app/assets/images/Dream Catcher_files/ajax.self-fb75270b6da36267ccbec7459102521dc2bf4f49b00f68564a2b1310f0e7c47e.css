@@ -1,0 +1,24 @@
+/* line 1, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/ajax.css.scss */
+[data-form="new"], [data-form="edit"] {
+  display: none;
+}
+
+/* line 2, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/ajax.css.scss */
+[data-form="new_step"], [data-form="edit-step"] {
+  display: none;
+}
+
+/* line 3, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/ajax.css.scss */
+[data-form="profile"] {
+  display: none;
+}
+
+/* line 4, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/ajax.css.scss */
+[data-div="hidden"] {
+  display: none;
+}
+
+/* line 5, /Users/Sy_borg/LucidDreamer/app/assets/stylesheets/ajax.css.scss */
+[data-form="edit-comment"] {
+  display: none;
+}
