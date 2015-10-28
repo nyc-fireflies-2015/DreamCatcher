@@ -1,6 +1,6 @@
 # Dream Catcher
 
-[##LucidDreamCatcher.HerokuApp.com](https://luciddreamcatcher.herokuapp.com)
+#[LucidDreamCatcher.HerokuApp.com](https://luciddreamcatcher.herokuapp.com)
 
 Team Members: |
 --------------|
