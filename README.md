@@ -1,13 +1,13 @@
 # Dream Catcher
 
+[##LucidDreamCatcher.HerokuApp.com](https://luciddreamcatcher.herokuapp.com)
+
 Team Members: |
 --------------|
 Abby          |
 Deren         |
 Ramon         |
 James         |
-
-<img src="http://cdn-7.spiritscienceandmetaphysics.com/wp-content/uploads/2013/12/lucid-dream.png" width="150px" alt="Lucid Dream"/>
 
 ## User Stories
 
