@@ -7,10 +7,10 @@ Social media platform dedicated to sharing and inducing lucid dreams. Users can 
 ![Screenshot](screenshot.png)
 
 ### Team Members:
-*[Abby De Los Santos](https://github.com/albalenys)
-*[Deren Dogrusoy](https://github.com/aderend)
-*[Ramon Ramos III](https://github.com/arjis02)
-*[James Lowenthal](https://github.com/JamesAnthonyLow)
+[Abby De Los Santos](https://github.com/albalenys)<br>
+[Deren Dogrusoy](https://github.com/aderend)<br>
+[Ramon Ramos III](https://github.com/arjis02)<br>
+[James Lowenthal](https://github.com/JamesAnthonyLow)
 
 ### Tools:
 [Waffle](https://waffle.io/nyc-fireflies-2015/DreamCatcher) | [Slack](https://luciddreamer.slack.com/messages/general/) | [Test Coverage](https://rawgit.com/nyc-fireflies-2015/DreamCatcher/b34e0cc4a5e82470efbb31cd4885fa8c8a2758b3/coverage/index.html#_AllFiles)
