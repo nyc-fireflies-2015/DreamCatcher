@@ -1,33 +1,15 @@
 # Dream Catcher
 
-#[LucidDreamCatcher.HerokuApp.com](https://luciddreamcatcher.herokuapp.com)
+##[LucidDreamCatcher.HerokuApp.com](https://luciddreamcatcher.herokuapp.com)
 
-Team Members: |
---------------|
-Abby          |
-Deren         |
-Ramon         |
-James         |
+Social media platform dedicated to sharing and inducing lucid dreams. Users can experiment with different methods and receive daily SMS to remind them to perform reality checks. More experienced dreamers recieve points that accumulate to higher rankings.
 
-## User Stories
+![Screenshot](screenshot.png)
 
-Prolile Page : |   Dashboard : |
----------------|---------------|
-Avatar         | River of Dreams |
-Questionnaire  | Trends |
-Stats          |
-Set Reminders  |
-Dream Logs     |
-My Recipe      |
-Badges         |
+[Waffle](https://waffle.io/nyc-fireflies-2015/DreamCatcher) | [Slack](https://luciddreamer.slack.com/messages/general/) | [Test Coverage](https://rawgit.com/nyc-fireflies-2015/DreamCatcher/b34e0cc4a5e82470efbb31cd4885fa8c8a2758b3/coverage/index.html#_AllFiles)
 
-## Schema
-
-![Schema](schema.png)
-![Wireframe](wireframe.png)
-
-[Our Waffle](https://waffle.io/nyc-fireflies-2015/DreamCatcher)
-
-[Our Slack](https://luciddreamer.slack.com/messages/general/)
-
-[Our Test Coverage](https://rawgit.com/nyc-fireflies-2015/DreamCatcher/b34e0cc4a5e82470efbb31cd4885fa8c8a2758b3/coverage/index.html#_AllFiles)
+## Team Members:
+[Abby De Los Santos](https://github.com/albalenys)
+[Deren Dogrusoy](https://github.com/aderend)
+[Ramon Ramos III](https://github.com/arjis02)
+[James Lowenthal](https://github.com/JamesAnthonyLow)
